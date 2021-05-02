@@ -1,0 +1,21 @@
+{
+    "botToken": null,
+
+    "connectionType": "polling",
+
+    "webhookOptions":{
+        "webhookHost": null,
+        
+        "webhookPort": null,
+        
+        "webhookListen": "0.0.0.0",
+        
+        "sslCertificate": null,
+        
+        "sslPrivateKey": null
+    },
+
+    "database": "database.sqlite",
+
+    "language": "language.json"
+}
