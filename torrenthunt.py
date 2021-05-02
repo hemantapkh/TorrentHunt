@@ -258,9 +258,9 @@ def browse3(message, torrentType, category):
     elif message.text == language['backBtn']['en']:
         browse2(message, torrentType)
     else:
-        if message.text[2:] == language['timeCategory']['en'].format(torrentType=language[torrentType]['en'].capitalize(), category='' if category in ['all', 'other'] else language[category]['en'], time=language['today']['en']):
+        if message.text[2 if torrentType == 'trending' else 3:] == language['timeCategory']['en'].format(torrentType=language[torrentType]['en'].capitalize(), category='' if category in ['all', 'other'] else language[category]['en'], time=language['today']['en']):
             week = False
-        elif message.text[2:] == language['timeCategory']['en'].format(torrentType=language[torrentType]['en'].capitalize(), category='' if category in ['all', 'other'] else language[category]['en'], time=language['week']['en']):
+        elif message.text[2 if torrentType == 'trending' else 3:] == language['timeCategory']['en'].format(torrentType=language[torrentType]['en'].capitalize(), category='' if category in ['all', 'other'] else language[category]['en'], time=language['week']['en']):
             week = True
         else:
             week = 'unknown'
@@ -270,7 +270,6 @@ def browse3(message, torrentType, category):
             browse2(message, torrentType, category)
         
         else:
-            week = True if language['week']['en'] in message.text.split() else False
             bot.send_message(message.chat.id, text=language['fetchingTorrentTime']['en'].format(torrentType=language[torrentType]['en'], category=language['torrents']['en'] if category in ['all', 'other'] else language[category]['en'], time=language['week']['en'] if week else language['today']['en']), reply_markup=mainReplyKeyboard())
 
             torrent = py1337x.py1337x()
