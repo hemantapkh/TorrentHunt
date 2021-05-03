@@ -47,10 +47,9 @@ def mainReplyKeyboard():
     button6 = telebot.types.KeyboardButton(text=language['helpBtn']['en'])
     button7 = telebot.types.KeyboardButton(text=language['supportBtn']['en'])
     
-    keyboard.row(button1)
-    keyboard.row(button2)
+    keyboard.row(button1, button2)
     keyboard.row(button3, button4)
-    keyboard.row(button6, button7)
+    keyboard.row(button5, button6, button7)
 
     return keyboard
 
