@@ -50,7 +50,7 @@ def mainReplyKeyboard():
     keyboard.row(button1)
     keyboard.row(button2)
     keyboard.row(button3, button4)
-    keyboard.row(button5, button6, button7)
+    keyboard.row(button6, button7)
 
     return keyboard
 
