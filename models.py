@@ -20,6 +20,15 @@ class dbQuery():
             cursor.execute(f'Insert into users (telegramId) values ({telegramId})')
             con.commit()
 
+    #: Get all the registered users
+    def getAllAccounts(self):
+        with sqlite3.connect(self.db) as con:
+            cur = con.cursor()
+            users = cur.execute(f'SELECT * FROM users WHERE telegramId NOT NULL').fetchall()
+            con.commit()
+
+            return users if users else None
+
     #: Get the user's settings
     def getSetting(self, userId, var):
         with sqlite3.connect(self.db) as con:
