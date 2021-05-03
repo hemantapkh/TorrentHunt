@@ -4,6 +4,7 @@ from time import time
 
 import telebot, py1337x
 from aiohttp import web
+from models import dbQuery
 
 # Finding the absolute path of the config file
 scriptPath = path.abspath(__file__)
@@ -12,6 +13,7 @@ configPath = path.join(dirPath,'config.json')
 
 config = json.load(open(configPath))
 language = json.load(open(config['language']))
+dbSql = dbQuery(config['database'])
 
 bot = telebot.TeleBot(config['botToken'], parse_mode='HTML')
 
@@ -211,6 +213,9 @@ def result(response, torrentType, page, category=None, week=None, query=None):
 # Start handler
 @bot.message_handler(commands=['start'])
 def start(message):
+    telegramId = message.from_user.id
+    if not dbSql.getUserId(telegramId):
+        dbSql.setUserId(telegramId)
     bot.send_message(message.chat.id, text=language['greet']['en'].format(message.from_user.first_name), reply_markup=mainReplyKeyboard(), disable_web_page_preview=True)
 
 # Handler for trending, popular, top and browse torrents
