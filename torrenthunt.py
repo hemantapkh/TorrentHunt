@@ -147,12 +147,10 @@ def result(response, torrentType, page, category=None, week=None, query=None):
                 # Show only 20 items per page
                 if count >= 20:
                     break
-                msg += f"👉 <b>{((page-1)*20)+count+1}. {item['name']}</b>\n"
-                msg += f"{language['size']['en']}: {item['size']}\n"
-                msg += f"{language['seeders']['en']}: {item['seeders']}\n"
-                msg += f"{language['leechers']['en']}: {item['leechers']}\n\n"
+                msg += f"<b>{((page-1)*20)+count+1}. {item['name']}</b>\n\n"
+                msg += f"💾 {item['size']}, 🟢 {item['seeders']}, 🔴 {item['leechers']}\n\n"
 
-                msg += f"{language['url']['en']}: /getMagnet_{item['id']}\n"
+                msg += f"{language['link']['en']}: /getLink_{item['id']}\n"
                 msg += f"{language['moreInfo']['en']}: /getInfo_{item['id']}\n\n"
 
             pageCount = response['pageCount']
@@ -296,11 +294,11 @@ def browse4(message, torrentType, category):
     bot.send_message(chat_id=message.chat.id, text=msg or language['emptyPage']['en'], reply_markup=markup)
     
 # Get magnet link of the torrent
-@bot.message_handler(func=lambda message: message.text and message.text[:11] == '/getMagnet_')
-def getURL(message):
+@bot.message_handler(func=lambda message: message.text and message.text[:9] == '/getLink_')
+def getLink(message):
     sent = bot.send_message(message.chat.id, language['fetchingMagnetLink']['en'])
     
-    torrentId = message.text[11:]
+    torrentId = message.text[9:]
     torrent = py1337x.py1337x()
     
     response = torrent.info(torrentId, id=True)
@@ -319,7 +317,7 @@ def getInfo(message):
 
     genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
     description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
-    msg = f"<b>✨ {response['name']}</b>\n\n{language['category']['en']}: {response['category']}\n{language['language']['en']}: {response['language']}\n{language['size']['en']}: {response['size']}\n{language['uploadedBy']['en']}: {response['uploader']}\n{language['downloads']['en']}: {response['downloads']}\n{language['lastChecked']['en']}: {response['lastChecked']}\n{language['uploadedOn']['en']}: {response['uploadDate']}\n{language['seeders']['en']}: {response['seeders']}\n{language['leechers']['en']}: {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['url']['en']}: /getMagnet_{torrentId}"
+    msg = f"<b>✨ {response['name']}</b>\n\n{language['category']['en']}: {response['category']}\n{language['language']['en']}: {response['language']}\n{language['size']['en']}: {response['size']}\n{language['uploadedBy']['en']}: {response['uploader']}\n{language['downloads']['en']}: {response['downloads']}\n{language['lastChecked']['en']}: {response['lastChecked']}\n{language['uploadedOn']['en']}: {response['uploadDate']}\n{language['seeders']['en']}: {response['seeders']}\n{language['leechers']['en']}: {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['link']['en']}: /getLink_{torrentId}"
     
     bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg)
 
