@@ -303,7 +303,8 @@ def getLink(message):
     
     response = torrent.info(torrentId, id=True)
 
-    bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f"✨ <b>{response['name']}</b>\n\n<code>{response['magnetLink']}</code>")
+    msg = f"✨ <b>{response['name']}</b>\n\n<code>{response['magnetLink']}</code>" if response['magnetLink'] else language['errorFetchingLink']['en']
+    bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg)
 
 # Get information about the torrent
 @bot.message_handler(func=lambda message: message.text and message.text[:9] == '/getInfo_')
