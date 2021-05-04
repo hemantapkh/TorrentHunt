@@ -215,8 +215,8 @@ def start(message):
 
 # Handler for trending, popular, top and browse torrents
 @bot.message_handler(commands=['trending', 'popular', 'top', 'browse'])
-def browse(message, torrentType=None):
-    if isSubscribed(message):
+def browse(message, torrentType=None, referred=False):
+    if referred or isSubscribed(message):
         torrentType = torrentType or message.text.split()[0][1:]
         sent = bot.send_message(message.chat.id, text=language['selectCategory']['en'], reply_markup=categoryReplyKeyboard(allCategories=False if torrentType == 'browse' else True))
         bot.register_next_step_handler(sent, browse2, torrentType)
@@ -256,7 +256,7 @@ def browse3(message, torrentType, category):
         bot.send_message(message.chat.id, text=language['backToMenu']['en'], reply_markup=mainReplyKeyboard())
     # Back
     elif message.text == language['backBtn']['en']:
-        browse2(message, torrentType)
+        browse(message, torrentType, referred=True)
     else:
         if message.text[2 if torrentType == 'trending' else 3:] == language['timeCategory']['en'].format(torrentType=language[torrentType]['en'].capitalize(), category='' if category in ['all', 'other'] else language[category]['en'], time=language['today']['en']):
             week = False
