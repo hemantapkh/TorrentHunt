@@ -112,7 +112,7 @@ def textToCategory(text):
         return 'tv'
 
     elif text == language['docsBtn']['en']:
-        return 'documentries'
+        return 'documentaries'
 
     elif text == language['gamesBtn']['en']:
         return 'games'
