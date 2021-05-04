@@ -315,10 +315,13 @@ def getInfo(message):
     
     response = torrent.info(torrentId, id=True)
 
-    genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
-    description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
-    msg = f"<b>✨ {response['name']}</b>\n\n{language['category']['en']}: {response['category']}\n{language['language']['en']}: {response['language']}\n{language['size']['en']}: {response['size']}\n{language['uploadedBy']['en']}: {response['uploader']}\n{language['downloads']['en']}: {response['downloads']}\n{language['lastChecked']['en']}: {response['lastChecked']}\n{language['uploadedOn']['en']}: {response['uploadDate']}\n{language['seeders']['en']}: {response['seeders']}\n{language['leechers']['en']}: {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['link']['en']}: /getLink_{torrentId}"
-    
+    if response['name']:
+        genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
+        description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
+        msg = f"<b>✨ {response['name']}</b>\n\n{language['category']['en']}: {response['category']}\n{language['language']['en']}: {response['language']}\n{language['size']['en']}: {response['size']}\n{language['uploadedBy']['en']}: {response['uploader']}\n{language['downloads']['en']}: {response['downloads']}\n{language['lastChecked']['en']}: {response['lastChecked']}\n{language['uploadedOn']['en']}: {response['uploadDate']}\n{language['seeders']['en']}: {response['seeders']}\n{language['leechers']['en']}: {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['link']['en']}: /getLink_{torrentId}"
+    else:
+        msg = language['errorFetchingInfo']['en']  
+        
     bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg)
 
 # Text handler
