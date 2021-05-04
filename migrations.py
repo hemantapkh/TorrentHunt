@@ -12,10 +12,16 @@ conn = sqlite3.connect(database)
 print('[+] Database opened successfully.')
 
 conn.execute('''CREATE TABLE users
-         (id        INTEGER PRIMARY KEY AUTOINCREMENT,
-         telegramId TEXT
+         (UserId       INTEGER PRIMARY KEY
          );''')
 
 print('[+] Table users created successfully.')
+
+conn.execute('''CREATE TABLE settings
+         (ownerId       INTEGER PRIMARY KEY,
+         language       TEXT DEFAULT "EN"
+         );''')
+
+print('[+] Table settings created successfully.')
 
 conn.close()
