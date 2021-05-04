@@ -210,9 +210,7 @@ def result(response, torrentType, page, category=None, week=None, query=None):
 # Start handler
 @bot.message_handler(commands=['start'])
 def start(message):
-    telegramId = message.from_user.id
-    if not dbSql.getUserId(telegramId):
-        dbSql.setUserId(telegramId)
+    dbSql.setAccount(message.from_user.id)
     bot.send_message(message.chat.id, text=language['greet']['en'].format(message.from_user.first_name), reply_markup=mainReplyKeyboard(), disable_web_page_preview=True)
 
 # Handler for trending, popular, top and browse torrents
