@@ -210,8 +210,26 @@ def result(response, torrentType, page, category=None, week=None, query=None):
 # Start handler
 @bot.message_handler(commands=['start'])
 def start(message):
-    dbSql.setAccount(message.from_user.id)
-    bot.send_message(message.chat.id, text=language['greet']['en'].format(message.from_user.first_name), reply_markup=mainReplyKeyboard(), disable_web_page_preview=True)
+    if dbSql.setAccount(message.from_user.id):
+        bot.send_message(message.chat.id, text=language['greet']['en'].format(message.from_user.first_name), reply_markup=mainReplyKeyboard(), disable_web_page_preview=True)
+    else:
+        lang(message, greet=True)
+
+# Select language
+def lang(message, greet=False):
+    markup = telebot.types.InlineKeyboardMarkup()
+    
+    markup.add(telebot.types.InlineKeyboardButton('🌐 English', callback_data=f'cb_language_{greet}_english'), telebot.types.InlineKeyboardButton('🇳🇵 नेपाली', callback_data=f'cb_language_{greet}_nepali')) # English, Nepali
+    markup.add(telebot.types.InlineKeyboardButton('🇧🇾 Bengali', callback_data=f'cb_language_{greet}_bengali'), telebot.types.InlineKeyboardButton('🇧🇾 Беларуская', callback_data=f'cb_language_{greet}_belarusian')) # Bengali, Belarusian
+    markup.add(telebot.types.InlineKeyboardButton('🏴󠁥󠁳󠁣󠁴󠁿 Català', callback_data=f'cb_language_{greet}_catalan'), telebot.types.InlineKeyboardButton('🇳🇱 Nederlands', callback_data=f'cb_language_{greet}_dutch')) # Catalan, Dutch
+    markup.add(telebot.types.InlineKeyboardButton('🇫🇷 français', callback_data=f'cb_language_{greet}_french'), telebot.types.InlineKeyboardButton('🇩🇪 Deutsch', callback_data=f'cb_language_{greet}_germain')) # French, Germain
+    markup.add(telebot.types.InlineKeyboardButton('🇮🇳 हिन्दी', callback_data=f'cb_language_{greet}_hindi'), telebot.types.InlineKeyboardButton('🇮🇹 Italian', callback_data=f'cb_language_{greet}_italian')) # Hindi, Italian
+    markup.add(telebot.types.InlineKeyboardButton('🇰🇷 한국어', callback_data=f'cb_language_{greet}_korean'), telebot.types.InlineKeyboardButton('🇮🇩 Bahasa Melayu', callback_data=f'cb_language_{greet}_malay')) # Korean, Malay
+    markup.add(telebot.types.InlineKeyboardButton('🇵🇱 Polski', callback_data=f'cb_language_{greet}_polish'), telebot.types.InlineKeyboardButton('🇧🇷 Português', callback_data=f'cb_language_{greet}_portuguese')) # Polish, Portuguese
+    markup.add(telebot.types.InlineKeyboardButton('🇷🇺 русский', callback_data=f'cb_language_{greet}_russian'), telebot.types.InlineKeyboardButton('🇪🇸 español', callback_data=f'cb_language_{greet}_spanish')) # Russian, Spanish
+    markup.add(telebot.types.InlineKeyboardButton('🇹🇷 Türkçe', callback_data=f'cb_language_{greet}_turkish'), telebot.types.InlineKeyboardButton('🇺🇦 Український', callback_data=f'cb_language_{greet}_ukrainian')) # Turkish, Ukrainian
+    
+    bot.send_message(message.chat.id, language['chooseLanguage']['en'], reply_markup=markup)
 
 # Handler for trending, popular, top and browse torrents
 @bot.message_handler(commands=['trending', 'popular', 'top', 'browse'])
@@ -342,7 +360,7 @@ def text(message):
 
     # Settings
     elif message.text in ['/settings', language['settingsBtn']['en']]:
-        pass
+        lang(message)
 
     # Help
     elif message.text in ['/help', language['helpBtn']['en']]:
@@ -432,6 +450,17 @@ def callbackHandler(call):
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=language['thanksForSub']['en'])
         else:
             bot.answer_callback_query(call.id, language['notSubscribedCallback']['en'])
+
+    # Choose language
+    elif call.data[:12] == 'cb_language_':
+        greet = call.data.split('_')[2]
+        lang = call.data.split('_')[3]
+
+        dbSql.setSetting(call.from_user.id, 'language', lang)
+        if greet == 'True':
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=language['greet']['en'].format(call.from_user.first_name))
+        else:
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=language['languageSelected']['en'])
 
 # Polling Bot
 if config['connectionType'] == 'polling':
