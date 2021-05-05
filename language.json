@@ -1,0 +1,257 @@
+{
+    "greet": {
+        "english": "✨ Hi {}, I am Torrent Hunt Bot and I can help you to search and browse torrents within Telegram.\n\n<b>Send any keywords to search for torrents.</b>"
+    },
+
+    "chooseLanguage": {
+        "english": "🗣️ Choose a language you wish"
+    },
+
+    "languageSelected": {
+        "english": "🌐 English is selected as your default language. You can choose another language again from settings."
+    },
+
+    "notSubscribed": {
+        "english": "🥺 Hi {}, It seems like you are not subscribed to our channel yet. Due to our limited resources, only our subscriers can use this bot. Please support us by subscribing to our channel and use the bot.\n\n<b>Click on the button below to subscribe to our channel and press the ❤️ Done button after subscribing.</b>"
+    },
+
+    "notSubscribedCallback": {
+        "english": "⚠️ You are not subscribed yet."
+    },
+
+    "thanksForSub": {
+        "english": "😇 <b>Thank you so much for supporting us!! Being a part of our channel, you will get the latest updates of our projects.</b>"
+    },
+
+    "help": {
+        "english": "<b>⁉️ Help</b>\n\n/start - Start conversation with the bot\n/trending - Get trending torrents\n/popular - Get popular torrents\n/top - Get top 100 torrents\n/browse - Browse torrents\n/settings - Change your settings\n/help - Show this help menu\n/support - Support the developer\n\n<b>Send any keywords to search torrents.</b>"
+    },
+
+    "support": {
+        "english": "<b>🎁 Support</b>\n\nIf you like our work and want to support us, subscribe to our channel on YouTube and Telegram. Follow me on GitHub to make my day.😇\n\n🐛 To report bugs or to request a new feature, join our discussion chat, and discuss it there."
+    },
+
+    "shareText": {
+        "english": "Hey, using torrent hunt you can get the link of your favorites movies, series, shows,games, software, and many more within Telegram. To use the bot, click on the link above and start the conversation with it.🚀"
+    },
+
+    "searchingQuery": {
+        "english": "🔎 <code>Searching {}...</code>"
+    },
+
+    "noResults": {
+        "english": "❌ No results were returned. Please refine your search."
+    },
+
+    "selectCategory": {
+        "english": "❔ Choose a category for your torrents"
+    },
+
+    "unknownCategory": {
+        "english": "❔ Please choose the correct category"
+    },
+
+    "selectTimePeriod": {
+        "english": "⏰ Choose a period"
+    },
+
+    "unknownTimePeriod": {
+        "english": "⏰ Please choose the correct period"
+    },
+
+    "trendingToday": {
+        "english": "✨ Trending torrents today"
+    },
+
+    "trendingThisWeek": {
+        "english": "✨ Trending torrents this week"
+    },
+
+    "popularToday": {
+        "english": "⚡️ Popular torrents today"
+    },
+
+    "popularThisWeek": {
+        "english": "⚡️ Popular torrents this week"
+    },
+
+    "fetchingTorrents": {
+        "english": "🔎 <code>Searching torrents...</code>"
+    },
+
+    "emptyPage": {
+        "english": "⚠️ This page doesn't have any content."
+    },
+
+    "fetchingTorrentInfo": {
+        "english": "🔎 <code>Fetching torrent info...</code>"
+    },
+
+    "errorFetchingInfo": {
+        "english": "⚠️ <code>Error while fetching torrent info...</code>"
+    },
+
+    "fetchingMagnetLink": {
+        "english": "🔎 <code>Fetching magnet link...</code>"
+    },
+
+    "errorFetchingLink": {
+        "english": "⚠️ <code>Error while fetching magnet link...</code>"
+    },
+
+    "backToMenu": {
+        "english": "⬅️ Back to main menu"
+    },
+
+    "link": {
+        "english": "Link: "
+    },
+
+    "moreInfo": {
+        "english": "Info: "
+    },
+
+    "category": {
+        "english": "Category: "
+    },
+
+    "language": {
+        "english": "Language: "
+    },
+
+    "size": {
+        "english": "Size: "
+    },
+
+    "uploadedBy": {
+        "english": "Uploader: "
+    },
+
+    "downloads": {
+        "english": "Downloads: "
+    },
+
+    "lastChecked": {
+        "english": "Last Checked: "
+    },
+
+    "uploadedOn": {
+        "english": "Uploaded On: "
+    },
+
+    "seeders": {
+        "english": "Seeders: "
+    },
+
+    "leechers": {
+        "english": "Leechers: "
+    },
+
+    "trendingBtn": {
+        "english": "✨ Trending Torrents"
+    },
+
+    "popularBtn": {
+        "english": "⚡ Popular Torrents"
+    },
+
+    "topBtn": {
+        "english": "💯 Top Torrents"
+    },
+
+    "browseBtn": {
+        "english": "🔍 Browse Torrents"
+    },
+
+    "settingsBtn": {
+        "english": "⚙️ Settings"
+    },
+
+    "helpBtn": {
+        "english": "⁉️ Help"
+    },
+
+    "supportBtn": {
+        "english": "🎁 Support"
+    },
+
+    "moviesBtn": {
+        "english": "🎬 Movies"
+    },
+
+    "tvBtn": {
+        "english": "📺 TV"
+    },
+
+    "docsBtn": {
+        "english": "🎥 Docs"
+    },
+
+    "gamesBtn": {
+        "english": "🎮 Games"
+    },
+
+    "musicBtn": {
+        "english": "🎵 Music"
+    },
+
+    "appsBtn": {
+        "english": "🖥️ Apps"
+    },
+
+    "animeBtn": {
+        "english": "🎎 Anime"
+    },
+
+    "xxxBtn": {
+        "english": "🔞 "
+    },
+
+    "othersBtn": {
+        "english": "📦 Others"
+    },
+
+    "allBtn": {
+        "english": "✅ All"
+    },
+
+    "mainMenuBtn": {
+        "english": "⬅️ Main menu"
+    },
+
+    "backBtn": {
+        "english": "⬅️ Back"
+    },
+
+    "nextBtn": {
+        "english": "⏭️ Next"
+    },
+
+    "previousBtn": {
+        "english": "⏮️ Previous"
+    },
+
+    "doneBtn": {
+        "english": "❤️ Done"
+    },
+
+    "subscribeChannelBtn": {
+        "english": "📺 Subscribe our channel"
+    },
+
+    "joinChannelBtn": {
+        "english": "➕ Join our channel"
+    },
+
+    "joinDiscussionBtn": {
+        "english": "🗣️ Join our discussion"
+    },
+
+    "followGithubBtn": {
+        "english": "🌟 Follow us on GitHub"
+    },
+
+    "shareWithFriendsBtn": {
+        "english": "💬 Share"
+    }
+}
