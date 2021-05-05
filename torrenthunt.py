@@ -149,8 +149,8 @@ def result(response, torrentType, page, category=None, week=None, query=None):
                 msg += f"<b>{((page-1)*20)+count+1}. {item['name']}</b>\n\n"
                 msg += f"💾 {item['size']}, 🟢 {item['seeders']}, 🔴 {item['leechers']}\n\n"
 
-                msg += f"{language['link']['en']}: /getLink_{item['id']}\n"
-                msg += f"{language['moreInfo']['en']}: /getInfo_{item['id']}\n\n"
+                msg += f"{language['link']['en']} /getLink_{item['id']}\n"
+                msg += f"{language['moreInfo']['en']} /getInfo_{item['id']}\n\n"
 
             pageCount = response['pageCount']
 
@@ -215,14 +215,14 @@ def start(message):
 
 # Handler for trending, popular, top and browse torrents
 @bot.message_handler(commands=['trending', 'popular', 'top', 'browse'])
-def browse(message, torrentType=None, referred=False):
+def browse(message, torrentType=None, referred=False, customMessage=None):
     if referred or isSubscribed(message):
         torrentType = torrentType or message.text.split()[0][1:]
-        sent = bot.send_message(message.chat.id, text=language['selectCategory']['en'], reply_markup=categoryReplyKeyboard(allCategories=False if torrentType == 'browse' else True))
+        sent = bot.send_message(message.chat.id, text=customMessage or language['selectCategory']['en'], reply_markup=categoryReplyKeyboard(allCategories=False if torrentType == 'browse' else True))
         bot.register_next_step_handler(sent, browse2, torrentType)
 
 # Next step handler for trending, popular, top and browse torrents
-def browse2(message, torrentType, category=None):
+def browse2(message, torrentType, category=None, customMessage=None):
     # Main menu
     if message.text == language['mainMenuBtn']['en']:
         bot.send_message(message.chat.id, text=language['backToMenu']['en'], reply_markup=mainReplyKeyboard())
@@ -233,8 +233,8 @@ def browse2(message, torrentType, category=None):
             if torrentType in ['trending', 'popular']:
                 keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
 
-                button1 = telebot.types.KeyboardButton(text=f"{'✨' if torrentType == 'trending' else '⚡️'} {language['timeCategory']['en'].format(torrentType=language[torrentType]['en'].capitalize(), category='' if category in ['all', 'other'] else language[category]['en'], time=language['today']['en'])}")
-                button2 = telebot.types.KeyboardButton(text=f"{'✨' if torrentType == 'trending' else '⚡️'} {language['timeCategory']['en'].format(torrentType=language[torrentType]['en'].capitalize(), category='' if category in ['all', 'other'] else language[category]['en'], time=language['week']['en'])}")
+                button1 = telebot.types.KeyboardButton(text=language['trendingToday' if torrentType == 'trending' else 'popularToday']['en'])
+                button2 = telebot.types.KeyboardButton(text=language['trendingThisWeek' if torrentType == 'trending' else 'popularThisWeek']['en'])
                 button3 = telebot.types.KeyboardButton(text=language['backBtn']['en'])
                 button4 = telebot.types.KeyboardButton(text=language['mainMenuBtn']['en'])
 
@@ -242,12 +242,12 @@ def browse2(message, torrentType, category=None):
                 keyboard.row(button2)
                 keyboard.row(button3, button4)
 
-                sent = bot.send_message(message.chat.id, text=language['selectTime']['en'], reply_markup=keyboard)
+                sent = bot.send_message(message.chat.id, text=customMessage or language['selectTimePeriod']['en'], reply_markup=keyboard)
                 bot.register_next_step_handler(sent, browse3, torrentType, category)
             else:
                 browse4(message, torrentType, category)
         else:
-            browse(message, torrentType)
+            browse(message, torrentType,referred=True, customMessage=language['unknownCategory']['en'])
 
 # Next step handler for trending and popular torrents
 def browse3(message, torrentType, category):
@@ -258,19 +258,14 @@ def browse3(message, torrentType, category):
     elif message.text == language['backBtn']['en']:
         browse(message, torrentType, referred=True)
     else:
-        if message.text[2 if torrentType == 'trending' else 3:] == language['timeCategory']['en'].format(torrentType=language[torrentType]['en'].capitalize(), category='' if category in ['all', 'other'] else language[category]['en'], time=language['today']['en']):
-            week = False
-        elif message.text[2 if torrentType == 'trending' else 3:] == language['timeCategory']['en'].format(torrentType=language[torrentType]['en'].capitalize(), category='' if category in ['all', 'other'] else language[category]['en'], time=language['week']['en']):
-            week = True
-        else:
-            week = 'unknown'
+        week = True if message.text == language[torrentType+'ThisWeek']['en'] else False if message.text == language[torrentType+'Today']['en'] else None
         
-        # If week is unknown, return to browse2
-        if week == 'unknown':
-            browse2(message, torrentType, category)
+        # If week is None, return to browse2
+        if week == None:
+            browse2(message, torrentType, category, customMessage=language['unknownTimePeriod']['en'])
         
         else:
-            bot.send_message(message.chat.id, text=language['fetchingTorrentTime']['en'].format(torrentType=language[torrentType]['en'], category=language['torrents']['en'] if category in ['all', 'other'] else language[category]['en'], time=language['week']['en'] if week else language['today']['en']), reply_markup=mainReplyKeyboard())
+            bot.send_message(message.chat.id, text=language['fetchingTorrents']['en'], reply_markup=mainReplyKeyboard())
 
             torrent = py1337x.py1337x()
             response =  getattr(torrent, torrentType)(category=None if category == 'all' else category, week=week)
@@ -281,7 +276,7 @@ def browse3(message, torrentType, category):
 
 # Next step handler for top and browse torrents
 def browse4(message, torrentType, category):
-    bot.send_message(message.chat.id, text=language['fetchingTorrent' if torrentType == 'top' else 'fetchingTorrentBrowse']['en'].format(torrentType='' if torrentType == 'browse' else language['top']['en'], category=language['torrents']['en'] if category in ['all', 'other'] else language[category]['en']), reply_markup=mainReplyKeyboard())
+    bot.send_message(message.chat.id, text=language['fetchingTorrents']['en'], reply_markup=mainReplyKeyboard())
     
     torrent = py1337x.py1337x()
     response =  getattr(torrent, torrentType)(category=None if category == 'all' else category)
@@ -316,7 +311,7 @@ def getInfo(message):
     if response['name']:
         genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
         description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
-        msg = f"<b>✨ {response['name']}</b>\n\n{language['category']['en']}: {response['category']}\n{language['language']['en']}: {response['language']}\n{language['size']['en']}: {response['size']}\n{language['uploadedBy']['en']}: {response['uploader']}\n{language['downloads']['en']}: {response['downloads']}\n{language['lastChecked']['en']}: {response['lastChecked']}\n{language['uploadedOn']['en']}: {response['uploadDate']}\n{language['seeders']['en']}: {response['seeders']}\n{language['leechers']['en']}: {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['link']['en']}: /getLink_{torrentId}"
+        msg = f"<b>✨ {response['name']}</b>\n\n{language['category']['en']} {response['category']}\n{language['language']['en']} {response['language']}\n{language['size']['en']} {response['size']}\n{language['uploadedBy']['en']} {response['uploader']}\n{language['downloads']['en']} {response['downloads']}\n{language['lastChecked']['en']} {response['lastChecked']}\n{language['uploadedOn']['en']} {response['uploadDate']}\n{language['seeders']['en']} {response['seeders']}\n{language['leechers']['en']} {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['link']['en']} /getLink_{torrentId}"
     else:
         msg = language['errorFetchingInfo']['en']  
         
