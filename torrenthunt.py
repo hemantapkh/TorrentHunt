@@ -458,7 +458,8 @@ def callbackHandler(call):
 
         dbSql.setSetting(call.from_user.id, 'language', lang)
         if greet == 'True':
-            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=language['greet']['en'].format(call.from_user.first_name))
+            bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.id)
+            bot.send_message(chat_id=call.message.chat.id, text=language['greet']['en'].format(call.from_user.first_name), reply_markup=mainReplyKeyboard())
         else:
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=language['languageSelected']['en'])
 
