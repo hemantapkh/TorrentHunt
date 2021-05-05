@@ -12,10 +12,14 @@ class dbQuery():
         isRegistered = cur.execute(f'SELECT * FROM users WHERE userId={userId}').fetchone()
         con.commit()
 
+        isRegistered = True if isRegistered else False
+
         if not isRegistered:
             cur.execute(f'Insert into users (userId) values ({userId})')
             cur.execute(f'Insert into settings (ownerId) values ({userId})')
             con.commit()
+        
+        return isRegistered
 
     #: Get all the registered users
     def getAllUsers(self):
