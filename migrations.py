@@ -19,7 +19,7 @@ print('[+] Table users created successfully.')
 
 conn.execute('''CREATE TABLE settings
          (ownerId       INTEGER PRIMARY KEY,
-         language       TEXT DEFAULT "EN"
+         language       TEXT DEFAULT "english"
          );''')
 
 print('[+] Table settings created successfully.')
