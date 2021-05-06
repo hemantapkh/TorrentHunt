@@ -78,39 +78,39 @@
     "languageSelected": {
         "english": "🌐 English is selected as your default language. You can choose another language again from settings.",
 
-        "nepali": "नेपाली तपाईको पूर्वनिर्धारित भाषाको रूपमा चयन गरिएको छ। तपाईं सेटिंग्सबाट अर्को भाषा छान्न सक्नुहुन्छ।",
+        "nepali": "🇳🇵 नेपाली तपाईको पूर्वनिर्धारित भाषाको रूपमा चयन गरिएको छ। तपाईं सेटिंग्सबाट अर्को भाषा छान्न सक्नुहुन्छ।",
 
-        "bengali": "আপনার ডিফল্ট ভাষা হিসাবে বাংলা নির্বাচন করা হয়েছে। আপনি সেটিংস থেকে আবার অন্য ভাষা চয়ন করতে পারেন।",
+        "bengali": "🇧🇩 আপনার ডিফল্ট ভাষা হিসাবে বাংলা নির্বাচন করা হয়েছে। আপনি সেটিংস থেকে আবার অন্য ভাষা চয়ন করতে পারেন।",
 
-        "belarusian": "У якасці мовы па змаўчанні абрана беларуская мова. Вы можаце зноў выбраць іншую мову ў наладах.",
+        "belarusian": "🇧🇾 У якасці мовы па змаўчанні абрана беларуская мова. Вы можаце зноў выбраць іншую мову ў наладах.",
 
-        "catalan": "El català està seleccionat com a idioma predeterminat. Podeu tornar a triar un altre idioma a la configuració.",
+        "catalan": "🏴󠁥󠁳󠁣󠁴󠁿 El català està seleccionat com a idioma predeterminat. Podeu tornar a triar un altre idioma a la configuració.",
 
-        "dutch": "Nederlands is geselecteerd als uw standaardtaal. U kunt via de instellingen opnieuw een andere taal kiezen.",
+        "dutch": "🇳🇱 Nederlands is geselecteerd als uw standaardtaal. U kunt via de instellingen opnieuw een andere taal kiezen.",
 
-        "french": "Le français est sélectionné comme langue par défaut. Vous pouvez à nouveau choisir une autre langue dans les paramètres.",
+        "french": "🇫🇷 Le français est sélectionné comme langue par défaut. Vous pouvez à nouveau choisir une autre langue dans les paramètres.",
 
-        "german": "Deutsch ist als Standardsprache ausgewählt. Sie können in den Einstellungen erneut eine andere Sprache auswählen.",
+        "german": "🇩🇪 Deutsch ist als Standardsprache ausgewählt. Sie können in den Einstellungen erneut eine andere Sprache auswählen.",
 
-        "hindi": "हिंदी को आपकी डिफ़ॉल्ट भाषा के रूप में चुना गया है। आप सेटिंग्स से दूसरी भाषा फिर से चुन सकते हैं।",
+        "hindi": "🇮🇳 हिंदी को आपकी डिफ़ॉल्ट भाषा के रूप में चुना गया है। आप सेटिंग्स से दूसरी भाषा फिर से चुन सकते हैं।",
 
-        "italian": "L'italiano è selezionato come lingua predefinita. Puoi scegliere di nuovo un'altra lingua dalle impostazioni.",
+        "italian": "🇮🇹 L'italiano è selezionato come lingua predefinita. Puoi scegliere di nuovo un'altra lingua dalle impostazioni.",
 
-        "korean": "한국어가 기본 언어로 선택됩니다. 설정에서 다른 언어를 다시 선택할 수 있습니다.",
+        "korean": "🇰🇷 한국어가 기본 언어로 선택됩니다. 설정에서 다른 언어를 다시 선택할 수 있습니다.",
 
-        "malay": "Bahasa Melayu dipilih sebagai bahasa lalai anda. Anda boleh memilih bahasa lain sekali lagi dari tetapan.",
+        "malay": "🇮🇩 Bahasa Melayu dipilih sebagai bahasa lalai anda. Anda boleh memilih bahasa lain sekali lagi dari tetapan.",
 
-        "polish": "Polski jest wybrany jako domyślny język. Możesz ponownie wybrać inny język w ustawieniach.",
+        "polish": "🇵🇱 Polski jest wybrany jako domyślny język. Możesz ponownie wybrać inny język w ustawieniach.",
 
-        "portuguese": "Português é selecionado como seu idioma padrão. Você pode escolher outro idioma novamente nas configurações.",
+        "portuguese": "🇧🇷 Português é selecionado como seu idioma padrão. Você pode escolher outro idioma novamente nas configurações.",
 
-        "russian": "Русский выбран в качестве языка по умолчанию. Вы можете снова выбрать другой язык в настройках.",
+        "russian": "🇷🇺 Русский выбран в качестве языка по умолчанию. Вы можете снова выбрать другой язык в настройках.",
 
-        "spanish": "El español está seleccionado como idioma predeterminado. Puede elegir otro idioma nuevamente desde la configuración.",
+        "spanish": "🇪🇸 El español está seleccionado como idioma predeterminado. Puede elegir otro idioma nuevamente desde la configuración.",
 
-        "turkish": "Varsayılan diliniz olarak Türkçe seçilmiştir. Ayarlardan tekrar başka bir dil seçebilirsiniz.",
+        "turkish": "🇹🇷 Varsayılan diliniz olarak Türkçe seçilmiştir. Ayarlardan tekrar başka bir dil seçebilirsiniz.",
 
-        "ukrainian": "Українською мовою вибрано мовою за замовчуванням. Ви можете знову вибрати іншу мову з налаштувань."
+        "ukrainian": "🇺🇦 Українською мовою вибрано мовою за замовчуванням. Ви можете знову вибрати іншу мову з налаштувань."
     },
 
     "notSubscribed": {
