@@ -1,4 +1,6 @@
 .vscode/
 env/
+__pycache__
 torrenthunt.sqlite
 database.sqlite
+config.json
