@@ -223,7 +223,8 @@ def start(message):
 
 # Settings
 @bot.message_handler(commands=['settings'])
-def settings(message, userLanguage, called=False):
+def settings(message, userLanguage=None, called=False):
+    userLanguage = dbSql.getSetting(message.from_user.id, 'language')
     restrictedMode = dbSql.getSetting(message.from_user.id, 'restrictedMode')
     markup = telebot.types.InlineKeyboardMarkup()
     
