@@ -270,7 +270,7 @@ def browse(message,userLanguage, torrentType=None, referred=False, customMessage
     if referred or isSubscribed(message, userLanguage):
         torrentType = torrentType or message.text.split()[0][1:]
         
-        sent = bot.send_message(message.chat.id, text=customMessage or language['selectCategory'][userLanguage], reply_markup=categoryReplyKeyboard(userLanguage, allCategories=False if torrentType == 'browse' else True, restrictedMode=dbSql.getSetting(message.from_user.id, 'restrictedMode')))
+        sent = bot.send_message(message.chat.id, text=customMessage or language['selectCategory'][userLanguage], reply_markup=categoryReplyKeyboard(userLanguage, allCategories=False if torrentType in ['browse', 'popular'] else True, restrictedMode=dbSql.getSetting(message.from_user.id, 'restrictedMode')))
         bot.register_next_step_handler(sent, browse2, userLanguage, torrentType)
 
 # Next step handler for trending, popular, top and browse torrents
