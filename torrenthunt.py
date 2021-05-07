@@ -54,7 +54,7 @@ def mainReplyKeyboard(userLanguage):
     return keyboard
 
 # Category reply keyboard
-def categoryReplyKeyboard(userLanguage, allCategories=True):
+def categoryReplyKeyboard(userLanguage, allCategories, restrictedMode):
     keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
 
     button1 = telebot.types.KeyboardButton(text=language['moviesBtn'][userLanguage])
@@ -71,7 +71,7 @@ def categoryReplyKeyboard(userLanguage, allCategories=True):
 
     keyboard.row(button1, button2, button3)
     keyboard.row(button4, button5, button6)
-    keyboard.row(button7, button8, button9)
+    keyboard.row(button7, button9) if restrictedMode else keyboard.row(button7, button8, button9)
    
     keyboard.row(button10, button11) if allCategories else keyboard.row(button11)
 
@@ -216,12 +216,28 @@ def start(message):
     else:
         lang(message, userLanguage='english', greet=True)
 
+# Settings
+@bot.message_handler(commands=['settings'])
+def settings(message, userLanguage, called=False):
+    restrictedMode = dbSql.getSetting(message.from_user.id, 'restrictedMode')
+    markup = telebot.types.InlineKeyboardMarkup()
+    
+    markup.add(telebot.types.InlineKeyboardButton(text=language['languageSetting'][userLanguage], callback_data=f'cb_languageSetting{time()}'))
+    markup.add(telebot.types.InlineKeyboardButton(text=language['turnOffRestrictedMode' if restrictedMode else 'turnOnRestrictedMode'][userLanguage], callback_data=f"cb_restrictedMode{'Off' if restrictedMode else 'On'}"))
+
+    # Edit the message if called
+    if called:
+        bot.edit_message_text(chat_id=message.message.chat.id, message_id=message.message.id, text=language['settings'][userLanguage].format(language['settingsBtn'][userLanguage]), reply_markup=markup)
+    # Else, send a new message
+    else:
+        bot.send_message(message.chat.id, text=language['settings'][userLanguage].format(language['settingsBtn'][userLanguage]), reply_markup=markup)
+
 # Select language
-def lang(message, userLanguage, greet=False):
+def lang(message, userLanguage, called=False, greet=False):
     markup = telebot.types.InlineKeyboardMarkup()
     
     markup.add(telebot.types.InlineKeyboardButton('🌐 English', callback_data=f'cb_language_{greet}_english'), telebot.types.InlineKeyboardButton('🇳🇵 नेपाली', callback_data=f'cb_language_{greet}_nepali')) # English, Nepali
-    markup.add(telebot.types.InlineKeyboardButton('🇧🇾 Bengali', callback_data=f'cb_language_{greet}_bengali'), telebot.types.InlineKeyboardButton('🇧🇾 Беларуская', callback_data=f'cb_language_{greet}_belarusian')) # Bengali, Belarusian
+    markup.add(telebot.types.InlineKeyboardButton('🇧🇩 Bengali', callback_data=f'cb_language_{greet}_bengali'), telebot.types.InlineKeyboardButton('🇧🇾 Беларуская', callback_data=f'cb_language_{greet}_belarusian')) # Bengali, Belarusian
     markup.add(telebot.types.InlineKeyboardButton('🏴󠁥󠁳󠁣󠁴󠁿 Català', callback_data=f'cb_language_{greet}_catalan'), telebot.types.InlineKeyboardButton('🇳🇱 Nederlands', callback_data=f'cb_language_{greet}_dutch')) # Catalan, Dutch
     markup.add(telebot.types.InlineKeyboardButton('🇫🇷 français', callback_data=f'cb_language_{greet}_french'), telebot.types.InlineKeyboardButton('🇩🇪 Deutsch', callback_data=f'cb_language_{greet}_german')) # French, German
     markup.add(telebot.types.InlineKeyboardButton('🇮🇳 हिन्दी', callback_data=f'cb_language_{greet}_hindi'), telebot.types.InlineKeyboardButton('🇮🇹 Italian', callback_data=f'cb_language_{greet}_italian')) # Hindi, Italian
@@ -230,7 +246,11 @@ def lang(message, userLanguage, greet=False):
     markup.add(telebot.types.InlineKeyboardButton('🇷🇺 русский', callback_data=f'cb_language_{greet}_russian'), telebot.types.InlineKeyboardButton('🇪🇸 español', callback_data=f'cb_language_{greet}_spanish')) # Russian, Spanish
     markup.add(telebot.types.InlineKeyboardButton('🇹🇷 Türkçe', callback_data=f'cb_language_{greet}_turkish'), telebot.types.InlineKeyboardButton('🇺🇦 Український', callback_data=f'cb_language_{greet}_ukrainian')) # Turkish, Ukrainian
     
-    bot.send_message(message.chat.id, language['chooseLanguage'][userLanguage], reply_markup=markup)
+    if called:
+        markup.add(telebot.types.InlineKeyboardButton(text=language['backBtn'][userLanguage], callback_data=f'cb_backToSettings{time()}'))
+        bot.edit_message_text(chat_id=message.message.chat.id, message_id=message.message.id, text=language['chooseLanguage'][userLanguage], reply_markup=markup)
+    else:
+        bot.send_message(message.chat.id, language['chooseLanguage'][userLanguage], reply_markup=markup)
 
 # Handler for trending, popular, top and browse torrents
 @bot.message_handler(commands=['trending', 'popular', 'top', 'browse'])
@@ -238,7 +258,7 @@ def browse(message,userLanguage, torrentType=None, referred=False, customMessage
     if referred or isSubscribed(message, userLanguage):
         torrentType = torrentType or message.text.split()[0][1:]
         
-        sent = bot.send_message(message.chat.id, text=customMessage or language['selectCategory'][userLanguage], reply_markup=categoryReplyKeyboard(userLanguage, allCategories=False if torrentType == 'browse' else True))
+        sent = bot.send_message(message.chat.id, text=customMessage or language['selectCategory'][userLanguage], reply_markup=categoryReplyKeyboard(userLanguage, allCategories=False if torrentType == 'browse' else True, restrictedMode=dbSql.getSetting(message.from_user.id, 'restrictedMode')))
         bot.register_next_step_handler(sent, browse2, userLanguage, torrentType)
 
 # Next step handler for trending, popular, top and browse torrents
@@ -365,7 +385,7 @@ def text(message):
 
     # Settings
     elif message.text in ['/settings', language['settingsBtn'][userLanguage]]:
-        lang(message, userLanguage)
+        settings(message, userLanguage)
 
     # Help
     elif message.text in ['/help', language['helpBtn'][userLanguage]]:
@@ -456,18 +476,35 @@ def callbackHandler(call):
         else:
             bot.answer_callback_query(call.id, language['notSubscribedCallback'][userLanguage])
 
-    # Choose language
+    # Language settings
+    elif call.data[:18] == 'cb_languageSetting':
+        lang(call, userLanguage, called=True)
+
+    # Select language
     elif call.data[:12] == 'cb_language_':
         greet = call.data.split('_')[2]
-        lang = call.data.split('_')[3]
+        userLanguage = call.data.split('_')[3]
 
-        dbSql.setSetting(call.from_user.id, 'language', lang)
+        dbSql.setSetting(call.from_user.id, 'language', userLanguage)
+        
         if greet == 'True':
             bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.id)
-            bot.send_message(chat_id=call.message.chat.id, text=language['greet'][lang].format(call.from_user.first_name), reply_markup=mainReplyKeyboard(lang))
+            bot.send_message(chat_id=call.message.chat.id, text=language['greet'][userLanguage].format(call.from_user.first_name), reply_markup=mainReplyKeyboard(userLanguage))
+        
         else:
             bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.id)
-            bot.send_message(chat_id=call.message.chat.id, text=language['languageSelected'][lang], reply_markup=mainReplyKeyboard(lang))
+            bot.send_message(chat_id=call.message.chat.id, text=language['languageSelected'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
+
+    # Content filter setting
+    elif call.data[:17] == 'cb_restrictedMode':
+        restrictedMode = 1 if call.data[17:] == 'On' else 0
+        dbSql.setSetting(call.from_user.id, 'restrictedMode', restrictedMode)
+        
+        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=language['restrictedModeOn' if restrictedMode else 'restrictedModeOff'][userLanguage])
+
+    # Back to settings
+    elif call.data[:17] == 'cb_backToSettings':
+        settings(call, userLanguage, called=True)
 
 # Polling Bot
 if config['connectionType'] == 'polling':
