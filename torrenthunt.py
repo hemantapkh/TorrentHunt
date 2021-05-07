@@ -71,10 +71,15 @@ def categoryReplyKeyboard(userLanguage, allCategories, restrictedMode):
 
     keyboard.row(button1, button2, button3)
     keyboard.row(button4, button5, button6)
-    keyboard.row(button7, button9) if restrictedMode else keyboard.row(button7, button8, button9)
-   
-    keyboard.row(button10, button11) if allCategories else keyboard.row(button11)
 
+    if restrictedMode:
+        keyboard.row(button7, button9, button10) if allCategories else keyboard.row(button7, button9)
+        keyboard.row(button11)
+    
+    else:
+        keyboard.row(button7, button8, button9)
+        keyboard.row(button10, button11) if allCategories else keyboard.row(button11)
+   
     return keyboard
 
 # Check if the user is subscribed or not, returns True if subscribed
