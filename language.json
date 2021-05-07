@@ -266,7 +266,7 @@
     },
 
     "restrictedModeOff": {
-        "english": "✔️ estricted mode is turned off successfully.",
+        "english": "✔️ Restricted mode is turned off successfully.",
 
         "nepali": "✔️ प्रतिबन्धित मोड सफलतापूर्वक बन्द गरिएको छ।",
 
@@ -301,6 +301,44 @@
         "turkish": "✔️ Kısıtlı mod başarıyla kapatıldı.",
 
         "ukrainian": "✔️ Обмежений режим успішно вимкнено."   
+    },
+
+    "cantView": {
+        "english": "🚫 You can't view this content because the restricted mode is on. You can turn off the restriction from settings.",
+
+        "nepali": "🚫 तपाईं यो सामग्री हेर्न सक्नुहुन्न किनकि प्रतिबन्धित मोड चालु छ। तपाईं सेटिंग्सबाट प्रतिबन्ध बन्द गर्न सक्नुहुनेछ।",
+
+        "bengali": "🚫 সীমাবদ্ধ মোড চালু থাকায় আপনি এই সামগ্রীটি দেখতে পারবেন না। আপনি সেটিংস থেকে সীমাবদ্ধতা বন্ধ করতে পারেন।",
+
+        "belarusian": "🚫 Вы не можаце праглядаць гэты змест, бо ўключаны абмежаваны рэжым. Вы можаце адключыць абмежаванне ў наладах.",
+
+        "catalan": "🚫 No podeu veure aquest contingut perquè el mode restringit està activat. Podeu desactivar la restricció des de la configuració.",
+
+        "dutch": "🚫 U kunt deze inhoud niet bekijken omdat de beperkte modus is ingeschakeld. U kunt de beperking uitschakelen via de instellingen.",
+
+        "french": "🚫 Vous ne pouvez pas afficher ce contenu car le mode restreint est activé. Vous pouvez désactiver la restriction à partir des paramètres.",
+
+        "german": "🚫 Sie können diesen Inhalt nicht anzeigen, da der eingeschränkte Modus aktiviert ist. Sie können die Einschränkung in den Einstellungen deaktivieren.",
+
+        "hindi": "🚫 आप इस सामग्री को नहीं देख सकते क्योंकि प्रतिबंधित मोड चालू है। आप सेटिंग्स से प्रतिबंध को बंद कर सकते हैं।",
+
+        "italian": "🚫 Non puoi visualizzare questo contenuto perché la modalità con restrizioni è attiva. Puoi disattivare la restrizione dalle impostazioni.",
+
+        "korean": "🚫 제한 모드가 켜져 있기 때문에이 콘텐츠를 볼 수 없습니다. 설정에서 제한을 해제 할 수 있습니다.",
+
+        "malay": "🚫 Anda tidak dapat melihat kandungan ini kerana mod terhad dihidupkan. Anda boleh mematikan sekatan dari tetapan.",
+
+        "polish": "🚫 Nie możesz wyświetlić tej zawartości, ponieważ włączony jest tryb ograniczonego dostępu. Możesz wyłączyć ograniczenie w ustawieniach.",
+
+        "portuguese": "🚫 Você não pode visualizar este conteúdo porque o modo restrito está ativado. Você pode desativar a restrição nas configurações.",
+
+        "russian": "🚫 Вы не можете просматривать этот контент, потому что включен ограниченный режим. Вы можете отключить ограничение в настройках.",
+
+        "spanish": "🚫 No puede ver este contenido porque el modo restringido está activado. Puede desactivar la restricción desde la configuración.",
+
+        "turkish": "🚫 Kısıtlı mod açık olduğundan bu içeriği görüntüleyemezsiniz. Kısıtlamayı ayarlardan kapatabilirsiniz.",
+
+        "ukrainian": "🚫 Ви не можете переглянути цей вміст, оскільки ввімкнено обмежений режим. Ви можете вимкнути обмеження в налаштуваннях." 
     },
 
     "notSubscribed": {

@@ -342,7 +342,14 @@ def getLink(message):
     
     response = torrent.info(torrentId, id=True)
 
-    msg = f"✨ <b>{response['name']}</b>\n\n<code>{response['magnetLink']}</code>" if response['magnetLink'] else language['errorFetchingLink'][userLanguage]
+    if response['magnetLink']:
+        if dbSql.getSetting(message.from_user.id, 'restrictedMode') and response['category'] == 'XXX':
+            msg = language['cantView'][userLanguage]
+        else:
+            msg = f"✨ <b>{response['name']}</b>\n\n<code>{response['magnetLink']}</code>"
+    else:
+        msg = language['errorFetchingLink'][userLanguage]
+
     bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg)
 
 # Get information about the torrent
@@ -357,9 +364,13 @@ def getInfo(message):
     response = torrent.info(torrentId, id=True)
 
     if response['name']:
-        genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
-        description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
-        msg = f"<b>✨ {response['name']}</b>\n\n{language['category'][userLanguage]} {response['category']}\n{language['language'][userLanguage]} {response['language']}\n{language['size'][userLanguage]} {response['size']}\n{language['uploadedBy'][userLanguage]} {response['uploader']}\n{language['downloads'][userLanguage]} {response['downloads']}\n{language['lastChecked'][userLanguage]} {response['lastChecked']}\n{language['uploadedOn'][userLanguage]} {response['uploadDate']}\n{language['seeders'][userLanguage]} {response['seeders']}\n{language['leechers'][userLanguage]} {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['link'][userLanguage]} /getLink_{torrentId}"
+        # Hide if restricted mode is on
+        if dbSql.getSetting(message.from_user.id, 'restrictedMode') and response['category'] == 'XXX':
+            msg = language['cantView'][userLanguage]
+        else:
+            genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
+            description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
+            msg = f"<b>✨ {response['name']}</b>\n\n{language['category'][userLanguage]} {response['category']}\n{language['language'][userLanguage]} {response['language']}\n{language['size'][userLanguage]} {response['size']}\n{language['uploadedBy'][userLanguage]} {response['uploader']}\n{language['downloads'][userLanguage]} {response['downloads']}\n{language['lastChecked'][userLanguage]} {response['lastChecked']}\n{language['uploadedOn'][userLanguage]} {response['uploadDate']}\n{language['seeders'][userLanguage]} {response['seeders']}\n{language['leechers'][userLanguage]} {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['link'][userLanguage]} /getLink_{torrentId}"
     else:
         msg = language['errorFetchingInfo'][userLanguage]  
         
