@@ -190,19 +190,25 @@ def result(response, userLanguage, torrentType, page, category=None, week=None, 
                     # Show 10 buttons at once
                     if len(buttons) >= 10:
                         break
-                    buttons.append(telebot.types.InlineKeyboardButton('🔘' if i == page else i, callback_data=f"cb_nextPage{time()}:{i}:{torrentType}-{category}-{week}:{query or ''}"))
-
+                    cb = f"q{str(time())[-3:]}:{i}:{query}" if query else f"cb_nextPage{time()}:{i}:{torrentType}-{category}-{week}:{query or ''}"
+                    buttons.append(telebot.types.InlineKeyboardButton('🔘' if i == page else i, callback_data=cb))
+                
                 markup.add(*buttons)
                 if pageCount > 10:
                     if page <= 10:
-                        markup.add(telebot.types.InlineKeyboardButton(language['nextBtn'][userLanguage], callback_data=f"cb_nextPage{time()}:{firstPage+10}:{torrentType}-{category}-{week}:{query or ''}"))
+                        cb = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage+10}:{torrentType}-{category}-{week}"
+                        markup.add(telebot.types.InlineKeyboardButton(language['nextBtn'][userLanguage], callback_data=cb))
 
                     elif 10 < page <= (pageCount - 10):
-                        markup.add(telebot.types.InlineKeyboardButton(language['previousBtn'][userLanguage], callback_data=f"cb_nextPage{time()}:{firstPage-10}:{torrentType}-{category}-{week}:{query or ''}"), telebot.types.InlineKeyboardButton(language['nextBtn'][userLanguage], callback_data=f"cb_nextPage{time()}:{firstPage+10}:{torrentType}-{category}-{week}:{query or ''}"))
+                        cb1 = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage-10}:{torrentType}-{category}-{week}"
+                        cb2 = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage+10}:{torrentType}-{category}-{week}"
+
+                        markup.add(telebot.types.InlineKeyboardButton(language['previousBtn'][userLanguage], callback_data=cb1), telebot.types.InlineKeyboardButton(language['nextBtn'][userLanguage], callback_data=cb2))
                     
                     else:
-                        markup.add(telebot.types.InlineKeyboardButton(language['previousBtn'][userLanguage], callback_data=f"cb_nextPage{time()}:{firstPage-10}:{torrentType}-{category}-{week}:{query or ''}"))                      
-            
+                        cb = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage-10}:{torrentType}-{category}-{week}"
+                        markup.add(telebot.types.InlineKeyboardButton(language['previousBtn'][userLanguage], callback_data=cb))                      
+
             # No markup if items are less than 20
             else:
                 markup = None
@@ -432,33 +438,43 @@ def text(message):
 @bot.callback_query_handler(func=lambda call: True)
 def callbackHandler(call):
     userLanguage = dbSql.getSetting(call.from_user.id, 'language')
+    # Next page for query 
+    if call.data[:1] == 'q':
+        splittedData = call.data.split(':', 2)
+        page = int(splittedData[1])
+        query = splittedData[2]
+        torrentType = None
+
+        torrent = py1337x.py1337x()
+        response = torrent.search(query, page=page)
+
+        msg, markup = result(response, userLanguage, torrentType, page=page, query=query)
+
+        # 1337x may return empty response sometime. So, changing the case to prevent this.
+        if not msg and query.islower():
+            response = torrent.search(query.capitalize(), page=page)
+            msg, markup = result(response, userLanguage, torrentType, page=page, query=query)
+        
+        elif not msg:
+            response = torrent.search(query.lower(), page=page)
+            msg, markup = result(response, userLanguage, torrentType, page=page, query=query)
+
+        if msg:
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=msg, reply_markup=markup)
+        # If msg is None
+        else:
+            bot.answer_callback_query(call.id, text=language['emptyPage'][userLanguage], show_alert=True)
+
     # Next page
     if call.data[:11] == 'cb_nextPage':
-        splittedData = call.data.split(':', 3)
+        splittedData = call.data.split(':', 2)
         page = int(splittedData[1])
         torrentType = splittedData[2].split('-')[0]
         category =  splittedData[2].split('-')[1]
         week =  splittedData[2].split('-')[2]
-        query = splittedData[3]
-
-        # Next page for query search
-        if torrentType == 'query':
-            torrent = py1337x.py1337x()
-            response = torrent.search(query, page=page)
-
-            msg, markup = result(response, userLanguage, torrentType, page=page, query=query)
-
-            # 1337x may return empty response sometime. So, changing the case to prevent this.
-            if not msg and query.islower():
-                response = torrent.search(query.capitalize(), page=page)
-                msg, markup = result(response, userLanguage, torrentType, page=page, query=query)
-            
-            elif not msg:
-                response = torrent.search(query.lower(), page=page)
-                msg, markup = result(response, userLanguage, torrentType, page=page, query=query)
         
         # Next page for trending and popular torrents
-        elif torrentType in ['trending', 'popular']:
+        if torrentType in ['trending', 'popular']:
             torrent = py1337x.py1337x()
             response =  getattr(torrent, torrentType)(category=None if category == 'all' else category, week=True if week == 'True' else False)
             
