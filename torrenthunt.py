@@ -268,11 +268,11 @@ def lang(message, userLanguage, called=False, greet=False):
 # Handler for trending, popular, top and browse torrents
 @bot.message_handler(commands=['trending', 'popular', 'top', 'browse'])
 def browse(message,userLanguage, torrentType=None, referred=False, customMessage=None):
-    if referred or isSubscribed(message, userLanguage):
-        torrentType = torrentType or message.text.split()[0][1:]
-        
-        sent = bot.send_message(message.chat.id, text=customMessage or language['selectCategory'][userLanguage], reply_markup=categoryReplyKeyboard(userLanguage, allCategories=False if torrentType in ['browse', 'popular'] else True, restrictedMode=dbSql.getSetting(message.from_user.id, 'restrictedMode')))
-        bot.register_next_step_handler(sent, browse2, userLanguage, torrentType)
+    #if referred or isSubscribed(message, userLanguage):
+    torrentType = torrentType or message.text.split()[0][1:]
+    
+    sent = bot.send_message(message.chat.id, text=customMessage or language['selectCategory'][userLanguage], reply_markup=categoryReplyKeyboard(userLanguage, allCategories=False if torrentType in ['browse', 'popular'] else True, restrictedMode=dbSql.getSetting(message.from_user.id, 'restrictedMode')))
+    bot.register_next_step_handler(sent, browse2, userLanguage, torrentType)
 
 # Next step handler for trending, popular, top and browse torrents
 def browse2(message, userLanguage, torrentType, category=None, customMessage=None):
@@ -421,13 +421,13 @@ def text(message):
     
     # Query search
     else:
-        if isSubscribed(message, userLanguage):
-            sent = bot.send_message(message.chat.id, language['searchingQuery'][userLanguage].format(message.text))
-            response = torrent.search(message.text)
+        #if isSubscribed(message, userLanguage):
+        sent = bot.send_message(message.chat.id, language['searchingQuery'][userLanguage].format(message.text))
+        response = torrent.search(message.text)
 
-            msg, markup = result(response, userLanguage, torrentType='query', page=1, query=message.text)
+        msg, markup = result(response, userLanguage, torrentType='query', page=1, query=message.text)
 
-            bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg or language['noResults'][userLanguage], reply_markup=markup)
+        bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg or language['noResults'][userLanguage], reply_markup=markup)
 
 # Callback handler
 @bot.callback_query_handler(func=lambda call: True)
@@ -530,6 +530,7 @@ def callbackHandler(call):
     elif call.data[:17] == 'cb_backToSettings':
         settings(call, userLanguage, called=True)
 
+# Inline query
 @bot.inline_handler(lambda query: len(query.query) >= 3)
 def query_text(inline_query):
     offset = int(inline_query.offset.split(':')[0]) if inline_query.offset else 0
