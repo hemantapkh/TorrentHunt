@@ -550,7 +550,7 @@ def query_text(inline_query):
     nextPage = page+1 if nextOffset == 20 else page
     nextOffset = 0 if nextOffset == 20 else nextOffset
 
-    bot.answer_inline_query(inline_query.id, queryResult, next_offset=None if (nextPage == pageCount and nextOffset == 15) else f'{nextOffset}:{nextPage}')
+    bot.answer_inline_query(inline_query.id, queryResult, next_offset=None if (nextPage == pageCount and nextOffset == 15) else f'{nextOffset}:{nextPage}', is_private=True)
 
 def queryMessageContent(userId, torrentId):
     userLanguage = dbSql.getSetting(userId, 'language')
