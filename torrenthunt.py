@@ -479,7 +479,7 @@ def callbackHandler(call):
             response =  getattr(torrent, torrentType)(category=None if category == 'all' else category, week=True if week == 'True' else False)
             
             del response['items'][:(page-1)*20]
-            msg, markup = result(response, userLanguage, torrentType, page=page, category=category, query=query)
+            msg, markup = result(response, userLanguage, torrentType, page=page, category=category)
         
         # Next page for top torrents
         elif torrentType == 'top':
