@@ -21,6 +21,7 @@ bot = telebot.TeleBot(config['botToken'], parse_mode='HTML')
 webhookBaseUrl = f"https://{config['webhookOptions']['webhookHost']}:{config['webhookOptions']['webhookPort']}"
 webhookUrlPath = f"/{config['botToken']}/"
 
+torrent = py1337x.py1337x()
 app = web.Application()
 
 # Process webhook calls
@@ -318,8 +319,7 @@ def browse3(message, userLanguage, torrentType, category):
         
         else:
             bot.send_message(message.chat.id, text=language['fetchingTorrents'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
-
-            torrent = py1337x.py1337x()
+           
             response =  getattr(torrent, torrentType)(category=None if category == 'all' else category, week=week)
 
             msg, markup = result(response, userLanguage, torrentType, 1, category, week)
@@ -330,7 +330,6 @@ def browse3(message, userLanguage, torrentType, category):
 def browse4(message, userLanguage, torrentType, category):
     bot.send_message(message.chat.id, text=language['fetchingTorrents'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
     
-    torrent = py1337x.py1337x()
     response =  getattr(torrent, torrentType)(category=None if category == 'all' else category)
 
     msg, markup = result(response, userLanguage, torrentType, 1, category)
@@ -344,7 +343,6 @@ def getLink(message):
     sent = bot.send_message(message.chat.id, language['fetchingMagnetLink'][userLanguage])
     
     torrentId = message.text[9:]
-    torrent = py1337x.py1337x()
     
     response = torrent.info(torrentId, id=True)
 
@@ -365,8 +363,6 @@ def getInfo(message):
     sent = bot.send_message(message.chat.id, text=language['fetchingTorrentInfo'][userLanguage])
     
     torrentId = message.text[9:]
-    torrent = py1337x.py1337x()
-    
     response = torrent.info(torrentId, id=True)
 
     if response['name']:
@@ -427,7 +423,6 @@ def text(message):
     else:
         if isSubscribed(message, userLanguage):
             sent = bot.send_message(message.chat.id, language['searchingQuery'][userLanguage].format(message.text))
-            torrent = py1337x.py1337x()
             response = torrent.search(message.text)
 
             msg, markup = result(response, userLanguage, torrentType='query', page=1, query=message.text)
@@ -445,7 +440,6 @@ def callbackHandler(call):
         query = splittedData[2]
         torrentType = None
 
-        torrent = py1337x.py1337x()
         response = torrent.search(query, page=page)
 
         msg, markup = result(response, userLanguage, torrentType, page=page, query=query)
@@ -475,7 +469,6 @@ def callbackHandler(call):
         
         # Next page for trending and popular torrents
         if torrentType in ['trending', 'popular']:
-            torrent = py1337x.py1337x()
             response =  getattr(torrent, torrentType)(category=None if category == 'all' else category, week=True if week == 'True' else False)
             
             del response['items'][:(page-1)*20]
@@ -483,7 +476,6 @@ def callbackHandler(call):
         
         # Next page for top torrents
         elif torrentType == 'top':
-            torrent = py1337x.py1337x()
             response =  getattr(torrent, torrentType)(category=None if category == 'all' else category)
             
             del response['items'][:(page-1)*20]
@@ -491,7 +483,6 @@ def callbackHandler(call):
 
         # Next page for browse torrents
         else:
-            torrent = py1337x.py1337x()
             response =  getattr(torrent, torrentType)(category=None if category == 'all' else category, page=page)
 
             msg, markup = result(response, userLanguage, torrentType, page=page, category=category)
@@ -541,8 +532,6 @@ def callbackHandler(call):
 
 @bot.inline_handler(lambda query: len(query.query) >= 3)
 def query_text(inline_query):
-    torrent = py1337x.py1337x()
-
     offset = int(inline_query.offset.split(':')[0]) if inline_query.offset else 0
     page = int(inline_query.offset.split(':')[1]) if inline_query.offset else 1
 
@@ -564,7 +553,6 @@ def query_text(inline_query):
 
 def queryMessageContent(userId, torrentId):
     userLanguage = dbSql.getSetting(userId, 'language')
-    torrent = py1337x.py1337x()
     response = torrent.info(torrentId=torrentId)
 
     if dbSql.getSetting(userId, 'restrictedMode') and response['category'] == 'XXX':
