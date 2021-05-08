@@ -380,41 +380,79 @@
     },
 
     "notSubscribedCallback": {
-        "english": "⚠️ You are not subscribed yet.",
+        "english": "You are not subscribed yet.",
 
-        "nepali": "⚠️ तपाइँ अझै सदस्यता लिनुभएको छैन।",
+        "nepali": "तपाइँ अझै सदस्यता लिनुभएको छैन।",
 
-        "bengali": "⚠️ আপনি এখনও সাবস্ক্রাইব করা হয়নি।",
+        "bengali": "আপনি এখনও সাবস্ক্রাইব করা হয়নি।",
 
-        "belarusian": "⚠️ Вы яшчэ не падпісаны.",
+        "belarusian": "Вы яшчэ не падпісаны.",
 
-        "catalan": "⚠️ Encara no esteu subscrit.",
+        "catalan": "Encara no esteu subscrit.",
 
-        "dutch": "⚠️ Je bent nog niet geabonneerd.",
+        "dutch": "Je bent nog niet geabonneerd.",
 
-        "french": "⚠️ Vous n'êtes pas encore abonné.",
+        "french": "Vous n'êtes pas encore abonné.",
 
-        "german": "⚠️ Sie sind noch nicht abonniert.",
+        "german": "Sie sind noch nicht abonniert.",
 
-        "hindi": "⚠️ आपने अभी तक सदस्यता नहीं ली है।",
+        "hindi": "आपने अभी तक सदस्यता नहीं ली है।",
 
-        "italian": "⚠️ Non sei ancora iscritto.",
+        "italian": "Non sei ancora iscritto.",
 
-        "korean": "⚠️ 아직 구독하지 않았습니다.",
+        "korean": "아직 구독하지 않았습니다.",
 
-        "malay": "⚠️ Anda belum melanggan.",
+        "malay": "Anda belum melanggan.",
 
-        "polish": "⚠️ Nie jesteś jeszcze zapisany.",
+        "polish": "Nie jesteś jeszcze zapisany.",
 
-        "portuguese": "⚠️ Você ainda não está inscrito.",
+        "portuguese": "Você ainda não está inscrito.",
 
-        "russian": "⚠️ Вы еще не подписаны.",
+        "russian": "Вы еще не подписаны.",
 
-        "spanish": "⚠️ Aún no estás suscrito.",
+        "spanish": "Aún no estás suscrito.",
 
-        "turkish": "⚠️ Henüz abone değilsiniz.",
+        "turkish": "Henüz abone değilsiniz.",
 
-        "ukrainian": "⚠️ Ви ще не підписані."
+        "ukrainian": "Ви ще не підписані."
+    },
+
+    "clickForMoreDetails": {
+        "english": "Click for more details.",
+
+        "nepali": "थप विवरणहरूको लागि क्लिक गर्नुहोस्।",
+
+        "bengali": "বিস্তারিত জানতে ক্লিক করুন।",
+
+        "belarusian": "Націсніце, каб даведацца больш.",
+
+        "catalan": "Feu clic per obtenir més informació.",
+
+        "dutch": "Klik voor meer details.",
+
+        "french": "Cliquez pour plus de détails.",
+
+        "german": "Klicken Sie hier für weitere Details.",
+
+        "hindi": "अधिक जानकारी के लिए क्लिक करें।",
+
+        "italian": "Fare clic per maggiori dettagli.",
+
+        "korean": "자세한 내용을 보려면 클릭하십시오.",
+
+        "malay": "Klik untuk maklumat lebih lanjut.",
+
+        "polish": "Kliknij, aby uzyskać więcej informacji.",
+
+        "portuguese": "Clique para mais detalhes.",
+
+        "russian": "Щелкните для получения более подробной информации.",
+
+        "spanish": "Haga clic para obtener más detalles.",
+
+        "turkish": "Daha fazla detay için tıklayınız.",
+
+        "ukrainian": "Клацніть для отримання детальної інформації."
     },
 
     "thanksForSub": {

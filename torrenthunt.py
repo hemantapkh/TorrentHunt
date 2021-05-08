@@ -84,7 +84,7 @@ def categoryReplyKeyboard(userLanguage, allCategories, restrictedMode):
     return keyboard
 
 # Check if the user is subscribed or not, returns True if subscribed
-def isSubscribed(message, userLanguage, sendMessage=True):
+def isSubscribed(message, userLanguage=None, sendMessage=True):
     telegramId = message.from_user.id
     subscribed = True
     
@@ -101,13 +101,16 @@ def isSubscribed(message, userLanguage, sendMessage=True):
     if not subscribed:
         # Send the links if sendMessage is True
         if sendMessage:
-            bot.send_message(message.chat.id, text=language['notSubscribed'][userLanguage], reply_markup=telebot.types.InlineKeyboardMarkup([
-            [telebot.types.InlineKeyboardButton(text=language['subscribeChannelBtn'][userLanguage], url='https://www.youtube.com/h9youtube?sub_confirmation=1'),
-            telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='https://t.me/h9youtube')],
-            [telebot.types.InlineKeyboardButton(text=language['doneBtn'][userLanguage], callback_data='cb_checkSubscription')]
-            ]))
-
+            bot.send_message(message.chat.id, text=language['notSubscribed'][userLanguage], reply_markup=notSubscribedMarkup(userLanguage))
         return False
+
+def notSubscribedMarkup(userLanguage):
+    markup = telebot.types.InlineKeyboardMarkup([
+            [telebot.types.InlineKeyboardButton(text=language['subscribeChannelBtn'][userLanguage], url='https://www.youtube.com/h9youtube?sub_confirmation=1'),
+            telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='https://t.me/h9youtube')]
+            ])
+    return markup
+
 
 # Returns the equivalent category of the text 
 def textToCategory(text, userLanguage):
@@ -382,8 +385,13 @@ def getInfo(message):
 @bot.message_handler(content_types=['text'])
 def text(message):
     userLanguage = dbSql.getSetting(message.from_user.id, 'language')
+
+    # Don't search if the message is via bot
+    if 'via_bot' in message.json.keys() and message.json['via_bot']['id'] == 1700458114:
+        pass
+    
     # Main menu
-    if message.text == language['mainMenuBtn'][userLanguage]:
+    elif message.text == language['mainMenuBtn'][userLanguage]:
         bot.send_message(message.chat.id, text=language['backToMenu'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
     
     # Trending torrents
@@ -531,27 +539,33 @@ def callbackHandler(call):
         settings(call, userLanguage, called=True)
 
 # Inline query
-@bot.inline_handler(lambda query: len(query.query) >= 3)
+@bot.inline_handler(lambda query: len(query.query) >= 1)
 def query_text(inline_query):
-    offset = int(inline_query.offset.split(':')[0]) if inline_query.offset else 0
-    page = int(inline_query.offset.split(':')[1]) if inline_query.offset else 1
+    userLanguage = dbSql.getSetting(inline_query.from_user.id, 'language')
+    if isSubscribed(inline_query, sendMessage=False):
+        offset = int(inline_query.offset.split(':')[0]) if inline_query.offset else 0
+        page = int(inline_query.offset.split(':')[1]) if inline_query.offset else 1
 
-    results = torrent.search(inline_query.query, page)
-    pageCount = results['pageCount']
+        results = torrent.search(inline_query.query, page)
+        pageCount = results['pageCount']
 
-    queryResult = []
-    for count, item in enumerate(results['items'][offset:]):
-        if count >= 5:
-            break
-        info = torrent.info(link=item['link'])
-        queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], thumb_url=info['image'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentId=item['id']), parse_mode='HTML')))
-    
-    nextOffset = offset + 5 if offset < 20 else 0
-    nextPage = page+1 if nextOffset == 20 else page
-    nextOffset = 0 if nextOffset == 20 else nextOffset
+        queryResult = []
+        for count, item in enumerate(results['items'][offset:]):
+            if count >= 5:
+                break
+            info = torrent.info(link=item['link'])
+            queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], thumb_url=info['image'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentId=item['id']), parse_mode='HTML')))
+        
+        nextOffset = offset + 5 if offset < 20 else 0
+        nextPage = page+1 if nextOffset == 20 else page
+        nextOffset = 0 if nextOffset == 20 else nextOffset
 
-    bot.answer_inline_query(inline_query.id, queryResult, next_offset=None if (nextPage == pageCount and nextOffset == 15) else f'{nextOffset}:{nextPage}', is_private=True)
-
+        bot.answer_inline_query(inline_query.id, queryResult, next_offset=None if (nextPage == pageCount and nextOffset == 15) else f'{nextOffset}:{nextPage}', is_personal=True, cache_time=86400)
+    else:
+        reply = telebot.types.InlineQueryResultArticle(id=1, title=language['notSubscribedCallback'][userLanguage], description=language['clickForMoreDetails'][userLanguage], thumb_url='https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/H9Logo.jpg', input_message_content=telebot.types.InputTextMessageContent(language['notSubscribed'][userLanguage], parse_mode='HTML'), reply_markup=notSubscribedMarkup(userLanguage))
+        
+        bot.answer_inline_query(inline_query.id, [reply], is_personal=True, cache_time=0)
+     
 def queryMessageContent(userId, torrentId):
     userLanguage = dbSql.getSetting(userId, 'language')
     response = torrent.info(torrentId=torrentId)
