@@ -347,7 +347,7 @@ def getLink(message):
     
     torrentId = message.text[9:]
     
-    response = torrent.info(torrentId, id=True)
+    response = torrent.info(torrentId=torrentId)
 
     if response['magnetLink']:
         if dbSql.getSetting(message.from_user.id, 'restrictedMode') and response['category'] == 'XXX':
@@ -366,7 +366,7 @@ def getInfo(message):
     sent = bot.send_message(message.chat.id, text=language['fetchingTorrentInfo'][userLanguage])
     
     torrentId = message.text[9:]
-    response = torrent.info(torrentId, id=True)
+    response = torrent.info(torrentId=torrentId)
 
     if response['name']:
         # Hide if restricted mode is on
