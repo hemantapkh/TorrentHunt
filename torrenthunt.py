@@ -542,26 +542,37 @@ def callbackHandler(call):
 @bot.inline_handler(lambda query: len(query.query) >= 3)
 def query_text(inline_query):
     torrent = py1337x.py1337x()
-    results = torrent.search(inline_query.query)
-    nextOffset = int(inline_query.offset) if inline_query.offset else 0
-    
+
+    offset = int(inline_query.offset.split(':')[0]) if inline_query.offset else 0
+    page = int(inline_query.offset.split(':')[1]) if inline_query.offset else 1
+
+    results = torrent.search(inline_query.query, page)
+    pageCount = results['pageCount']
+
     queryResult = []
-    for count, item in enumerate(results['items'][nextOffset:]):
+    for count, item in enumerate(results['items'][offset:]):
         if count >= 5:
             break
         info = torrent.info(link=item['link'])
         queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], thumb_url=info['image'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentId=item['id']), parse_mode='HTML')))
     
-    bot.answer_inline_query(inline_query.id, queryResult, next_offset=nextOffset+5, cache_time=86400)
+    nextOffset = offset + 5 if offset < 20 else 0
+    nextPage = page+1 if nextOffset == 20 else page
+    nextOffset = 0 if nextOffset == 20 else nextOffset
+
+    bot.answer_inline_query(inline_query.id, queryResult, next_offset=None if (nextPage == pageCount and nextOffset == 15) else f'{nextOffset}:{nextPage}')
 
 def queryMessageContent(userId, torrentId):
     userLanguage = dbSql.getSetting(userId, 'language')
     torrent = py1337x.py1337x()
     response = torrent.info(torrentId=torrentId)
 
-    genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
-    description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
-    msg = f"<b>✨ {response['name']}</b>\n\n{language['category'][userLanguage]} {response['category']}\n{language['language'][userLanguage]} {response['language']}\n{language['size'][userLanguage]} {response['size']}\n{language['uploadedBy'][userLanguage]} {response['uploader']}\n{language['downloads'][userLanguage]} {response['downloads']}\n{language['lastChecked'][userLanguage]} {response['lastChecked']}\n{language['uploadedOn'][userLanguage]} {response['uploadDate']}\n{language['seeders'][userLanguage]} {response['seeders']}\n{language['leechers'][userLanguage]} {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n<b>Magnet Link: </b><code>{response['magnetLink']}</code>"
+    if dbSql.getSetting(userId, 'restrictedMode') and response['category'] == 'XXX':
+            msg = language['cantView'][userLanguage]
+    else:
+        genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
+        description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
+        msg = f"<b>✨ {response['name']}</b>\n\n{language['category'][userLanguage]} {response['category']}\n{language['language'][userLanguage]} {response['language']}\n{language['size'][userLanguage]} {response['size']}\n{language['uploadedBy'][userLanguage]} {response['uploader']}\n{language['downloads'][userLanguage]} {response['downloads']}\n{language['lastChecked'][userLanguage]} {response['lastChecked']}\n{language['uploadedOn'][userLanguage]} {response['uploadDate']}\n{language['seeders'][userLanguage]} {response['seeders']}\n{language['leechers'][userLanguage]} {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n<b>Magnet Link: </b><code>{response['magnetLink']}</code>"
 
     return msg
 
