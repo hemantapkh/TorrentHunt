@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-<a href="https://t.me/ncellappbot">
+<a href="https://t.me/torrenthuntbot">
 <img src='https://img.shields.io/badge/Torrent Hunt-Active-blue?style=for-the-badge&logo=telegram'>
 </a>
 <a href="https://t.me/h9youtube">
