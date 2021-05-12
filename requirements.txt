@@ -1,4 +1,5 @@
 bs4
 1337x
 aiohttp
+pyshorteners
 pyTelegramBotApi

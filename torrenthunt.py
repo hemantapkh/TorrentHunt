@@ -2,6 +2,7 @@ import json, ssl
 from os import path
 from time import time
 
+import pyshorteners
 import telebot, py1337x
 from aiohttp import web
 from models import dbQuery
@@ -14,14 +15,14 @@ configPath = path.join(dirPath,'config.json')
 config = json.load(open(configPath))
 language = json.load(open(config['language']))
 dbSql = dbQuery(config['database'])
-
+torrent = py1337x.py1337x()
+shortner = pyshorteners.Shortener()
 bot = telebot.TeleBot(config['botToken'], parse_mode='HTML')
 
 # Configuration for webhook
 webhookBaseUrl = f"https://{config['webhookOptions']['webhookHost']}:{config['webhookOptions']['webhookPort']}"
 webhookUrlPath = f"/{config['botToken']}/"
 
-torrent = py1337x.py1337x()
 app = web.Application()
 
 # Process webhook calls
@@ -348,16 +349,24 @@ def getLink(message):
     torrentId = message.text[9:]
     
     response = torrent.info(torrentId=torrentId)
+    markup = None
 
     if response['magnetLink']:
         if dbSql.getSetting(message.from_user.id, 'restrictedMode') and response['category'] == 'XXX':
             msg = language['cantView'][userLanguage]
         else:
             msg = f"✨ <b>{response['name']}</b>\n\n<code>{response['magnetLink']}</code>"
+            try:
+                shortUrl = shortner.tinyurl.short(response['magnetLink'], cleanUrl=False)
+                
+                markup = telebot.types.InlineKeyboardMarkup()
+                markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownload'][userLanguage], url=shortUrl))
+            except Exception:
+                pass       
     else:
         msg = language['errorFetchingLink'][userLanguage]
 
-    bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg)
+    bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg, reply_markup=markup)
 
 # Get information about the torrent
 @bot.message_handler(func=lambda message: message.text and message.text[:9] == '/getInfo_')
@@ -367,6 +376,7 @@ def getInfo(message):
     
     torrentId = message.text[9:]
     response = torrent.info(torrentId=torrentId)
+    markup = None
 
     if response['name']:
         # Hide if restricted mode is on
@@ -376,10 +386,18 @@ def getInfo(message):
             genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
             description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
             msg = f"<b>✨ {response['name']}</b>\n\n{language['category'][userLanguage]} {response['category']}\n{language['language'][userLanguage]} {response['language']}\n{language['size'][userLanguage]} {response['size']}\n{language['uploadedBy'][userLanguage]} {response['uploader']}\n{language['downloads'][userLanguage]} {response['downloads']}\n{language['lastChecked'][userLanguage]} {response['lastChecked']}\n{language['uploadedOn'][userLanguage]} {response['uploadDate']}\n{language['seeders'][userLanguage]} {response['seeders']}\n{language['leechers'][userLanguage]} {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['link'][userLanguage]} /getLink_{torrentId}"
+            
+            try:
+                shortUrl = shortner.tinyurl.short(response['magnetLink'], cleanUrl=False)
+                
+                markup = telebot.types.InlineKeyboardMarkup()
+                markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownload'][userLanguage], url=shortUrl))
+            except Exception:
+                pass
     else:
         msg = language['errorFetchingInfo'][userLanguage]  
         
-    bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg)
+    bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg, reply_markup=markup)
 
 # Text handler
 @bot.message_handler(content_types=['text'])

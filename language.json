@@ -1254,6 +1254,44 @@
         "ukrainian": "⚠️ <code>Помилка під час отримання посилання ...</code>"
     },
 
+    "magnetDownload": {
+        "english": "🧲 Magnet download",
+
+        "nepali": "🧲 म्याग्नेट डाउनलोड",
+
+        "bengali": "🧲 ম্যাগনিট ডাউনলোড",
+
+        "belarusian": "🧲 Magnet спампаваць",
+
+        "catalan": "🧲 Magnet descarregar",
+
+        "dutch": "🧲 Magnet downloaden",
+
+        "french": "🧲 Magnet Télécharger",
+
+        "german": "🧲 Magnet herunterladen",
+
+        "hindi": "🧲 Magnet डाउनलोड",
+
+        "italian": "🧲 Magnet Scarica",
+
+        "korean": "🧲 Magnet 다운로드",
+
+        "malay": "🧲 Magnet muat turun",
+
+        "polish": "🧲 Magnet Ściągnij",
+
+        "portuguese": "🧲 Magnet download",
+
+        "russian": "🧲 Magnet скачать",
+
+        "spanish": "🧲 Magnet descargar",
+
+        "turkish": "🧲 Magnet indir",
+
+        "ukrainian": "🧲 Magnet завантажити"
+    },
+
     "backToMenu": {
         "english": "⬅️ Back to main menu",
 
