@@ -270,7 +270,6 @@ def lang(message, userLanguage, called=False, greet=False):
         bot.send_message(message.chat.id, language['chooseLanguage'][userLanguage], reply_markup=markup)
 
 # Handler for trending, popular, top and browse torrents
-@bot.message_handler(commands=['trending', 'popular', 'top', 'browse'])
 def browse(message,userLanguage, torrentType=None, referred=False, customMessage=None):
     #if referred or isSubscribed(message, userLanguage):
     torrentType = torrentType or message.text.split()[0][1:]
@@ -413,19 +412,19 @@ def text(message):
         bot.send_message(message.chat.id, text=language['backToMenu'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
     
     # Trending torrents
-    elif message.text == language['trendingBtn'][userLanguage]:
+    elif message.text in ['/trending', language['trendingBtn'][userLanguage]]:
         browse(message, userLanguage, 'trending')
 
     # Popular torrents
-    elif message.text == language['popularBtn'][userLanguage]:
+    elif message.text in ['/popular', language['popularBtn'][userLanguage]]:
         browse(message, userLanguage, 'popular')
         
     # Top torrents
-    elif message.text == language['topBtn'][userLanguage]:
+    elif message.text in ['/top', language['topBtn'][userLanguage]]:
         browse(message, userLanguage, 'top')
     
     # Browse torrents
-    elif message.text == language['browseBtn'][userLanguage]:
+    elif message.text in ['/browse', language['browseBtn'][userLanguage]]:
         browse(message, userLanguage, 'browse')
 
     # Settings
