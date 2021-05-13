@@ -576,7 +576,7 @@ def callbackHandler(call):
 
         response = requests.get(f'http://itorrents.org/torrent/{infoHash}.torrent')
         
-        if response.ok:
+        if response.ok and not response.content.startswith(b'<!DOCTYPE html PUBLIC'):
             bot.answer_callback_query(call.id)
             bot.send_chat_action(call.message.chat.id, 'upload_document')
             torrentInfo = torrent.info(torrentId=torrentId)
