@@ -583,15 +583,15 @@ def callbackHandler(call):
 
             # -- Writing the file and sending it because telegram don't let change the file name. ToDo: Change this method--
             # Create temp directory if not exists
-            Path(f"tmp/{call.from_user.id}").mkdir(parents=True, exist_ok=True)
+            Path(f"/TorrentHuntTmp/{call.from_user.id}").mkdir(parents=True, exist_ok=True)
 
-            open(f"tmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent", 'wb').write(response.content)
+            open(f"/TorrentHuntTmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent", 'wb').write(response.content)
             thumbnail = requests.get(torrentInfo['image']) if torrentInfo['image'] else None
             
-            data = open(f"tmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent", 'rb')
+            data = open(f"/TorrentHuntTmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent", 'rb')
 
             # Deleting the file
-            remove(f"tmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent")
+            remove(f"/TorrentHuntTmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent")
 
             bot.send_document(call.message.chat.id, data=data, caption=f"{torrentInfo['name']}\n\n{language['size'][userLanguage]}{torrentInfo['size']}\n{language['seeders'][userLanguage]}{torrentInfo['seeders']}\n{language['leechers'][userLanguage]}{torrentInfo['leechers']}\n\n<b>🔥via @TorrentHuntBot</b>", thumb=thumbnail.content if thumbnail else open('images/TorrentHunt.jpg'))
         
