@@ -1,10 +1,12 @@
+import requests
 import json, ssl
-from os import path
 from time import time
+from os import path, remove
 
 import pyshorteners
 import telebot, py1337x
 from aiohttp import web
+from pathlib import Path
 from models import dbQuery
 
 # Finding the absolute path of the config file
@@ -351,17 +353,23 @@ def getLink(message):
     markup = None
 
     if response['magnetLink']:
+        markup = telebot.types.InlineKeyboardMarkup()
         if dbSql.getSetting(message.from_user.id, 'restrictedMode') and response['category'] == 'XXX':
             msg = language['cantView'][userLanguage]
         else:
-            msg = f"✨ <b>{response['name']}</b>\n\n<code>{response['magnetLink']}</code>"
+            msg = f"✨ <b>{response['name']}</b>\n\n<code>{response['magnetLink']}</code>\n\n<b>🔥via @TorrentHuntBot</b>"
             try:
                 shortUrl = shortner.tinyurl.short(response['magnetLink'], cleanUrl=False)
                 
                 markup = telebot.types.InlineKeyboardMarkup()
-                markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownload'][userLanguage], url=shortUrl))
+                markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownloadBtn'][userLanguage], url=shortUrl))
+            
             except Exception:
-                pass       
+                pass
+
+            finally:
+                markup.add(telebot.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}"))
+                markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
     else:
         msg = language['errorFetchingLink'][userLanguage]
 
@@ -378,21 +386,27 @@ def getInfo(message):
     markup = None
 
     if response['name']:
+        markup = telebot.types.InlineKeyboardMarkup()
         # Hide if restricted mode is on
         if dbSql.getSetting(message.from_user.id, 'restrictedMode') and response['category'] == 'XXX':
             msg = language['cantView'][userLanguage]
         else:
             genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
             description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
-            msg = f"<b>✨ {response['name']}</b>\n\n{language['category'][userLanguage]} {response['category']}\n{language['language'][userLanguage]} {response['language']}\n{language['size'][userLanguage]} {response['size']}\n{language['uploadedBy'][userLanguage]} {response['uploader']}\n{language['downloads'][userLanguage]} {response['downloads']}\n{language['lastChecked'][userLanguage]} {response['lastChecked']}\n{language['uploadedOn'][userLanguage]} {response['uploadDate']}\n{language['seeders'][userLanguage]} {response['seeders']}\n{language['leechers'][userLanguage]} {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['link'][userLanguage]} /getLink_{torrentId}"
+            msg = f"<b>✨ {response['name']}</b>\n\n{language['category'][userLanguage]} {response['category']}\n{language['language'][userLanguage]} {response['language']}\n{language['size'][userLanguage]} {response['size']}\n{language['uploadedBy'][userLanguage]} {response['uploader']}\n{language['downloads'][userLanguage]} {response['downloads']}\n{language['lastChecked'][userLanguage]} {response['lastChecked']}\n{language['uploadedOn'][userLanguage]} {response['uploadDate']}\n{language['seeders'][userLanguage]} {response['seeders']}\n{language['leechers'][userLanguage]} {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['link'][userLanguage]} /getLink_{torrentId}\n\n<b>🔥via @TorrentHuntBot</b>"
             
             try:
                 shortUrl = shortner.tinyurl.short(response['magnetLink'], cleanUrl=False)
                 
                 markup = telebot.types.InlineKeyboardMarkup()
-                markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownload'][userLanguage], url=shortUrl))
+                markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownloadBtn'][userLanguage], url=shortUrl))
+            
             except Exception:
                 pass
+
+            finally:
+                markup.add(telebot.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}"))
+                markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
     else:
         msg = language['errorFetchingInfo'][userLanguage]  
         
@@ -554,6 +568,36 @@ def callbackHandler(call):
     # Back to settings
     elif call.data[:17] == 'cb_backToSettings':
         settings(call, userLanguage, called=True)
+
+    # Download .Torrent file
+    elif call.data[:14] == 'cb_getTorrent:':
+        infoHash = call.data.split(':')[1]
+        torrentId = call.data.split(':')[2]
+
+        response = requests.get(f'http://itorrents.org/torrent/{infoHash}.torrent')
+        
+        if response.ok:
+            bot.answer_callback_query(call.id)
+            bot.send_chat_action(call.message.chat.id, 'upload_document')
+            torrentInfo = torrent.info(torrentId=torrentId)
+
+            # -- Writing the file and sending it because telegram don't let change the file name. ToDo: Change this method--
+            # Create temp directory if not exists
+            Path(f"tmp/{call.from_user.id}").mkdir(parents=True, exist_ok=True)
+
+            open(f"tmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent", 'wb').write(response.content)
+            thumbnail = requests.get(torrentInfo['image']) if torrentInfo['image'] else None
+            
+            data = open(f"tmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent", 'rb')
+
+            # Deleting the file
+            remove(f"tmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent")
+
+            bot.send_document(call.message.chat.id, data=data, caption=f"{torrentInfo['name']}\n\n{language['size'][userLanguage]}{torrentInfo['size']}\n{language['seeders'][userLanguage]}{torrentInfo['seeders']}\n{language['leechers'][userLanguage]}{torrentInfo['leechers']}\n\n<b>🔥via @TorrentHuntBot</b>", thumb=thumbnail.content if thumbnail else open('images/TorrentHunt.jpg'))
+        
+        # Torrent file not found in itorrents
+        else:
+            bot.answer_callback_query(call.id, text=language['fileNotFound'][userLanguage], show_alert=True)
 
 # Inline query
 @bot.inline_handler(lambda query: len(query.query) >= 1)

@@ -722,6 +722,44 @@
         "ukrainian": "❌ Результати не повернуто. Уточніть пошук."
     },
 
+    "fileNotFound": {
+        "english": "😿 The requested file is not found on the server.",
+
+        "nepali": "😿 अनुरोध गरिएको फाईल सर्भरमा फेला परेन।",
+
+        "bengali": "😿 অনুরোধ করা ফাইলটি সার্ভারে পাওয়া যায় নি।",
+
+        "belarusian": "😿 Запытаны файл не знойдзены на серверы.",
+
+        "catalan": "😿 El fitxer sol·licitat no es troba al servidor.",
+
+        "dutch": "😿 Het opgevraagde bestand is niet gevonden op de server.",
+
+        "french": "😿 Le fichier demandé est introuvable sur le serveur.",
+
+        "german": "😿 Die angeforderte Datei wurde nicht auf dem Server gefunden.",
+
+        "hindi": "😿 अनुरोधित फ़ाइल सर्वर पर नहीं मिली।",
+
+        "italian": "😿 Il file richiesto non è stato trovato sul server.",
+
+        "korean": "😿 요청한 파일을 서버에서 찾을 수 없습니다.",
+
+        "malay": "😿 Fail yang diminta tidak dijumpai di pelayan.",
+
+        "polish": "😿 Żądanego pliku nie znaleziono na serwerze.",
+
+        "portuguese": "😿 O arquivo solicitado não foi encontrado no servidor.",
+
+        "russian": "😿 Запрошенный файл не найден на сервере.",
+
+        "spanish": "😿 El archivo solicitado no se encuentra en el servidor.",
+
+        "turkish": "😿 İstenen dosya sunucuda bulunamadı.",
+
+        "ukrainian": "😿 Запитаний файл не знайдено на сервері."
+    },
+
     "selectCategory": {
         "english": "❔ Choose a category for your torrents",
 
@@ -1252,44 +1290,6 @@
         "turkish": "⚠️ <code>Bağlantı alınırken hata ...</code>",
 
         "ukrainian": "⚠️ <code>Помилка під час отримання посилання ...</code>"
-    },
-
-    "magnetDownload": {
-        "english": "🧲 Magnet download",
-
-        "nepali": "🧲 म्याग्नेट डाउनलोड",
-
-        "bengali": "🧲 ম্যাগনিট ডাউনলোড",
-
-        "belarusian": "🧲 Magnet спампаваць",
-
-        "catalan": "🧲 Magnet descarregar",
-
-        "dutch": "🧲 Magnet downloaden",
-
-        "french": "🧲 Magnet Télécharger",
-
-        "german": "🧲 Magnet herunterladen",
-
-        "hindi": "🧲 Magnet डाउनलोड",
-
-        "italian": "🧲 Magnet Scarica",
-
-        "korean": "🧲 Magnet 다운로드",
-
-        "malay": "🧲 Magnet muat turun",
-
-        "polish": "🧲 Magnet Ściągnij",
-
-        "portuguese": "🧲 Magnet download",
-
-        "russian": "🧲 Magnet скачать",
-
-        "spanish": "🧲 Magnet descargar",
-
-        "turkish": "🧲 Magnet indir",
-
-        "ukrainian": "🧲 Magnet завантажити"
     },
 
     "backToMenu": {
@@ -2544,6 +2544,82 @@
         "turkish": "⏮️ Önceki",
 
         "ukrainian": "⏮️ Попередній"
+    },
+
+    "magnetDownloadBtn": {
+        "english": "🧲 Magnet download",
+
+        "nepali": "🧲 म्याग्नेट डाउनलोड",
+
+        "bengali": "🧲 ম্যাগনিট ডাউনলোড",
+
+        "belarusian": "🧲 Magnet спампаваць",
+
+        "catalan": "🧲 Magnet descarregar",
+
+        "dutch": "🧲 Magnet downloaden",
+
+        "french": "🧲 Magnet Télécharger",
+
+        "german": "🧲 Magnet herunterladen",
+
+        "hindi": "🧲 Magnet डाउनलोड",
+
+        "italian": "🧲 Magnet Scarica",
+
+        "korean": "🧲 Magnet 다운로드",
+
+        "malay": "🧲 Magnet muat turun",
+
+        "polish": "🧲 Magnet Ściągnij",
+
+        "portuguese": "🧲 Magnet download",
+
+        "russian": "🧲 Magnet скачать",
+
+        "spanish": "🧲 Magnet descargar",
+
+        "turkish": "🧲 Magnet indir",
+
+        "ukrainian": "🧲 Magnet завантажити"
+    },
+
+    "torrentDownloadBtn": {
+        "english": "⬇️ Torrent download",
+
+        "nepali": "⬇️ टोरेन्ट डाउनलोड",
+
+        "bengali": "⬇️ টরেন্ট ডাউনলোড",
+
+        "belarusian": "⬇️ загрузка торэнта",
+
+        "catalan": "⬇️ Descàrrega de torrent",
+
+        "dutch": "⬇️ Torrent downloaden",
+
+        "french": "⬇️ Téléchargement torrent",
+
+        "german": "⬇️ Torrent herunterladen",
+
+        "hindi": "⬇️ टोरेन्ट डाउनलोड",
+
+        "italian": "⬇️ Download torrent",
+
+        "korean": "⬇️ 토렌트 다운로드",
+
+        "malay": "⬇️ Muat turun torrent",
+
+        "polish": "⬇️ Pobieranie torrentów",
+
+        "portuguese": "⬇️ Download torrent",
+
+        "russian": "⬇️ Торрент скачать",
+
+        "spanish": "⬇️ Descarga de torrent",
+
+        "turkish": "⬇️ Torrent indirme",
+
+        "ukrainian": "⬇️ Завантажити торрент"
     },
 
     "doneBtn": {
