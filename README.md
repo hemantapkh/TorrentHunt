@@ -29,7 +29,7 @@
 <h2 align='center'>🔍 Torrent Hunt Bot</h2>
 
 <p align="center">
-Telegram Hunt Bot is a telegram bot to search and browse torrents. It can show you the result of your query in a snap. Furthermore, you can explore top, trending, & popular torrents and browse torrents of a certain category. 
+Telegram Torrent Hunt Bot is a telegram bot to search and browse torrents. It can show you the result of your query in a snap. Furthermore, you can explore top, trending, & popular torrents and browse torrents of a certain category. 
 </P>
 
 # ⛲ Features
