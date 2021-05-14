@@ -29,7 +29,7 @@
 <h2 align='center'>🔍 Torrent Hunt Bot</h2>
 
 <p align="center">
-Telegram Hunt Bot is a telegram bot to search and browse torrents. It can show you the result of your query in a snap. Furthermore, you can explore top, trending, & popular torrents and browse torrents of a certain category. 
+Torrent Hunt Bot is a telegram bot to search and browse torrents. It can show you the result of your query in a snap. Furthermore, you can explore top, trending, & popular torrents and browse torrents of a certain category. 
 </P>
 
 # ⛲ Features
@@ -144,7 +144,7 @@ You can set up GitHub actions to update the bot automatically on every push.
 - Clone the repository and install the requirements in the virtual environment
 
     ```bash
-    git clone https://github.com/hemantapkh/torrenthunt && cd torrenthunt && source /opt/TorrentHunt/env/bin/activate && pip install -r requirements.txt
+    git clone https://github.com/hemantapkh/TorrentHunt && cd TorrentHunt && source /opt/TorrentHunt/env/bin/activate && pip install -r requirements.txt
     ```
 
 - Create a database and move the database into `/opt/TorrentHunt`
@@ -165,15 +165,15 @@ You can set up GitHub actions to update the bot automatically on every push.
 
     - **database** = **/opt/TorrentHunt/database.sqlite**
     - If you are using webhooks, copy the SSL certificate and private key in `/opt/TorrentHunt` and set
-        - **sslCertificate** == **/opt/TorrentHunt/sslCertificate.pem**
-        - **sslPrivateKey** == **/opt/TorrentHunt/sslPrivateKey.pem**
+        - **sslCertificate** = **/opt/TorrentHunt/sslCertificate.pem**
+        - **sslPrivateKey** = **/opt/TorrentHunt/sslPrivateKey.pem**
 
 - Copy the content of the edited config.json and save it on your repository secrets with name `CONFIG`. Don't forget to wrap the content of config file with single quotes like this `'Content of config.json'`.
 
 - And, start the bot.
 
     ```bash
-    source /opt/TorrentHunt/env/bin/activate && screen -dm python /opt/TorrentHunt/torrenthunt/torrenthunt.py
+    source /opt/TorrentHunt/env/bin/activate && screen -dm python /opt/TorrentHunt/TorrentHunt/torrenthunt.py
     ```
 
 Now, every time you push on the `main` branch, the bot automatically gets updated.
