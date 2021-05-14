@@ -40,6 +40,8 @@ Telegram Hunt Bot is a telegram bot to search and browse torrents. It can show y
 - Explore trending, popular, and top torrents
 - Browse torrents of a certain category
 - Get info and magnet link of the torrent
+- Get the .Torrent file of the torrenthunt
+- Get the shortened URL of the magnet link
 - Supports inline query with thumbnail
 - Restriction mode to hide explicit content
 
@@ -67,6 +69,116 @@ Torrent Hunt Bot can talk in 18 different languages.
 - Ukrainian
 
 ```Unverified languages are translated with Google Translator and may contain errors. If you find any, feel free to send a pull request.```
+
+## ⚙️ Deployment
+
+* Clone the repository, create a virtual environment, and install the requirements
+
+    ```bash
+    git clone https://github.com/hemantapkh/torrenthunt && virtualenv env && source env/bin/activate && cd torrenthunt && pip install -r requirements.txt
+    ```
+
+* Add your bot token in [config.json](config.json) file
+* Run the [migration.py](migrations.py) file to open a database.
+
+    ```python
+    python migrations.py
+    ```
+* Now, start the bot polling
+
+    ```python
+    python telegrambot.py
+    ```
+
+---
+
+## 🚀 Webhook Deployment
+
+While polling and webhooks both accomplish the same task, webhooks are far more efficient. Polling sends a request for new events (specifically, Create, Retrieve, and Delete events, which signal changes in data) at a predetermined frequency and waits for the endpoint to respond whereas, webhooks only transfer data when there is new data to send, making them 100% efficient. That means that polling creates, on average, 66x more server load than webhooks. ([r](https://blog.cloud-elements.com/webhooks-vs-polling-youre-better-than-this))
+
+- Generate an SSL certificate
+
+    ```bash
+    >> openssl genrsa -out sslPrivateKey.pem 2048
+    >> openssl req -new -x509 -days 3650 -key sslPrivateKey.pem -out sslCertificate.pem
+    ```
+
+    *"Common Name (e.g. server FQDN or YOUR name)" should be your Host IP.*
+
+- Edit [config.json](config.json) file and set
+
+    - **connectionType** = **webhook**
+    - **webhookHost** = **IP/Host where the bot is running**
+    - **webhookPort** = **PORT (Need to be opened)**
+    - **webhookListen** = **0.0.0.0** or **IP address in some VPS**
+    - **sslCertificate** = **Directory of SSL certificate**
+    - **sslPrivateKey** = **Directory of SSL private key**
+
+* And, start the aioHttp server.
+
+    ```python
+    python torrenthuntbot.py
+    ```
+
+---
+
+## 🛺 Auto deployment on every push
+
+You can set up GitHub actions to update the bot automatically on every push.
+
+- Fork the repository on your GitHub account.
+
+- Create a directory
+    ```bash
+    mkdir /opt/TorrentHunt && cd /opt/TorrentHunt
+    ```
+
+    *You should create a directory with the same name as above inside /opt, or edit the [deploy.yml](.github/workflows/deploy.yml) and [deployScript.sh](.github/workflows/deployScript.sh)*
+
+- Create a virtual environment in the directory with name `env`
+
+    ```bash
+    virtualenv env
+    ```
+
+- Clone the repository and install the requirements in the virtual environment
+
+    ```bash
+    git clone https://github.com/hemantapkh/torrenthunt && cd torrenthunt && source /opt/TorrentHunt/env/bin/activate && pip install -r requirements.txt
+    ```
+
+- Create a database and move the database into `/opt/TorrentHunt`
+
+    ```bash
+    python migrations.py && mv database.sqlite /opt/TorrentHunt
+    ```
+
+- Generate SSH keys for your VPS and keep the private key in your GitHub secrets
+
+    - Create the ssh key pair using the `ssh-keygen` command. You must leave the passphrase empty while generating the SSH key.
+    - Copy and install the public ssh key on the server using `sh-copy-id -i your_public_key user@host` command or add the content of the public key in `~/.ssh/authorized_keys`.
+    - Now, copy the content of the private key and paste it on your GitHub secrets with the name `SSHKEY`. *(Repository settings >> secrets >> New repository secret)*
+
+- Create another GitHub secret with name `HOST` and save your Host IP.
+
+- Edit [config.json](config.json) file and set
+
+    - **database** = **/opt/TorrentHunt/database.sqlite**
+    - If you are using webhooks, copy the SSL certificate and private key in `/opt/TorrentHunt` and set
+        - **sslCertificate** == **/opt/TorrentHunt/sslCertificate.pem**
+        - **sslPrivateKey** == **/opt/TorrentHunt/sslPrivateKey.pem**
+
+- Copy the content of the edited config.json and save it on your repository secrets with name `CONFIG`. Don't forget to wrap the content of config file with single quotes like this `'Content of config.json'`.
+
+- And, start the bot.
+
+    ```bash
+    source /opt/TorrentHunt/env/bin/activate && screen -dm python /opt/TorrentHunt/torrenthunt/torrenthunt.py
+    ```
+
+Now, every time you push on the `main` branch, the bot automatically gets updated.
+
+---
 
 ## 💚 Contributing
 
