@@ -593,7 +593,7 @@ def callbackHandler(call):
             # Deleting the file
             remove(f"/TorrentHuntTmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent")
 
-            bot.send_document(call.message.chat.id, data=data, caption=f"{torrentInfo['name']}\n\n{language['size'][userLanguage]}{torrentInfo['size']}\n{language['seeders'][userLanguage]}{torrentInfo['seeders']}\n{language['leechers'][userLanguage]}{torrentInfo['leechers']}\n\n<b>🔥via @TorrentHuntBot</b>", thumb=thumbnail.content if thumbnail else open('images/TorrentHunt.jpg'))
+            bot.send_document(call.message.chat.id, data=data, caption=f"{torrentInfo['name']}\n\n{language['size'][userLanguage]}{torrentInfo['size']}\n{language['seeders'][userLanguage]}{torrentInfo['seeders']}\n{language['leechers'][userLanguage]}{torrentInfo['leechers']}\n\n<b>🔥via @TorrentHuntBot</b>", thumb=thumbnail.content if thumbnail else 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt_Low.jpg')
         
         # Torrent file not found in itorrents
         else:
