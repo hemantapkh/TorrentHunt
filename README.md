@@ -87,7 +87,7 @@ Torrent Hunt Bot can talk in 18 different languages.
 * Now, start the bot polling
 
     ```python
-    python telegrambot.py
+    python torrenthunt.py
     ```
 
 ---
@@ -117,7 +117,7 @@ While polling and webhooks both accomplish the same task, webhooks are far more 
 * And, start the aioHttp server.
 
     ```python
-    python torrenthuntbot.py
+    python torrenthunt.py
     ```
 
 ---
