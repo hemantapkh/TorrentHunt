@@ -574,7 +574,8 @@ def callbackHandler(call):
         infoHash = call.data.split(':')[1]
         torrentId = call.data.split(':')[2]
 
-        response = requests.get(f'http://itorrents.org/torrent/{infoHash}.torrent')
+        headers = {'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:15.0) Gecko/20100101 Firefox/15.0.1'}
+        response = requests.get(f'http://itorrents.org/torrent/{infoHash}.torrent', headers=headers)
         
         if response.ok and not response.content.startswith(b'<!DOCTYPE html PUBLIC'):
             bot.answer_callback_query(call.id)
