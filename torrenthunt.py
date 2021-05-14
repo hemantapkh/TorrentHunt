@@ -1,12 +1,12 @@
 import requests
 import json, ssl
 from time import time
+from pathlib import Path
 from os import path, remove
 
 import pyshorteners
 import telebot, py1337x
 from aiohttp import web
-from pathlib import Path
 from models import dbQuery
 
 # Finding the absolute path of the config file
