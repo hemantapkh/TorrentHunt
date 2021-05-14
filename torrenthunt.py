@@ -161,8 +161,8 @@ def result(response, userLanguage, torrentType, page, category=None, week=None, 
                 msg += f"<b>{((page-1)*20)+count+1}. {item['name']}</b>\n\n"
                 msg += f"💾 {item['size']}, 🟢 {item['seeders']}, 🔴 {item['leechers']}\n\n"
 
-                msg += f"{language['link'][userLanguage]} /getLink_{item['id']}\n"
-                msg += f"{language['moreInfo'][userLanguage]} /getInfo_{item['id']}\n\n"
+                msg += f"{language['link'][userLanguage]} /getLink_{item['torrentId']}\n"
+                msg += f"{language['moreInfo'][userLanguage]} /getInfo_{item['torrentId']}\n\n"
 
             pageCount = response['pageCount']
 
@@ -615,7 +615,7 @@ def query_text(inline_query):
             if count >= 5:
                 break
             info = torrent.info(link=item['link'])
-            queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], thumb_url=info['image'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentId=item['id']), parse_mode='HTML')))
+            queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], thumb_url=info['image'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentId=item['torrentId']), parse_mode='HTML')))
         
         nextOffset = offset + 5 if offset < 20 else 0
         nextPage = page+1 if nextOffset == 20 else page
