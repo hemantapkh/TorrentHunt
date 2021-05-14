@@ -40,7 +40,7 @@ Telegram Hunt Bot is a telegram bot to search and browse torrents. It can show y
 - Explore trending, popular, and top torrents
 - Browse torrents of a certain category
 - Get info and magnet link of the torrent
-- Get the .Torrent file of the torrenthunt
+- Get the .Torrent file of the torrent
 - Get the shortened URL of the magnet link
 - Supports inline query with thumbnail
 - Restriction mode to hide explicit content
