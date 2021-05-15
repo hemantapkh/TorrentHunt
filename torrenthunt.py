@@ -1,8 +1,8 @@
 import requests
 import json, ssl
-from time import time
 from pathlib import Path
 from os import path, remove
+from time import sleep, time
 
 import pyshorteners
 import telebot, py1337x
@@ -412,6 +412,67 @@ def getInfo(message):
         
     bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg, reply_markup=markup)
 
+# Broadcast message
+@bot.message_handler(commands=['broadcast'])
+def broadcast(message):
+    if message.from_user.id == int(config['adminId']):
+        sent = bot.send_message(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
+        bot.register_next_step_handler(sent, broadcast2)
+
+def broadcast2(message):
+    if message.text != '/cancel':
+        sent2 = bot.send_message(chat_id=message.chat.id, text='<b>To send embed button, send the link in the following format.</b>\n\n<code>Text1 - URL1\nText2 - URL2</code>\n\n/cancel to cancel the broadcast.\n/skip to skip the buttons.')
+        bot.register_next_step_handler(sent2, broadcast3, message.text)
+    else:
+        bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
+    
+def broadcast3(message, textMessage):
+    markup = telebot.types.InlineKeyboardMarkup()
+    if message.text == '/cancel':
+        bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
+    
+    elif message.text == '/skip':
+        try:
+            bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}',)
+            sent = bot.send_message(message.chat.id, text='/send to broadcast this message.')
+            bot.register_next_step_handler(sent, broadcast4, textMessage, markup=None)
+        except Exception as e:
+            bot.send_message(chat_id=message.chat.id, text=f"<b>⚠️ Error</b>\n\n{str(e).replace('<','')}")
+
+    else:
+        try:
+            for i in message.text.split('\n'):
+                markup.add(telebot.types.InlineKeyboardButton(text=i.split('-')[0].strip(), url=i.split('-')[1].strip()))
+        
+            bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}', reply_markup=markup)
+            sent = bot.send_message(message.chat.id, text='/send to broadcast this message.')
+            bot.register_next_step_handler(sent, broadcast4, textMessage, markup)
+        
+        except Exception as e:
+            bot.send_message(message.chat.id, text=f"<b>⚠️ Error</b>\n\n{str(e).replace('<','')}")
+
+def broadcast4(message, textMessage, markup):
+    if message.text == '/send':
+        sent = bot.send_message(chat_id=message.chat.id, text='<code>Broadcasting message</code>')
+        users = dbSql.getAllUsers()
+        failure = 0
+        success = 0
+
+        for userId in users:
+            try:
+                bot.send_message(chat_id=userId, text=textMessage, reply_markup=markup)
+                success += 1
+            
+            except Exception:
+                failure += 1
+
+            finally:
+                sleep(0.04)
+
+        bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<b>✈️ Broadcast Report</b>\n\nSuccess: {success}\nFailure: {failure}')
+    else:
+        bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
+
 # Text handler
 @bot.message_handler(content_types=['text'])
 def text(message):
@@ -594,7 +655,7 @@ def callbackHandler(call):
             # Deleting the file
             remove(f"/TorrentHuntTmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent")
 
-            bot.send_document(call.message.chat.id, data=data, caption=f"{torrentInfo['name']}\n\n{language['size'][userLanguage]}{torrentInfo['size']}\n{language['seeders'][userLanguage]}{torrentInfo['seeders']}\n{language['leechers'][userLanguage]}{torrentInfo['leechers']}\n\n<b>🔥via @TorrentHuntBot</b>", thumb=thumbnail.content if thumbnail else 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt_Low.jpg')
+            bot.send_document(call.message.chat.id, data=data, caption=f"{torrentInfo['name']}\n\n{language['size'][userLanguage]}{torrentInfo['size']}\n{language['seeders'][userLanguage]}{torrentInfo['seeders']}\n{language['leechers'][userLanguage]}{torrentInfo['leechers']}\n\n<b>🔥via @TorrentHuntBot</b>", thumb=thumbnail.content if thumbnail else None)
         
         # Torrent file not found in itorrents
         else:
