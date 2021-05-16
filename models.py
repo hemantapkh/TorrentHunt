@@ -31,6 +31,17 @@ class dbQuery():
         con.commit()
 
         return users if users else None
+    
+    #: Get users of particular language
+    def getUsers(self, language):
+        con = sqlite3.connect(self.db)
+        con.row_factory = lambda cursor, row: row[0]
+        cur = con.cursor()
+        
+        users = cur.execute(f'SELECT ownerId FROM settings WHERE language="{language}"').fetchall()
+        con.commit()
+
+        return users if users else None
 
     #: Get the user's settings
     def getSetting(self, userId, var):

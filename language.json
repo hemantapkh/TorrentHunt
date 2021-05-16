@@ -1292,6 +1292,44 @@
         "ukrainian": "⚠️ <code>Помилка під час отримання посилання ...</code>"
     },
 
+    "noPermission": {
+        "english": "⚠️ You don’t have enough permission to access this.",
+
+        "nepali": "⚠️ तपाईंसँग यो पहुँच गर्न पर्याप्त अनुमति छैन।",
+
+        "bengali": "⚠️ এটি অ্যাক্সেস করার জন্য আপনার কাছে পর্যাপ্ত অনুমতি নেই।",
+
+        "belarusian": "⚠️ У вас недастаткова дазволу на доступ.",
+
+        "catalan": "⚠️ No teniu prou permís per accedir-hi.",
+
+        "dutch": "⚠️ Je hebt niet genoeg toestemming om hier toegang toe te krijgen.",
+
+        "french": "⚠️ Vous n’avez pas suffisamment d’autorisation pour y accéder.",
+
+        "german": "⚠️ Sie haben nicht genügend Berechtigungen, um darauf zuzugreifen.",
+
+        "hindi": "⚠️ आपके पास इसे एक्सेस करने के लिए पर्याप्त अनुमति नहीं है।",
+
+        "italian": "⚠️ Non disponi di autorizzazioni sufficienti per accedervi.",
+
+        "korean": "⚠️ 여기에 액세스 할 수있는 권한이 없습니다.",
+
+        "malay": "⚠️ Anda tidak mempunyai kebenaran yang mencukupi untuk mengaksesnya.",
+
+        "polish": "⚠️ Nie masz wystarczających uprawnień, aby uzyskać do tego dostęp.",
+
+        "portuguese": "⚠️ Você não tem permissão suficiente para acessar isso.",
+
+        "russian": "⚠️ У вас недостаточно прав для доступа к этому.",
+
+        "spanish": "⚠️ No tienes permiso suficiente para acceder a esto.",
+
+        "turkish": "⚠️ Buna erişmek için yeterli izniniz yok.",
+
+        "ukrainian": "⚠️ У вас недостатньо дозволу для доступу до цього." 
+    },
+
     "backToMenu": {
         "english": "⬅️ Back to main menu",
 
