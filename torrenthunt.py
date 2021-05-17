@@ -483,6 +483,7 @@ def broadcast5(message, audience, textMessage, markup):
 
                 finally:
                     sleep(0.04)
+                    bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<code>{failure+success} out of {len(users)} complete.</code>')
 
             bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<b>✈️ Broadcast Report</b>\n\nSuccess: {success}\nFailure: {failure}')
         else:
