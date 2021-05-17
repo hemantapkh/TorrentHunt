@@ -416,20 +416,31 @@ def getInfo(message):
 @bot.message_handler(commands=['broadcast'])
 def broadcast(message):
     if message.from_user.id == int(config['adminId']):
-        sent = bot.send_message(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
+        sent = bot.send_message(chat_id=message.chat.id, text='<b>Choose the audience.</b>\n\n/all /bengali /belarusian /catalan /dutch /english /french /german /hindi /italian /korean /malay /nepali /polish /portuguese /russian /spanish /turkish /ukrainian \n\n/cancel to cancel the broadcast.')
         bot.register_next_step_handler(sent, broadcast2)
     else:
         userLanguage = dbSql.getSetting(message.from_user.id, 'language')
         bot.send_message(chat_id=message.chat.id, text=language['noPermission'][userLanguage])
-
+    
 def broadcast2(message):
+    if message.text == '/cancel':
+        bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
+    else:
+        if message.text in ['/all', '/bengali', '/belarusian', '/catalan', '/dutch', '/english', '/french', '/german', '/hindi', '/italian', '/korean', '/malay', '/nepali', '/polish', '/portuguese', '/russian', '/spanish', '/turkish', '/ukrainian']:
+            audience = 'all' if message.text == '/all' else message.text[1:]
+            sent = bot.send_message(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
+            bot.register_next_step_handler(sent, broadcast3, audience)
+        else:
+            bot.send_message(chat_id=message.chat.id, text='❌ Unknown audience. Broadcast cancelled.')
+
+def broadcast3(message, audience):
     if message.text != '/cancel':
         sent2 = bot.send_message(chat_id=message.chat.id, text='<b>To send embed button, send the link in the following format.</b>\n\n<code>Text1 - URL1\nText2 - URL2</code>\n\n/cancel to cancel the broadcast.\n/skip to skip the buttons.')
-        bot.register_next_step_handler(sent2, broadcast3, message.text)
+        bot.register_next_step_handler(sent2, broadcast4, audience, message.text)
     else:
         bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
     
-def broadcast3(message, textMessage):
+def broadcast4(message, audience, textMessage):
     markup = telebot.types.InlineKeyboardMarkup()
     if message.text == '/cancel':
         bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
@@ -438,7 +449,7 @@ def broadcast3(message, textMessage):
         try:
             bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}',)
             sent = bot.send_message(message.chat.id, text='/send to broadcast this message.')
-            bot.register_next_step_handler(sent, broadcast4, textMessage, markup=None)
+            bot.register_next_step_handler(sent, broadcast5, audience, textMessage, markup=None)
         except Exception as e:
             bot.send_message(chat_id=message.chat.id, text=f"<b>⚠️ Error</b>\n\n{str(e).replace('<','')}")
 
@@ -449,36 +460,39 @@ def broadcast3(message, textMessage):
         
             bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}', reply_markup=markup)
             sent = bot.send_message(message.chat.id, text='/send to broadcast this message.')
-            bot.register_next_step_handler(sent, broadcast4, textMessage, markup)
+            bot.register_next_step_handler(sent, broadcast5, audience, textMessage, markup)
         
         except Exception as e:
             bot.send_message(message.chat.id, text=f"<b>⚠️ Error</b>\n\n{str(e).replace('<','')}")
 
-def broadcast4(message, textMessage, markup):
+def broadcast5(message, audience, textMessage, markup):
     if message.text == '/send':
         sent = bot.send_message(chat_id=message.chat.id, text='<code>Broadcasting message</code>')
-        users = dbSql.getAllUsers()
+        users = dbSql.getAllUsers() if audience == 'all' else dbSql.getUsers(audience)
         failure = 0
         success = 0
 
-        for userId in users:
-            try:
-                bot.send_message(chat_id=userId, text=textMessage, reply_markup=markup)
-                success += 1
-            
-            except Exception:
-                failure += 1
+        if users:
+            for userId in users:
+                try:
+                    bot.send_message(chat_id=userId, text=textMessage, reply_markup=markup)
+                    success += 1
+                
+                except Exception:
+                    failure += 1
 
-            finally:
-                sleep(0.04)
+                finally:
+                    sleep(0.04)
 
-        bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<b>✈️ Broadcast Report</b>\n\nSuccess: {success}\nFailure: {failure}')
+            bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<b>✈️ Broadcast Report</b>\n\nSuccess: {success}\nFailure: {failure}')
+        else:
+            bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'❌ No user to broadcast message.')
     else:
         bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
 
 # Stats
 @bot.message_handler(commands=['stats'])
-def broadcast(message):
+def stats(message):
     if message.from_user.id == int(config['adminId']):
         languageSet = ["english", "nepali", "bengali", "belarusian", "catalan", "dutch",  "french",  "german", "hindi", "italian", "korean", "malay", "polish", "portuguese", "russian", "spanish", "turkish", "ukrainian"]
         
