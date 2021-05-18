@@ -550,7 +550,9 @@ def text(message):
 
     # Help
     elif message.text in ['/help', language['helpBtn'][userLanguage]]:
-        bot.send_message(message.chat.id, language['help'][userLanguage].format(language['helpBtn'][userLanguage]))
+        markup = telebot.types.InlineKeyboardMarkup()
+        markup.add(telebot.types.InlineKeyboardButton(text=language['inlineSearchBtn'][userLanguage], switch_inline_query_current_chat=""))
+        bot.send_message(message.chat.id, language['help'][userLanguage].format(language['helpBtn'][userLanguage]), reply_markup=markup)
 
     # Support
     elif message.text in ['/support', language['supportBtn'][userLanguage]]:

@@ -2584,6 +2584,45 @@
         "ukrainian": "⏮️ Попередній"
     },
 
+    "inlineSearchBtn": {
+        "english": "🔎 Inline search",
+
+        "nepali": "🔎 इनलाइन खोज",
+
+        "bengali": "🔎 ইনলাইন অনুসন্ধান",
+
+        "belarusian": "🔎 убудаваны пошук",
+
+        "catalan": "🔎 cerca en línia",
+
+        "dutch": "🔎 inline zoeken",
+
+        "french": "🔎 recherche en ligne",
+
+        "german": "🔎 Inline-Suche",
+
+        "hindi": "🔎 इनलाइन खोज",
+
+        "italian": "🔎 ricerca in linea",
+
+        "korean": "🔎 인라인 검색",
+
+        "malay": "🔎 carian sebaris",
+
+        "polish": "🔎 wyszukiwanie w treści",
+
+        "portuguese": "🔎 pesquisa inline",
+
+        "russian": "🔎 встроенный поиск",
+
+        "spanish": "🔎 búsqueda en línea",
+
+        "turkish": "🔎 satır içi arama",
+
+        "ukrainian": "🔎 вбудований пошук"
+    },
+
+
     "magnetDownloadBtn": {
         "english": "🧲 Magnet download",
 
