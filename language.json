@@ -1,40 +1,40 @@
 {
     "greet": {
-        "english": "✨ Hi {}, I am Torrent Hunt Bot and I can help you to search and explore torrents within Telegram.\n\n<b>Send any keywords to search for torrents.</b>",
+        "english": "✨ Hi {}, I am Torrent Hunt Bot and I can help you to search and explore torrents within Telegram.\n\n<b>Send any keywords to search for torrents.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>For inline search, just type @TorrentHuntBot in any chat and search for torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "nepali": "✨ नमस्ते {}, म टोरेन्ट हन्ट बोट हुँ र म तपाईंलाई टेलिग्राममा टोरेन्टहरू खोज्न र अन्वेषण गर्न मद्दत गर्न सक्छु।\n\n<b>टोरेन्टको खोजी गर्न कुनै कुञ्जी शब्दहरू पठाउनुहोस्।</b>",
+        "nepali": "✨ नमस्ते {}, म टोरेन्ट हन्ट बोट हुँ र म तपाईंलाई टेलिग्राममा टोरेन्टहरू खोज्न र अन्वेषण गर्न मद्दत गर्न सक्छु।\n\n<b>टोरेन्टको खोजी गर्न कुनै कुञ्जी शब्दहरू पठाउनुहोस्।</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>इनलाइन खोजीको लागि, कुनै पनि च्याटमा @TorrentHuntBot टाइप गर्नुहोस् र टोरेन्टहरूको लागि खोजी गर्नुहोस्।</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "bengali": "✨ ওহে {}, আমি টরেন্ট হান্ট বট এবং আমি আপনাকে টেলিগ্রামের মধ্যে টরেন্ট অনুসন্ধান এবং ব্রাউজ করতে সহায়তা করতে পারি।\n\n<b>টরেন্টস অনুসন্ধানের জন্য কোনও কীওয়ার্ড প্রেরণ করুন।</b>",
+        "bengali": "✨ ওহে {}, আমি টরেন্ট হান্ট বট এবং আমি আপনাকে টেলিগ্রামের মধ্যে টরেন্ট অনুসন্ধান এবং ব্রাউজ করতে সহায়তা করতে পারি।\n\n<b>টরেন্টস অনুসন্ধানের জন্য কোনও কীওয়ার্ড প্রেরণ করুন।</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>ইনলাইন অনুসন্ধানের জন্য, যে কোনও আড্ডায় কেবল @TorrentHuntBot টাইপ করুন এবং টরেন্টস অনুসন্ধান করুন।</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "belarusian": "✨ Прывітанне {}, Я Bont Hunt Bot, і я магу дапамагчы вам шукаць і праглядаць торэнты ў Telegram.\n\n<b>Адпраўляйце любыя ключавыя словы для пошуку торэнтаў.</b>",
+        "belarusian": "✨ Прывітанне {}, Я Bont Hunt Bot, і я магу дапамагчы вам шукаць і праглядаць торэнты ў Telegram.\n\n<b>Адпраўляйце любыя ключавыя словы для пошуку торэнтаў.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Для ўбудаванага пошуку проста ўвядзіце @TorrentHuntBot у любым чаце і шукайце торэнты.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "catalan": "✨ Hola {}, Sóc Torrent Hunt Bot i puc ajudar-vos a buscar i navegar per torrents dins de Telegram.\n\n<b>Envieu qualsevol paraula clau per cercar torrents.</b>",
+        "catalan": "✨ Hola {}, Sóc Torrent Hunt Bot i puc ajudar-vos a buscar i navegar per torrents dins de Telegram.\n\n<b>Envieu qualsevol paraula clau per cercar torrents.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Per a la cerca en línia, només cal que escriviu @TorrentHuntBot en qualsevol xat i cerqueu torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "dutch": "✨ Hoi {}, Ik ben Torrent Hunt Bot en ik kan je helpen bij het zoeken en bladeren door torrents binnen Telegram.\n\n<b>Stuur trefwoorden om naar torrents te zoeken.</b>",
+        "dutch": "✨ Hoi {}, Ik ben Torrent Hunt Bot en ik kan je helpen bij het zoeken en bladeren door torrents binnen Telegram.\n\n<b>Stuur trefwoorden om naar torrents te zoeken.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Voor inline zoeken typ je gewoon @TorrentHuntBot in een chat en zoek je naar torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "french": "✨ Salut {}, Je suis Torrent Hunt Bot et je peux vous aider à rechercher et parcourir des torrents dans Telegram.\n\n<b>Envoyez des mots-clés pour rechercher des torrents.</b>",
+        "french": "✨ Salut {}, Je suis Torrent Hunt Bot et je peux vous aider à rechercher et parcourir des torrents dans Telegram.\n\n<b>Envoyez des mots-clés pour rechercher des torrents.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Pour la recherche en ligne, tapez simplement @TorrentHuntBot dans n'importe quelle discussion et recherchez des torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "german": "✨ Hallo {}, Ich bin Torrent Hunt Bot und kann Ihnen helfen, Torrents in Telegram zu suchen und zu durchsuchen.\n\n<b>Senden Sie beliebige Schlüsselwörter, um nach Torrents zu suchen.</b>",
+        "german": "✨ Hallo {}, Ich bin Torrent Hunt Bot und kann Ihnen helfen, Torrents in Telegram zu suchen und zu durchsuchen.\n\n<b>Senden Sie beliebige Schlüsselwörter, um nach Torrents zu suchen.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Geben Sie für die Inline-Suche einfach @TorrentHuntBot in einen Chat ein und suchen Sie nach Torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "hindi": "✨ नमस्ते {}, मैं टोरेंट हंट बॉट हूं और मैं टेलीग्राम के भीतर टोरेंट को खोजने और अन्वेषण करने में आपकी मदद कर सकता हूं।\n\n<b>टोरेंट की खोज के लिए कोई भी कीवर्ड भेजें।</b>",
+        "hindi": "✨ नमस्ते {}, मैं टोरेंट हंट बॉट हूं और मैं टेलीग्राम के भीतर टोरेंट को खोजने और अन्वेषण करने में आपकी मदद कर सकता हूं।\n\n<b>टोरेंट की खोज के लिए कोई भी कीवर्ड भेजें।</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>इनलाइन खोज के लिए, बस किसी भी चैट में @TorrentHuntBot टाइप करें और टोरेंट खोजें।</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "italian": "✨ Ciao {}, Sono Torrent Hunt Bot e posso aiutarti a cercare e sfogliare i torrent all'interno di Telegram.\n\n<b>Invia qualsiasi parola chiave per cercare torrent.</b>",
+        "italian": "✨ Ciao {}, Sono Torrent Hunt Bot e posso aiutarti a cercare e sfogliare i torrent all'interno di Telegram.\n\n<b>Invia qualsiasi parola chiave per cercare torrent.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "korean": "✨ 안녕하세요 {}, 저는 Torrent Hunt Bot이며 Telegram에서 급류를 검색하고 찾아 볼 수 있도록 도와 드릴 수 있습니다.\n\n<b>급류를 검색하려면 키워드를 보내십시오.</b>",
+        "korean": "✨ 안녕하세요 {}, 저는 Torrent Hunt Bot이며 Telegram에서 급류를 검색하고 찾아 볼 수 있도록 도와 드릴 수 있습니다.\n\n<b>급류를 검색하려면 키워드를 보내십시오.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>인라인 검색의 경우 채팅에서 @TorrentHuntBot를 입력하고 토렌트를 검색하십시오.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "malay": "✨ Hai {}, Saya Torrent Hunt Bot dan saya dapat membantu anda mencari dan meninjau torrents di Telegram.\n\n<b>Hantarkan sebarang kata kunci untuk mencari torrents.</b>",
+        "malay": "✨ Hai {}, Saya Torrent Hunt Bot dan saya dapat membantu anda mencari dan meninjau torrents di Telegram.\n\n<b>Hantarkan sebarang kata kunci untuk mencari torrents.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Untuk carian sebaris, ketik @TorrentHuntBot dalam mana-mana sembang dan cari torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "polish": "✨ Witaj {}, Nazywam się Torrent Hunt Bot i mogę ci pomóc w wyszukiwaniu i przeglądaniu torrentów w Telegramie.\n\n<b>Wyślij dowolne słowo klucz, aby wyszukać torrenty.</b>",
+        "polish": "✨ Witaj {}, Nazywam się Torrent Hunt Bot i mogę ci pomóc w wyszukiwaniu i przeglądaniu torrentów w Telegramie.\n\n<b>Wyślij dowolne słowo klucz, aby wyszukać torrenty.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Aby wyszukać w trybie inline, po prostu wpisz @TorrentHuntBot na dowolnym czacie i wyszukaj torrenty.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "portuguese": "✨ Oi {}, Eu sou o Torrent Hunt Bot e posso ajudá-lo a pesquisar e navegar por torrents no Telegram.\n\n<b>Envie qualquer palavra-chave para pesquisar torrents.</b>",
+        "portuguese": "✨ Oi {}, Eu sou o Torrent Hunt Bot e posso ajudá-lo a pesquisar e navegar por torrents no Telegram.\n\n<b>Envie qualquer palavra-chave para pesquisar torrents.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Para pesquisa inline, basta digitar @TorrentHuntBot em qualquer chat e pesquisar por torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "russian": "✨ Привет {}, Я Torrent Hunt Bot, и я могу помочь вам искать и просматривать торренты в Telegram.\n\n<b>Отправляйте любые ключевые слова для поиска торрентов.</b>",
+        "russian": "✨ Привет {}, Я Torrent Hunt Bot, и я могу помочь вам искать и просматривать торренты в Telegram.\n\n<b>Отправляйте любые ключевые слова для поиска торрентов.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Для встроенного поиска просто введите @TorrentHuntBot в любом чате и ищите торренты.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "spanish": "✨ Hola {}, Soy Torrent Hunt Bot y puedo ayudarte a buscar y explorar torrents dentro de Telegram.\n\n<b>Envíe cualquier palabra clave para buscar torrents.</b>",
+        "spanish": "✨ Hola {}, Soy Torrent Hunt Bot y puedo ayudarte a buscar y explorar torrents dentro de Telegram.\n\n<b>Envíe cualquier palabra clave para buscar torrents.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Para la búsqueda en línea, simplemente escriba @TorrentHuntBot en cualquier chat y busque torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "turkish": "✨ Selam {}, Ben Torrent Hunt Bot'um ve Telegram'da torrentleri aramanıza ve göz atmanıza yardımcı olabilirim.\n\n<b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>",
+        "turkish": "✨ Selam {}, Ben Torrent Hunt Bot'um ve Telegram'da torrentleri aramanıza ve göz atmanıza yardımcı olabilirim.\n\n<b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Satır içi arama için, herhangi bir sohbette @TorrentHuntBot yazıp torrentleri aramanız yeterlidir.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "ukrainian": "✨ Привіт {}, Я Torrent Hunt Bot, і я можу допомогти вам шукати та переглядати торренти в Telegram.\n\n<b>Надішліть будь-які ключові слова для пошуку торрентів.</b>"
+        "ukrainian": "✨ Привіт {}, Я Torrent Hunt Bot, і я можу допомогти вам шукати та переглядати торренти в Telegram.\n\n<b>Надішліть будь-які ключові слова для пошуку торрентів.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Для вбудованого пошуку просто введіть @TorrentHuntBot у будь-якому чаті та шукайте торренти.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>"
     },
 
     "chooseLanguage": {
