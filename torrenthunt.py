@@ -17,7 +17,7 @@ configPath = path.join(dirPath,'config.json')
 config = json.load(open(configPath))
 language = json.load(open(config['language']))
 dbSql = dbQuery(config['database'])
-torrent = py1337x.py1337x()
+torrent = py1337x.py1337x(proxy='1337x.to')
 shortner = pyshorteners.Shortener()
 bot = telebot.TeleBot(config['botToken'], parse_mode='HTML')
 
