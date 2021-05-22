@@ -32,6 +32,21 @@ class dbQuery():
 
         return users if users else None
     
+    #: Get all users exclude certain languages
+    #: languages must be of list type
+    def getUsersExcept(self, languages):
+        con = sqlite3.connect(self.db)
+        con.row_factory = lambda cursor, row: row[0]
+        cur = con.cursor()
+        
+        users = cur.execute(f'SELECT * FROM users WHERE userId NOT NULL').fetchall()
+        con.commit()
+
+        for language in languages:
+            users = [item for item in users if item not in self.getUsers(language)] if self.getUsers(language) else users
+
+        return users if users else None
+    
     #: Get users of particular language
     def getUsers(self, language):
         con = sqlite3.connect(self.db)
