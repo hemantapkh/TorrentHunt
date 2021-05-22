@@ -1330,6 +1330,44 @@
         "ukrainian": "⚠️ У вас недостатньо дозволу для доступу до цього." 
     },
 
+    "errorSendingImage": {
+        "english": "⚠️ Error while sending pictures.",
+
+        "nepali": "⚠️ चित्रहरु पठाउँदा त्रुटि ।",
+
+        "bengali": "⚠️ ছবি পাঠানোর সময় ত্রুটি ।",
+
+        "belarusian": "⚠️ Памылка пры адпраўцы малюнкаў.",
+
+        "catalan": "⚠️ Error en enviar fotografies.",
+
+        "dutch": "⚠️ Fout bij het verzenden van afbeeldingen.",
+
+        "french": "⚠️ Erreur lors de l'envoi des photos.",
+
+        "german": "⚠️ Fehler beim Senden von Bildern.",
+
+        "hindi": "⚠️ चित्र भेजते समय त्रुटि।",
+
+        "italian": "⚠️ Errore durante l'invio delle immagini.",
+
+        "korean": "⚠️ 사진을 보내는 동안 오류가 발생했습니다.",
+
+        "malay": "⚠️ Ralat semasa menghantar gambar.",
+
+        "polish": "⚠️ Błąd podczas wysyłania zdjęć.",
+
+        "portuguese": "⚠️ Erro ao enviar fotos.",
+
+        "russian": "⚠️ Ошибка при отправке картинок.",
+
+        "spanish": "⚠️ Error al enviar imágenes.",
+
+        "turkish": "⚠️ Resimleri gönderirken hata oluştu.",
+
+        "ukrainian": "⚠️ Помилка під час надсилання зображень."
+    },
+
     "backToMenu": {
         "english": "⬅️ Back to main menu",
 
@@ -2659,6 +2697,44 @@
         "turkish": "🧲 Magnet indir",
 
         "ukrainian": "🧲 Magnet завантажити"
+    },
+
+    "imageBtn": {
+        "english": "🖼️ Images",
+
+        "nepali": "🖼️ चित्रहरु",
+
+        "bengali": "🖼️ ছবি",
+
+        "belarusian": "🖼️ Малюнкі",
+
+        "catalan": "🖼️ Imatges",
+
+        "dutch": "🖼️ Afbeeldingen",
+
+        "french": "🖼️ Des photos",
+
+        "german": "🖼️ Bilder",
+
+        "hindi": "🖼️ चित्रों",
+
+        "italian": "🖼️ Immagini",
+
+        "korean": "🖼️ 영화",
+
+        "malay": "🖼️ Gambar",
+
+        "polish": "🖼️ Kino",
+
+        "portuguese": "🖼️ Fotos",
+
+        "russian": "🖼️ Фотографий",
+
+        "spanish": "🖼️ Fotos",
+
+        "turkish": "🖼️ Resimler",
+
+        "ukrainian": "🖼️ Картинки"
     },
 
     "torrentDownloadBtn": {
