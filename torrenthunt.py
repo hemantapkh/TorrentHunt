@@ -739,7 +739,7 @@ def callbackHandler(call):
             Path(f"/TorrentHuntTmp/{call.from_user.id}").mkdir(parents=True, exist_ok=True)
 
             open(f"/TorrentHuntTmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent", 'wb').write(response.content)
-            thumbnail = requests.get(torrentInfo['image']) if torrentInfo['image'] else None
+            thumbnail = requests.get(torrentInfo['thumbnail']) if torrentInfo['thumbnail'] else None
             
             data = open(f"/TorrentHuntTmp/{call.from_user.id}/{torrentInfo['infoHash']}.torrent", 'rb')
 
@@ -791,7 +791,7 @@ def query_text(inline_query):
             if count >= 5:
                 break
             info = torrent.info(link=item['link'])
-            queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], thumb_url=info['image'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentId=item['torrentId']), parse_mode='HTML')))
+            queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], thumb_url=info['thumbnail'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentId=item['torrentId']), parse_mode='HTML')))
         
         nextOffset = offset + 5 if offset < 20 else 0
         nextPage = page+1 if nextOffset == 20 else page
