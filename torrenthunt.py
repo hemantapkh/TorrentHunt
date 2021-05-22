@@ -358,10 +358,12 @@ def getLink(message):
             msg = language['cantView'][userLanguage]
         else:
             msg = f"✨ <b>{response['name']}</b>\n\n<code>{response['magnetLink']}</code>\n\n<b>🔥via @TorrentHuntBot</b>"
+
+            if response['images']:
+                markup.add(telebot.types.InlineKeyboardButton(text=language['imageBtn'][userLanguage], callback_data=f"cb_getImages:{torrentId}"))
+
             try:
                 shortUrl = shortner.tinyurl.short(response['magnetLink'], cleanUrl=False)
-                
-                markup = telebot.types.InlineKeyboardMarkup()
                 markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownloadBtn'][userLanguage], url=shortUrl))
             
             except Exception:
@@ -395,10 +397,11 @@ def getInfo(message):
             description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
             msg = f"<b>✨ {response['name']}</b>\n\n{language['category'][userLanguage]} {response['category']}\n{language['language'][userLanguage]} {response['language']}\n{language['size'][userLanguage]} {response['size']}\n{language['uploadedBy'][userLanguage]} {response['uploader']}\n{language['downloads'][userLanguage]} {response['downloads']}\n{language['lastChecked'][userLanguage]} {response['lastChecked']}\n{language['uploadedOn'][userLanguage]} {response['uploadDate']}\n{language['seeders'][userLanguage]} {response['seeders']}\n{language['leechers'][userLanguage]} {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n{language['link'][userLanguage]} /getLink_{torrentId}\n\n<b>🔥via @TorrentHuntBot</b>"
             
+            if response['images']:
+                markup.add(telebot.types.InlineKeyboardButton(text=language['imageBtn'][userLanguage], callback_data=f"cb_getImages:{torrentId}"))
+    
             try:
                 shortUrl = shortner.tinyurl.short(response['magnetLink'], cleanUrl=False)
-                
-                markup = telebot.types.InlineKeyboardMarkup()
                 markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownloadBtn'][userLanguage], url=shortUrl))
             
             except Exception:
@@ -704,6 +707,29 @@ def callbackHandler(call):
         # Torrent file not found in itorrents
         else:
             bot.answer_callback_query(call.id, text=language['fileNotFound'][userLanguage], show_alert=True)
+
+    elif call.data[:13] == 'cb_getImages:':
+        bot.answer_callback_query(call.id)
+        bot.send_chat_action(call.message.chat.id, 'upload_photo')
+        torrentId = call.data[13:]
+        response = torrent.info(torrentId=torrentId)
+        media = []
+        
+        try:
+            if len(response['images']) >= 2:
+                for image in response['images']:
+                    media.append(telebot.types.InputMediaPhoto(image.replace('.th.','.'), caption=f"✨ {response['name']}\n\n{language['moreInfo'][userLanguage]} /getLink_{torrentId}\n{language['link'][userLanguage]} /getLink_{torrentId}\n\n🔥 via @TorrentHuntBot"))
+                    if len(media) > 6:
+                        bot.send_media_group(call.message.chat.id, media)
+                        media = []
+                
+                if media:
+                    bot.send_media_group(call.message.chat.id, media)
+            else:
+                bot.send_photo(call.message.chat.id, photo=response['images'][0].replace('.th.','.'), caption=f"✨ {response['name']}\n\n{language['moreInfo'][userLanguage]} /getLink_{torrentId}\n{language['link'][userLanguage]} /getLink_{torrentId}\n\n🔥 via @TorrentHuntBot")
+        
+        except Exception as e:
+            bot.send_message(call.message.chat.id, language['errorSendingImage'][userLanguage])
 
 # Inline query
 @bot.inline_handler(lambda query: len(query.query) >= 1)
