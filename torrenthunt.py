@@ -6,6 +6,7 @@ from time import sleep, time
 
 import pyshorteners
 import telebot, py1337x
+from tpblite import TPB
 from aiohttp import web
 from models import dbQuery
 
@@ -18,6 +19,7 @@ config = json.load(open(configPath))
 language = json.load(open(config['language']))
 dbSql = dbQuery(config['database'])
 torrent = py1337x.py1337x(proxy='1337x.to')
+pirateBay = TPB()
 shortner = pyshorteners.Shortener()
 bot = telebot.TeleBot(config['botToken'], parse_mode='HTML')
 
@@ -152,76 +154,66 @@ def textToCategory(text, userLanguage):
 
 # Parse the torrent result
 def result(response, userLanguage, torrentType, page, category=None, week=None, query=None):
+    markup = telebot.types.InlineKeyboardMarkup()
+    markup.one_time_keyboard=True
+    markup.row_width = 5
+    
+    msg =''
     if response['items']:
-            msg = ''
-            for count, item in enumerate(response['items']):
-                # Show only 20 items per page
-                if count >= 20:
-                    break
-                msg += f"<b>{((page-1)*20)+count+1}. {item['name']}</b>\n\n"
-                msg += f"💾 {item['size']}, 🟢 {item['seeders']}, 🔴 {item['leechers']}\n\n"
+        for count, item in enumerate(response['items']):
+            # Show only 20 items per page
+            if count >= 20:
+                break
+            msg += f"<b>{((page-1)*20)+count+1}. {item['name']}</b>\n\n"
+            msg += f"💾 {item['size']}, 🟢 {item['seeders']}, 🔴 {item['leechers']}\n\n"
 
-                msg += f"{language['link'][userLanguage]} /getLink_{item['torrentId']}\n"
-                msg += f"{language['moreInfo'][userLanguage]} /getInfo_{item['torrentId']}\n\n"
+            msg += f"{language['link'][userLanguage]} /getLink_{item['torrentId']}\n"
+            msg += f"{language['moreInfo'][userLanguage]} /getInfo_{item['torrentId']}\n\n"
 
-            pageCount = response['pageCount']
+        pageCount = response['pageCount']
 
-            # Trending, popular and top torrents has more than 20 items in the same page
-            if torrentType in ['trending', 'popular', 'top']:
-                if response['itemCount'] > 20:
-                    markup = telebot.types.InlineKeyboardMarkup()
-                    markup.one_time_keyboard=True
-                    markup.row_width = 6
-
-                    buttons =  []
-                    for i in range(1, -(-response['itemCount'] // 20)+1):
-                        buttons.append(telebot.types.InlineKeyboardButton('🔘' if i == page else i, callback_data=f"cb_nextPage{time()}:{i}:{torrentType}-{category}-{week}:{query or ''}"))
-
-                    markup.add(*buttons)
-                else:
-                    markup = None
-
-            # For other category, create page according to pageCount
-            elif pageCount > 1:
-                # FirstPage is the firstPage in a page list. Eg: FirstPage of (1 to 10) is 1, (11 to 20) is 11.
-                firstPage = 1
-                for i in range(-(-page // 10)-1):
-                    firstPage += 10
-                
-                markup = telebot.types.InlineKeyboardMarkup()
-                markup.one_time_keyboard=True
-                markup.row_width = 5
-
+        # Trending, popular and top torrents has more than 20 items in the same page
+        if torrentType in ['trending', 'popular', 'top']:
+            if response['itemCount'] > 20:
                 buttons =  []
-                for i in range(firstPage, pageCount+1):
-                    # Show 10 buttons at once
-                    if len(buttons) >= 10:
-                        break
-                    cb = f"q{str(time())[-3:]}:{i}:{query}" if query else f"cb_nextPage{time()}:{i}:{torrentType}-{category}-{week}:{query or ''}"
-                    buttons.append(telebot.types.InlineKeyboardButton('🔘' if i == page else i, callback_data=cb))
-                
+                for i in range(1, -(-response['itemCount'] // 20)+1):
+                    buttons.append(telebot.types.InlineKeyboardButton('🔘' if i == page else i, callback_data=f"cb_nextPage{time()}:{i}:{torrentType}-{category}-{week}:{query or ''}"))
+
                 markup.add(*buttons)
-                if pageCount > 10:
-                    if page <= 10:
-                        cb = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage+10}:{torrentType}-{category}-{week}"
-                        markup.add(telebot.types.InlineKeyboardButton(language['nextBtn'][userLanguage], callback_data=cb))
 
-                    elif 10 < page <= (pageCount - 10):
-                        cb1 = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage-10}:{torrentType}-{category}-{week}"
-                        cb2 = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage+10}:{torrentType}-{category}-{week}"
+        # For other category, create page according to pageCount
+        elif pageCount > 1:
+            # FirstPage is the firstPage in a page list. Eg: FirstPage of (1 to 10) is 1, (11 to 20) is 11.
+            firstPage = 1
+            for i in range(-(-page // 10)-1):
+                firstPage += 10
+            
+            buttons =  []
+            for i in range(firstPage, pageCount+1):
+                # Show 10 buttons at once
+                if len(buttons) >= 10:
+                    break
+                cb = f"q{str(time())[-3:]}:{i}:{query}" if query else f"cb_nextPage{time()}:{i}:{torrentType}-{category}-{week}:{query or ''}"
+                buttons.append(telebot.types.InlineKeyboardButton('🔘' if i == page else i, callback_data=cb))
+            
+            markup.add(*buttons)
+            if pageCount > 10:
+                if page <= 10:
+                    cb = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage+10}:{torrentType}-{category}-{week}"
+                    markup.add(telebot.types.InlineKeyboardButton(language['nextBtn'][userLanguage], callback_data=cb))
 
-                        markup.add(telebot.types.InlineKeyboardButton(language['previousBtn'][userLanguage], callback_data=cb1), telebot.types.InlineKeyboardButton(language['nextBtn'][userLanguage], callback_data=cb2))
-                    
-                    else:
-                        cb = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage-10}:{torrentType}-{category}-{week}"
-                        markup.add(telebot.types.InlineKeyboardButton(language['previousBtn'][userLanguage], callback_data=cb))                      
+                elif 10 < page <= (pageCount - 10):
+                    cb1 = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage-10}:{torrentType}-{category}-{week}"
+                    cb2 = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage+10}:{torrentType}-{category}-{week}"
 
-            # No markup if items are less than 20
-            else:
-                markup = None
-    # No markup and message if items are empty
-    else:
-        msg = markup = None
+                    markup.add(telebot.types.InlineKeyboardButton(language['previousBtn'][userLanguage], callback_data=cb1), telebot.types.InlineKeyboardButton(language['nextBtn'][userLanguage], callback_data=cb2))
+                
+                else:
+                    cb = f"q{str(time())[-3:]}:{firstPage+10}:{query}" if query else f"cb_nextPage{time()}:{firstPage-10}:{torrentType}-{category}-{week}"
+                    markup.add(telebot.types.InlineKeyboardButton(language['previousBtn'][userLanguage], callback_data=cb))                      
+                        
+    if query:
+        markup.add(telebot.types.InlineKeyboardButton(text='Pirate Bay 🔎', switch_inline_query_current_chat=f"!pb {query}"))
 
     return msg, markup
 
@@ -780,39 +772,54 @@ def callbackHandler(call):
 def query_text(inline_query):
     userLanguage = dbSql.getSetting(inline_query.from_user.id, 'language')
     if isSubscribed(inline_query, sendMessage=False):
-        offset = int(inline_query.offset.split(':')[0]) if inline_query.offset else 0
-        page = int(inline_query.offset.split(':')[1]) if inline_query.offset else 1
+        if inline_query.query[:3] == '!pb':
+            page = int(inline_query.offset) if inline_query.offset else 1
+            results = pirateBay.search(inline_query.query[4:], page)
 
-        results = torrent.search(inline_query.query, page)
-        pageCount = results['pageCount']
-
-        queryResult = []
-        for count, item in enumerate(results['items'][offset:]):
-            if count >= 5:
-                break
-            info = torrent.info(link=item['link'])
-            queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], thumb_url=info['thumbnail'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentId=item['torrentId']), parse_mode='HTML')))
+            queryResult = []
+            for count, item in enumerate(results):
+                if count >= 30:
+                    break
+                queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item.title, url=item.url, hide_url=True, thumb_url='https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/pirateBay.jpg', thumb_width='123', thumb_height='182', description=f"{'[TRUSTED] ' if item.is_trusted else ''}{'[VIP] ' if item.is_vip else ''}{item.filesize} size {item.seeds} seeders {item.leeches} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item, source='tpb'), parse_mode='HTML')))
+            
+            bot.answer_inline_query(inline_query.id, queryResult, next_offset=page+1 if len(results) else None, is_personal=True, cache_time=0)
         
-        nextOffset = offset + 5 if offset < 20 else 0
-        nextPage = page+1 if nextOffset == 20 else page
-        nextOffset = 0 if nextOffset == 20 else nextOffset
+        else:
+            offset = int(inline_query.offset.split(':')[0]) if inline_query.offset else 0
+            page = int(inline_query.offset.split(':')[1]) if inline_query.offset else 1
 
-        bot.answer_inline_query(inline_query.id, queryResult, next_offset=None if (nextPage == pageCount and nextOffset == 15) else f'{nextOffset}:{nextPage}', is_personal=True, cache_time=86400)
+            results = torrent.search(inline_query.query, page)
+            pageCount = results['pageCount']
+
+            queryResult = []
+            for count, item in enumerate(results['items'][offset:]):
+                if count >= 5:
+                    break
+                info = torrent.info(link=item['link'])
+                queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], url=item['link'], hide_url=True, thumb_url=info['thumbnail'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item['torrentId'], source='1337x'), parse_mode='HTML')))
+            
+            nextOffset = offset + 5 if offset < 20 else 0
+            nextPage = page+1 if nextOffset == 20 else page
+            nextOffset = 0 if nextOffset == 20 else nextOffset
+
+            bot.answer_inline_query(inline_query.id, queryResult, next_offset=None if (nextPage == pageCount and nextOffset == 15) else f'{nextOffset}:{nextPage}', is_personal=True)
     else:
         reply = telebot.types.InlineQueryResultArticle(id=1, title=language['notSubscribedCallback'][userLanguage], description=language['clickForMoreDetails'][userLanguage], thumb_url='https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/H9Logo.jpg', input_message_content=telebot.types.InputTextMessageContent(language['notSubscribed'][userLanguage], parse_mode='HTML'), reply_markup=notSubscribedMarkup(userLanguage))
-        
-        bot.answer_inline_query(inline_query.id, [reply], is_personal=True, cache_time=0)
+        bot.answer_inline_query(inline_query.id, [reply], is_personal=True)
      
-def queryMessageContent(userId, torrentId):
+def queryMessageContent(userId, torrentz, source):
     userLanguage = dbSql.getSetting(userId, 'language')
-    response = torrent.info(torrentId=torrentId)
-
-    if dbSql.getSetting(userId, 'restrictedMode') and response['category'] == 'XXX':
-            msg = language['cantView'][userLanguage]
-    else:
-        genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
-        description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
-        msg = f"<b>✨ {response['name']}</b>\n\n{language['category'][userLanguage]} {response['category']}\n{language['language'][userLanguage]} {response['language']}\n{language['size'][userLanguage]} {response['size']}\n{language['uploadedBy'][userLanguage]} {response['uploader']}\n{language['downloads'][userLanguage]} {response['downloads']}\n{language['lastChecked'][userLanguage]} {response['lastChecked']}\n{language['uploadedOn'][userLanguage]} {response['uploadDate']}\n{language['seeders'][userLanguage]} {response['seeders']}\n{language['leechers'][userLanguage]} {response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n<b>Magnet Link: </b><code>{response['magnetLink']}</code>"
+    if source == '1337x':
+        response = torrent.info(torrentId=torrentz)
+        if dbSql.getSetting(userId, 'restrictedMode') and response['category'] == 'XXX':
+                msg = language['cantView'][userLanguage]
+        else:
+            genre = '\n\n'+', '.join(response['genre']) if response['genre'] else None
+            description = '\n'+response['description'] if genre and response['description'] else '\n\n'+response['description'] if response['description'] else None
+            msg = f"<b>✨ {response['name']}</b>\n\n{language['category'][userLanguage]}{response['category']}\n{language['language'][userLanguage]}{response['language']}\n{language['size'][userLanguage]}{response['size']}\n{language['uploadedBy'][userLanguage]}{response['uploader']}\n{language['downloads'][userLanguage]}{response['downloads']}\n{language['lastChecked'][userLanguage]}{response['lastChecked']}\n{language['uploadedOn'][userLanguage]}{response['uploadDate']}\n{language['seeders'][userLanguage]}{response['seeders']}\n{language['leechers'][userLanguage]}{response['leechers']}{'<b>'+genre+'</b>' if genre else ''}{'<code>'+description+'</code>' if description else ''}\n\n<b>Magnet Link: </b><code>{response['magnetLink']}</code>"
+    
+    elif source == 'tpb':
+        msg = f"<b>✨ {torrentz.title}</b>\n\n{language['size'][userLanguage]}{torrentz.filesize}\n{language['seeders'][userLanguage]}{torrentz.seeds}\n{language['leechers'][userLanguage]}{torrentz.leeches}\n{language['uploadedBy'][userLanguage]}{torrentz.uploader}\n{language['uploadedOn'][userLanguage]}{torrentz.upload_date}\n\n<b>Magnet Link: </b><code>{torrentz.magnetlink}</code>"
 
     return msg
 
