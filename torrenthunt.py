@@ -214,6 +214,8 @@ def result(response, userLanguage, torrentType, page, category=None, week=None, 
                         
     if query:
         markup.add(telebot.types.InlineKeyboardButton(text='Pirate Bay 🔎', switch_inline_query_current_chat=f"!pb {query}"))
+    elif torrentType == 'top':
+        markup.add(telebot.types.InlineKeyboardButton(text='Pirate Bay 🔎', switch_inline_query_current_chat=f"!pb --top"))
 
     return msg, markup
 
@@ -774,7 +776,19 @@ def query_text(inline_query):
     if isSubscribed(inline_query, sendMessage=False):
         if inline_query.query[:3] == '!pb':
             page = int(inline_query.offset) if inline_query.offset else 1
-            results = pirateBay.search(inline_query.query[4:], page)
+            
+            # Top torrents of all category
+            if inline_query.query == '!pb --top':
+                results = pirateBay.top()[(page-1)*30:]
+            
+            # -- Error in tpblite package ---
+            # Top torrents of all category
+            # elif inline_query.query == '!pb --top-48hrs':
+            #     results = pirateBay.top(last_48=True)
+            
+            # Query search
+            else:
+                results = pirateBay.search(inline_query.query[4:], page)
 
             queryResult = []
             for count, item in enumerate(results):
