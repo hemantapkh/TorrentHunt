@@ -70,6 +70,16 @@ Torrent Hunt Bot can talk in 18 different languages.
 
 ```Unverified languages are translated with Google Translator and may contain errors. If you find any, feel free to send a pull request.```
 
+---
+
+## 🔑 License
+
+**If you want to host this bot for public use, you shall not remove or replace our links.**
+
+See [LICENSE](LICENSE) for more information.
+
+---
+
 ## ⚙️ Deployment
 
 * Clone the repository, create a virtual environment, and install the requirements
@@ -185,14 +195,6 @@ Now, every time you push on the `main` branch, the bot automatically gets update
 Any contributions you make are **greatly appreciated**.
 
 For minor fix, you can directly create a pull request and for adding a new feature, let's first discuss it in our [telegram group](https://t.me/h9discussion) or in [GitHub Discussion](https://github.com/hemantapkh/torrenthunt/discussions).
-
----
-
-## 🔑 License
-
-**If you want to host this bot on your server for public use, please do not change the support text.**
-
-Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 -----
 Made using [1337x](https://github.com/hemantapkh/1337x) and [pyTelegramBotApi](https://github.com/eternnoir/pyTelegramBotAPI) in Python💙 by [Hemanta Pokharel](https://github.com/hemantapkh/) [[✉️](mailto:hemantapkh@yahoo.com) [💬](https://t.me/hemantapkh) [📺](https://youtube.com/h9youtube)]
