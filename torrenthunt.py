@@ -512,19 +512,24 @@ def broadcast5(message, audience, exclude, textMessage, markup):
             users = dbSql.getUsers(audience)
         failure = 0
         success = 0
+        updateCount = 0
 
         if users:
             for userId in users:
                 try:
                     bot.send_message(chat_id=userId, text=textMessage, reply_markup=markup)
                     success += 1
+                    updateCount += 1
                 
                 except Exception:
                     failure += 1
+                    updateCount += 1
 
                 finally:
-                    sleep(0.04)
-                    bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<code>{failure+success} out of {len(users)} complete.</code>')
+                    sleep(0.1)
+                    if updateCount == 15:
+                        updateCount = 0
+                        bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<code>{failure+success} out of {len(users)} complete.</code>')
 
             bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<b>✈️ Broadcast Report</b>\n\nSuccess: {success}\nFailure: {failure}')
         else:
