@@ -18,7 +18,7 @@ configPath = path.join(dirPath,'config.json')
 config = json.load(open(configPath))
 language = json.load(open(config['language']))
 dbSql = dbQuery(config['database'])
-torrent = py1337x.py1337x(proxy='1337x.to')
+torrent = py1337x.py1337x(proxy='1337x.to', cache=config['cache'], cacheTime=config['cacheTime'])
 pirateBay = TPB()
 shortner = pyshorteners.Shortener()
 bot = telebot.TeleBot(config['botToken'], parse_mode='HTML')
@@ -790,33 +790,42 @@ def query_text(inline_query):
             else:
                 results = pirateBay.search(inline_query.query[4:], page)
 
-            queryResult = []
-            for count, item in enumerate(results):
-                if count >= 30:
-                    break
-                queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item.title, url=item.url, hide_url=True, thumb_url='https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/pirateBay.jpg', thumb_width='123', thumb_height='182', description=f"{'[TRUSTED] ' if item.is_trusted else ''}{'[VIP] ' if item.is_vip else ''}{item.filesize} size {item.seeds} seeders {item.leeches} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item, source='tpb'), parse_mode='HTML')))
-            
-            bot.answer_inline_query(inline_query.id, queryResult, next_offset=page+1 if len(results) else None, is_personal=True)
+                if results or page > 1:
+                    queryResult = []
+                    for count, item in enumerate(results):
+                        if count >= 30:
+                            break
+                        queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item.title, url=item.url, hide_url=True, thumb_url='https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/pirateBay.jpg', thumb_width='123', thumb_height='182', description=f"{'[TRUSTED] ' if item.is_trusted else ''}{'[VIP] ' if item.is_vip else ''}{item.filesize} size {item.seeds} seeders {item.leeches} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item, source='tpb'), parse_mode='HTML')))
+                    
+                    bot.answer_inline_query(inline_query.id, queryResult, next_offset=page+1 if len(results) else None, is_personal=True)
+                
+                else:
+                    bot.answer_inline_query(inline_query.id, [telebot.types.InlineQueryResultArticle(id=0, title=language['noResults'][userLanguage], url='https://t.me/h9youtube', hide_url=True, thumb_url='https://image.freepik.com/free-vector/error-404-found-glitch-effect_8024-4.jpg', input_message_content=telebot.types.InputTextMessageContent(language['noResults'][userLanguage], parse_mode='HTML'))], is_personal=True)
         
         else:
             offset = int(inline_query.offset.split(':')[0]) if inline_query.offset else 0
             page = int(inline_query.offset.split(':')[1]) if inline_query.offset else 1
 
             results = torrent.search(inline_query.query, page)
-            pageCount = results['pageCount']
 
-            queryResult = []
-            for count, item in enumerate(results['items'][offset:]):
-                if count >= 5:
-                    break
-                info = torrent.info(link=item['link'])
-                queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], url=item['link'], hide_url=True, thumb_url=info['thumbnail'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item['torrentId'], source='1337x'), parse_mode='HTML')))
+            if results['itemCount'] or page > 1:
+                pageCount = results['pageCount']
+
+                queryResult = []
+                for count, item in enumerate(results['items'][offset:]):
+                    if count >= 5:
+                        break
+                    info = torrent.info(link=item['link'])
+                    queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], url=item['link'], hide_url=True, thumb_url=info['thumbnail'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item['torrentId'], source='1337x'), parse_mode='HTML')))
+                
+                nextOffset = offset + 5 if offset < 20 else 0
+                nextPage = page+1 if nextOffset == 20 else page
+                nextOffset = 0 if nextOffset == 20 else nextOffset
+
+                bot.answer_inline_query(inline_query.id, queryResult, next_offset=None if (nextPage == pageCount and nextOffset == 15) else f'{nextOffset}:{nextPage}', is_personal=True)
             
-            nextOffset = offset + 5 if offset < 20 else 0
-            nextPage = page+1 if nextOffset == 20 else page
-            nextOffset = 0 if nextOffset == 20 else nextOffset
-
-            bot.answer_inline_query(inline_query.id, queryResult, next_offset=None if (nextPage == pageCount and nextOffset == 15) else f'{nextOffset}:{nextPage}', is_personal=True)
+            else:
+                bot.answer_inline_query(inline_query.id, [telebot.types.InlineQueryResultArticle(id=0, title=language['noResults'][userLanguage], url='https://t.me/h9youtube', hide_url=True, thumb_url='https://image.freepik.com/free-vector/error-404-found-glitch-effect_8024-4.jpg', input_message_content=telebot.types.InputTextMessageContent(language['noResults'][userLanguage], parse_mode='HTML'))], is_personal=True)
     else:
         reply = telebot.types.InlineQueryResultArticle(id=1, title=language['notSubscribedCallback'][userLanguage], description=language['clickForMoreDetails'][userLanguage], thumb_url='https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/H9Logo.jpg', input_message_content=telebot.types.InputTextMessageContent(language['notSubscribed'][userLanguage], parse_mode='HTML'), reply_markup=notSubscribedMarkup(userLanguage))
         bot.answer_inline_query(inline_query.id, [reply], is_personal=True, cache_time=0)
