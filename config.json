@@ -19,5 +19,9 @@
 
     "database": "database.sqlite",
 
+    "cache": "cache",
+
+    "cacheTime": 86400,
+
     "language": "language.json"
 }
