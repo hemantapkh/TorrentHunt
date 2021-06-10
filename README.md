@@ -29,7 +29,7 @@
 <h2 align='center'>🔍 Torrent Hunt Bot</h2>
 
 <p align="center">
-Torrent Hunt Bot is a telegram bot to search and browse torrents. It can show you the result of your query in a snap. Furthermore, you can explore top, trending, & popular torrents and browse torrents of a certain category. 
+Torrent Hunt Bot is a telegram bot to search and explore torrents from different sources. It can show you the result of your query in a snap. Furthermore, you can explore top, trending, & popular torrents and browse torrents of a certain category. 
 </P>
 
 # ⛲ Features
@@ -39,8 +39,7 @@ Torrent Hunt Bot is a telegram bot to search and browse torrents. It can show yo
 - Custom query search
 - Explore trending, popular, and top torrents
 - Browse torrents of a certain category
-- Get info and magnet link of the torrent
-- Get the .Torrent file of the torrent
+- Get info, images, magnet link and  .Torrent file of the torrent
 - Get the shortened URL of the magnet link
 - Supports inline query with thumbnail
 - Restriction mode to hide explicit content
@@ -49,7 +48,7 @@ Torrent Hunt Bot is a telegram bot to search and browse torrents. It can show yo
 
 Torrent Hunt Bot can talk in 18 different languages.
 
-- Bengali
+- Bengali (Verified by [sobuj53](https://github.com/sobuj53)) 
 - Belarusian
 - Catalan
 - Dutch
@@ -61,14 +60,16 @@ Torrent Hunt Bot can talk in 18 different languages.
 - Korean
 - Malay
 - Nepali
-- Polish (Verified by Oskar) Discord: ! ScriptMaker#7586
+- Polish (Verified by [Oskar](https://discordapp.com/users/171642532818714624))
 - Portuguese
 - Russian
 - Spanish
 - Turkish
 - Ukrainian
 
-```Unverified languages are translated with Google Translator and may contain errors. If you find any, feel free to send a pull request.```
+`Unverified languages are translated with Google Translator and may contain errors. Feel free to create a Pull Request with modifications to the language.json file.`
+
+**While making a PR, make sure to add yourself and a verified tag on the language.**
 
 ---
 
@@ -199,4 +200,4 @@ For minor fix, you can directly create a pull request and for adding a new featu
 -----
 Made using [1337x](https://github.com/hemantapkh/1337x) and [pyTelegramBotApi](https://github.com/eternnoir/pyTelegramBotAPI) in Python💙 by [Hemanta Pokharel](https://github.com/hemantapkh/) [[✉️](mailto:hemantapkh@yahoo.com) [💬](https://t.me/hemantapkh) [📺](https://youtube.com/h9youtube)]
 
-Powered by [1337x.to](https://www.1337x.to) 🔥
+Powered by [1337x.to](https://www.1337x.to) and [The Pirate Bay](https://tpb.party)🔥
