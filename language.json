@@ -32,7 +32,7 @@
 
         "spanish": "✨ Hola {}, Soy Torrent Hunt Bot y puedo ayudarte a buscar y explorar torrents dentro de Telegram.\n\n<b>Envíe cualquier palabra clave para buscar torrents.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Para la búsqueda en línea, simplemente escriba @TorrentHuntBot en cualquier chat y busque torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "turkish": "✨ Selam {}, Ben Torrent Hunt Bot'um ve Telegram'da torrentleri aramanıza ve göz atmanıza yardımcı olabilirim.\n\n<b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Satır içi arama için, herhangi bir sohbette @TorrentHuntBot yazıp torrentleri aramanız yeterlidir.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
+        "turkish": "✨ Selam {}, Ben Torrent Hunt Bot'um ve Telegram'da torrentleri aramanıza ve göz atmanıza yardımcı olabilirim.\n\n<b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>\n\nÖrneğin: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Satır içi arama için; herhangi bir sohbette @TorrentHuntBot yazıp torrentleri aramanız yeterlidir.</b>\n\nŞu şekilde: <code>@TorrentHuntBot Spider man</code>",
 
         "ukrainian": "✨ Привіт {}, Я Torrent Hunt Bot, і я можу допомогти вам шукати та переглядати торренти в Telegram.\n\n<b>Надішліть будь-які ключові слова для пошуку торрентів.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Для вбудованого пошуку просто введіть @TorrentHuntBot у будь-якому чаті та шукайте торренти.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>"
     },
@@ -108,7 +108,7 @@
 
         "spanish": "🇪🇸 El español está seleccionado como idioma predeterminado. Puede elegir otro idioma nuevamente desde la configuración.",
 
-        "turkish": "🇹🇷 Varsayılan diliniz olarak Türkçe seçilmiştir. Ayarlardan tekrar başka bir dil seçebilirsiniz.",
+        "turkish": "🇹🇷 Varsayılan diliniz artık Türkçe ! Dilerseniz ayarlardan başka bir dile tekrar geçebilirsiniz...",
 
         "ukrainian": "🇺🇦 Українською мовою вибрано мовою за замовчуванням. Ви можете знову вибрати іншу мову з налаштувань."
     },
@@ -260,7 +260,7 @@
 
         "spanish": "🚫 El modo restringido está activado para usted, lo que ocultará el contenido para adultos de sus resultados.",
 
-        "turkish": "🚫 Kısıtlı mod sizin için açıldı ve bu da yetişkinlere yönelik içeriği sonuçlarınızdan gizleyecek.",
+        "turkish": "🚫 Kısıtlı modu kendiniz için açtınız ve bu da şu anlama geliyor: Yetişkinlere yönelik içerik sonuçlarınızda gözükmeyecek.",
 
         "ukrainian": "🚫 Для вас увімкнено обмежений режим, який буде приховувати вміст для дорослих з результатів."   
     },
@@ -565,7 +565,7 @@
 
         "spanish": "<b>{}</b>\n\n/start - Iniciar conversación con el bot\n/trending - Obtén torrents de tendencia\n/popular - Obtén torrents populares\n/top - Obtén los 100 mejores torrents\n/browse - Explorar torrents\n/settings - Cambia tu configuración\n/help - Mostrar este menú de ayuda\n/support - Apoya al desarrollador\n\n<b>⬇️ ¿Cómo descargar torrents?</b>\n\nPara descargar los torrents, debe instalar cualquier cliente de torrent en su dispositivo. Hay muchos clientes de torrents por ahí. Algunos de mis favoritos son qBitTorrent (para PC) y Flud (para Android). Después de la instalación, solo necesita copiar el enlace magnético o cargar el archivo .Torrent en la aplicación y su torrent comenzará a descargarse.\n\nAdemás, puede utilizar un cliente web torrent, como seedr, que descargará el torrent por usted. El uso de un cliente web le permitirá ver torrents sin descargar. Solo necesita crear una cuenta en seedr y copiar el enlace magnético allí. Puede descargar el archivo o transmitirlo directamente al reproductor VLC sin descargarlo. Prefiero usar un cliente web como seedr para descargar torrents.\n\n<b>Envíe cualquier palabra clave para buscar torrents.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Para la búsqueda en línea, simplemente escriba @TorrentHuntBot en cualquier chat y busque torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "turkish": "<b>{}</b>\n\n/start - Botla konuşmaya başlayın\n/trending - Trend olan selleri alın\n/popular - Popüler selleri alın\n/top - En iyi 100 torrent alın\n/browse - Torrentlere göz atın\n/settings - Ayarlarınızı değiştirin\n/help - Bu yardım menüsünü göster\n/support - Geliştiriciyi destekleyin\n\n<b>⬇️ Torrentler nasıl indirilir?</b>\n\nTorrentleri indirmek için, cihazınıza herhangi bir torrent istemcisi yüklemeniz gerekir. Dışarıda birçok torrent istemcisi var. Favorilerimden bazıları qBitTorrent (PC için) ve Flud (android için). Yükledikten sonra, mıknatıs bağlantısını kopyalamanız veya .Torrent dosyasını uygulamaya yüklemeniz yeterlidir; torrent'iniz indirilmeye başlayacaktır.\n\nAyrıca, torrent'i sizin için indirecek seedr gibi bir web torrent istemcisi de kullanabilirsiniz. Bir web istemcisi kullanmak, indirmeden torrentleri izlemenize izin verir. Sadece seedr'de bir hesap oluşturmanız ve magnet bağlantısını oraya kopyalamanız yeterlidir. Dosyayı indirebilir veya indirmeden doğrudan VLC oynatıcıya aktarabilirsiniz. Torrentleri indirmek için seedr gibi bir web istemcisi kullanmayı tercih ediyorum.\n\n<b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Satır içi arama için, herhangi bir sohbette @TorrentHuntBot yazıp torrentleri aramanız yeterlidir.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
+        "turkish": "<b>{}</b>\n\n/start - Botla konuşmaya başlayın\n/trending - Trend olan Torrent'leri alın\n/popular - Popüler Torrent'leri alın\n/top - En iyi 100 Torrent'i alın\n/browse - Torrentlere göz atın\n/settings - Ayarlarınızı değiştirin\n/help - Bu mesajı tekrar atar.\n/support - Geliştiriciyi destekleyin\n\n<b>⬇️ Torrentler nasıl indirilir?</b>\n\nTorrentleri indirmek için, cihazınıza herhangi bir Torrent istemcisi yüklemeniz gerekir. Dışarıda birçok Torrent istemcisi var. Favorilerimden bazıları qBitTorrent (PC için) ve Flud (Android için). Yükledikten sonra, mıknatıs bağlantısını kopyalamanız veya .Torrent dosyasını uygulamaya yüklemeniz yeterlidir; Torrent'iniz indirilmeye başlayacaktır.\n\nAyrıca, torrent'i sizin için indirecek seedr gibi bir web torrent istemcisi de kullanabilirsiniz. Bir web istemcisi kullanmak, indirmeden Torrentleri izlemenize izin verir. Sadece seedr'de bir hesap oluşturmanız ve mıknatıs bağlantısını oraya kopyalamanız yeterlidir. Dosyayı indirebilir veya indirmeden doğrudan VLC oynatıcıya aktarabilirsiniz. Torrentleri indirmek için seedr gibi bir web istemcisi kullanmayı tercih ediyorum.\n\n<b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>\n\nÖrneğin: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Satır içi arama için, herhangi bir sohbette @TorrentHuntBot yazıp torrentleri aramanız yeterlidir.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
         "ukrainian": "<b>{}</b>\n\n/start - Почніть розмову з ботом\n/trending - Отримайте тенденція торренти\n/popular - Отримайте популярні торренти\n/top - Отримайте топ-100 торентів\n/browse - Переглядайте торренти\n/settings - Змініть налаштування\n/help - Показати це меню довідки\n/support - Підтримка розробника\n\n<b>⬇️ Як завантажити торренти?</b>\n\nЩоб завантажити торренти, вам потрібно встановити будь-який торрент-клієнт на свій пристрій. Там є багато клієнтів-торрент. Деякі з моїх улюблених - qBitTorrent (для ПК) та Flud (для android). Після встановлення потрібно просто скопіювати магнітне посилання або завантажити файл .Torrent у програму, і ваш торрент почне завантажуватися.\n\nКрім того, ви можете використовувати веб-клієнт-торрент, наприклад seedr, який завантажить торрент для вас. Використання веб-клієнта дозволить переглядати торренти без завантаження. Вам просто потрібно створити обліковий запис у seedr і скопіювати там магнітне посилання. Ви можете завантажити файл або передати їх прямо в програвач VLC без завантаження. Я віддаю перевагу використовувати веб-клієнт, такий як seedr, для завантаження торентів.\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Для вбудованого пошуку просто введіть @TorrentHuntBot у будь-якому чаті та шукайте торренти.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>"
     },
@@ -603,7 +603,7 @@
 
         "spanish": "<b>{}</b>\n\nActualmente, puede apoyarnos suscribiéndose a nuestro canal de YouTube y siguiéndonos en GitHub.😇\n\n🐛 Para informar errores o solicitar una nueva función, únase a nuestro chat de discusión y discútalo allí.",
 
-        "turkish": "<b>{}</b>\n\nŞu anda YouTube kanalımıza abone olarak ve GitHub'da bizi takip ederek bize destek olabilirsiniz.😇\n\n🐛 Hataları bildirmek veya yeni bir özellik talep etmek için tartışma sohbetimize katılın ve orada tartışın.",
+        "turkish": "<b>{}</b>\n\nŞu anda YouTube kanalımıza abone olarak ve GitHub'da bizi takip ederek bize destek olabilirsiniz.😇\n\n🐛 Hataları bildirmek veya yeni bir özellik talep etmek için destek grubumuza katılın ve orada bize anlatın.",
 
         "ukrainian": "<b>{}</b>\n\nНаразі ви можете підтримати нас, підписавшись на наш канал YouTube і підписавшись на GitHub.😇\n\n🐛 Щоб повідомити про помилки або запросити нову функцію, приєднуйтесь до нашого дискусійного чату та обговорюйте його там."
     },
@@ -641,7 +641,7 @@
 
         "spanish": "Hola, con Torrent Hunt puedes obtener el enlace de tus películas, series, programas, juegos, software y muchos más favoritos dentro de Telegram. Para usar el bot, haga clic en el enlace de arriba y comience la conversación con él.",
 
-        "turkish": "Merhaba, torrent avını kullanarak Telegram'da en sevdiğiniz filmlerin, dizilerin, şovların, oyunların, yazılımların ve çok daha fazlasının bağlantısını alabilirsiniz. Botu kullanmak için yukarıdaki bağlantıya tıklayın ve onunla konuşmaya başlayın.",
+        "turkish": "Merhaba, Torrent Hunt kullanarak Telegram'da en sevdiğiniz filmlerin, dizilerin, şovların, oyunların, yazılımların ve çok daha fazlasının bağlantısını alabilirsiniz. Botu kullanmak için yukarıdaki bağlantıya tıklayın ve keyfini çıkarın.",
 
         "ukrainian": "Привіт, за допомогою торрент-полювання ви можете отримати посилання на свої улюблені фільми, серіали, шоу, ігри, програмне забезпечення та багато іншого в Telegram. Щоб скористатися ботом, натисніть на посилання вище та розпочніть з ним розмову."
     },
@@ -717,7 +717,7 @@
 
         "spanish": "❌ No se devolvieron resultados. Por favor refine su búsqueda.",
 
-        "turkish": "❌ Hiçbir sonuç döndürülmedi. Lütfen aramanızı daraltın.",
+        "turkish": "❌ Hiçbir sonuç yok. Lütfen aramanızı daraltın.",
 
         "ukrainian": "❌ Результати не повернуто. Уточніть пошук."
     },
@@ -755,7 +755,7 @@
 
         "spanish": "😿 El archivo solicitado no se encuentra en el servidor.",
 
-        "turkish": "😿 İstenen dosya sunucuda bulunamadı.",
+        "turkish": "😿 İstenen dosya sunucuda bulunamadı...",
 
         "ukrainian": "😿 Запитаний файл не знайдено на сервері."
     },
@@ -945,7 +945,7 @@
 
         "spanish": "✨ Los torrents de tendencia de hoy",
 
-        "turkish": "✨ Bugünün trend olan selleri",
+        "turkish": "✨ Bugünün Trend Olan Torrentleri",
 
         "ukrainian": "✨ Сьогоднішні поточні потоки"
     },
@@ -983,7 +983,7 @@
 
         "spanish": "✨ los torrents de tendencia de esta semana",
 
-        "turkish": "✨ Bu haftanın trend olan selleri",
+        "turkish": "✨ Bu Haftanın Trend Olan Torrentleri",
 
         "ukrainian": "✨ поточні потоки цього тижня"
     },
@@ -1021,7 +1021,7 @@
 
         "spanish": "⚡️ Torrents populares de hoy",
 
-        "turkish": "⚡️ Günümüzün popüler selleri",
+        "turkish": "⚡️ Günümüzün Popüler Torrentleri",
 
         "ukrainian": "⚡️ Популярні сьогодні торренти"
     },
@@ -1059,7 +1059,7 @@
 
         "spanish": "⚡️ Los torrents populares de esta semana",
 
-        "turkish": "⚡️ Bu haftanın popüler selleri",
+        "turkish": "⚡️ Bu Haftanın Popüler Torrentleri",
 
         "ukrainian": "⚡️ Популярні потоки цього тижня"
     },
@@ -1135,7 +1135,7 @@
 
         "spanish": "⚠️ Esta página no tiene ningún contenido.",
 
-        "turkish": "⚠️ Bu sayfada herhangi bir içerik yok.",
+        "turkish": "⚠️ Bu sayfada herhangi bir içerik yok...",
 
         "ukrainian": "⚠️ Ця сторінка не має жодного вмісту."
     },
@@ -1325,7 +1325,7 @@
 
         "spanish": "⚠️ No tienes permiso suficiente para acceder a esto.",
 
-        "turkish": "⚠️ Buna erişmek için yeterli izniniz yok.",
+        "turkish": "⚠️ Buna erişmek için yeterli izinin yok.",
 
         "ukrainian": "⚠️ У вас недостатньо дозволу для доступу до цього." 
     },
@@ -1363,7 +1363,7 @@
 
         "spanish": "⚠️ Error al enviar imágenes.",
 
-        "turkish": "⚠️ Resimleri gönderirken hata oluştu.",
+        "turkish": "⚠️ Resimleri gönderirken bir hata oluştu.",
 
         "ukrainian": "⚠️ Помилка під час надсилання зображень."
     },
@@ -1591,7 +1591,7 @@
 
         "spanish": "Tamaño: ",
 
-        "turkish": "Boyut: ",
+        "turkish": "Boyutu: ",
 
         "ukrainian": "Розмір: "
     },
@@ -2199,7 +2199,7 @@
 
         "spanish": "🎥 Docu",
 
-        "turkish": "🎥 belgesel",
+        "turkish": "🎥 Belgesel",
 
         "ukrainian": "🎥 доку"
     },
@@ -2655,7 +2655,7 @@
 
         "spanish": "🔎 búsqueda en línea",
 
-        "turkish": "🔎 satır içi arama",
+        "turkish": "🔎 Satır içi arama",
 
         "ukrainian": "🔎 вбудований пошук"
     },
@@ -2732,7 +2732,7 @@
 
         "spanish": "🖼️ Fotos",
 
-        "turkish": "🖼️ Resimler",
+        "turkish": "🖼️ Fotoğraflar",
 
         "ukrainian": "🖼️ Картинки"
     },
@@ -2884,7 +2884,7 @@
 
         "spanish": "➕ Channel",
 
-        "turkish": "➕ Channel",
+        "turkish": "➕ Kanal",
 
         "ukrainian": "➕ Channel"
     },
