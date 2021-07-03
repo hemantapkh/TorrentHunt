@@ -2,6 +2,7 @@ import requests
 import json, ssl
 from pathlib import Path
 from os import path, remove
+from ast import literal_eval
 from time import sleep, time
 
 import pyshorteners
@@ -213,7 +214,7 @@ def result(response, userLanguage, torrentType, page, category=None, week=None, 
                     markup.add(telebot.types.InlineKeyboardButton(language['previousBtn'][userLanguage], callback_data=cb))                      
                         
     if query:
-        markup.add(telebot.types.InlineKeyboardButton(text='Pirate Bay 🔎', switch_inline_query_current_chat=f"!pb {query}"))
+        markup.add(telebot.types.InlineKeyboardButton(text='Pirate Bay 🔎', switch_inline_query_current_chat=f"!pb {query}"), telebot.types.InlineKeyboardButton(text='Nyaa 🔎', switch_inline_query_current_chat=f"!nyaa {query}"))
     elif torrentType == 'top':
         markup.add(telebot.types.InlineKeyboardButton(text='Pirate Bay 🔎', switch_inline_query_current_chat=f"!pb --top"))
 
@@ -807,6 +808,21 @@ def query_text(inline_query):
                 else:
                     bot.answer_inline_query(inline_query.id, [telebot.types.InlineQueryResultArticle(id=0, title=language['noResults'][userLanguage], url='https://t.me/h9youtube', hide_url=True, thumb_url='https://image.freepik.com/free-vector/error-404-found-glitch-effect_8024-4.jpg', input_message_content=telebot.types.InputTextMessageContent(language['noResults'][userLanguage], parse_mode='HTML'))], is_personal=True)
         
+        elif inline_query.query[:5] == '!nyaa':
+            page = int(inline_query.offset) if inline_query.offset else 0
+            results = literal_eval(requests.get('https://api.api-zero.workers.dev/nyaasi/'+inline_query.query[6:]).text)
+
+            if 'error' not in results:
+                results = results[page*50:(page+1)*50]
+                queryResult = []
+                for count, item in enumerate(results):
+                    queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['Name'], url=item['Url'], hide_url=True, thumb_url='https://i.pinimg.com/736x/2d/8d/5c/2d8d5c5e953fd50493e388da2759ac41.jpg', thumb_width='123', thumb_height='182', description=f"{item['Size']} size {item['Seeder']} seeders {item['Leecher']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item, source='nyaa'), parse_mode='HTML')))
+                    
+                bot.answer_inline_query(inline_query.id, queryResult, next_offset=page+1 if len(results) else None, is_personal=True, cache_time=0)
+                
+            else:
+                bot.answer_inline_query(inline_query.id, [telebot.types.InlineQueryResultArticle(id=0, title=language['noResults'][userLanguage], url='https://t.me/h9youtube', hide_url=True, thumb_url='https://image.freepik.com/free-vector/error-404-found-glitch-effect_8024-4.jpg', input_message_content=telebot.types.InputTextMessageContent(language['noResults'][userLanguage], parse_mode='HTML'))], is_personal=True)
+
         else:
             offset = int(inline_query.offset.split(':')[0]) if inline_query.offset else 0
             page = int(inline_query.offset.split(':')[1]) if inline_query.offset else 1
@@ -848,6 +864,9 @@ def queryMessageContent(userId, torrentz, source):
     
     elif source == 'tpb':
         msg = f"<b>✨ {torrentz.title}</b>\n\n{language['size'][userLanguage]}{torrentz.filesize}\n{language['seeders'][userLanguage]}{torrentz.seeds}\n{language['leechers'][userLanguage]}{torrentz.leeches}\n{language['uploadedBy'][userLanguage]}{torrentz.uploader}\n{language['uploadedOn'][userLanguage]}{torrentz.upload_date}\n\n<b>Magnet Link: </b><code>{torrentz.magnetlink}</code>"
+
+    elif source ==  'nyaa':
+        msg = f"<b>✨ {torrentz['Name']}</b>\n\n{language['size'][userLanguage]}{torrentz['Size']}\n{language['seeders'][userLanguage]}{torrentz['Seeder']}\n{language['leechers'][userLanguage]}{torrentz['Leecher']}\n{language['uploadedOn'][userLanguage]}{torrentz['Date']}\n\n<b>Magnet Link: </b><code>{torrentz['Magnet']}</code>"
 
     return msg
 
