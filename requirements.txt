@@ -2,5 +2,4 @@ bs4
 1337x
 tpblite
 aiohttp
-pyshorteners
 pyTelegramBotApi
