@@ -2738,41 +2738,79 @@
     },
 
     "torrentDownloadBtn": {
-        "english": "⬇️ Torrent download",
+        "english": "📄 Torrent download",
 
-        "nepali": "⬇️ टोरेन्ट डाउनलोड",
+        "nepali": "📄 टोरेन्ट डाउनलोड",
 
-        "bengali": "⬇️ টরেন্ট ডাউনলোড",
+        "bengali": "📄 টরেন্ট ডাউনলোড",
 
-        "belarusian": "⬇️ загрузка торэнта",
+        "belarusian": "📄 загрузка торэнта",
 
-        "catalan": "⬇️ Descàrrega de torrent",
+        "catalan": "📄 Descàrrega de torrent",
 
-        "dutch": "⬇️ Torrent downloaden",
+        "dutch": "📄 Torrent downloaden",
 
-        "french": "⬇️ Téléchargement torrent",
+        "french": "📄 Téléchargement torrent",
 
-        "german": "⬇️ Torrent herunterladen",
+        "german": "📄 Torrent herunterladen",
 
-        "hindi": "⬇️ टोरेन्ट डाउनलोड",
+        "hindi": "📄 टोरेन्ट डाउनलोड",
 
-        "italian": "⬇️ Download torrent",
+        "italian": "📄 Download torrent",
 
-        "korean": "⬇️ 토렌트 다운로드",
+        "korean": "📄 토렌트 다운로드",
 
-        "malay": "⬇️ Muat turun torrent",
+        "malay": "📄 Muat turun torrent",
 
-        "polish": "⬇️ Pobieranie torrentów",
+        "polish": "📄 Pobieranie torrentów",
 
-        "portuguese": "⬇️ Download torrent",
+        "portuguese": "📄 Download torrent",
 
-        "russian": "⬇️ Торрент скачать",
+        "russian": "📄 Торрент скачать",
 
-        "spanish": "⬇️ Descarga de torrent",
+        "spanish": "📄 Descarga de torrent",
 
-        "turkish": "⬇️ Torrent indirme",
+        "turkish": "📄 Torrent indirme",
 
-        "ukrainian": "⬇️ Завантажити торрент"
+        "ukrainian": "📄 Завантажити торрент"
+    },
+
+    "addToSeedr": {
+        "english": "⬇️ Add to seedr",
+
+        "nepali": "⬇️ सीडरमा डाउनलोड गर्नुहोस्",
+
+        "bengali": "⬇️ সিডারে ডাউনলোড করুন",
+
+        "belarusian": "⬇️ загрузіць у seedr",
+
+        "catalan": "⬇️ Descarregar a seedr",
+
+        "dutch": "⬇️ Downloaden naar seedr",
+
+        "french": "⬇️ Télécharger dans le semoir",
+
+        "german": "⬇️ Download auf Seeder",
+
+        "hindi": "⬇️ सीडर में डाउनलोड करें",
+
+        "italian": "⬇️ Scarica su seedr",
+
+        "korean": "⬇️ 파종기에 다운로드",
+
+        "malay": "⬇️ Muat turun ke seedr",
+
+        "polish": "⬇️ Pobierz do seedera",
+
+        "portuguese": "⬇️ Baixar para seedr",
+
+        "russian": "⬇️ Скачать в seedr",
+
+        "spanish": "⬇️ Descargar a seedr",
+
+        "turkish": "⬇️ Seedr'e indir",
+
+        "ukrainian": "⬇️ Завантажити на сівалку"
     },
 
     "doneBtn": {

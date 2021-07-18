@@ -5,7 +5,6 @@ from os import path, remove
 from ast import literal_eval
 from time import sleep, time
 
-import pyshorteners
 import telebot, py1337x
 from tpblite import TPB
 from aiohttp import web
@@ -21,7 +20,6 @@ language = json.load(open(config['language']))
 dbSql = dbQuery(config['database'])
 torrent = py1337x.py1337x(proxy='1337x.to', cache=config['cache'], cacheTime=config['cacheTime'])
 pirateBay = TPB()
-shortner = pyshorteners.Shortener()
 bot = telebot.TeleBot(config['botToken'], parse_mode='HTML')
 
 # Configuration for webhook
@@ -41,6 +39,10 @@ async def handle(request):
         return web.Response(status=403)
 
 app.router.add_post('/{token}/', handle)
+
+def shortner(url):
+    short = requests.get(f'http://tinyurl.com/api-create.php?url={url}')
+    return short.text
 
 # Main reply keyboard
 def mainReplyKeyboard(userLanguage):
@@ -373,16 +375,11 @@ def getLink(message):
             if response['images']:
                 markup.add(telebot.types.InlineKeyboardButton(text=language['imageBtn'][userLanguage], callback_data=f"cb_getImages:{torrentId}"))
 
-            try:
-                shortUrl = shortner.tinyurl.short(response['magnetLink'], cleanUrl=False)
-                markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownloadBtn'][userLanguage], url=shortUrl))
+            shortUrl = shortner(response['magnetLink'])
             
-            except Exception:
-                pass
-
-            finally:
-                markup.add(telebot.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}"))
-                markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
+            markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownloadBtn'][userLanguage], url=shortUrl), telebot.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}"))
+            markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
+            markup.add(telebot.types.InlineKeyboardButton(text=language['addToSeedr'][userLanguage], url=f't.me/torrentseedrbot?start=addTorrent_{shortUrl[20:]}'))
     else:
         msg = language['errorFetchingLink'][userLanguage]
 
@@ -411,16 +408,11 @@ def getInfo(message):
             if response['images']:
                 markup.add(telebot.types.InlineKeyboardButton(text=language['imageBtn'][userLanguage], callback_data=f"cb_getImages:{torrentId}"))
     
-            try:
-                shortUrl = shortner.tinyurl.short(response['magnetLink'], cleanUrl=False)
-                markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownloadBtn'][userLanguage], url=shortUrl))
+            shortUrl = shortner(response['magnetLink'])
             
-            except Exception:
-                pass
-
-            finally:
-                markup.add(telebot.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}"))
-                markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
+            markup.add(telebot.types.InlineKeyboardButton(text=language['magnetDownloadBtn'][userLanguage], url=shortUrl), telebot.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}"))
+            markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
+            markup.add(telebot.types.InlineKeyboardButton(text=language['addToSeedr'][userLanguage], url=f't.me/torrentseedrbot?start=addTorrent_{shortUrl[20:]}'))
     else:
         msg = language['errorFetchingInfo'][userLanguage]  
         
