@@ -231,7 +231,9 @@ def result(response, userLanguage, torrentType, page, category=None, week=None, 
         markup.add(telebot.types.InlineKeyboardButton(text='Pirate Bay 🔎', switch_inline_query_current_chat=f"!pb {query}"), telebot.types.InlineKeyboardButton(text='Nyaa 🔎', switch_inline_query_current_chat=f"!nyaa {query}"))
     elif torrentType == 'top':
         markup.add(telebot.types.InlineKeyboardButton(text='Pirate Bay 🔎', switch_inline_query_current_chat=f"!pb --top"))
-
+    if msg:
+        markup.add(telebot.types.InlineKeyboardButton(text='☕ Donate', url='https://buymeacoffee.com/hemantapkh'))
+    
     return msg, markup
 
 # Start handler
@@ -816,6 +818,8 @@ def callbackHandler(call):
 def query_text(inline_query):
     userLanguage = dbSql.getSetting(inline_query.from_user.id, 'language')
     if isSubscribed(inline_query, sendMessage=False):
+        markup = telebot.types.InlineKeyboardMarkup()
+        markup.add(telebot.types.InlineKeyboardButton(text='☕ Donate', url='https://buymeacoffee.com/hemantapkh'))
         if inline_query.query[:3] == '!pb':
             page = int(inline_query.offset) if inline_query.offset else 1
             
@@ -837,7 +841,7 @@ def query_text(inline_query):
                     for count, item in enumerate(results):
                         if count >= 30:
                             break
-                        queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item.title, url=item.url, hide_url=True, thumb_url='https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/pirateBay.jpg', thumb_width='123', thumb_height='182', description=f"{'[TRUSTED] ' if item.is_trusted else ''}{'[VIP] ' if item.is_vip else ''}{item.filesize} size {item.seeds} seeders {item.leeches} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item, source='tpb'), parse_mode='HTML')))
+                        queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item.title, url=item.url, hide_url=True, thumb_url='https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/pirateBay.jpg', thumb_width='123', thumb_height='182', description=f"{'[TRUSTED] ' if item.is_trusted else ''}{'[VIP] ' if item.is_vip else ''}{item.filesize} size {item.seeds} seeders {item.leeches} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item, source='tpb'), parse_mode='HTML'),reply_markup=markup))
                     
                     bot.answer_inline_query(inline_query.id, queryResult, next_offset=page+1 if len(results) else None, is_personal=True)
                 
@@ -852,7 +856,7 @@ def query_text(inline_query):
                 results = results[page*50:(page+1)*50]
                 queryResult = []
                 for count, item in enumerate(results):
-                    queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['Name'], url=item['Url'], hide_url=True, thumb_url='https://i.pinimg.com/736x/2d/8d/5c/2d8d5c5e953fd50493e388da2759ac41.jpg', thumb_width='123', thumb_height='182', description=f"{item['Size']} size {item['Seeder']} seeders {item['Leecher']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item, source='nyaa'), parse_mode='HTML')))
+                    queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['Name'], url=item['Url'], hide_url=True, thumb_url='https://i.pinimg.com/736x/2d/8d/5c/2d8d5c5e953fd50493e388da2759ac41.jpg', thumb_width='123', thumb_height='182', description=f"{item['Size']} size {item['Seeder']} seeders {item['Leecher']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item, source='nyaa'), parse_mode='HTML'), reply_markup=markup))
                     
                 bot.answer_inline_query(inline_query.id, queryResult, next_offset=page+1 if len(results) else None, is_personal=True, cache_time=0)
                 
@@ -873,7 +877,7 @@ def query_text(inline_query):
                     if count >= 5:
                         break
                     info = torrent.info(link=item['link'])
-                    queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], url=item['link'], hide_url=True, thumb_url=info['thumbnail'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item['torrentId'], source='1337x'), parse_mode='HTML')))
+                    queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], url=item['link'], hide_url=True, thumb_url=info['thumbnail'] or 'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/TorrentHunt.jpg', thumb_width='123', thumb_height='182', description=f"{item['size']} size {item['seeders']} seeders {item['leechers']} leechers", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(userId=inline_query.from_user.id, torrentz=item['torrentId'], source='1337x'), parse_mode='HTML'), reply_markup=markup))
                 
                 nextOffset = offset + 5 if offset < 20 else 0
                 nextPage = page+1 if nextOffset == 20 else page
