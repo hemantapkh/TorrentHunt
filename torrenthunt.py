@@ -44,6 +44,18 @@ def shortner(url):
     short = requests.get(f'http://tinyurl.com/api-create.php?url={url}')
     return short.text
 
+def getSuggestions(query):
+    headers = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:90.0) Gecko/20100101 Firefox/90.0'}
+
+    params = (
+        ('client', 'Firefox'),
+        ('q', query),
+    )
+
+    response = requests.get('https://www.google.com/complete/search', headers=headers, params=params)
+    
+    return literal_eval(response.text)[1]
+
 # Main reply keyboard
 def mainReplyKeyboard(userLanguage):
     keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -625,8 +637,24 @@ def text(message):
         response = torrent.search(message.text)
 
         msg, markup = result(response, userLanguage, torrentType='query', page=1, query=message.text)
-
-        bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg or language['noResults'][userLanguage], reply_markup=markup)
+        
+        if not msg:
+            try:
+                suggestion = getSuggestions(message.text)
+                
+                if suggestion and suggestion[0] != message.text:
+                    bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=language['searchingQuery'][userLanguage].format(suggestion[0]))
+                    response = torrent.search(suggestion[0])
+                    
+                    msg, markup = result(response, userLanguage, torrentType='query', page=1, query=suggestion[0])
+                    bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg or language['noResults'][userLanguage], reply_markup=markup)
+                else:
+                    bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=language['noResults'][userLanguage], reply_markup=markup)
+            
+            except Exception:
+                bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg, reply_markup=markup)
+        else:
+            bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg, reply_markup=markup)
 
 # Callback handler
 @bot.callback_query_handler(func=lambda call: True)
