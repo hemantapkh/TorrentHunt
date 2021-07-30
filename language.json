@@ -571,41 +571,41 @@
     },
 
     "support": {
-        "english": "<b>{}</b>\n\nCurrently, you can support us by subscribing our YouTube channel and following us on GitHub.😇\n\n🐛 To report bugs or to request a new feature, join our discussion chat, and discuss it there.",
+        "english": "<b>{}</b>\n\nThank you for your wish to contribute. Donate any amount to keep this service alive and to give me a motivation to add new features.😇\n\n🐛 To report bugs or to request a new feature, join our discussion chat, and discuss it there.",
 
-        "nepali": "<b>{}</b>\n\nहाल, तपाईं हाम्रो YouTube च्यानल सदस्यता लिन र GitHub मा हामीलाई अनुसरण गरेर हामीलाई समर्थन गर्न सक्नुहुनेछ।😇\n\n🐛 बगहरू रिपोर्ट गर्न वा नयाँ सुविधा अनुरोध गर्न, हाम्रो छलफल च्याटमा समावेश हुनुहोस्, र त्यहाँ छलफल गर्नुहोस्।",
+        "nepali": "<b>{}</b>\n\nयोगदान गर्न चाहानु भएकोमा धन्यवाद। यस सेवा लाई जीवित राख्न र मलाई नयाँ सुविधाहरु थप्न को लागी प्रेरणा दिन को लागी कुनै पनि रकम दान गर्नुहोस्।😇\n\n🐛 बगहरू रिपोर्ट गर्न वा नयाँ सुविधा अनुरोध गर्न, हाम्रो छलफल च्याटमा समावेश हुनुहोस्, र त्यहाँ छलफल गर्नुहोस्।",
 
-        "bengali": "<b>{}</b>\n\nবর্তমানে, আপনি আমাদের ইউটিউব চ্যানেলটি সাবস্ক্রাইব করে এবং GitHub আমাদের অনুসরণ করে আমাদের সমর্থন করতে পারেন।😇\n\n🐛 ত্রুটিগুলি জানতে পারেন বা একটি নতুন বৈশিষ্ট্যের জন্য অনুরোধ জানাতে, আমাদের আলোচনার আড্ডায় যোগ দিন, এবং সেখানে আলোচনা করুন।",
+        "bengali": "<b>{}</b>\n\nআমাকে সমর্থন করার আপনার ইচ্ছার জন্য আপনাকে ধন্যবাদ। এই পরিষেবাটি বাঁচিয়ে রাখতে এবং নতুন বৈশিষ্ট্য যুক্ত করার অনুপ্রেরণা দেওয়ার জন্য যে কোনও পরিমাণ অনুদান দিন।😇\n\n🐛 ত্রুটিগুলি জানতে পারেন বা একটি নতুন বৈশিষ্ট্যের জন্য অনুরোধ জানাতে, আমাদের আলোচনার আড্ডায় যোগ দিন, এবং সেখানে আলোচনা করুন।",
 
-        "belarusian": "<b>{}</b>\n\nУ цяперашні час вы можаце падтрымаць нас, падпісаўшыся на наш канал на YouTube і падпісаўшыся на GitHub.😇\n\n🐛 Каб паведаміць пра памылкі альбо запытаць новую функцыю, далучайцеся да нашага дыскусійнага чата і абмяркуйце яго там.",
+        "belarusian": "<b>{}</b>\n\nআপনার অবদানের ইচ্ছার জন্য ধন্যবাদ। এই পরিষেবাটি বাঁচিয়ে রাখতে এবং নতুন বৈশিষ্ট্য যুক্ত করার অনুপ্রেরণা দেওয়ার জন্য যে কোনও পরিমাণ অনুদান দিন।😇\n\n🐛 Каб паведаміць пра памылкі альбо запытаць новую функцыю, далучайцеся да нашага дыскусійнага чата і абмяркуйце яго там.",
 
-        "catalan": "<b>{}</b>\n\nActualment, ens podeu donar suport subscrivint el nostre canal de YouTube i seguint-nos a GitHub.😇\n\n🐛 Per informar d'errors o sol·licitar una nova característica, uniu-vos al xat de debat i discutiu-lo allà.",
+        "catalan": "<b>{}</b>\n\nGràcies pel vostre desig de contribuir. Doneu qualsevol quantitat per mantenir viu aquest servei i donar-me la motivació per afegir noves funcions.😇\n\n🐛 Per informar d'errors o sol·licitar una nova característica, uniu-vos al xat de debat i discutiu-lo allà.",
 
-        "dutch": "<b>{}</b>\n\nMomenteel kun je ons steunen door je te abonneren op ons YouTube-kanaal en ons te volgen op GitHub.😇\n\n🐛 Om bugs te melden of een nieuwe functie aan te vragen, neemt u deel aan onze discussiechat en bespreekt u deze daar.",
+        "dutch": "<b>{}</b>\n\nBedankt voor je wens om bij te dragen. Doneer een willekeurig bedrag om deze service in leven te houden en om mij de motivatie te geven om nieuwe functies toe te voegen.😇\n\n🐛 Om bugs te melden of een nieuwe functie aan te vragen, neemt u deel aan onze discussiechat en bespreekt u deze daar.",
 
-        "french": "<b>{}</b>\n\nActuellement, vous pouvez nous soutenir en vous abonnant à notre chaîne YouTube et en nous suivant sur GitHub.😇\n\n🐛 Pour signaler des bogues ou pour demander une nouvelle fonctionnalité, rejoignez notre discussion en ligne et discutez-en ici.",
+        "french": "<b>{}</b>\n\nMerci pour votre souhait de contribuer. Faites un don pour maintenir ce service en vie et pour me motiver à ajouter de nouvelles fonctionnalités.😇\n\n🐛 Pour signaler des bogues ou pour demander une nouvelle fonctionnalité, rejoignez notre discussion en ligne et discutez-en ici.",
 
-        "german": "<b>{}</b>\n\nDerzeit kannst du uns unterstützen, indem du unseren YouTube-Kanal abonnierst und uns auf GitHub folgst.😇\n\n🐛 Um Fehler zu melden oder eine neue Funktion anzufordern, nehmen Sie an unserem Diskussionschat teil und diskutieren Sie dort.",
+        "german": "<b>{}</b>\n\nVielen Dank für Ihren Wunsch, einen Beitrag zu leisten. Spenden Sie einen beliebigen Betrag, um diesen Service am Leben zu erhalten und mir die Motivation zu geben, neue Funktionen hinzuzufügen.😇\n\n🐛 Um Fehler zu melden oder eine neue Funktion anzufordern, nehmen Sie an unserem Diskussionschat teil und diskutieren Sie dort.",
 
-        "hindi": "<b>{}</b>\n\nवर्तमान में, आप हमारे YouTube चैनल की सदस्यता ले सकते हैं और GitHub पर हमें अनुसरण कर सकते हैं।😇\n\n🐛 बग की रिपोर्ट करने या एक नई सुविधा का अनुरोध करने के लिए, हमारी चर्चा चैट में शामिल हों और वहां चर्चा करें।",
+        "hindi": "<b>{}</b>\n\nयोगदान करने की इच्छा के लिए धन्यवाद। इस सेवा को जीवित रखने के लिए और मुझे नई सुविधाओं को जोड़ने की प्रेरणा देने के लिए कोई भी राशि दान करें ।😇\n\n🐛 बग की रिपोर्ट करने या एक नई सुविधा का अनुरोध करने के लिए, हमारी चर्चा चैट में शामिल हों और वहां चर्चा करें।",
 
-        "italian": "<b>{}</b>\n\nAttualmente puoi supportarci iscrivendoti al nostro canale YouTube e seguendoci su GitHub.😇\n\n🐛 Per segnalare bug o richiedere una nuova funzionalità, unisciti alla nostra chat di discussione e discutine lì.",
+        "italian": "<b>{}</b>\n\nGrazie per il tuo desiderio di contribuire. Dona qualsiasi somma per mantenere vivo questo servizio e per darmi la motivazione per aggiungere nuove funzionalità.😇\n\n🐛 Per segnalare bug o richiedere una nuova funzionalità, unisciti alla nostra chat di discussione e discutine lì.",
 
-        "korean": "<b>{}</b>\n\n현재 YouTube 채널을 구독하고 GitHub에서 팔로우하여 지원할 수 있습니다.😇\n\n🐛 버그를보고하거나 새로운 기능을 요청하려면 토론 채팅에 참여하고 거기에서 토론하십시오.",
+        "korean": "<b>{}</b>\n\n기부를 희망해주셔서 감사합니다. 이 서비스를 유지하고 새로운 기능을 추가할 동기를 부여하려면 얼마든지 기부하십시오.😇\n\n🐛 버그를보고하거나 새로운 기능을 요청하려면 토론 채팅에 참여하고 거기에서 토론하십시오.",
 
-        "malay": "<b>{}</b>\n\nPada masa ini, anda boleh menyokong kami dengan melanggan saluran YouTube kami dan mengikuti kami di GitHub.😇\n\n🐛 Untuk melaporkan bug atau meminta ciri baru, sertai sembang perbincangan kami, dan bincangkan di sana.",
+        "malay": "<b>{}</b>\n\nTerima kasih kerana sudi menyumbang. Sumbangkan sejumlah wang untuk memastikan perkhidmatan ini tetap hidup dan memberi saya motivasi untuk menambahkan ciri baru.😇\n\n🐛 Untuk melaporkan bug atau meminta ciri baru, sertai sembang perbincangan kami, dan bincangkan di sana.",
 
-        "polish": "<b>{}</b>\n\nObecnie możesz nas wesprzeć poprzez subskrybowanie naszego kanału YouTube i obserwując nas na GitHub.😇\n\n🐛 Aby zgłosić błędy lub poprosić o nową funkcję, dołącz do naszego czatu dyskusyjnego i tam o tym porozmawiaj.",
+        "polish": "<b>{}</b>\n\nDziękuję za chęć wniesienia wkładu. Przekaż dowolną kwotę, aby utrzymać tę usługę przy życiu i dać mi motywację do dodawania nowych funkcji.😇\n\n🐛 Aby zgłosić błędy lub poprosić o nową funkcję, dołącz do naszego czatu dyskusyjnego i tam o tym porozmawiaj.",
 
-        "portuguese": "<b>{}</b>\n\nAtualmente, você pode nos apoiar assinando nosso canal no YouTube e nos seguindo no GitHub.😇\n\n🐛 Para relatar bugs ou solicitar um novo recurso, participe do nosso chat de discussão e discuta nele.",
+        "portuguese": "<b>{}</b>\n\nObrigado por seu desejo de contribuir. Doe qualquer quantia para manter este serviço vivo e para me motivar a adicionar novos recursos.😇\n\n🐛 Para relatar bugs ou solicitar um novo recurso, participe do nosso chat de discussão e discuta nele.",
 
-        "russian": "<b>{}</b>\n\nВ настоящее время вы можете поддержать нас, подписавшись на наш канал YouTube и подписавшись на нас на GitHub.😇\n\n🐛 Чтобы сообщить об ошибках или запросить новую функцию, присоединяйтесь к нашему дискуссионному чату и обсуждайте это там.",
+        "russian": "<b>{}</b>\n\nСпасибо за ваше желание внести свой вклад. Пожертвуйте любую сумму, чтобы поддержать этот сервис и дать мне мотивацию добавлять новые функции.😇\n\n🐛 Чтобы сообщить об ошибках или запросить новую функцию, присоединяйтесь к нашему дискуссионному чату и обсуждайте это там.",
 
-        "spanish": "<b>{}</b>\n\nActualmente, puede apoyarnos suscribiéndose a nuestro canal de YouTube y siguiéndonos en GitHub.😇\n\n🐛 Para informar errores o solicitar una nueva función, únase a nuestro chat de discusión y discútalo allí.",
+        "spanish": "<b>{}</b>\n\nGracias por su deseo de contribuir. Done cualquier cantidad para mantener vivo este servicio y darme la motivación para agregar nuevas funciones.😇\n\n🐛 Para informar errores o solicitar una nueva función, únase a nuestro chat de discusión y discútalo allí.",
 
-        "turkish": "<b>{}</b>\n\nŞu anda YouTube kanalımıza abone olarak ve GitHub'da bizi takip ederek bize destek olabilirsiniz.😇\n\n🐛 Hataları bildirmek veya yeni bir özellik talep etmek için destek grubumuza katılın ve orada bize anlatın.",
+        "turkish": "<b>{}</b>\n\nKatkı sağlama isteğiniz için teşekkür ederiz. Bu hizmeti canlı tutmak ve bana yeni özellikler ekleme motivasyonu vermek için herhangi bir miktar bağış yapın.😇\n\n🐛 Hataları bildirmek veya yeni bir özellik talep etmek için destek grubumuza katılın ve orada bize anlatın.",
 
-        "ukrainian": "<b>{}</b>\n\nНаразі ви можете підтримати нас, підписавшись на наш канал YouTube і підписавшись на GitHub.😇\n\n🐛 Щоб повідомити про помилки або запросити нову функцію, приєднуйтесь до нашого дискусійного чату та обговорюйте його там."
+        "ukrainian": "<b>{}</b>\n\nДякуємо за ваше бажання внести свій внесок. Пожертвуйте будь -яку суму, щоб підтримати цю послугу і дати мені мотивацію додавати нові функції.😇\n\n🐛 Щоб повідомити про помилки або запросити нову функцію, приєднуйтесь до нашого дискусійного чату та обговорюйте його там."
     },
 
     "shareText": {
@@ -3001,6 +3001,44 @@
         "turkish": "🌟 GitHub",
 
         "ukrainian": "🌟 GitHub"
+    },
+
+    "donateBtn": {
+        "english": "☕  Donate",
+
+        "nepali": "☕  दान गर्नुहोस्",
+
+        "bengali": "☕  দান করুন",
+
+        "belarusian": "☕  Ахвяруйце",
+
+        "catalan": "☕  Donar",
+
+        "dutch": "☕  Doneren",
+
+        "french": "☕  Faire un don",
+
+        "german": "☕  Spenden",
+
+        "hindi": "☕  दान करना",
+
+        "italian": "☕  Donare",
+
+        "korean": "☕  기부",
+
+        "malay": "☕  Sumbang",
+
+        "polish": "☕  Podarować",
+
+        "portuguese": "☕  Doar",
+
+        "russian": "☕  Пожертвовать",
+
+        "spanish": "☕  Donar",
+
+        "turkish": "☕  Bağış yapmak",
+
+        "ukrainian": "☕  Пожертвувати"
     },
 
     "shareWithFriendsBtn": {
