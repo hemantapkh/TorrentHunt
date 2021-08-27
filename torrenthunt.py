@@ -239,7 +239,8 @@ def result(response, userLanguage, torrentType, page, category=None, week=None, 
     elif torrentType == 'top':
         markup.add(telebot.types.InlineKeyboardButton(text='Pirate Bay 🔎', switch_inline_query_current_chat=f"!pb --top"))
     if msg:
-        markup.add(telebot.types.InlineKeyboardButton(text=language['donateBtn'][userLanguage], url='https://buymeacoffee.com/hemantapkh'))
+        #markup.add(telebot.types.InlineKeyboardButton(text=language['donateBtn'][userLanguage], url='https://buymeacoffee.com/hemantapkh'))
+        markup.add(telebot.types.InlineKeyboardButton(text='🌟 Rate ', url='https://t.me/tlgrmcbot?start=torrenthuntbot-review'))
     
     return msg, markup
 
