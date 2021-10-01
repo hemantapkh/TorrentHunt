@@ -1,7 +1,7 @@
 import sqlite3
 import os, json
 
-config = json.load(open('config.json'))
+config = json.load(open('src/config.json'))
 database = config['database']
 
 if os.path.exists(database):
@@ -20,6 +20,7 @@ print('[+] Table users created successfully.')
 conn.execute('''CREATE TABLE settings
          (ownerId       INTEGER PRIMARY KEY,
          language       TEXT DEFAULT "english",
+         defaultSite    TEXT DEFAULT "piratebay",
          restrictedMode INTEGER DEFAULT 1
          );''')
 

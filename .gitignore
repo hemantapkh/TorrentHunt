@@ -1,6 +1,5 @@
 .vscode/
 env/
 __pycache__
-torrenthunt.sqlite
-database.sqlite
+*.sqlite
 config.json
