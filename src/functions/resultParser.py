@@ -65,9 +65,9 @@ def result(response, userLanguage, torrentType, page, category=None, week=None, 
                     markup.add(telebot.types.InlineKeyboardButton(language['previousBtn'][userLanguage], callback_data=cb))                      
                         
     if query:
-        markup.add(telebot.types.InlineKeyboardButton(text='⚡️ 1337x 🔎', switch_inline_query_current_chat=f"!1337x {query}"), telebot.types.InlineKeyboardButton(text='🚀 Pirate 🔎', switch_inline_query_current_chat=f"!pb {query}"), telebot.types.InlineKeyboardButton(text='⚠️ Rarbg 🔎', switch_inline_query_current_chat=f"!rb {query}"))
-        markup.add(telebot.types.InlineKeyboardButton(text='🎎 Nyaa 🔎', switch_inline_query_current_chat=f"!nyaa {query}"), telebot.types.InlineKeyboardButton(text='🔻 Ez 🔎', switch_inline_query_current_chat=f"!ez {query}"), telebot.types.InlineKeyboardButton(text='🐌 Tor Lock 🔎', switch_inline_query_current_chat=f"!tl {query}"))
-        markup.add(telebot.types.InlineKeyboardButton(text='🍿 YTS 🔎', switch_inline_query_current_chat=f"!yts {query}"), telebot.types.InlineKeyboardButton(text='⚡️ Et 🔎', switch_inline_query_current_chat=f"!et {query}") , telebot.types.InlineKeyboardButton(text='🚀 Galaxy 🔎', switch_inline_query_current_chat=f"!tg {query}"))
+        markup.add(telebot.types.InlineKeyboardButton(text='⚡️ 1337x', switch_inline_query_current_chat=f"!1337x {query}"), telebot.types.InlineKeyboardButton(text='⚡️ Pirate', switch_inline_query_current_chat=f"!pb {query}"), telebot.types.InlineKeyboardButton(text='⚡️ Rarbg', switch_inline_query_current_chat=f"!rb {query}"))
+        markup.add(telebot.types.InlineKeyboardButton(text='🎎 Nyaa', switch_inline_query_current_chat=f"!nyaa {query}"), telebot.types.InlineKeyboardButton(text='📺 Ez', switch_inline_query_current_chat=f"!ez {query}"), telebot.types.InlineKeyboardButton(text='⚡️ Tor Lock', switch_inline_query_current_chat=f"!tl {query}"))
+        markup.add(telebot.types.InlineKeyboardButton(text='🍿 YTS', switch_inline_query_current_chat=f"!yts {query}"), telebot.types.InlineKeyboardButton(text='📺 Et', switch_inline_query_current_chat=f"!et {query}") , telebot.types.InlineKeyboardButton(text='⚡️ Galaxy', switch_inline_query_current_chat=f"!tg {query}"))
     
     else:
         if msg:

@@ -70,8 +70,6 @@ def inlineSearch(inline_query):
                             break
 
                         thumbnail = item['Poster'] if 'Poster' in item and item['Poster'] not in ['','https://img.picturegalaxy.org/static/noposter.jpg'] else f'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/{site}.jpg'
-                        #! Removing extra https (Bug in the search API)
-                        thumbnail = thumbnail[6:]  if thumbnail[:12] == 'https:https:' else thumbnail
                         
                         queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['Name'], url=item['Url'], hide_url=True, thumb_url=thumbnail, thumb_width='123', thumb_height='182', description=f"{language['size'][userLanguage] + item['Size'] if 'Size' in item else language['size'][userLanguage] + item['Files'][0]['Size'] if site == 'yts' else ''} {', '+language['seeders'][userLanguage] + item['Seeders'] if 'Seeders' in item and item['Seeders'] != '-' else ''} {', '+language['leechers'][userLanguage] + item['Leechers'] if 'Leechers' in item else ''}", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(inline_query.from_user.id, item, site), parse_mode='HTML'), reply_markup=markup))
                     
