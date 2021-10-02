@@ -27,25 +27,22 @@ class dbQuery():
         con.row_factory = lambda cursor, row: row[0]
         cur = con.cursor()
         
-        users = cur.execute(f'SELECT * FROM users WHERE userId NOT NULL').fetchall()
+        users = cur.execute(f'SELECT userId FROM users').fetchall()
         con.commit()
 
-        return users if users else None
+        return users
     
     #: Get all users exclude certain languages
-    #: languages must be of list type
+    #: languages must inside a list
     def getUsersExcept(self, languages):
         con = sqlite3.connect(self.db)
         con.row_factory = lambda cursor, row: row[0]
         cur = con.cursor()
         
-        users = cur.execute(f'SELECT * FROM users WHERE userId NOT NULL').fetchall()
+        users = cur.execute(f"SELECT ownerId FROM settings WHERE language NOT IN {str(languages).replace('[','(').replace(']',')')}").fetchall()
         con.commit()
 
-        for language in languages:
-            users = [item for item in users if item not in self.getUsers(language)] if self.getUsers(language) else users
-
-        return users if users else None
+        return users
     
     #: Get users of particular language
     def getUsers(self, language):
@@ -56,7 +53,7 @@ class dbQuery():
         users = cur.execute(f'SELECT ownerId FROM settings WHERE language="{language}"').fetchall()
         con.commit()
 
-        return users if users else None
+        return users
 
     #: Get the user's settings
     def getSetting(self, userId, var):
