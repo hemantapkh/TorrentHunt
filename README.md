@@ -26,11 +26,24 @@
 <img src='https://img.shields.io/badge/Channel-Join-blue?style=for-the-badge&logo=telegram'>
 </a>
 </P>
-<h2 align='center'>🔍 Torrent Hunt Bot</h2>
+<h1 align='center'>🔍 Torrent Hunt Bot</h1>
 
 <p align="center">
 Torrent Hunt Bot is a telegram bot to search and explore torrents from different sources. It can show you the result of your query in a snap. Furthermore, you can explore top, trending, & popular torrents and browse torrents of a certain category. 
 </P>
+
+# 🌐 Supported Torrent Sources
+
+- [1337x.to](https://1337x.to/)
+- [The pirate bay](https://thehiddenbay.com/)
+- [Torrent Galaxy](https://torrentgalaxy.to/)
+- [RARBG](https://rargb.to/)
+- [Nyaa](https://nyaa.si/)
+- [YTS](https://yts.mx/)
+- [Ez Tv](https://eztv.re/)
+- [Tor lock](https://www.torlock.com/)
+- [ET Tv](https://www.ettvcentral.com/)
+
 
 # ⛲ Features
 
@@ -43,6 +56,7 @@ Torrent Hunt Bot is a telegram bot to search and explore torrents from different
 - Get the shortened URL of the magnet link
 - Supports inline query with thumbnail
 - Restriction mode to hide explicit content
+- Directly add the torrent in your [seedr](https://seedr.cc) account
 
 # 🗣️ Languages
 
@@ -64,7 +78,7 @@ Torrent Hunt Bot can talk in 18 different languages.
 - Portuguese
 - Russian
 - Spanish
-- Turkish
+- Turkish (Verified by [Berce](https://github.com/must4f))
 - Ukrainian
 
 `Unverified languages are translated with Google Translator and may contain errors. Feel free to create a Pull Request with modifications to the language.json file.`
@@ -81,7 +95,7 @@ See [LICENSE](LICENSE) for more information.
 
 ---
 
-## ⚙️ Deployment
+## ⚒️ Deployment
 
 * Clone the repository, create a virtual environment, and install the requirements
 
@@ -89,7 +103,44 @@ See [LICENSE](LICENSE) for more information.
     git clone https://github.com/hemantapkh/torrenthunt && virtualenv env && source env/bin/activate && cd torrenthunt && pip install -r requirements.txt
     ```
 
-* Add your bot token in [config.json](config.json) file
+* Edit the [config.json](src/config.json) file
+
+    <details>
+    <summary>⚙️ Click here to see a sample config file</summary>
+    
+    ```json
+    {
+    "botToken": "<BOT Token>",
+
+    "connectionType": "polling",
+
+    "webhookOptions":{
+        "webhookHost": null,
+        
+        "webhookPort": null,
+        
+        "webhookListen": "0.0.0.0",
+        
+        "sslCertificate": null,
+        
+        "sslPrivateKey": null
+    },
+    
+    "adminId" : "<Admin UserId>", // Use @GetUserIdBot to find your user id
+
+    "database": "torrenthunt.sqlite",
+
+    "cache": "cache",
+
+    "cacheTime": 86400,
+
+    "language": "language.json",
+
+    "apiLink": "https://torrents-api.ryukme.repl.co/api" // Host your own API for better performance (https://github.com/Ryuk-me/Torrents-Api)
+    }
+    ```
+    </details>
+
 * Run the [migration.py](migrations.py) file to open a database.
 
     ```python
@@ -116,7 +167,7 @@ While polling and webhooks both accomplish the same task, webhooks are far more 
 
     *"Common Name (e.g. server FQDN or YOUR name)" should be your Host IP.*
 
-- Edit [config.json](config.json) file and set
+- Edit [config.json](src/config.json) file and set
 
     - **connectionType** = **webhook**
     - **webhookHost** = **IP/Host where the bot is running**
@@ -172,7 +223,7 @@ You can set up GitHub actions to update the bot automatically on every push.
 
 - Create another GitHub secret with name `HOST` and save your Host IP.
 
-- Edit [config.json](config.json) file and set
+- Edit [config.json](src/config.json) file and set
 
     - **database** = **/opt/TorrentHunt/database.sqlite**
     - If you are using webhooks, copy the SSL certificate and private key in `/opt/TorrentHunt` and set
@@ -197,7 +248,7 @@ Any contributions you make are **greatly appreciated**.
 
 For minor fix, you can directly create a pull request and for adding a new feature, let's first discuss it in our [telegram group](https://t.me/h9discussion) or in [GitHub Discussion](https://github.com/hemantapkh/torrenthunt/discussions).
 
------
-Made using [1337x](https://github.com/hemantapkh/1337x) and [pyTelegramBotApi](https://github.com/eternnoir/pyTelegramBotAPI) in Python💙 by [Hemanta Pokharel](https://github.com/hemantapkh/) [[✉️](mailto:hemantapkh@yahoo.com) [💬](https://t.me/hemantapkh) [📺](https://youtube.com/h9youtube)]
+**🙏 Special thanks to [Ryuk-me](https://github.com/Ryuk-me) for creating [Torrents-Api](https://github.com/Ryuk-me/Torrents-Api) which is used for inline query in Torrent Hunt.**
 
-Powered by [1337x.to](https://www.1337x.to) and [The Pirate Bay](https://tpb.party)🔥
+-----
+❇️ Made using [1337x](https://github.com/hemantapkh/1337x) and [pyTelegramBotApi](https://github.com/eternnoir/pyTelegramBotAPI) in Python💙 by [Hemanta Pokharel](https://github.com/hemantapkh/) [[✉️](mailto:hemantapkh@yahoo.com) [💬](https://t.me/hemantapkh) [📺](https://youtube.com/h9youtube)]
