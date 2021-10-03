@@ -1,0 +1,29 @@
+{
+    "botToken": null,
+
+    "connectionType": "polling",
+
+    "webhookOptions":{
+        "webhookHost": null,
+        
+        "webhookPort": null,
+        
+        "webhookListen": "0.0.0.0",
+        
+        "sslCertificate": null,
+        
+        "sslPrivateKey": null
+    },
+    
+    "adminId" : null,
+
+    "database": "torrenthunt.sqlite",
+
+    "cache": "cache",
+
+    "cacheTime": 86400,
+
+    "language": "language.json",
+
+    "apiLink": "https://torrents-api.ryukme.repl.co/api"
+}

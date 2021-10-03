@@ -103,7 +103,9 @@ See [LICENSE](LICENSE) for more information.
     git clone https://github.com/hemantapkh/torrenthunt && virtualenv env && source env/bin/activate && cd torrenthunt && pip install -r requirements.txt
     ```
 
-* Edit the [config.json](src/config.json) file
+* Host the [Torrents-API](https://github.com/Ryuk-me/Torrents-Api) on your own server for better performance or leave it default. This API will be used for inline query only.
+
+* Edit the [src/sample-config.json](src/sample-config.json) file and rename it to `config.json`
 
     <details>
     <summary>⚙️ Click here to see a sample config file</summary>
@@ -126,7 +128,7 @@ See [LICENSE](LICENSE) for more information.
         "sslPrivateKey": null
     },
     
-    "adminId" : "<Admin UserId>", // Use @GetUserIdBot to find your user id
+    "adminId" : "<Admin UserId>", 
 
     "database": "torrenthunt.sqlite",
 
@@ -136,7 +138,7 @@ See [LICENSE](LICENSE) for more information.
 
     "language": "language.json",
 
-    "apiLink": "https://torrents-api.ryukme.repl.co/api" // Host your own API for better performance (https://github.com/Ryuk-me/Torrents-Api)
+    "apiLink": "https://torrents-api.ryukme.repl.co/api" 
     }
     ```
     </details>
@@ -167,7 +169,7 @@ While polling and webhooks both accomplish the same task, webhooks are far more 
 
     *"Common Name (e.g. server FQDN or YOUR name)" should be your Host IP.*
 
-- Edit [config.json](src/config.json) file and set
+- Rename the [src/sample-config.json](src/sample-config.json) file  to `config.json` and set
 
     - **connectionType** = **webhook**
     - **webhookHost** = **IP/Host where the bot is running**
@@ -223,7 +225,7 @@ You can set up GitHub actions to update the bot automatically on every push.
 
 - Create another GitHub secret with name `HOST` and save your Host IP.
 
-- Edit [config.json](src/config.json) file and set
+- Rename the [src/sample-config.json](src/sample-config.json) file  to **config.json** and set
 
     - **database** = **/opt/TorrentHunt/database.sqlite**
     - If you are using webhooks, copy the SSL certificate and private key in `/opt/TorrentHunt` and set
