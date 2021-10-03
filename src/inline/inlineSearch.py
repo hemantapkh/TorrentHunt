@@ -105,6 +105,6 @@ def queryMessageContent(userId, item, torrentSite):
         msg += f"{language['leechers'][userLanguage]}{item['Leechers'] if 'Leechers' in item else '-'}\n"
         msg += f"{language['uploadedOn'][userLanguage]}{item['DateUploaded'] if 'DateUploaded' in item else '-'}\n\n"
     
-        msg += f"<b>Magnet Link: </b>{'<code>'+item['Magnet']+'</code>' if 'Magnet' in item else language['errorFetchingLink'][userLanguage].replace('.','')}"
+        msg += f"<b>Magnet Link: </b>{'<code>'+item['Magnet']+'</code>' if 'Magnet' in item else language['errorFetchingLink'][userLanguage].replace('.','')}\n\n🔥<b>via @TorrentHuntBot</b>"
     
     return msg
