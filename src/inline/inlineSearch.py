@@ -40,9 +40,6 @@ def inlineSearch(inline_query):
             bot.answer_inline_query(inline_query.id, results=[], cache_time=0, is_personal=True, switch_pm_text=f'Enter the query to search in {siteName[site]}', switch_pm_parameter='inlineQuery')
         
         else:
-            markup = telebot.types.InlineKeyboardMarkup()
-            markup.add(telebot.types.InlineKeyboardButton(text=language['donateBtn'][userLanguage], url='https://buymeacoffee.com/hemantapkh'))
-
             if inline_query.query.split()[0] in siteList:
                 site = siteList[inline_query.query.split()[0]]
                 query = ' '.join(inline_query.query.split()[1:])
@@ -70,6 +67,15 @@ def inlineSearch(inline_query):
                             break
 
                         thumbnail = item['Poster'] if 'Poster' in item and item['Poster'] not in ['','https://img.picturegalaxy.org/static/noposter.jpg'] else f'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/{site}.jpg'
+                        
+                        if botId == '1700458114' and 'Magnet' in item:
+                            markup = telebot.types.InlineKeyboardMarkup()
+                            magnetKey = 'Db_'+dbSql.setMagnet(item['Magnet'])
+                            markup.add(telebot.types.InlineKeyboardButton(text=language['addToSeedr'][userLanguage], url=f't.me/torrentseedrbot?start=addTorrent{magnetKey}'))
+                        
+                        else:
+                            markup = telebot.types.InlineKeyboardMarkup()
+                            markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
                         
                         queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['Name'], url=item['Url'], hide_url=True, thumb_url=thumbnail, thumb_width='123', thumb_height='182', description=f"{language['size'][userLanguage] + item['Size'] if 'Size' in item else language['size'][userLanguage] + item['Files'][0]['Size'] if site == 'yts' else ''} {', '+language['seeders'][userLanguage] + item['Seeders'] if 'Seeders' in item and item['Seeders'] != '-' else ''} {', '+language['leechers'][userLanguage] + item['Leechers'] if 'Leechers' in item else ''}", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(inline_query.from_user.id, item, site), parse_mode='HTML'), reply_markup=markup))
                     

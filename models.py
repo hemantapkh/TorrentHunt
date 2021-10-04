@@ -1,8 +1,10 @@
 import sqlite3
+import uuid, time
 
 class dbQuery():
-    def __init__(self, db):
+    def __init__(self, db, mdb):
         self.db = db
+        self.mdb = mdb
     
     #: Add the user into the database if not registered
     def setAccount(self, userId):
@@ -77,3 +79,14 @@ class dbQuery():
         cur.execute(f'INSERT OR IGNORE INTO settings (ownerId, {var}) VALUES ({userId}, {value})')
         cur.execute(f'UPDATE settings SET {var}={value} WHERE ownerId={userId}')
         con.commit()
+
+    #: Set magnet link in the database
+    def setMagnet(self, magnetLink):
+        con = sqlite3.connect(self.mdb)
+        cur = con.cursor()
+
+        key = uuid.uuid4().hex
+        cur.execute(f'Insert into data (key, date, magnetLink) VALUES ("{key}", {int(time.time())}, "{magnetLink}")')
+        con.commit()
+
+        return key
