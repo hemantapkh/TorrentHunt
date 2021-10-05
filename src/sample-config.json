@@ -19,6 +19,8 @@
 
     "database": "torrenthunt.sqlite",
 
+    "magnetDatabase": "magnets.sqlite",
+
     "cache": "cache",
 
     "cacheTime": 86400,

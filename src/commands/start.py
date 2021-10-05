@@ -1,6 +1,6 @@
 import base64
 from src.objs import *
-from src.functions.resultParser import result
+from src.commands.querySearch import querySearch
 from src.functions.keyboard import mainReplyKeyboard, lang
 
 #: Start handler
@@ -13,14 +13,10 @@ def start(message):
         #! If start paramater is passed
         if params:
             try:
-                text = base64.b64decode(params.encode('utf')).decode('utf')
-                sent = bot.send_message(message.chat.id, language['searchingQuery'][userLanguage].format(text))
-                response = torrent.search(text)
+                message.text = base64.b64decode(params.encode('utf')).decode('utf')
 
-                msg, markup = result(response, userLanguage, torrentType='query', page=1, query=text)
+                querySearch(message, userLanguage)
 
-                bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg or language['noResults'][userLanguage], reply_markup=markup)
-            
             except Exception:
                 bot.send_message(message.chat.id, text=language['greet'][userLanguage].format(message.from_user.first_name), reply_markup=mainReplyKeyboard(userLanguage), disable_web_page_preview=True)
         else:

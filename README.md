@@ -57,6 +57,7 @@ Torrent Hunt Bot is a telegram bot to search and explore torrents from different
 - Supports inline query with thumbnail
 - Restriction mode to hide explicit content
 - Directly add the torrent in your [seedr](https://seedr.cc) account
+- Auto typo correction and suggestions
 
 # 🗣️ Languages
 
@@ -131,6 +132,8 @@ See [LICENSE](LICENSE) for more information.
     "adminId" : "<Admin UserId>", 
 
     "database": "torrenthunt.sqlite",
+
+    "magnetDatabase": "magnets.sqlite",
 
     "cache": "cache",
 

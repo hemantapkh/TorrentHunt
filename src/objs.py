@@ -3,7 +3,6 @@ from os import path
 from models import dbQuery
 
 import telebot, py1337x
-from tpblite import TPB
 
 #! Finding the absolute path of the config file
 scriptPath = path.abspath(__file__)
@@ -15,7 +14,6 @@ language = json.load(open(config['language']))
 dbSql = dbQuery(config['database'], config['magnetDatabase'])
 
 torrent = py1337x.py1337x(proxy='1337x.to', cache=config['cache'], cacheTime=config['cacheTime'])
-pirateBay = TPB()
 
 botId = config['botToken'].split(':')[0]
 bot = telebot.TeleBot(config['botToken'], parse_mode='HTML')
