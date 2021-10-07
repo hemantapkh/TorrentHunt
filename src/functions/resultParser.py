@@ -9,17 +9,18 @@ def result(response, userLanguage, torrentType, page, category=None, week=None, 
     
     msg = ''
     if response['items']:
-        response['items'].reverse()
         for count, item in enumerate(response['items']):
             #! Show only 20 items per page
             if count >= 20:
                 break
 
-            msg += f"<b>{((page)*20)-count}. {item['name']}</b>\n\n"
-            msg += f"💾 {item['size']}, 🟢 {item['seeders']}, 🔴 {item['leechers']}\n\n"
+            newMsg = f"<b>{((page-1)*20)+count+1}. {item['name']}</b>\n\n"
+            newMsg += f"💾 {item['size']}, 🟢 {item['seeders']}, 🔴 {item['leechers']}\n\n"
 
-            msg += f"{language['link'][userLanguage]} /getLink_{item['torrentId']}\n"
-            msg += f"{language['moreInfo'][userLanguage]} /getInfo_{item['torrentId']}\n\n"
+            newMsg += f"{language['link'][userLanguage]} /getLink_{item['torrentId']}\n"
+            newMsg += f"{language['moreInfo'][userLanguage]} /getInfo_{item['torrentId']}\n\n"
+
+            msg = newMsg + msg
 
         pageCount = response['pageCount']
 
