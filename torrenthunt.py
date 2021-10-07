@@ -27,9 +27,16 @@ app.router.add_post('/{token}/', handle)
 def text(message):
     userLanguage = dbSql.getSetting(message.from_user.id, 'language')
 
-    #! Don't search if the message is via bot
-    if 'via_bot' in message.json.keys() and message.json['via_bot']['id'] == 1700458114:
-        pass
+    
+    if 'via_bot' in message.json.keys():
+        #! Don't search if the message is via bot
+        if message.json['via_bot']['id'] == int(botId):
+            pass
+
+        #! IMDB bot
+        elif message.json['via_bot']['username'] == 'imdb':
+            message.text = message.text.split(' •')[0]
+            querySearch(message, userLanguage)
     
     #! Main menu
     elif message.text == language['mainMenuBtn'][userLanguage]:
