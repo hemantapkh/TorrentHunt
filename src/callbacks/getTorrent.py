@@ -16,8 +16,6 @@ def getTorrent(call, userLanguage):
         bot.send_chat_action(call.message.chat.id, 'upload_document')
         torrentInfo = torrent.info(torrentId=torrentId)
 
-        # -- Writing the file and sending it because telegram don't let change the file name. ToDo: Change this method--
-        # Create temp directory if not exists
         Path(f"/tmp/TorrentHunt/{call.from_user.id}").mkdir(parents=True, exist_ok=True)
 
         open(f"/tmp/TorrentHunt/{call.from_user.id}/{torrentInfo['infoHash']}.torrent", 'wb').write(response.content)

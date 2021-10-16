@@ -1,7 +1,7 @@
 import base64
 from src.objs import *
 from src.functions.resultParser import result
-from src.functions.funs import getSuggestions, sortList
+from src.functions.funs import getSuggestions
 
 #: Custom query search
 def querySearch(message, userLanguage):
@@ -22,27 +22,7 @@ def querySearch(message, userLanguage):
                     msg, markup = result(response, userLanguage, torrentType='query', page=1, query=suggestion[0], originalQuery=message.text)
 
                 if not msg:
-                    markup.row_width = 3
-                    suggestion = sortList(suggestion)
-                    buttons = []
-                    smallButtons = []
-                    
-                    for i in suggestion[1:]:
-                        suggestedQuery = base64.b64encode(i.encode()).decode()
-                        
-                        if len(suggestedQuery) <= 64:
-                            if len(i) < 13:
-                                smallButtons.append(telebot.types.InlineKeyboardButton(text=i, url=f"https://t.me/torrenthuntbot?start={suggestedQuery}"))
-                            
-                            elif len(i) < 18:
-                                buttons.append(telebot.types.InlineKeyboardButton(text=i, url=f"https://t.me/torrenthuntbot?start={suggestedQuery}"))
-                            
-                            else:
-                                markup.add(telebot.types.InlineKeyboardButton(text=i, url=f"https://t.me/torrenthuntbot?start={suggestedQuery}"))
-
-                    markup.add(*smallButtons)
-                    markup.row_width = 2
-                    markup.add(*buttons)
+                    markup.add(telebot.types.InlineKeyboardButton(text='🔎 Google suggestions', switch_inline_query_current_chat=f'!google {message.text}'))
                     
                 bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg or language['noResults'][userLanguage], reply_markup=markup)
             

@@ -2,6 +2,7 @@ import requests
 from src.objs import *
 from ast import literal_eval
 from src.functions.funs import isSubscribed
+from src.inline.google import googleSuggestions
 from src.functions.keyboard import notSubscribedMarkup
 
 siteList = {
@@ -38,6 +39,9 @@ def inlineSearch(inline_query):
 
         if len(inline_query.query) == 0:
             bot.answer_inline_query(inline_query.id, results=[], cache_time=0, is_personal=True, switch_pm_text=f'Enter the query to search in {siteName[site]}', switch_pm_parameter='inlineQuery')
+        
+        elif inline_query.query.split()[0] == '!google':
+            googleSuggestions(inline_query, userLanguage)
         
         else:
             if inline_query.query.split()[0] in siteList:

@@ -29,9 +29,14 @@ def text(message):
 
     
     if 'via_bot' in message.json.keys():
-        #! Don't search if the message is via bot
+        #! Don't search if the message is via the same bot
         if message.json['via_bot']['id'] == int(botId):
-            pass
+            if message.text.startswith('💫'):
+                message.text = message.text[1:]
+                querySearch(message, userLanguage)
+            
+            else:
+                pass
 
         #! IMDB bot
         elif message.json['via_bot']['username'] == 'imdb':
