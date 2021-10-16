@@ -8,7 +8,7 @@ def querySearch(message, userLanguage):
     sent = bot.send_message(message.chat.id, language['searchingQuery'][userLanguage].format(message.text))
     response = torrent.search(message.text)
 
-    msg, markup = result(response, userLanguage, torrentType='query', page=1, query=message.text)
+    msg, markup = result(response, userLanguage, torrentType='query', page=1, query=message.text, originalQuery=message.text)
     
     if not msg:
         try:
@@ -19,7 +19,7 @@ def querySearch(message, userLanguage):
                     bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=language['searchingQuery'][userLanguage].format(suggestion[0]))
                     response = torrent.search(suggestion[0])
                     
-                    msg, markup = result(response, userLanguage, torrentType='query', page=1, query=suggestion[0])
+                    msg, markup = result(response, userLanguage, torrentType='query', page=1, query=suggestion[0], originalQuery=message.text)
 
                 if not msg:
                     markup.row_width = 3
