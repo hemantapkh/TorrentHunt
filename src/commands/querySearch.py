@@ -6,9 +6,10 @@ from src.functions.funs import getSuggestions
 #: Custom query search
 def querySearch(message, userLanguage):
     sent = bot.send_message(message.chat.id, language['searchingQuery'][userLanguage].format(message.text))
+    resultType = dbSql.getSetting(message.chat.id, 'defaultMode')
     response = torrent.search(message.text)
 
-    msg, markup = result(response, userLanguage, torrentType='query', page=1, query=message.text, originalQuery=message.text)
+    msg, markup = result(response, userLanguage, resultType, torrentType='query', page=1, query=message.text, originalQuery=message.text)
     
     if not msg:
         try:
@@ -19,7 +20,7 @@ def querySearch(message, userLanguage):
                     bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=language['searchingQuery'][userLanguage].format(suggestion[0]))
                     response = torrent.search(suggestion[0])
                     
-                    msg, markup = result(response, userLanguage, torrentType='query', page=1, query=suggestion[0], originalQuery=message.text)
+                    msg, markup = result(response, userLanguage, resultType, torrentType='query', page=1, query=suggestion[0], originalQuery=message.text)
 
                 if not msg:
                     markup.add(telebot.types.InlineKeyboardButton(text='🔎 Google suggestions', switch_inline_query_current_chat=f'!google {message.text}'))

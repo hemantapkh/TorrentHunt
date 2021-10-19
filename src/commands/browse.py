@@ -59,18 +59,20 @@ def browse3(message, userLanguage, torrentType, category):
             browse2(message, userLanguage, torrentType, category, customMessage=language['unknownTimePeriod'][userLanguage])
         
         else:
+            resultType = dbSql.getSetting(message.from_user.id, 'defaultMode')
             bot.send_message(message.chat.id, text=language['fetchingTorrents'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
            
             response =  getattr(torrent, torrentType)(category=None if category == 'all' else category, week=week)
-            msg, markup = result(response, userLanguage, torrentType, 1, category, week)
+            msg, markup = result(response, userLanguage, resultType, torrentType, 1, category, week)
             
             bot.send_message(chat_id=message.chat.id, text=msg or language['emptyPage'][userLanguage], reply_markup=markup)
 
 #: Next step handler for top and browse torrents
 def browse4(message, userLanguage, torrentType, category):
     bot.send_message(message.chat.id, text=language['fetchingTorrents'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
+    resultType = dbSql.getSetting(message.from_user.id, 'defaultMode')
     
     response =  getattr(torrent, torrentType)(category=None if category == 'all' else category)
-    msg, markup = result(response, userLanguage, torrentType, 1, category)
+    msg, markup = result(response, userLanguage, resultType, torrentType, 1, category)
 
     bot.send_message(chat_id=message.chat.id, text=msg or language['emptyPage'][userLanguage], reply_markup=markup)

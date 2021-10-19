@@ -2,7 +2,7 @@ from time import time
 from src.objs import *
 
 #: Parse the torrent result
-def result(response, userLanguage, torrentType, page, category=None, week=None, query=None, originalQuery=None):
+def result(response, userLanguage, resultType, torrentType, page, category=None, week=None, query=None, originalQuery=None):
     markup = telebot.types.InlineKeyboardMarkup()
     markup.one_time_keyboard=True
     markup.row_width = 5
@@ -17,8 +17,7 @@ def result(response, userLanguage, torrentType, page, category=None, week=None, 
             newMsg = f"<b>{((page-1)*20)+count+1}. {item['name']}</b>\n\n"
             newMsg += f"💾 {item['size']}, 🟢 {item['seeders']}, 🔴 {item['leechers']}\n\n"
 
-            newMsg += f"{language['link'][userLanguage]} /getLink_{item['torrentId']}\n"
-            newMsg += f"{language['moreInfo'][userLanguage]} /getInfo_{item['torrentId']}\n\n"
+            newMsg += f"{language['link'][userLanguage]} /{'getLink' if resultType=='link' else 'getInfo'}_{item['torrentId']}\n\n"
 
             msg = newMsg + msg
 

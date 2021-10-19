@@ -2662,41 +2662,41 @@
 
 
     "magnetDownloadBtn": {
-        "english": "🧲 Magnet download",
+        "english": "🧲 Magnet",
 
-        "nepali": "🧲 म्याग्नेट डाउनलोड",
+        "nepali": "🧲 म्याग्नेट",
 
-        "bengali": "🧲 ম্যাগনিট ডাউনলোড",
+        "bengali": "🧲 ম্যাগনিট",
 
-        "belarusian": "🧲 Magnet спампаваць",
+        "belarusian": "🧲 Magnet",
 
-        "catalan": "🧲 Magnet descarregar",
+        "catalan": "🧲 Magnet",
 
-        "dutch": "🧲 Magnet downloaden",
+        "dutch": "🧲 Magnet",
 
-        "french": "🧲 Magnet Télécharger",
+        "french": "🧲 Magnet",
 
-        "german": "🧲 Magnet herunterladen",
+        "german": "🧲 Magnet",
 
-        "hindi": "🧲 Magnet डाउनलोड",
+        "hindi": "🧲 Magnet",
 
-        "italian": "🧲 Magnet Scarica",
+        "italian": "🧲 Magnet",
 
-        "korean": "🧲 Magnet 다운로드",
+        "korean": "🧲 Magnet",
 
-        "malay": "🧲 Magnet muat turun",
+        "malay": "🧲 Magnet",
 
-        "polish": "🧲 Pobierz magnet",
+        "polish": "🧲 Magnet",
 
-        "portuguese": "🧲 Magnet download",
+        "portuguese": "🧲 Magnet",
 
-        "russian": "🧲 Magnet скачать",
+        "russian": "🧲 Magnet",
 
-        "spanish": "🧲 Magnet descargar",
+        "spanish": "🧲 Magnet",
 
-        "turkish": "🧲 Magnet indir",
+        "turkish": "🧲 Magnet",
 
-        "ukrainian": "🧲 Magnet завантажити"
+        "ukrainian": "🧲 Magnet"
     },
 
     "imageBtn": {
@@ -2738,41 +2738,41 @@
     },
 
     "torrentDownloadBtn": {
-        "english": "📄 Torrent download",
+        "english": "📄 Torrent",
 
-        "nepali": "📄 टोरेन्ट डाउनलोड",
+        "nepali": "📄 टोरेन्ट",
 
-        "bengali": "📄 টরেন্ট ডাউনলোড",
+        "bengali": "📄 টরেন্ট",
 
-        "belarusian": "📄 загрузка торэнта",
+        "belarusian": "📄 торэнта",
 
-        "catalan": "📄 Descàrrega de torrent",
+        "catalan": "📄 Torrent",
 
-        "dutch": "📄 Torrent downloaden",
+        "dutch": "📄 Torrent",
 
-        "french": "📄 Téléchargement torrent",
+        "french": "📄 Torrent",
 
-        "german": "📄 Torrent herunterladen",
+        "german": "📄 Torrent",
 
-        "hindi": "📄 टोरेन्ट डाउनलोड",
+        "hindi": "📄 टोरेन्ट",
 
-        "italian": "📄 Download torrent",
+        "italian": "📄 Torrent",
 
-        "korean": "📄 토렌트 다운로드",
+        "korean": "📄 토렌트",
 
-        "malay": "📄 Muat turun torrent",
+        "malay": "📄 Torrent",
 
-        "polish": "📄 Pobieranie torrentów",
+        "polish": "📄 Torrentów",
 
-        "portuguese": "📄 Download torrent",
+        "portuguese": "📄 Torrent",
 
-        "russian": "📄 Торрент скачать",
+        "russian": "📄 Торрент",
 
-        "spanish": "📄 Descarga de torrent",
+        "spanish": "📄 Torrent",
 
-        "turkish": "📄 Torrent indirme",
+        "turkish": "📄 Torrent",
 
-        "ukrainian": "📄 Завантажити торрент"
+        "ukrainian": "📄 торрент"
     },
 
     "addToSeedr": {

@@ -43,6 +43,7 @@ if input1 == 'y':
             (ownerId       INTEGER PRIMARY KEY,
             language       TEXT DEFAULT "english",
             defaultSite    TEXT DEFAULT "piratebay",
+            defaultMode    TEXT DEFAULT "link",
             restrictedMode INTEGER DEFAULT 1
             );''')
 

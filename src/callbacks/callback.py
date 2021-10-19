@@ -1,4 +1,6 @@
 from src.objs import *
+from src.commands.getLink import getLink
+from src.commands.getInfo import getInfo
 from src.commands.settings import settings
 from src.functions.funs import isSubscribed
 from src.callbacks.getImages import getImages
@@ -10,14 +12,25 @@ from src.functions.keyboard import mainReplyKeyboard, lang
 @bot.callback_query_handler(func=lambda call: True)
 def callbackHandler(call):
     userLanguage = dbSql.getSetting(call.from_user.id, 'language')
+    resultType = dbSql.getSetting(call.from_user.id, 'defaultMode')
 
     #! Next page handler for query
     if call.data[:1] == 'q':
-        nextPageQuery(call, userLanguage)
+        nextPageQuery(call, userLanguage, resultType)
 
     #! Next page handler
     elif call.data[:11] == 'cb_nextPage':
-        nextPage(call, userLanguage)
+        nextPage(call, userLanguage, resultType)
+
+    #! Get torrent link
+    elif call.data[:10] == 'cb_getLink':
+        getLink(call, userLanguage, called=True)
+        dbSql.setSetting(call.from_user.id, 'defaultMode', 'link')
+
+    #! Get torrent info
+    elif call.data[:10] == 'cb_getInfo':
+        getInfo(call, userLanguage, called=True)
+        dbSql.setSetting(call.from_user.id, 'defaultMode', 'info')
 
     #! Get torrent images
     elif call.data[:13] == 'cb_getImages:':
