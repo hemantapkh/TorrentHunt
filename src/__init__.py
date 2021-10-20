@@ -21,4 +21,5 @@ from src.inline.inlineSearch import inlineSearch
 #! Functions
 from src.functions.keyboard import *
 from src.functions.resultParser import result
+from src.functions.floodControl import floodControl
 from src.functions.funs import sortList, getSuggestions

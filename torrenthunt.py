@@ -26,66 +26,65 @@ app.router.add_post('/{token}/', handle)
 @bot.message_handler(content_types=['text'])
 def text(message):
     userLanguage = dbSql.getSetting(message.from_user.id, 'language')
+    if floodControl(message, userLanguage):
+        if 'via_bot' in message.json.keys():
+            #! Don't search if the message is via the same bot
+            if message.json['via_bot']['id'] == int(botId):
+                if message.text.startswith('💫'):
+                    message.text = message.text[1:]
+                    querySearch(message, userLanguage)
+                
+                else:
+                    pass
 
-    
-    if 'via_bot' in message.json.keys():
-        #! Don't search if the message is via the same bot
-        if message.json['via_bot']['id'] == int(botId):
-            if message.text.startswith('💫'):
-                message.text = message.text[1:]
+            #! IMDB bot
+            elif message.json['via_bot']['username'] == 'imdb':
+                message.text = message.text.split(' •')[0]
                 querySearch(message, userLanguage)
+        
+        #! Main menu
+        elif message.text == language['mainMenuBtn'][userLanguage]:
+            bot.send_message(message.chat.id, text=language['backToMenu'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
+        
+        #! Trending torrents
+        elif message.text in ['/trending', language['trendingBtn'][userLanguage]]:
+            browse(message, userLanguage, 'trending')
+
+        #! Popular torrents
+        elif message.text in ['/popular', language['popularBtn'][userLanguage]]:
+            browse(message, userLanguage, 'popular')
             
-            else:
-                pass
+        #! Top torrents
+        elif message.text in ['/top', language['topBtn'][userLanguage]]:
+            browse(message, userLanguage, 'top')
+        
+        #! Browse torrents
+        elif message.text in ['/browse', language['browseBtn'][userLanguage]]:
+            browse(message, userLanguage, 'browse')
 
-        #! IMDB bot
-        elif message.json['via_bot']['username'] == 'imdb':
-            message.text = message.text.split(' •')[0]
+        # Settings
+        elif message.text in ['/settings', language['settingsBtn'][userLanguage]]:
+            settings(message, userLanguage)
+
+        #! Help
+        elif message.text in ['/help', language['helpBtn'][userLanguage]]:
+            markup = telebot.types.InlineKeyboardMarkup()
+            markup.add(telebot.types.InlineKeyboardButton(text=language['inlineSearchBtn'][userLanguage], switch_inline_query_current_chat=""))
+            bot.send_message(message.chat.id, language['help'][userLanguage].format(language['helpBtn'][userLanguage]), reply_markup=markup)
+
+        #! Support
+        elif message.text in ['/support', language['supportBtn'][userLanguage]]:
+            markup = telebot.types.InlineKeyboardMarkup()
+            markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'))
+            markup.add(telebot.types.InlineKeyboardButton(text=language['shareWithFriendsBtn'][userLanguage], url=f"https://t.me/share/url?url=t.me/torrenthuntbot&text={language['shareText'][userLanguage]}"), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
+            markup.add(telebot.types.InlineKeyboardButton(text=language['subscribeChannelBtn'][userLanguage], url='https://youtube.com/h9youtube'), telebot.types.InlineKeyboardButton(text=language['followGithubBtn'][userLanguage], url='https://github.com/hemantapkh'))
+            markup.add(telebot.types.InlineKeyboardButton(text=language['donateBtn'][userLanguage], url=f"https://buymeacoffee.com/hemantapkh"))
+            
+            bot.send_message(message.from_user.id, language['support'][userLanguage].format(language['supportBtn'][userLanguage]), reply_markup=markup, disable_web_page_preview=True)
+        
+        #! Query search
+        else:
             querySearch(message, userLanguage)
-    
-    #! Main menu
-    elif message.text == language['mainMenuBtn'][userLanguage]:
-        bot.send_message(message.chat.id, text=language['backToMenu'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
-    
-    #! Trending torrents
-    elif message.text in ['/trending', language['trendingBtn'][userLanguage]]:
-        browse(message, userLanguage, 'trending')
-
-    #! Popular torrents
-    elif message.text in ['/popular', language['popularBtn'][userLanguage]]:
-        browse(message, userLanguage, 'popular')
-        
-    #! Top torrents
-    elif message.text in ['/top', language['topBtn'][userLanguage]]:
-        browse(message, userLanguage, 'top')
-    
-    #! Browse torrents
-    elif message.text in ['/browse', language['browseBtn'][userLanguage]]:
-        browse(message, userLanguage, 'browse')
-
-    # Settings
-    elif message.text in ['/settings', language['settingsBtn'][userLanguage]]:
-        settings(message, userLanguage)
-
-    #! Help
-    elif message.text in ['/help', language['helpBtn'][userLanguage]]:
-        markup = telebot.types.InlineKeyboardMarkup()
-        markup.add(telebot.types.InlineKeyboardButton(text=language['inlineSearchBtn'][userLanguage], switch_inline_query_current_chat=""))
-        bot.send_message(message.chat.id, language['help'][userLanguage].format(language['helpBtn'][userLanguage]), reply_markup=markup)
-
-    #! Support
-    elif message.text in ['/support', language['supportBtn'][userLanguage]]:
-        markup = telebot.types.InlineKeyboardMarkup()
-        markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'))
-        markup.add(telebot.types.InlineKeyboardButton(text=language['shareWithFriendsBtn'][userLanguage], url=f"https://t.me/share/url?url=t.me/torrenthuntbot&text={language['shareText'][userLanguage]}"), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
-        markup.add(telebot.types.InlineKeyboardButton(text=language['subscribeChannelBtn'][userLanguage], url='https://youtube.com/h9youtube'), telebot.types.InlineKeyboardButton(text=language['followGithubBtn'][userLanguage], url='https://github.com/hemantapkh'))
-        markup.add(telebot.types.InlineKeyboardButton(text=language['donateBtn'][userLanguage], url=f"https://buymeacoffee.com/hemantapkh"))
-        
-        bot.send_message(message.from_user.id, language['support'][userLanguage].format(language['supportBtn'][userLanguage]), reply_markup=markup, disable_web_page_preview=True)
-    
-    #! Query search
-    else:
-        querySearch(message, userLanguage)
 
 #: Polling Bot
 if config['connectionType'] == 'polling':

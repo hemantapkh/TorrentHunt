@@ -1406,6 +1406,84 @@
         "ukrainian": "⬅️ Повернутися до головного меню"
     },
 
+
+    "warningTooFast": {
+        "english": "🛑 You are sending messages too fast. Please slow down or you may get banned.",
+
+        "nepali": "🛑 तपाइँ धेरै छिटो सन्देश पठाउँदै हुनुहुन्छ। कृपया ढिलो गर्नुहोस् वा तपाइँ प्रतिबन्धित हुन सक्नुहुन्छ।",
+
+        "bengali": "🛑 আপনি খুব দ্রুত বার্তা পাঠাচ্ছেন। অনুগ্রহ করে ধীর করুন অথবা আপনি নিষিদ্ধ হতে পারেন।",
+
+        "belarusian": "🛑 Вы адпраўляеце паведамленні занадта хутка. Калі ласка, павольней, інакш вас могуць забараніць.",
+
+        "catalan": "🛑 Esteu enviant missatges massa ràpid. Si us plau, reduïu la velocitat o és possible que se us prohibeixi.",
+
+        "dutch": "🛑 Je verstuurt berichten te snel. Alsjeblieft, vertraag of je kunt een ban krijgen.",
+
+        "french": "🛑 Vous envoyez des messages trop rapidement. Veuillez ralentir ou vous pourriez être banni.",
+
+        "german": "🛑 Sie senden zu schnell Nachrichten. Bitte verlangsamen Sie, sonst werden Sie möglicherweise gesperrt.",
+
+        "hindi": "🛑 आप संदेश बहुत तेजी से भेज रहे हैं। कृपया धीमा करें या आप पर प्रतिबंध लगाया जा सकता है।",
+
+        "italian": "🛑 Stai inviando messaggi troppo velocemente. Per favore rallenta o potresti essere bannato.",
+
+        "korean": "🛑 메시지를 너무 빨리 보내고 있습니다. 속도를 줄이지 않으면 차단될 수 있습니다.",
+
+        "malay": "🛑 Anda menghantar mesej terlalu cepat. Harap perlahan atau anda mungkin dilarang.",
+
+        "polish": "🛑 Wysyłasz wiadomości za szybko. Zwolnij, bo możesz zostać zbanowany.",
+
+        "portuguese": "🛑 Você está enviando mensagens muito rápido. Por favor, diminua a velocidade ou você pode ser banido.",
+
+        "russian": "🛑 Вы отправляете сообщения слишком быстро. Пожалуйста, притормози, иначе вас могут забанить.",
+
+        "spanish": "🛑 Estás enviando mensajes demasiado rápido. Por favor, reduzca la velocidad o puede ser expulsado.",
+
+        "turkish": "🛑 Çok hızlı mesaj gönderiyorsun. Lütfen yavaşlayın yoksa yasaklanabilirsiniz.",
+
+        "ukrainian": "🛑 Ви надсилаєте повідомлення надто швидко. Будь ласка, пригальмуйте, інакше вас можуть заборонити."
+    },
+
+
+    "blockedTooFast": {
+        "english": "⛔ You have been banned for 5 minutes for spamming the bot.",
+
+        "nepali": "⛔ तपाइँ बोट स्पामिंग को लागी 5 मिनेट को लागी प्रतिबन्धित गरीएको छ।",
+
+        "bengali": "⛔ বট স্প্যাম করার জন্য আপনাকে 5 মিনিটের জন্য নিষিদ্ধ করা হয়েছে।",
+
+        "belarusian": "⛔ Вас забаранілі на 5 хвілін за спам боту.",
+
+        "catalan": "⛔ Se us ha prohibit durant 5 minuts per brossa de correu brossa.",
+
+        "dutch": "⛔ Je bent 5 minuten verbannen voor het spammen van de bot.",
+
+        "french": "⛔ Vous avez été banni pendant 5 minutes pour spammer le bot.",
+
+        "german": "⛔ Sie wurden für 5 Minuten gesperrt, weil Sie den Bot spammen.",
+
+        "hindi": "⛔ बॉट को स्पैम करने के लिए आपको 5 मिनट के लिए प्रतिबंधित कर दिया गया है।",
+
+        "italian": "⛔ Sei stato bannato per 5 minuti per aver inviato spam al bot.",
+
+        "korean": "⛔ 봇을 스팸하여 5분 동안 차단되었습니다.",
+
+        "malay": "⛔ Anda telah dilarang selama 5 minit kerana menghantar spam ke bot.",
+
+        "polish": "⛔ Zostałeś zbanowany na 5 minut za spamowanie bota.",
+
+        "portuguese": "⛔ Você foi banido por 5 minutos por enviar spam para o bot.",
+
+        "russian": "⛔ Вас забанили на 5 минут за рассылку спама боту.",
+
+        "spanish": "⛔ Ha sido baneado durante 5 minutos por enviar spam al bot.",
+
+        "turkish": "⛔ Bot'a spam gönderdiğiniz için 5 dakika süreyle yasaklandınız.",
+
+        "ukrainian": "⛔ Вас заблокували на 5 хвилин за спам боту."
+    },
+
     "link": {
         "english": "Link: ",
 

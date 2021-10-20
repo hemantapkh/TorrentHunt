@@ -19,6 +19,7 @@ class dbQuery():
         if not isRegistered:
             cur.execute(f'Insert into users (userId) values ({userId})')
             cur.execute(f'Insert into settings (ownerId) values ({userId})')
+            cur.execute(f'Insert into flood (ownerId) values ({userId})')
             con.commit()
         
         return isRegistered
@@ -58,26 +59,26 @@ class dbQuery():
         return users
 
     #: Get the user's settings
-    def getSetting(self, userId, var):
+    def getSetting(self, userId, var, table='settings'):
         self.setAccount(userId)
         con = sqlite3.connect(self.db)
         cur = con.cursor()
         
-        setting = cur.execute(f'SELECT {var} FROM settings WHERE ownerId={userId} limit 1').fetchone()
+        setting = cur.execute(f'SELECT {var} FROM {table} WHERE ownerId={userId} limit 1').fetchone()
         con.commit()
 
         return setting[0] if setting else None
 
     #: Set the user's settings    
-    def setSetting(self, userId, var, value):
+    def setSetting(self, userId, var, value, table='settings'):
         self.setAccount(userId)
         con = sqlite3.connect(self.db)
         cur = con.cursor()
 
         #!? If value is None, put value as NULL else "{string}"
         value = f'"{value}"' if value else 'NULL'
-        cur.execute(f'INSERT OR IGNORE INTO settings (ownerId, {var}) VALUES ({userId}, {value})')
-        cur.execute(f'UPDATE settings SET {var}={value} WHERE ownerId={userId}')
+        cur.execute(f'INSERT OR IGNORE INTO {table} (ownerId, {var}) VALUES ({userId}, {value})')
+        cur.execute(f'UPDATE {table} SET {var}={value} WHERE ownerId={userId}')
         con.commit()
 
     #: Set magnet link in the database
