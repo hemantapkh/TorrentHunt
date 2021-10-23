@@ -1,15 +1,20 @@
 from src.objs import *
 from src.functions.resultParser import result
 from src.functions.funs import textToCategory
+from src.commands.querySearch import querySearch
 from src.functions.keyboard import mainReplyKeyboard, categoryReplyKeyboard
 
 #: Handler for trending, popular, top and browse torrents
-def browse(message,userLanguage, torrentType=None, referred=False, customMessage=None):
-    #! If referred or isSubscribed(message, userLanguage):
-    torrentType = torrentType or message.text.split()[0][1:]
+def browse(message,userLanguage, torrentType=None, customMessage=None):
+    if message.chat.type == 'private':
+        #! If referred or isSubscribed(message, userLanguage):
+        torrentType = torrentType or message.text.split()[0][1:]
+        
+        sent = bot.send_message(message.chat.id, text=customMessage or language['selectCategory'][userLanguage], reply_markup=categoryReplyKeyboard(userLanguage, allCategories=False if torrentType in ['browse', 'popular'] else True, restrictedMode=dbSql.getSetting(message.chat.id, 'restrictedMode')))
+        bot.register_next_step_handler(sent, browse2, userLanguage, torrentType)
     
-    sent = bot.send_message(message.chat.id, text=customMessage or language['selectCategory'][userLanguage], reply_markup=categoryReplyKeyboard(userLanguage, allCategories=False if torrentType in ['browse', 'popular'] else True, restrictedMode=dbSql.getSetting(message.from_user.id, 'restrictedMode')))
-    bot.register_next_step_handler(sent, browse2, userLanguage, torrentType)
+    else:
+        querySearch(message, userLanguage)
 
 #: Next step handler for trending, popular, top and browse torrents
 def browse2(message, userLanguage, torrentType, category=None, customMessage=None):
@@ -59,7 +64,7 @@ def browse3(message, userLanguage, torrentType, category):
             browse2(message, userLanguage, torrentType, category, customMessage=language['unknownTimePeriod'][userLanguage])
         
         else:
-            resultType = dbSql.getSetting(message.from_user.id, 'defaultMode')
+            resultType = dbSql.getSetting(message.chat.id, 'defaultMode')
             bot.send_message(message.chat.id, text=language['fetchingTorrents'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
            
             response =  getattr(torrent, torrentType)(category=None if category == 'all' else category, week=week)
@@ -70,7 +75,7 @@ def browse3(message, userLanguage, torrentType, category):
 #: Next step handler for top and browse torrents
 def browse4(message, userLanguage, torrentType, category):
     bot.send_message(message.chat.id, text=language['fetchingTorrents'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
-    resultType = dbSql.getSetting(message.from_user.id, 'defaultMode')
+    resultType = dbSql.getSetting(message.chat.id, 'defaultMode')
     
     response =  getattr(torrent, torrentType)(category=None if category == 'all' else category)
     msg, markup = result(response, userLanguage, resultType, torrentType, 1, category)

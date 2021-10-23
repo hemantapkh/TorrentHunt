@@ -66,7 +66,7 @@ def lang(message, userLanguage, called=False, greet=False):
         markup.add(telebot.types.InlineKeyboardButton(text=language['backBtn'][userLanguage], callback_data=f'cb_backToSettings{time()}'))
         bot.edit_message_text(chat_id=message.message.chat.id, message_id=message.message.id, text=language['chooseLanguage'][userLanguage], reply_markup=markup)
     else:
-        bot.send_message(message.chat.id, language['chooseLanguage'][userLanguage], reply_markup=markup)
+        bot.send_message(message.chat.id, language['chooseLanguage'][userLanguage], reply_markup=markup, reply_to_message_id=message.id)
 
 #: Markup for non subscribed users
 def notSubscribedMarkup(userLanguage):

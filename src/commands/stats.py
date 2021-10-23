@@ -21,5 +21,5 @@ def stats(message):
         bot.send_message(chat_id=message.chat.id, text=msg)
 
     else:
-        userLanguage = dbSql.getSetting(message.from_user.id, 'language')
+        userLanguage = dbSql.getSetting(message.chat.id, 'language')
         bot.send_message(chat_id=message.chat.id, text=language['noPermission'][userLanguage])

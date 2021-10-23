@@ -1,5 +1,6 @@
 import sqlite3
 import uuid, time
+from datetime import datetime
 
 class dbQuery():
     def __init__(self, db, mdb):
@@ -7,22 +8,36 @@ class dbQuery():
         self.mdb = mdb
     
     #: Add the user into the database if not registered
-    def setAccount(self, userId):
+    def setAccount(self, userId, userName=None):
+        chatType = 'users' if userId > 0 else 'groups'
         con = sqlite3.connect(self.db)
         cur = con.cursor()
 
-        isRegistered = cur.execute(f'SELECT * FROM users WHERE userId={userId}').fetchone()
-        con.commit()
-
-        isRegistered = True if isRegistered else False
+        isRegistered = self.isRegistered(userId, chatType)
 
         if not isRegistered:
-            cur.execute(f'Insert into users (userId) values ({userId})')
+            if chatType == 'users':
+                cur.execute(f"Insert into {chatType} (userId, date) values ({userId}, \"{datetime.today().strftime('%Y-%m-%d')}\")")
+                cur.execute(f'Insert into flood (ownerId) values ({userId})')
+
+            else:
+                cur.execute(f"Insert into {chatType} (userId, userName, date) values ({userId}, \"{userName}\", \"{datetime.today().strftime('%Y-%m-%d')}\")")
+            
             cur.execute(f'Insert into settings (ownerId) values ({userId})')
-            cur.execute(f'Insert into flood (ownerId) values ({userId})')
+                        
             con.commit()
         
         return isRegistered
+
+    #: Find if a user is registered or not
+    def isRegistered(self, userId, chatType='users'):
+        con = sqlite3.connect(self.db)
+        cur = con.cursor()
+
+        isRegistered = cur.execute(f'SELECT * FROM {chatType} WHERE userId={userId}').fetchone()
+        con.commit()
+
+        return True if isRegistered else False
 
     #: Get all the registered users
     def getAllUsers(self):

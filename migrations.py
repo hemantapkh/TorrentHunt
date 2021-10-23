@@ -34,7 +34,16 @@ if input1 == 'y':
     print('[+] Database opened successfully.')
 
     conn.execute('''CREATE TABLE users
-            (UserId       INTEGER PRIMARY KEY
+            (UserId       INTEGER PRIMARY KEY,
+            date          STRING  NOT NULL
+            );''')
+
+    print('[+] Table users created successfully.')
+
+    conn.execute('''CREATE TABLE groups
+            (UserId       INTEGER PRIMARY KEY,
+            userName      TEXT,
+            date          STRING  NOT NULL
             );''')
 
     print('[+] Table users created successfully.')

@@ -5,7 +5,14 @@ from src.functions.funs import getSuggestions
 
 #: Custom query search
 def querySearch(message, userLanguage):
-    sent = bot.send_message(message.chat.id, language['searchingQuery'][userLanguage].format(message.text))
+    if message.chat.type == "private":
+        sent = bot.send_message(message.chat.id, language['searchingQuery'][userLanguage].format(message.text))
+    
+    else:
+        message.text =  message.text[1:] if message.text[0] == '/' else message.text
+        message.text = message.text.split(botUsername)[0]
+        sent = bot.send_message(message.chat.id, language['searchingQuery'][userLanguage].format(message.text), reply_to_message_id=message.id)
+    
     resultType = dbSql.getSetting(message.chat.id, 'defaultMode')
     response = torrent.search(message.text)
 

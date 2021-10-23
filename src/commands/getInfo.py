@@ -5,15 +5,16 @@ from src.functions.floodControl import floodControl
 #: Get information about the torrent
 @bot.message_handler(func=lambda message: message.text and message.text[:9] == '/getInfo_')
 def getInfo(message, userLanguage=None, called=False):
-    userLanguage = userLanguage or dbSql.getSetting(message.from_user.id, 'language')
+    chatId = message.message.chat.id if called else message.chat.id
+    userLanguage = userLanguage or dbSql.getSetting(chatId, 'language')
 
-    if floodControl(message, userLanguage):
+    if (message.message.chat.type if called else message.chat.type) != 'private' or floodControl(message, userLanguage):
         if called:
             torrentId = message.data[11:]
         
         else:
-            sent = bot.send_message(message.chat.id, text=language['fetchingTorrentInfo'][userLanguage])
-            torrentId = message.text[9:]
+            sent = bot.send_message(chatId, text=language['fetchingTorrentInfo'][userLanguage], reply_to_message_id=message.id if message.chat.type != 'private' else None)
+            torrentId = message.text[9:] if message.chat.type == 'private' else message.text[9:].split('@')[0]
         
         response = torrent.info(torrentId=torrentId)
         markup = None
@@ -21,7 +22,7 @@ def getInfo(message, userLanguage=None, called=False):
         if response['name']:
             markup = telebot.types.InlineKeyboardMarkup()
             #! Hide if restricted mode is on
-            if dbSql.getSetting(message.from_user.id, 'restrictedMode') and response['category'] == 'XXX':
+            if dbSql.getSetting(chatId, 'restrictedMode') and response['category'] == 'XXX':
                 msg = language['cantView'][userLanguage]
             
             else:
@@ -47,6 +48,7 @@ def getInfo(message, userLanguage=None, called=False):
             
         if called:
             bot.answer_callback_query(message.id)
-            bot.edit_message_text(chat_id=message.message.chat.id, message_id=message.message.id, text=msg, reply_markup=markup)
+            bot.edit_message_text(msg, chatId, message_id=message.message.id, reply_markup=markup)
+        
         else:
-            bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=msg, reply_markup=markup)
+            bot.edit_message_text(msg, chatId, message_id=sent.message_id, reply_markup=markup)

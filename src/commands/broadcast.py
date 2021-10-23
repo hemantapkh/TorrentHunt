@@ -8,7 +8,7 @@ def broadcast(message):
         sent = bot.send_message(chat_id=message.chat.id, text='<b>Choose the audience.</b>\n\n/all /bengali /belarusian /catalan /dutch /english /french /german /hindi /italian /korean /malay /nepali /polish /portuguese /russian /spanish /turkish /ukrainian \n\n/cancel to cancel the broadcast.')
         bot.register_next_step_handler(sent, broadcast2)
     else:
-        userLanguage = dbSql.getSetting(message.from_user.id, 'language')
+        userLanguage = dbSql.getSetting(message.chat.id, 'language')
         bot.send_message(chat_id=message.chat.id, text=language['noPermission'][userLanguage])
     
 def broadcast2(message):

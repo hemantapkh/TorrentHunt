@@ -25,8 +25,9 @@ app.router.add_post('/{token}/', handle)
 #: Text handler
 @bot.message_handler(content_types=['text'])
 def text(message):
-    userLanguage = dbSql.getSetting(message.from_user.id, 'language')
-    if floodControl(message, userLanguage):
+    userLanguage = dbSql.getSetting(message.chat.id, 'language')
+    
+    if message.chat.type != 'private' or floodControl(message, userLanguage):
         if 'via_bot' in message.json.keys():
             #! Don't search if the message is via the same bot
             if message.json['via_bot']['id'] == int(botId):
@@ -80,7 +81,7 @@ def text(message):
             markup.add(telebot.types.InlineKeyboardButton(text=language['subscribeChannelBtn'][userLanguage], url='https://youtube.com/h9youtube'), telebot.types.InlineKeyboardButton(text=language['followGithubBtn'][userLanguage], url='https://github.com/hemantapkh'))
             markup.add(telebot.types.InlineKeyboardButton(text=language['donateBtn'][userLanguage], url=f"https://buymeacoffee.com/hemantapkh"))
             
-            bot.send_message(message.from_user.id, language['support'][userLanguage].format(language['supportBtn'][userLanguage]), reply_markup=markup, disable_web_page_preview=True)
+            bot.send_message(message.chat.id, language['support'][userLanguage].format(language['supportBtn'][userLanguage]), reply_markup=markup, disable_web_page_preview=True)
         
         #! Query search
         else:
