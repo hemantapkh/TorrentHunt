@@ -64,24 +64,16 @@ def text(message):
             browse(message, userLanguage, 'browse')
 
         # Settings
-        elif message.text in ['/settings', language['settingsBtn'][userLanguage]]:
+        elif message.text == language['settingsBtn'][userLanguage]:
             settings(message, userLanguage)
 
         #! Help
-        elif message.text in ['/help', language['helpBtn'][userLanguage]]:
-            markup = telebot.types.InlineKeyboardMarkup()
-            markup.add(telebot.types.InlineKeyboardButton(text=language['inlineSearchBtn'][userLanguage], switch_inline_query_current_chat=""))
-            bot.send_message(message.chat.id, language['help'][userLanguage].format(language['helpBtn'][userLanguage]), reply_markup=markup)
+        elif message.text == language['helpBtn'][userLanguage]:
+            help(message, userLanguage)
 
         #! Support
-        elif message.text in ['/support', language['supportBtn'][userLanguage]]:
-            markup = telebot.types.InlineKeyboardMarkup()
-            markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'))
-            markup.add(telebot.types.InlineKeyboardButton(text=language['shareWithFriendsBtn'][userLanguage], url=f"https://t.me/share/url?url=t.me/torrenthuntbot&text={language['shareText'][userLanguage]}"), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
-            markup.add(telebot.types.InlineKeyboardButton(text=language['subscribeChannelBtn'][userLanguage], url='https://youtube.com/h9youtube'), telebot.types.InlineKeyboardButton(text=language['followGithubBtn'][userLanguage], url='https://github.com/hemantapkh'))
-            markup.add(telebot.types.InlineKeyboardButton(text=language['donateBtn'][userLanguage], url=f"https://buymeacoffee.com/hemantapkh"))
-            
-            bot.send_message(message.chat.id, language['support'][userLanguage].format(language['supportBtn'][userLanguage]), reply_markup=markup, disable_web_page_preview=True)
+        elif message.text == language['supportBtn'][userLanguage]:
+            support(message, userLanguage)
         
         #! Query search
         else:

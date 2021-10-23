@@ -5,7 +5,7 @@ from time import time
 @bot.message_handler(commands=['settings'])
 def settings(message, userLanguage=None, called=False):
     chatId = message.message.chat.id if called else message.chat.id
-    userLanguage = dbSql.getSetting(chatId, 'language')
+    userLanguage = userLanguage or dbSql.getSetting(chatId, 'language')
     
     if (message.message.chat.type if called else message.chat.type) == 'private' or bot.get_chat_member(chatId, message.from_user.id).status in ['creator', 'administrator']:
         restrictedMode = dbSql.getSetting(chatId, 'restrictedMode')
