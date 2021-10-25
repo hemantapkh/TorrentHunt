@@ -40,14 +40,21 @@ class dbQuery():
         return True if isRegistered else False
 
     #: Get all the registered users
-    def getAllUsers(self):
+    def getAllUsers(self, type='users', date=None, countOnly=False):
         con = sqlite3.connect(self.db)
         con.row_factory = lambda cursor, row: row[0]
         cur = con.cursor()
         
-        users = cur.execute(f'SELECT userId FROM users').fetchall()
-        con.commit()
+        if countOnly:
+            if date:
+                users = cur.execute(f'SELECT count(*) FROM {type} WHERE DATE="{date}"').fetchone()
+            else:
+                users = cur.execute(f'SELECT count(*) FROM {type}').fetchone()
 
+        else:
+            users = cur.execute(f'SELECT userId FROM {type}').fetchall()
+        
+        con.commit()
         return users
     
     #: Get all users exclude certain languages
@@ -63,14 +70,17 @@ class dbQuery():
         return users
     
     #: Get users of particular language
-    def getUsers(self, language):
+    def getUsers(self, language, countOnly=False):
         con = sqlite3.connect(self.db)
         con.row_factory = lambda cursor, row: row[0]
         cur = con.cursor()
         
-        users = cur.execute(f'SELECT ownerId FROM settings WHERE language="{language}"').fetchall()
+        if countOnly:
+            users = cur.execute(f'SELECT count(*) FROM settings WHERE language="{language}"').fetchone()
+        else:
+            users = cur.execute(f'SELECT ownerId FROM settings WHERE language="{language}"').fetchall()
+        
         con.commit()
-
         return users
 
     #: Get the user's settings
