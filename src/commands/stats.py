@@ -27,8 +27,8 @@ languageSet = [
 @bot.message_handler(commands=['stats'])
 def stats(message):
     userLanguage = dbSql.getSetting(message.from_user.id, 'language')
-    
-    if floodControl(message, userLanguage):
+
+    if message.chat.type != 'private' or floodControl(message, userLanguage):
         currentDate = datetime.today().strftime('%Y-%m-%d')
         
         msg = f'<b>📊 Statistics</b>\n\n'
