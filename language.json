@@ -494,6 +494,45 @@
         "ukrainian": "Клацніть для отримання детальної інформації."
     },
 
+    "unlockAllFeatures": {
+        "english": "💫 <b>Make sure to subscribe to our channel to unlock all the features of the bot for free.</b>",
+
+        "nepali": "💫 <b>बोटका सबै सुविधाहरू निःशुल्क अनलक गर्न हाम्रो च्यानलको सदस्यता लिन निश्चित गर्नुहोस्।</b>",
+
+        "bengali": "💫 <b>বিনামূল্যের বটের সমস্ত বৈশিষ্ট্য আনলক করতে আমাদের চ্যানেলে সাবস্ক্রাইব করতে ভুলবেন না।</b>",
+
+        "belarusian": "💫 <b>Абавязкова падпішыцеся на наш канал, каб бясплатна разблакаваць усе магчымасці бота.</b>",
+
+        "catalan": "💫 <b>Assegura't de subscriure't al nostre canal per desbloquejar totes les funcions del bot de forma gratuïta.</b>",
+
+        "dutch": "💫 <b>Zorg ervoor dat je je abonneert op ons kanaal om alle functies van de bot gratis te ontgrendelen.</b>",
+
+        "french": "💫 <b>Assurez-vous de vous abonner à notre chaîne pour débloquer gratuitement toutes les fonctionnalités du bot.</b>",
+
+        "german": "💫 <b>Stellen Sie sicher, dass Sie unseren Kanal abonnieren, um alle Funktionen des Bots kostenlos freizuschalten.</b>",
+
+        "hindi": "💫 <b>बॉट की सभी सुविधाओं को मुफ्त में अनलॉक करने के लिए हमारे चैनल को सब्सक्राइब करना न भूलें।</b>",
+
+        "italian": "💫 <b>Assicurati di iscriverti al nostro canale per sbloccare gratuitamente tutte le funzionalità del bot.</b>",
+
+        "korean": "💫 <b>봇의 모든 기능을 무료로 잠금 해제하려면 채널을 구독하세요.</b>",
+
+        "malay": "💫 <b>Pastikan anda melanggan saluran kami untuk membuka kunci semua ciri bot secara percuma.</b>",
+
+        "polish": "💫 <b>Zasubskrybuj nasz kanał, aby odblokować wszystkie funkcje bota za darmo.</b>",
+
+        "portuguese": "💫 <b>Certifique-se de se inscrever em nosso canal para desbloquear todos os recursos do bot gratuitamente.</b>",
+
+        "russian": "💫 <b>Обязательно подпишитесь на наш канал, чтобы бесплатно получить доступ ко всем функциям бота.</b>",
+
+        "spanish": "💫 <b>Asegúrate de suscribirte a nuestro canal para desbloquear todas las funciones del bot de forma gratuita.</b>",
+
+        "turkish": "💫 <b>Botun tüm özelliklerinden ücretsiz yararlanmak için kanalımıza abone olmayı unutmayın.</b>",
+
+        "ukrainian": "💫 <b>Обов’язково підпишіться на наш канал, щоб безкоштовно розблокувати всі функції бота.</b>"
+    },
+
+
     "thanksForSub": {
         "english": "😇 <b>Thank you so much for supporting us!! Being a part of our channel, you will get the latest updates of our projects.</b>",
 
@@ -3045,41 +3084,41 @@
     },
 
     "joinChannelBtn": {
-        "english": "➕ Channel",
+        "english": "📢 Channel",
 
-        "nepali": "➕ Channel",
+        "nepali": "📢 Channel",
 
-        "bengali": "➕ Channel",
+        "bengali": "📢 Channel",
 
-        "belarusian": "➕ Channel",
+        "belarusian": "📢 Channel",
 
-        "catalan": "➕ Channel",
+        "catalan": "📢 Channel",
 
-        "dutch": "➕ Channel",
+        "dutch": "📢 Channel",
 
-        "french": "➕ Channel",
+        "french": "📢 Channel",
 
-        "german": "➕ Channel",
+        "german": "📢 Channel",
 
-        "hindi": "➕ Channel",
+        "hindi": "📢 Channel",
 
-        "italian": "➕ Channel",
+        "italian": "📢 Channel",
 
-        "korean": "➕ Channel",
+        "korean": "📢 Channel",
 
-        "malay": "➕ Channel",
+        "malay": "📢 Channel",
 
-        "polish": "➕ Kanał",
+        "polish": "📢 Kanał",
 
-        "portuguese": "➕ Channel",
+        "portuguese": "📢 Channel",
 
-        "russian": "➕ Channel",
+        "russian": "📢 Channel",
 
-        "spanish": "➕ Channel",
+        "spanish": "📢 Channel",
 
-        "turkish": "➕ Kanal",
+        "turkish": "📢 Kanal",
 
-        "ukrainian": "➕ Channel"
+        "ukrainian": "📢 Channel"
     },
 
     "joinDiscussionBtn": {

@@ -5,6 +5,7 @@ from src.commands.settings import settings
 from src.functions.funs import isSubscribed
 from src.callbacks.getImages import getImages
 from src.callbacks.getTorrent import getTorrent
+from src.functions.keyboard import notSubscribedMarkup
 from src.callbacks.nextPage import nextPage, nextPageQuery
 from src.functions.keyboard import mainReplyKeyboard, lang
 
@@ -59,6 +60,9 @@ def callbackHandler(call):
             if greet == 'True':
                 bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.id)
                 bot.send_message(chat_id=call.message.chat.id, text=language['greet'][userLanguage].format(call.from_user.first_name), reply_markup=mainReplyKeyboard(userLanguage) if call.message.chat.type == 'private' else None)
+                
+                if call.message.chat.type == 'private':
+                    bot.send_message(chat_id=call.message.chat.id, text=language['unlockAllFeatures'][userLanguage], reply_markup=notSubscribedMarkup(userLanguage))
             
             else:
                 bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.id)
