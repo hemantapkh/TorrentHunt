@@ -5,7 +5,7 @@ from src.functions.keyboard import notSubscribedMarkup
 
 #: URL shortner
 def shortner(url):
-    short = requests.get(f'http://tinyurl.com/api-create.php?url={url}')
+    short = requests.get(f'https://is.gd/create.php?format=simple&url={url}')
     return short.text
 
 #: Get suggestion query
