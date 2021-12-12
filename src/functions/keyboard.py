@@ -13,8 +13,8 @@ def mainReplyKeyboard(userLanguage):
     button6 = telebot.types.KeyboardButton(text=language['helpBtn'][userLanguage])
     button7 = telebot.types.KeyboardButton(text=language['supportBtn'][userLanguage])
     
-    # keyboard.row(button1, button2)
-    # keyboard.row(button3, button4)
+    keyboard.row(button1, button2)
+    keyboard.row(button3, button4)
     keyboard.row(button5, button6, button7)
 
     return keyboard
