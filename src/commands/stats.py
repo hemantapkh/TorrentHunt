@@ -28,7 +28,7 @@ languageSet = [
 async def stats(Client, message):
     userLanguage = dbSql.getSetting(message.from_user.id, 'language')
 
-    if message.chat.type != 'private' or floodControl(message, userLanguage):
+    if message.chat.type != 'private' or await floodControl(message, userLanguage):
         currentDate = datetime.today().strftime('%Y-%m-%d')
         
         msg = f'<b>📊 Statistics</b>\n\n'

@@ -11,7 +11,7 @@ from src.commands.getInfo import getInfo
 from src.commands.getLink import getLink
 from src.commands.support import support
 from src.commands.settings import settings
-from src.commands.broadcast import broadcast
+#from src.commands.broadcast import broadcast
 from src.commands.querySearch import querySearch
 
 #! Inline buttons
