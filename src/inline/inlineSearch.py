@@ -75,7 +75,7 @@ async def inlineSearch(Client, inline_query):
                             
                             if botId == '1700458114' and 'Magnet' in item:
                                 magnetKey = 'Db_'+dbSql.setMagnet(item['Magnet'])
-                                markup = pyrogram.types.InlineKeyboardMarkup([pyrogram.types.InlineKeyboardButton(text=language['addToSeedr'][userLanguage], url=f't.me/torrentseedrbot?start=addTorrent{magnetKey}')])
+                                markup = pyrogram.types.InlineKeyboardMarkup([[pyrogram.types.InlineKeyboardButton(text=language['addToSeedr'][userLanguage], url=f't.me/torrentseedrbot?start=addTorrent{magnetKey}')]])
                             
                             else:
                                 markup = pyrogram.types.InlineKeyboardMarkup([[pyrogram.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'), pyrogram.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion')]])
