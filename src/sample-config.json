@@ -1,19 +1,9 @@
 {
     "botToken": null,
 
-    "connectionType": "polling",
+    "apiId": null,
 
-    "webhookOptions":{
-        "webhookHost": null,
-        
-        "webhookPort": null,
-        
-        "webhookListen": "0.0.0.0",
-        
-        "sslCertificate": null,
-        
-        "sslPrivateKey": null
-    },
+    "apiHash": null,
     
     "adminId" : null,
 

@@ -3,3 +3,4 @@ env/
 __pycache__
 *.sqlite
 config.json
+*.session*

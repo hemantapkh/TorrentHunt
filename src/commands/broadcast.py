@@ -1,57 +1,57 @@
 from src.objs import *
-from time import sleep
+from asyncio import sleep
 
 #: Broadcast message
-@bot.message_handler(commands=['broadcast'])
-def broadcast(message):
+@bot.on_message(filters.command('broadcast'))
+async def broadcast(client, message):
     if message.from_user.id == int(config['adminId']):
-        sent = bot.send_message(chat_id=message.chat.id, text='<b>Choose the audience.</b>\n\n/all /bengali /belarusian /catalan /dutch /english /french /german /hindi /italian /korean /malay /nepali /polish /portuguese /russian /spanish /turkish /ukrainian \n\n/cancel to cancel the broadcast.')
-        bot.register_next_step_handler(sent, broadcast2)
+        sent = await bot.ask(chat_id=message.chat.id, text='<b>Choose the audience.</b>\n\n/all /bengali /belarusian /catalan /dutch /english /french /german /hindi /italian /korean /malay /nepali /polish /portuguese /russian /spanish /turkish /ukrainian \n\n/cancel to cancel the broadcast.')
+        await broadcast2(sent)
+    
     else:
         userLanguage = dbSql.getSetting(message.chat.id, 'language')
-        bot.send_message(chat_id=message.chat.id, text=language['noPermission'][userLanguage])
+        await bot.send_message(chat_id=message.chat.id, text=language['noPermission'][userLanguage])
     
-def broadcast2(message):
+async def broadcast2(message):
     if message.text == '/cancel':
-        bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
+        await bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
     else:
         if message.text == '/all':
-            sent = bot.send_message(chat_id=message.chat.id, text='<b>Choose the audience to exclude from broadcasting.</b>\n\n<code>bengali</code>, <code>belarusian</code>, <code>catalan</code>, <code>dutch</code>, <code>english</code>, <code>french</code>, <code>german</code>, <code>hindi</code>, <code>italian</code>, <code>korean</code>, <code>malay</code>, <code>nepali</code>, <code>polish</code>, <code>portuguese</code>, <code>russian</code>, <code>spanish</code>, <code>turkish</code>, <code>ukrainian</code> \n\n<b>Separate by comma for multiple exclusion.</b>\n\n/cancel to cancel the broadcast.\n/skip to Skip the exclusion.')
-            bot.register_next_step_handler(sent, broadcastExclusion)
+            sent = await bot.ask(chat_id=message.chat.id, text='<b>Choose the audience to exclude from broadcasting.</b>\n\n<code>bengali</code>, <code>belarusian</code>, <code>catalan</code>, <code>dutch</code>, <code>english</code>, <code>french</code>, <code>german</code>, <code>hindi</code>, <code>italian</code>, <code>korean</code>, <code>malay</code>, <code>nepali</code>, <code>polish</code>, <code>portuguese</code>, <code>russian</code>, <code>spanish</code>, <code>turkish</code>, <code>ukrainian</code> \n\n<b>Separate by comma for multiple exclusion.</b>\n\n/cancel to cancel the broadcast.\n/skip to Skip the exclusion.')
+            await broadcastExclusion(sent)
         
         elif message.text in ['/bengali', '/belarusian', '/catalan', '/dutch', '/english', '/french', '/german', '/hindi', '/italian', '/korean', '/malay', '/nepali', '/polish', '/portuguese', '/russian', '/spanish', '/turkish', '/ukrainian']:
             audience = message.text[1:]
-            sent = bot.send_message(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
-            bot.register_next_step_handler(sent, broadcast3, audience)
+            sent = await bot.ask(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
+            await broadcast3(sent, audience)
         
         else:
-            bot.send_message(chat_id=message.chat.id, text='❌ Unknown audience. Broadcast cancelled.')
+            await bot.send_message(chat_id=message.chat.id, text='❌ Unknown audience. Broadcast cancelled.')
 
-def broadcastExclusion(message):
+async def broadcastExclusion(message):
     if message.text == '/skip':
-        sent = bot.send_message(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
-        bot.register_next_step_handler(sent, broadcast3, audience='all', exclude=None)
+        sent = await bot.ask(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
+        await broadcast3(sent, audience='all', exclude=None)
     
     elif message.text == '/cancel':
-        bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
+        await bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
     
     else:
-        sent = bot.send_message(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
+        sent = await bot.ask(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
         exclude = [x.strip() for x in message.text.split(',')]
-        bot.register_next_step_handler(sent, broadcast3, audience='all', exclude=exclude)
+        await broadcast3(sent, audience='all', exclude=exclude)
 
-def broadcast3(message, audience, exclude=None):
+async def broadcast3(message, audience, exclude=None):
     if message.text != '/cancel':
-        sent2 = bot.send_message(chat_id=message.chat.id, text='<b>To send embed button, send the link in the following format.</b>\n\n<code>Text1 -> URL1\nText2 -> URL2</code>\n\n/cancel to cancel the broadcast.\n/skip to skip the buttons.')
-        bot.register_next_step_handler(sent2, broadcast4, audience, exclude, message.text)
+        sent2 = bot.ask(chat_id=message.chat.id, text='<b>To send embed button, send the link in the following format.</b>\n\n<code>Text1 -> URL1\nText2 -> URL2</code>\n\n/cancel to cancel the broadcast.\n/skip to skip the buttons.')
+        await broadcast4(sent2, audience, exclude, message.text)
     
     else:
-        bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
+        await bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
     
-def broadcast4(message, audience, exclude, textMessage):
-    markup = telebot.types.InlineKeyboardMarkup()
+async def broadcast4(message, audience, exclude, textMessage):
     if message.text == '/cancel':
-        bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
+        await bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
     
     elif message.text == '/skip':
         if audience == 'all':
@@ -66,11 +66,12 @@ def broadcast4(message, audience, exclude, textMessage):
         users = len(users) if users else 0
         
         try:
-            bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}',)
-            sent = bot.send_message(message.chat.id, text=f"/send to broadcast this message.\n\nTarget Audience: {audience}\nExcluded Audience: {' '.join(exclude) if exclude else None}\nTotal audience: {users}")
-            bot.register_next_step_handler(sent, broadcast5, audience, exclude, textMessage, markup=None)
+            await bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}',)
+            sent = await bot.ask(message.chat.id, text=f"/send to broadcast this message.\n\nTarget Audience: {audience}\nExcluded Audience: {' '.join(exclude) if exclude else None}\nTotal audience: {users}")
+            await broadcast5(sent, broadcast5, audience, exclude, textMessage, markup=None)
+        
         except Exception as e:
-            bot.send_message(chat_id=message.chat.id, text=f"<b>⚠️ Error</b>\n\n{str(e).replace('<','')}")
+            await bot.send_message(chat_id=message.chat.id, text=f"<b>⚠️ Error</b>\n\n{str(e).replace('<','')}")
 
     else:
         if audience == 'all':
@@ -85,19 +86,23 @@ def broadcast4(message, audience, exclude, textMessage):
         users = len(users) if users else 0
 
         try:
+            markup = []
             for i in message.text.split('\n'):
-                markup.add(telebot.types.InlineKeyboardButton(text=i.split('->')[0].strip(), url=i.split('->')[1].strip()))
-        
-            bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}', reply_markup=markup)
-            sent = bot.send_message(message.chat.id, text=f"/send to broadcast this message.\n\nTarget Audience: {audience}\nExcluded Audience: {' '.join(exclude) if exclude else None}\nTotal audience: {users}")
-            bot.register_next_step_handler(sent, broadcast5, audience, exclude, textMessage, markup)
+                markup.append(pyrogram.types.InlineKeyboardButton(text=i.split('->')[0].strip(), url=i.split('->')[1].strip()))
+
+            keyboard = pyrogram.InlineKeyboardMarkup(inline_keyboard=[markup])
+            
+            await bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}', reply_markup=keyboard)
+            
+            sent = await bot.ask(message.chat.id, text=f"/send to broadcast this message.\n\nTarget Audience: {audience}\nExcluded Audience: {' '.join(exclude) if exclude else None}\nTotal audience: {users}")
+            await broadcast5(sent, audience, exclude, textMessage, markup)
         
         except Exception as e:
-            bot.send_message(message.chat.id, text=f"<b>⚠️ Error</b>\n\n{str(e).replace('<','')}")
+            await bot.send_message(message.chat.id, text=f"<b>⚠️ Error</b>\n\n{str(e).replace('<','')}")
 
-def broadcast5(message, audience, exclude, textMessage, markup):
+async def broadcast5(message, audience, exclude, textMessage, markup):
     if message.text == '/send':
-        sent = bot.send_message(chat_id=message.chat.id, text='<code>Broadcasting message</code>')
+        sent = await bot.send_message(chat_id=message.chat.id, text='<code>Broadcasting message</code>')
         if audience == 'all':
             if exclude:
                 users = dbSql.getUsersExcept(exclude)
@@ -114,7 +119,7 @@ def broadcast5(message, audience, exclude, textMessage, markup):
         if users:
             for userId in users:
                 try:
-                    bot.send_message(chat_id=userId, text=textMessage, reply_markup=markup)
+                    await bot.send_message(chat_id=userId, text=textMessage, reply_markup=markup)
                     success += 1
                     updateCount += 1
                 
@@ -126,11 +131,11 @@ def broadcast5(message, audience, exclude, textMessage, markup):
                     sleep(0.1)
                     if updateCount == 15:
                         updateCount = 0
-                        bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<code>{failure+success} out of {len(users)} complete.</code>')
+                        await bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<code>{failure+success} out of {len(users)} complete.</code>')
 
-            bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<b>✈️ Broadcast Report</b>\n\nSuccess: {success}\nFailure: {failure}')
+            await bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<b>✈️ Broadcast Report</b>\n\nSuccess: {success}\nFailure: {failure}')
         
         else:
-            bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'❌ No user to broadcast message.')
+            await bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'❌ No user to broadcast message.')
     else:
-        bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
+        await bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')

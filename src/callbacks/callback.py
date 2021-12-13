@@ -10,45 +10,45 @@ from src.callbacks.nextPage import nextPage, nextPageQuery
 from src.functions.keyboard import mainReplyKeyboard, lang
 
 #: Callback handler
-@bot.callback_query_handler(func=lambda call: True)
-def callbackHandler(call):
+@bot.on_callback_query()
+async def callbackHandler(client, call):
     userLanguage = dbSql.getSetting(call.message.chat.id, 'language')
     resultType = dbSql.getSetting(call.message.chat.id, 'defaultMode')
 
     if call.message.chat.type == 'private' or call.from_user.id == call.message.reply_to_message.from_user.id:
         #! Next page handler for query
         if call.data[:1] == 'q':
-            nextPageQuery(call, userLanguage, resultType)
+            await nextPageQuery(call, userLanguage, resultType)
 
         #! Next page handler
         elif call.data[:11] == 'cb_nextPage':
-            nextPage(call, userLanguage, resultType)
+            await nextPage(call, userLanguage, resultType)
 
         #! Get torrent link
         elif call.data[:10] == 'cb_getLink':
-            getLink(call, userLanguage, called=True)
+            await getLink(client, call, userLanguage, called=True)
 
             if call.message.chat.type == 'private':
                 dbSql.setSetting(call.message.chat.id, 'defaultMode', 'link')
             
         #! Get torrent info
         elif call.data[:10] == 'cb_getInfo':
-            getInfo(call, userLanguage, called=True)
+            await getInfo(client, call, userLanguage, called=True)
 
             if call.message.chat.type == 'private':
                 dbSql.setSetting(call.message.chat.id, 'defaultMode', 'info')
 
         #! Get torrent images
         elif call.data[:13] == 'cb_getImages:':
-            getImages(call, userLanguage)
+            await getImages(call, userLanguage)
 
         #! Get torrent file
         elif call.data[:14] == 'cb_getTorrent:':
-            getTorrent(call, userLanguage)
+            await getTorrent(call, userLanguage)
 
         #! Language settings
         elif call.data[:18] == 'cb_languageSetting':
-            lang(call, userLanguage, called=True)
+            await lang(call, userLanguage, called=True)
 
         #! Select language
         elif call.data[:12] == 'cb_language_':
@@ -58,33 +58,33 @@ def callbackHandler(call):
             dbSql.setSetting(call.message.chat.id, 'language', userLanguage)
             
             if greet == 'True':
-                bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.id)
-                bot.send_message(chat_id=call.message.chat.id, text=language['greet'][userLanguage].format(call.from_user.first_name), reply_markup=mainReplyKeyboard(userLanguage) if call.message.chat.type == 'private' else None)
+                await bot.delete_messages(chat_id=call.message.chat.id, message_ids=call.message.message_id)
+                await bot.send_message(chat_id=call.message.chat.id, text=language['greet'][userLanguage].format(call.from_user.first_name), reply_markup=mainReplyKeyboard(userLanguage) if call.message.chat.type == 'private' else None)
                 
                 if call.message.chat.type == 'private':
-                    bot.send_message(chat_id=call.message.chat.id, text=language['unlockAllFeatures'][userLanguage], reply_markup=notSubscribedMarkup(userLanguage))
+                    await bot.send_message(chat_id=call.message.chat.id, text=language['unlockAllFeatures'][userLanguage], reply_markup=notSubscribedMarkup(userLanguage))
             
             else:
-                bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.id)
-                bot.send_message(chat_id=call.message.chat.id, text=language['languageSelected'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage) if call.message.chat.type == 'private' else None)
+                await bot.delete_messages(chat_id=call.message.chat.id, message_ids=call.message.message_id)
+                await bot.send_message(chat_id=call.message.chat.id, text=language['languageSelected'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage) if call.message.chat.type == 'private' else None)
         
         #! Content filter setting
         elif call.data[:17] == 'cb_restrictedMode':
             restrictedMode = 1 if call.data[17:] == 'On' else 0
             dbSql.setSetting(call.message.chat.id, 'restrictedMode', restrictedMode)
             
-            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=language['restrictedModeOn' if restrictedMode else 'restrictedModeOff'][userLanguage])
+            await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=language['restrictedModeOn' if restrictedMode else 'restrictedModeOff'][userLanguage])
         
         #! Back to settings
         elif call.data[:17] == 'cb_backToSettings':
-            settings(call, userLanguage, called=True)
+            await settings(client, call, userLanguage, called=True)
 
         #! Check whether a user is subscribed or not after clicking done button
         elif call.data == 'cb_checkSubscription':
             if isSubscribed(call, None, sendMessage=False):
-                bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=language['thanksForSub'][userLanguage])
+                await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=language['thanksForSub'][userLanguage])
             else:
-                bot.answer_callback_query(call.id, language['notSubscribedCallback'][userLanguage])
+                await bot.answer_callback_query(call.id, language['notSubscribedCallback'][userLanguage])
 
     else:
-        bot.answer_callback_query(call.id, language['notYourMessage'][userLanguage], show_alert=True)
+        await bot.answer_callback_query(call.id, language['notYourMessage'][userLanguage], show_alert=True)

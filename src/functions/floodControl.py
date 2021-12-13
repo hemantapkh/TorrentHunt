@@ -2,8 +2,8 @@ import time
 from src.objs import *
 
 #: Flood prevention
-def floodControl(message, userLanguage):
-    called = True if type(message) == telebot.types.CallbackQuery else False
+async def floodControl(message, userLanguage):
+    called = True if type(message) == pyrogram.types.CallbackQuery else False
     userId = message.message.chat.id if called else message.chat.id
     
     if userId == int(config['adminId']):
@@ -18,13 +18,13 @@ def floodControl(message, userLanguage):
         if messageDate - lastMessage < 1:
             #! If the user is already warned, block for 5 minutes
             if dbSql.getSetting(userId, 'warned', table='flood'):
-                bot.send_message(userId, language['blockedTooFast'][userLanguage])
+                await bot.send_message(userId, language['blockedTooFast'][userLanguage])
                 dbSql.setSetting(userId, 'blockTill', int(time.time())+300, table='flood')
                 dbSql.setSetting(userId, 'warned', 0, table='flood')
             
             #! If the user is not warned, warn for the first time
             else:
-                bot.send_message(userId, language['warningTooFast'][userLanguage])
+                await bot.send_message(userId, language['warningTooFast'][userLanguage])
                 dbSql.setSetting(userId, 'warned', 1, table='flood')
             
             return False

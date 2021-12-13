@@ -24,8 +24,8 @@ languageSet = [
     ]
 
 #: Get the Statistics of users
-@bot.message_handler(commands=['stats'])
-def stats(message):
+@bot.on_message(filters.command('stats'))
+async def stats(Client, message):
     userLanguage = dbSql.getSetting(message.from_user.id, 'language')
 
     if message.chat.type != 'private' or floodControl(message, userLanguage):
@@ -48,4 +48,4 @@ def stats(message):
         msg += f'\n<b>Users: {totalUsers} <code>({dbSql.getAllUsers(date=currentDate, countOnly=True)} today)</code></b>'
         msg += f'\n<b>Groups: {totalGroups} <code>({dbSql.getAllUsers(type="groups", date=currentDate, countOnly=True)} today)</code></b>'
 
-        bot.send_message(chat_id=message.chat.id, text=msg)
+        await bot.send_message(chat_id=message.chat.id, text=msg)
