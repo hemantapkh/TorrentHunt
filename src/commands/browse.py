@@ -46,7 +46,7 @@ async def browse2(message, userLanguage, torrentType, category=None, customMessa
             else:
                 await browse4(message, userLanguage, torrentType, category)
         else:
-            await browse(message, userLanguage, torrentType,referred=True, customMessage=language['unknownCategory'][userLanguage])
+            await browse(message, userLanguage, torrentType, customMessage=language['unknownCategory'][userLanguage])
 
 #: Next step handler for trending and popular torrents
 async def browse3(message, userLanguage, torrentType, category):
