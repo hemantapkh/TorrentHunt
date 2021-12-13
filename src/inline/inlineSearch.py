@@ -6,7 +6,7 @@ from src.inline.google import googleSuggestions
 from src.functions.keyboard import notSubscribedMarkup
 
 siteList = {
-    '!1337x': '1337x',
+    #'!1337x': '1337x',
     '!pb': 'piratebay',
     '!rb': 'rarbg',
     '!nyaa': 'nyaasi',

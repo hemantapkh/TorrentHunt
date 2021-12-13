@@ -33,10 +33,10 @@ async def getInfo(Client, message, userLanguage=None, called=False):
                 buttons.append([pyrogram.types.InlineKeyboardButton(text='🔗 ' + language['link'][userLanguage].replace(':',''), callback_data=f"cb_getLink:{torrentId}")])
                 
                 if response['images']:
-                    buttons.append([pyrogram.types.InlineKeyboardButton(text=language['imageBtn'][userLanguage], callback_data=f"cb_getImages:{torrentId}"), pyrogram.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}")])
+                    buttons.append([pyrogram.types.InlineKeyboardButton(text=language['imageBtn'][userLanguage], callback_data=f"cb_getImages:{torrentId}")])#, pyrogram.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}")])
         
-                else:
-                    buttons.append([pyrogram.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}")])
+                #else:
+                #    buttons.append([pyrogram.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}")])
                 
                 if botId != '1700458114': 
                     shortUrl = shortner(response['magnetLink'])

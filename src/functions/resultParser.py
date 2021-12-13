@@ -64,7 +64,7 @@ def result(response, userLanguage, resultType, torrentType, page, category=None,
                     markup.inline_keyboard.append([pyrogram.types.InlineKeyboardButton(language['previousBtn'][userLanguage], callback_data=cb)])                      
                         
     if query:
-        button1 = [pyrogram.types.InlineKeyboardButton(text='⚡️ 1337x', switch_inline_query_current_chat=f"!1337x {query}"), pyrogram.types.InlineKeyboardButton(text='⚡️ Pirate', switch_inline_query_current_chat=f"!pb {query}"), pyrogram.types.InlineKeyboardButton(text='⚡️ Rarbg', switch_inline_query_current_chat=f"!rb {query}")]
+        button1 = [pyrogram.types.InlineKeyboardButton(text='⚡️ Pirate', switch_inline_query_current_chat=f"!pb {query}"), pyrogram.types.InlineKeyboardButton(text='⚡️ Rarbg', switch_inline_query_current_chat=f"!rb {query}")]
         button2 = [pyrogram.types.InlineKeyboardButton(text='🎎 Nyaa', switch_inline_query_current_chat=f"!nyaa {query}"), pyrogram.types.InlineKeyboardButton(text='📺 Ez', switch_inline_query_current_chat=f"!ez {query}"), pyrogram.types.InlineKeyboardButton(text='⚡️ Tor Lock', switch_inline_query_current_chat=f"!tl {query}")]
         button3 = [pyrogram.types.InlineKeyboardButton(text='🍿 YTS', switch_inline_query_current_chat=f"!yts {query}"), pyrogram.types.InlineKeyboardButton(text='📺 Et', switch_inline_query_current_chat=f"!et {query}") , pyrogram.types.InlineKeyboardButton(text='⚡️ Galaxy', switch_inline_query_current_chat=f"!tg {query}")]
 
