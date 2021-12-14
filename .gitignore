@@ -4,3 +4,4 @@ __pycache__
 *.sqlite
 config.json
 *.session*
+errors.log

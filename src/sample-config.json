@@ -9,6 +9,8 @@
 
     "database": "torrenthunt.sqlite",
 
+    "errorLog": "errors.log",
+
     "magnetDatabase": "magnets.sqlite",
 
     "cache": "cache",

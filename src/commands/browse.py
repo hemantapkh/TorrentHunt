@@ -7,7 +7,6 @@ from src.functions.keyboard import mainReplyKeyboard, categoryReplyKeyboard
 #: Handler for trending, popular, top and browse torrents
 async def browse(message,userLanguage, torrentType=None, customMessage=None):
     if message.chat.type == 'private':
-        #! If referred or isSubscribed(message, userLanguage):
         torrentType = torrentType or message.text.split()[0][1:]
         
         sent = await bot.ask(message.chat.id, text=customMessage or language['selectCategory'][userLanguage], reply_markup=categoryReplyKeyboard(userLanguage, allCategories=False if torrentType in ['browse', 'popular'] else True, restrictedMode=dbSql.getSetting(message.chat.id, 'restrictedMode')))
@@ -56,7 +55,7 @@ async def browse3(message, userLanguage, torrentType, category):
     
     #! Back
     elif message.text == language['backBtn'][userLanguage]:
-        await browse(message,userLanguage, torrentType, referred=True)
+        await browse(message,userLanguage, torrentType)
     
     else:
         week = True if message.text == language[torrentType+'ThisWeek'][userLanguage] else False if message.text == language[torrentType+'Today'][userLanguage] else None

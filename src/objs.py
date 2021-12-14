@@ -3,7 +3,7 @@ from os import path
 from models import dbQuery
 
 import pyromod.listen
-import pyrogram, py1337x
+import pyrogram, py1337x, logging
 from pyrogram import Client, filters
 
 #! Finding the absolute path of the config file
@@ -14,6 +14,11 @@ configPath = path.join(dirPath,'config.json')
 config = json.load(open(configPath))
 language = json.load(open(config['language']))
 dbSql = dbQuery(config['database'], config['magnetDatabase'])
+
+#! Loggin error messages
+logging.basicConfig(filename=config['errorLog'], level=logging.ERROR, 
+                    format='%(asctime)s %(levelname)s %(name)s %(message)s')
+logger=logging.getLogger(__name__)
 
 torrent = py1337x.py1337x(proxy='1377x.to', cache=config['cache'], cacheTime=config['cacheTime'])
 
