@@ -81,6 +81,13 @@ def result(response, userLanguage, resultType, torrentType, page, category=None,
     
     else:
         if msg:
-            markup.inline_keyboard.append([pyrogram.types.InlineKeyboardButton(text='🌟 Rate ', url='https://t.me/tlgrmcbot?start=torrenthuntbot-review'), pyrogram.types.InlineKeyboardButton(text=language['donateBtn'][userLanguage], url='https://buymeacoffee.com/hemantapkh')])
+            button1 = pyrogram.types.InlineKeyboardButton(text='🌟 Rate ', url='https://t.me/tlgrmcbot?start=torrenthuntbot-review')
+            button2 = pyrogram.types.InlineKeyboardButton(text=language['donateBtn'][userLanguage], url='https://buymeacoffee.com/hemantapkh')
+
+            if markup:
+                markup.inline_keyboard.append([button1, button2])
+
+            else:
+                markup = pyrogram.types.InlineKeyboardMarkup([[button1, button2]])
     
     return msg, markup
