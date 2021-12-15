@@ -5,7 +5,7 @@ from src.commands.querySearch import querySearch
 from src.functions.keyboard import mainReplyKeyboard, lang
 
 #: Start handler
-@bot.on_message(filters.command('start'))
+@bot.on_message(filters.command(['start', f'start{botUsername}']))
 async def start(Client, message):
     if dbSql.setAccount(message.chat.id, message.chat.username):
         userLanguage = dbSql.getSetting(message.chat.id, 'language')
@@ -32,7 +32,9 @@ async def start(Client, message):
             await lang(message, userLanguage='english', greet=True)
         
         else:
-            if await bot.get_chat_member(message.chat.id, message.from_user.id).status in ['creator', 'administrator']:
+            chatMember = await bot.get_chat_member(message.chat.id, message.from_user.id)
+
+            if chatMember.status in ['creator', 'administrator']:
                 await lang(message, userLanguage='english', greet=True)
 
             else:
