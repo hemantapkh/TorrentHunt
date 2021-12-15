@@ -6,11 +6,13 @@ class dbQuery():
     def __init__(self, db, mdb):
         self.db = db
         self.mdb = mdb
+        self.con = sqlite3.connect(self.db, timeout=60)
+        self.mCon = sqlite3.connect(self.mdb, timeout=60)
     
     #: Add the user into the database if not registered
     def setAccount(self, userId, userName=None):
         chatType = 'users' if userId > 0 else 'groups'
-        con = sqlite3.connect(self.db)
+        con = self.con
         cur = con.cursor()
 
         isRegistered = self.isRegistered(userId, chatType)
@@ -31,7 +33,7 @@ class dbQuery():
 
     #: Find if a user is registered or not
     def isRegistered(self, userId, chatType='users'):
-        con = sqlite3.connect(self.db)
+        con = self.con
         cur = con.cursor()
 
         isRegistered = cur.execute(f'SELECT * FROM {chatType} WHERE userId={userId}').fetchone()
@@ -41,7 +43,7 @@ class dbQuery():
 
     #: Get all the registered users
     def getAllUsers(self, type='users', date=None, countOnly=False):
-        con = sqlite3.connect(self.db)
+        con = self.con
         con.row_factory = lambda cursor, row: row[0]
         cur = con.cursor()
         
@@ -60,7 +62,7 @@ class dbQuery():
     #: Get all users exclude certain languages
     #: languages must inside a list
     def getUsersExcept(self, languages):
-        con = sqlite3.connect(self.db)
+        con = self.con
         con.row_factory = lambda cursor, row: row[0]
         cur = con.cursor()
         
@@ -71,7 +73,7 @@ class dbQuery():
     
     #: Get users of particular language
     def getUsers(self, language, countOnly=False):
-        con = sqlite3.connect(self.db)
+        con = self.con
         con.row_factory = lambda cursor, row: row[0]
         cur = con.cursor()
         
@@ -86,7 +88,7 @@ class dbQuery():
     #: Get the user's settings
     def getSetting(self, userId, var, table='settings'):
         self.setAccount(userId)
-        con = sqlite3.connect(self.db)
+        con = self.con
         cur = con.cursor()
         
         setting = cur.execute(f'SELECT {var} FROM {table} WHERE ownerId={userId} limit 1').fetchone()
@@ -97,7 +99,7 @@ class dbQuery():
     #: Set the user's settings    
     def setSetting(self, userId, var, value, table='settings'):
         self.setAccount(userId)
-        con = sqlite3.connect(self.db)
+        con = self.con
         cur = con.cursor()
 
         #!? If value is None, put value as NULL else "{string}"
@@ -108,7 +110,7 @@ class dbQuery():
 
     #: Set magnet link in the database
     def setMagnet(self, magnetLink):
-        con = sqlite3.connect(self.mdb)
+        con = self.mCon
         cur = con.cursor()
 
         key = cur.execute(f'select key from data where magnetLink="{magnetLink}"').fetchone()
