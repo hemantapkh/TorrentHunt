@@ -12,7 +12,7 @@ def result(response, userLanguage, resultType, torrentType, page, category=None,
             if count >= 20:
                 break
 
-            newMsg = f"<b>{((page-1)*20)+count+1}. {item['name']}</b>\n\n"
+            newMsg = f"<b>{((page-1)*20)+count+1}. {item['name'][:100]}</b>\n\n"
             newMsg += f"💾 {item['size']}, 🟢 {item['seeders']}, 🔴 {item['leechers']}\n\n"
 
             newMsg += f"{language['link'][userLanguage]} /{'getLink' if resultType=='link' else 'getInfo'}_{item['torrentId']}\n\n"
