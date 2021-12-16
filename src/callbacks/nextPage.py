@@ -2,7 +2,7 @@ from src.objs import *
 from src.functions.resultParser import result
 
 #: Next page handler for query
-async def nextPageQuery(call, userLanguage, resultType):
+def nextPageQuery(call, userLanguage, resultType):
     splittedData = call.data.split(':', 2)
     page = int(splittedData[1])
     query = splittedData[2]
@@ -22,14 +22,14 @@ async def nextPageQuery(call, userLanguage, resultType):
         msg, markup = result(response, userLanguage, resultType, torrentType, page=page, query=query)
 
     if msg:
-        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=msg, reply_markup=markup)
+        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=msg, reply_markup=markup)
     
     #! If msg is None
     else:
-        await bot.answer_callback_query(call.id, text=language['emptyPage'][userLanguage], show_alert=True)
+        bot.answer_callback_query(call.id, text=language['emptyPage'][userLanguage], show_alert=True)
 
 #! Next page
-async def nextPage(call, userLanguage, resultType):
+def nextPage(call, userLanguage, resultType):
     splittedData = call.data.split(':', 2)
     page = int(splittedData[1])
     torrentType = splittedData[2].split('-')[0]
@@ -57,8 +57,8 @@ async def nextPage(call, userLanguage, resultType):
         msg, markup = result(response, userLanguage, resultType, torrentType, page=page, category=category)
 
     if msg:
-        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=msg, reply_markup=markup)
+        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.id, text=msg, reply_markup=markup)
     
     #! If msg is None
     else:
-        await bot.answer_callback_query(call.id, text=language['emptyPage'][userLanguage], show_alert=True)
+        bot.answer_callback_query(call.id, text=language['emptyPage'][userLanguage], show_alert=True)
