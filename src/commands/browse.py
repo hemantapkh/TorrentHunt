@@ -7,7 +7,6 @@ from src.functions.keyboard import mainReplyKeyboard, categoryReplyKeyboard
 #: Handler for trending, popular, top and browse torrents
 def browse(message,userLanguage, torrentType=None, customMessage=None):
     if message.chat.type == 'private':
-        #! If referred or isSubscribed(message, userLanguage):
         torrentType = torrentType or message.text.split()[0][1:]
         
         sent = bot.send_message(message.chat.id, text=customMessage or language['selectCategory'][userLanguage], reply_markup=categoryReplyKeyboard(userLanguage, allCategories=False if torrentType in ['browse', 'popular'] else True, restrictedMode=dbSql.getSetting(message.chat.id, 'restrictedMode')))
@@ -44,7 +43,7 @@ def browse2(message, userLanguage, torrentType, category=None, customMessage=Non
             else:
                 browse4(message, userLanguage, torrentType, category)
         else:
-            browse(message, userLanguage, torrentType,referred=True, customMessage=language['unknownCategory'][userLanguage])
+            browse(message, userLanguage, torrentType, customMessage=language['unknownCategory'][userLanguage])
 
 #: Next step handler for trending and popular torrents
 def browse3(message, userLanguage, torrentType, category):
@@ -54,7 +53,7 @@ def browse3(message, userLanguage, torrentType, category):
     
     #! Back
     elif message.text == language['backBtn'][userLanguage]:
-        browse(message,userLanguage, torrentType, referred=True)
+        browse(message,userLanguage, torrentType)
     
     else:
         week = True if message.text == language[torrentType+'ThisWeek'][userLanguage] else False if message.text == language[torrentType+'Today'][userLanguage] else None
