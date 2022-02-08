@@ -67,9 +67,13 @@ def result(response, userLanguage, resultType, torrentType, page, category=None,
     if query:
         if not msg:
             query = originalQuery
-        markup.add(telebot.types.InlineKeyboardButton(text='⚡️ 1337x', switch_inline_query_current_chat=f"!1337x {query}"), telebot.types.InlineKeyboardButton(text='⚡️ Pirate', switch_inline_query_current_chat=f"!pb {query}"), telebot.types.InlineKeyboardButton(text='⚡️ Rarbg', switch_inline_query_current_chat=f"!rb {query}"))
-        markup.add(telebot.types.InlineKeyboardButton(text='🎎 Nyaa', switch_inline_query_current_chat=f"!nyaa {query}"), telebot.types.InlineKeyboardButton(text='📺 Ez', switch_inline_query_current_chat=f"!ez {query}"), telebot.types.InlineKeyboardButton(text='⚡️ Tor Lock', switch_inline_query_current_chat=f"!tl {query}"))
-        markup.add(telebot.types.InlineKeyboardButton(text='🍿 YTS', switch_inline_query_current_chat=f"!yts {query}"), telebot.types.InlineKeyboardButton(text='📺 Et', switch_inline_query_current_chat=f"!et {query}") , telebot.types.InlineKeyboardButton(text='⚡️ Galaxy', switch_inline_query_current_chat=f"!tg {query}"))
+        markup.add(telebot.types.InlineKeyboardButton(text='1337x', switch_inline_query_current_chat=f"!1337x {query}"), telebot.types.InlineKeyboardButton(text='Pirate', switch_inline_query_current_chat=f"!pb {query}"), telebot.types.InlineKeyboardButton(text='Rarbg', switch_inline_query_current_chat=f"!rb {query}"))
+        markup.add(telebot.types.InlineKeyboardButton(text='Nyaa', switch_inline_query_current_chat=f"!nyaa {query}"), telebot.types.InlineKeyboardButton(text='Ez', switch_inline_query_current_chat=f"!ez {query}"), telebot.types.InlineKeyboardButton(text='Tor Lock', switch_inline_query_current_chat=f"!tl {query}"))
+        markup.add(telebot.types.InlineKeyboardButton(text='YTS', switch_inline_query_current_chat=f"!yts {query}"), telebot.types.InlineKeyboardButton(text='Et', switch_inline_query_current_chat=f"!et {query}") , telebot.types.InlineKeyboardButton(text='Galaxy', switch_inline_query_current_chat=f"!tg {query}"))
+        markup.add(telebot.types.InlineKeyboardButton(text='Zooqle', switch_inline_query_current_chat=f"!zoo {query}"), telebot.types.InlineKeyboardButton(text='Kick Ass', switch_inline_query_current_chat=f"!ka {query}") , telebot.types.InlineKeyboardButton(text='Bit Search', switch_inline_query_current_chat=f"!bs {query}"))
+        markup.add(telebot.types.InlineKeyboardButton(text='Glodls', switch_inline_query_current_chat=f"!gl {query}"), telebot.types.InlineKeyboardButton(text='Magnet DL', switch_inline_query_current_chat=f"!mdl {query}") , telebot.types.InlineKeyboardButton(text='Lime Torrent', switch_inline_query_current_chat=f"!lt {query}"))
+        markup.add(telebot.types.InlineKeyboardButton(text='Torrent Funk', switch_inline_query_current_chat=f"!tf {query}"), telebot.types.InlineKeyboardButton(text='Torrent Project', switch_inline_query_current_chat=f"!tp {query}"))
+    
     
     else:
         if msg:

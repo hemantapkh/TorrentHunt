@@ -14,7 +14,15 @@ siteList = {
     '!ez': 'eztv',
     '!et': 'ettv',
     '!tl': 'torlock',
-    '!tg': 'tgx'  
+    '!tg': 'tgx',
+    '!zoo': 'zoogle',
+    '!ka': 'kickass',
+    '!bs': 'bitsearch',
+    '!gl': 'glodls',
+    '!mdl': 'magnetdl',
+    '!lt': 'limetorrents',
+    '!tf': 'torrentfunk',
+    '!tp': 'torrentproject'
 }
 
 siteName = {
@@ -26,7 +34,15 @@ siteName = {
     "ettv": "Et Tv",
     "torlock": "Torlock",
     "rarbg": "RARBG",
-    "tgx": "Torrent Galaxy"
+    "tgx": "Torrent Galaxy",
+    'zooqle': 'Zooqle',
+    'kickass': 'Kick Ass',
+    'bitsearch': 'Bit Search',
+    'glodls': 'Glodls',
+    'magnetdl': 'magnetDL',
+    'limetorrents': 'Lime Torrents',
+    'torrentfunk': 'Torrent Funk',
+    'torrentproject': 'Torrent Project'
 }
 
 #: Inline query
