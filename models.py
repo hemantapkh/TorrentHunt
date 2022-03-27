@@ -111,12 +111,8 @@ class dbQuery():
         con = sqlite3.connect(self.mdb)
         cur = con.cursor()
 
-        key = cur.execute(f'select key from data where magnetLink="{magnetLink}"').fetchone()
-        key = key[0] if key else None
-
-        if not key:
-            key = uuid.uuid4().hex
-            cur.execute(f'Insert into data (key, date, magnetLink) VALUES ("{key}", {int(time.time())}, "{magnetLink}")')
-            con.commit()
+        key = uuid.uuid4().hex
+        cur.execute(f'Insert into data (key, date, magnetLink) VALUES ("{key}", {int(time.time())}, "{magnetLink}")')
+        con.commit()
 
         return key
