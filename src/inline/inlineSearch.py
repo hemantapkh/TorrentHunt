@@ -94,9 +94,9 @@ def inlineSearch(inline_query):
 
                             thumbnail = item['poster'] if 'poster' in item and item['poster'] not in ['','https://img.picturegalaxy.org/static/noposter.jpg'] else f'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/{site}.jpg'
                             
-                            if botId == '1700458114' and 'Magnet' in item:
+                            if botId == '1700458114' and 'magnet' in item:
                                 markup = telebot.types.InlineKeyboardMarkup()
-                                magnetKey = 'Db_'+dbSql.setMagnet(item['Magnet'])
+                                magnetKey = 'Db_'+dbSql.setMagnet(item['magnet'])
                                 markup.add(telebot.types.InlineKeyboardButton(text=language['addToSeedr'][userLanguage], url=f't.me/torrentseedrbot?start=addTorrent{magnetKey}'))
                             
                             else:
