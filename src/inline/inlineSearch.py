@@ -82,7 +82,7 @@ def inlineSearch(inline_query):
                     
                     if 'error' not in results:
                         try:
-                            results = sorted(results, key=lambda k: eval(k['Seeders'] if 'Seeders' in k else k['Likes']), reverse=True) 
+                            results = sorted(results, key=lambda k: eval(k['seeders'] if 'seeders' in k else k['likes']), reverse=True) 
                         
                         except Exception:
                             pass
