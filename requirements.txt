@@ -19,4 +19,5 @@ soupsieve==2.2.1
 typing-extensions==3.10.0.2
 url-normalize==1.4.3
 urllib3==1.26.7
+validators==0.18.2
 yarl==1.6.3

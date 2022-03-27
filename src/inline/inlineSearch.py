@@ -1,4 +1,5 @@
 import requests
+import validators
 from src.objs import *
 from ast import literal_eval
 from src.functions.funs import isSubscribed
@@ -8,11 +9,11 @@ from src.functions.keyboard import notSubscribedMarkup
 siteList = {
     '!1337x': '1337x',
     '!pb': 'piratebay',
-    '!rb': 'rarbg',
+    #'!rb': 'rarbg',
     '!nyaa': 'nyaasi',
     '!yts': 'yts',
-    '!ez': 'eztv',
-    '!et': 'ettv',
+    #'!ez': 'eztv',
+    #'!et': 'ettv',
     '!tl': 'torlock',
     '!tg': 'tgx',
     '!zoo': 'zoogle',
@@ -20,9 +21,11 @@ siteList = {
     '!bs': 'bitsearch',
     '!gl': 'glodls',
     '!mdl': 'magnetdl',
-    '!lt': 'limetorrents',
+    '!lt': 'limetorrent',
     '!tf': 'torrentfunk',
-    '!tp': 'torrentproject'
+    '!tp': 'torrentproject',
+    '!gl': 'glodls',
+    'lg': 'libgen',
 }
 
 siteName = {
@@ -40,9 +43,11 @@ siteName = {
     'bitsearch': 'Bit Search',
     'glodls': 'Glodls',
     'magnetdl': 'magnetDL',
-    'limetorrents': 'Lime Torrents',
+    'limetorrent': 'Lime Torrents',
     'torrentfunk': 'Torrent Funk',
-    'torrentproject': 'Torrent Project'
+    'torrentproject': 'Torrent Project',
+    'glodls': 'Glodls',
+    'libgen': 'Libgen'
 }
 
 #: Inline query
@@ -72,8 +77,8 @@ def inlineSearch(inline_query):
                     offset = int(inline_query.offset.split(':')[0]) if inline_query.offset else 0
                     page = int(inline_query.offset.split(':')[1]) if inline_query.offset else 1
 
-                    link = f"{config['apiLink']}/{site}/{query}/{page}"
-                    results = literal_eval(requests.get(link).text)
+                    link = f"{config['apiLink']}/api/v1/search?site={site}&query={query}&limit=20&page={page}"
+                    results = requests.get(link).json()
 
                     if 'error' not in results:
                         try:
@@ -83,11 +88,11 @@ def inlineSearch(inline_query):
                             pass
 
                         queryResult = []
-                        for count, item in enumerate(results[offset:]):
+                        for count, item in enumerate(results['data'][offset:]):
                             if count >= 50:
                                 break
 
-                            thumbnail = item['Poster'] if 'Poster' in item and item['Poster'] not in ['','https://img.picturegalaxy.org/static/noposter.jpg'] else f'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/{site}.jpg'
+                            thumbnail = item['poster'] if 'poster' in item and item['poster'] not in ['','https://img.picturegalaxy.org/static/noposter.jpg'] else f'https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/{site}.jpg'
                             
                             if botId == '1700458114' and 'Magnet' in item:
                                 markup = telebot.types.InlineKeyboardMarkup()
@@ -98,7 +103,7 @@ def inlineSearch(inline_query):
                                 markup = telebot.types.InlineKeyboardMarkup()
                                 markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
                             
-                            queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['Name'], url=item['Url'], hide_url=True, thumb_url=thumbnail, thumb_width='123', thumb_height='182', description=f"{language['size'][userLanguage] + item['Size'] if 'Size' in item else language['size'][userLanguage] + item['Files'][0]['Size'] if site == 'yts' else ''} {', '+language['seeders'][userLanguage] + item['Seeders'] if 'Seeders' in item and item['Seeders'] != '-' else ''} {', '+language['leechers'][userLanguage] + item['Leechers'] if 'Leechers' in item else ''}", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(inline_query.from_user.id, item, site), parse_mode='HTML'), reply_markup=markup))
+                            queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], url=item['url'] if validators.url(item['url']) else None, hide_url=True, thumb_url=thumbnail, thumb_width='123', thumb_height='182', description=f"{language['size'][userLanguage] + item['size'] if 'size' in item else ''} {', '+language['seeders'][userLanguage] + item['seeders'] if 'seeders' in item and item['seeders'] != '-' else ''} {', '+language['leechers'][userLanguage] + item['leechers'] if 'leechers' in item else ''}", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(inline_query.from_user.id, item, site), parse_mode='HTML'), reply_markup=markup))
                         
                         nextOffset = offset + 50 if offset+50 < len(results) else 0
                         nextPage = page+1 if nextOffset == 0 else page
@@ -122,19 +127,13 @@ def inlineSearch(inline_query):
 def queryMessageContent(userId, item, torrentSite):
     userLanguage = dbSql.getSetting(userId, 'language')
     
-    msg  = f"<b>✨ {item['Name']}</b>\n\n"
+    msg  = f"<b>✨ {item['name']}</b>\n\n"
 
-    if torrentSite == 'yts':
-        msg += f"{language['size'][userLanguage]}{item['Files'][0]['Size']}\n\n"
-    
-        msg += f"<b>Magnet Link: </b>{'<code>'+item['Files'][0]['Magnet']+'</code>'}"
+    msg += f"{language['size'][userLanguage]}{item['size'] if 'size' in item else '-'}\n"
+    msg += f"{language['seeders'][userLanguage]}{item['seeders'] if 'seeders' in item else '-'}\n"
+    msg += f"{language['leechers'][userLanguage]}{item['leechers'] if 'leechers' in item else '-'}\n"
+    msg += f"{language['uploadedOn'][userLanguage]}{item['date'] if 'date' in item else '-'}\n\n"
 
-    else:
-        msg += f"{language['size'][userLanguage]}{item['Size'] if 'Size' in item else '-'}\n"
-        msg += f"{language['seeders'][userLanguage]}{item['Seeders'] if 'Seeders' in item else '-'}\n"
-        msg += f"{language['leechers'][userLanguage]}{item['Leechers'] if 'Leechers' in item else '-'}\n"
-        msg += f"{language['uploadedOn'][userLanguage]}{item['DateUploaded'] if 'DateUploaded' in item else '-'}\n\n"
-    
-        msg += f"<b>Magnet Link: </b>{'<code>'+item['Magnet']+'</code>' if 'Magnet' in item else language['errorFetchingLink'][userLanguage].replace('.','')}\n\n🔥<b>via @TorrentHuntBot</b>"
-    
+    msg += f"<b>Magnet Link: </b>{'<code>'+item['magnet']+'</code>' if 'magnet' in item else language['errorFetchingLink'][userLanguage].replace('.','')}\n\n🔥<b>via @TorrentHuntBot</b>"
+
     return msg
