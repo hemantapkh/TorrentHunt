@@ -1,3 +1,4 @@
+import re
 import requests
 import validators
 from src.objs import *
@@ -25,7 +26,7 @@ siteList = {
     '!tf': 'torrentfunk',
     '!tp': 'torrentproject',
     '!gl': 'glodls',
-    'lg': 'libgen',
+    '!lg': 'libgen',
 }
 
 siteName = {
@@ -78,7 +79,7 @@ def inlineSearch(inline_query):
 
                     link = f"{config['apiLink']}/api/v1/search?site={site}&query={query}&limit=20&page={page}"
                     results = requests.get(link).json()
-
+                    
                     if 'error' not in results:
                         try:
                             results = sorted(results, key=lambda k: eval(k['Seeders'] if 'Seeders' in k else k['Likes']), reverse=True) 
@@ -111,7 +112,7 @@ def inlineSearch(inline_query):
 
                     else:
                         if page == 1:
-                            bot.answer_inline_query(inline_query.id, [telebot.types.InlineQueryResultArticle(id=0, title=language['noResults'][userLanguage], url='https://t.me/h9youtube', hide_url=True, thumb_url='https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/notfound.jpg', input_message_content=telebot.types.InputTextMessageContent(language['noResults'][userLanguage], parse_mode='HTML'))], is_personal=True)
+                            bot.answer_inline_query(inline_query.id, [telebot.types.InlineQueryResultArticle(id=0, title=language['noResults'][userLanguage], url='https://t.me/h9youtube', hide_url=True, thumb_url='https://raw.githubusercontent.com/hemantapkh/TorrentHunt/main/images/notfound.jpg', description=results['error'], input_message_content=telebot.types.InputTextMessageContent(language['noResults'][userLanguage], parse_mode='HTML'))], is_personal=True)
 
                 else:
                     bot.answer_inline_query(inline_query.id, results=[], cache_time=0, is_personal=True, switch_pm_text=f'Enter the query to search in {siteName[site]}', switch_pm_parameter='inlineQuery')
