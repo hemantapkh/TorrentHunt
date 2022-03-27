@@ -46,7 +46,6 @@ siteName = {
     'limetorrent': 'Lime Torrents',
     'torrentfunk': 'Torrent Funk',
     'torrentproject': 'Torrent Project',
-    'glodls': 'Glodls',
     'libgen': 'Libgen'
 }
 
