@@ -27,6 +27,7 @@ siteList = {
     '!tp': 'torrentproject',
     '!gl': 'glodls',
     '!lg': 'libgen',
+    '!ybt': 'ybt',
 }
 
 siteName = {
@@ -47,7 +48,8 @@ siteName = {
     'limetorrent': 'Lime Torrents',
     'torrentfunk': 'Torrent Funk',
     'torrentproject': 'Torrent Project',
-    'libgen': 'Libgen'
+    'libgen': 'Libgen',
+    'ybt': 'Your BitTorrent'
 }
 
 #: Inline query
@@ -132,8 +134,10 @@ def queryMessageContent(userId, item, torrentSite):
     msg += f"{language['size'][userLanguage]}{item['size'] if 'size' in item else '-'}\n"
     msg += f"{language['seeders'][userLanguage]}{item['seeders'] if 'seeders' in item else '-'}\n"
     msg += f"{language['leechers'][userLanguage]}{item['leechers'] if 'leechers' in item else '-'}\n"
-    msg += f"{language['uploadedOn'][userLanguage]}{item['date'] if 'date' in item else '-'}\n\n"
+    msg += f"{language['uploadedOn'][userLanguage]}{item['date'] if 'date' in item else '-'}"
 
-    msg += f"<b>Magnet Link: </b>{'<code>'+item['magnet']+'</code>' if 'magnet' in item else language['errorFetchingLink'][userLanguage].replace('.','')}\n\n🔥<b>via @TorrentHuntBot</b>"
+    msg += f"\n\n<b>Magnet Link: </b><code>{item['magnet']}</code>" if 'magnet' in item else ''
+    msg += f"\n\n<b>Torrent Link: </b>{item['torrent']}" if 'torrent' in item else ''
+    msg += "\n\n🔥<b>via @TorrentHuntBot</b>"
 
     return msg
