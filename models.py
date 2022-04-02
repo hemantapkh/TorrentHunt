@@ -28,7 +28,7 @@ class dbQuery():
         return True if isRegistered else False
 
     #: Get user stats
-    def getUsers(self, type='users', language=None, languageExcept=None, date=None, countOnly=False):
+    def getUsers(self, language=None, languageExcept=None, date=None, countOnly=False):
         if countOnly:
             self.cur.execute(f"""SELECT count(*) FROM settings 
                                 FULL OUTER JOIN USERS on ownerId=userId
@@ -50,7 +50,7 @@ class dbQuery():
                         {f"AND language NOT IN {str(languageExcept).replace('[','(').replace(']',')')}" if languageExcept else ''} 
             """)
             
-            users = self.cur.fetchall()
+            users = [a[0] for a in self.cur.fetchall()]
 
         return users
 
