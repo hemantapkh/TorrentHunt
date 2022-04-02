@@ -1,70 +1,97 @@
-import sqlite3
-import os, json
+import psycopg2
 
-config = json.load(open('src/config.json'))
-magnetDatabase = config['magnetDatabase']
-database = config['database']
+# import os, json
 
-input1 = input('Do you want to run migration for magnet link database? Y/[n]: ')
-if input1 == 'y':
-    if os.path.exists(magnetDatabase):
-        os.remove(magnetDatabase)
-        print('[-] Database already exists. Deleting it.')
+# config = json.load(open('src/config.json'))
+# magnetDatabase = config['magnetDatabase']
+# database = config['database']
 
-    conn = sqlite3.connect(magnetDatabase)
-    print('[+] Magnetlink Database opened successfully.')
+choice = input('Create database for magnets? Y/[n]: ')
+if choice == 'y':
+    connection = psycopg2.connect(user="postgres",
+                                  password="postgres",
+                                  host="127.0.0.1",
+                                  port="5432",
+                                  database="magnets")
 
-    conn.execute('''CREATE TABLE data
-            (key       TEXT PRIMARY KEY,
-            date      INT,
-            magnetlink TEXT
-            );''')
+    connection.autocommit = True
+    cursor = connection.cursor()
 
-    print('[+] Table data created successfully.')
+    try:
+        cursor.execute('''CREATE TABLE data
+                (key       TEXT PRIMARY KEY,
+                date      INT,
+                magnetlink TEXT
+                );''')
+    
+        print('[+] Table users created successfully.')
+    
+    except psycopg2.errors.DuplicateTable:
+        print('[-] Table data already exists.')
 
-    conn.close()
+    connection.close()
 
-input1 = input('Do you want to run migration for Torrent Hunt database? Y/[n]: ')
-if input1 == 'y':
-    if os.path.exists(database):
-        os.remove(database)
-        print('[-] Database already exists. Deleting it.')
+choice = input('Create database for TorrentHunt? Y/[n]: ')
+if choice == 'y':
+    connection = psycopg2.connect(user="postgres",
+                                  password="postgres",
+                                  host="127.0.0.1",
+                                  port="5432",
+                                  database="torrenthunt")
+    connection.autocommit = True
+    
+    cursor = connection.cursor()
 
-    conn = sqlite3.connect(database)
-    print('[+] Database opened successfully.')
+    try:
+        cursor.execute('''CREATE TABLE users
+                (UserId       INTEGER PRIMARY KEY,
+                date          DATE,
+                userName      TEXT
+                );''')
 
-    conn.execute('''CREATE TABLE users
-            (UserId       INTEGER PRIMARY KEY,
-            date          STRING  NOT NULL
-            );''')
+        print('[+] Table users created successfully.')
+    
+    except psycopg2.errors.DuplicateTable:
+        print('[-] Table users already exists.')
 
-    print('[+] Table users created successfully.')
+    
+    try:
+        cursor.execute('''CREATE TABLE groups
+                (UserId       INTEGER PRIMARY KEY,
+                date          DATE,
+                userName      TEXT
+                );''')
 
-    conn.execute('''CREATE TABLE groups
-            (UserId       INTEGER PRIMARY KEY,
-            userName      TEXT,
-            date          STRING  NOT NULL
-            );''')
+        print('[+] Table users created successfully.')
+    
+    except psycopg2.errors.DuplicateTable:
+        print('[-] Table groups already exists.')
 
-    print('[+] Table users created successfully.')
+    try:
+        cursor.execute('''CREATE TABLE settings
+                (ownerId       INTEGER PRIMARY KEY,
+                language       TEXT DEFAULT 'english',
+                defaultSite    TEXT DEFAULT 'piratebay',
+                defaultMode    TEXT DEFAULT 'link',
+                restrictedMode INTEGER DEFAULT 1
+                );''')
 
-    conn.execute('''CREATE TABLE settings
+        print('[+] Table settings created successfully.')
+    
+    except psycopg2.errors.DuplicateTable:
+        print('[-] Table settings already exists.')
+
+    try:
+        cursor.execute('''CREATE TABLE flood
             (ownerId       INTEGER PRIMARY KEY,
-            language       TEXT DEFAULT "english",
-            defaultSite    TEXT DEFAULT "piratebay",
-            defaultMode    TEXT DEFAULT "link",
-            restrictedMode INTEGER DEFAULT 1
+            warned         INTEGER DEFAULT 0,
+            lastMessage   INTEGER DEFAULT 0,
+            blockTill     INTEGER DEFAULT 0
             );''')
+            
+        print('[+] Table flood created successfully.')
+    
+    except psycopg2.errors.DuplicateTable:
+        print('[-] Table flood already exists.')
 
-    print('[+] Table settings created successfully.')
-
-    conn.execute('''CREATE TABLE flood
-         (ownerId       INTEGER PRIMARY KEY,
-         warned         INTEGER DEFAULT 0,
-         lastMessage   INTEGER DEFAULT 0,
-         blockTill     INTEGER DEFAULT 0
-         );''')
-         
-    print('[+] Table flood created successfully.')
-
-    conn.close()
+    connection.close()
