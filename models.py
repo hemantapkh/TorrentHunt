@@ -56,6 +56,9 @@ class dbQuery():
 
     #: Get the user's settings
     def getSetting(self, userId, var, table='settings'):
+        self.cur.execute(f'''INSERT INTO {table} (ownerId) VALUES ({userId}) 
+                        ON CONFLICT (ownerId) 
+                        DO NOTHING''')
         self.cur.execute(f'SELECT {var} FROM {table} WHERE ownerId={userId} limit 1')
         setting = self.cur.fetchone()
 
