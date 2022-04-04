@@ -29,23 +29,21 @@ def sortList(lst):
 # Check if the user is subscribed or not, returns True if subscribed
 def isSubscribed(message, userLanguage=None, sendMessage=True):
     telegramId = message.from_user.id
-    subscribed = True
     
     try:
-        status = bot.get_chat_member('-1001270853324', telegramId)
-        if status.status == 'left':
-            subscribed = False
-        else:
+        response = requests.get('https://hemantapokharel.com.np/isSubscribed', params={'userid': telegramId}).json()
+        subscribed = response['subscribed']
+
+        if subscribed:
             return True
+        
+        else:
+            if sendMessage:
+                bot.send_message(message.chat.id, text=language['notSubscribed'][userLanguage], reply_markup=notSubscribedMarkup(userLanguage))
+            return False
 
     except Exception:
-        subscribed = True
-
-    if not subscribed:
-        # Send the links if sendMessage is True
-        if sendMessage:
-            bot.send_message(message.chat.id, text=language['notSubscribed'][userLanguage], reply_markup=notSubscribedMarkup(userLanguage))
-        return False
+        return True
 
 # Returns the equivalent category of the text 
 def textToCategory(text, userLanguage):
