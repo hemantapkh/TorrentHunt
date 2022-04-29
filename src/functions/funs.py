@@ -6,7 +6,12 @@ from src.functions.keyboard import notSubscribedMarkup
 #: URL shortner
 def shortner(url):
     short = requests.get(f'https://is.gd/create.php?format=simple&url={url}')
-    return short.text
+
+    if short.ok:
+        return short.text
+    
+    else:
+        return "ERROR"
 
 #: Get suggestion query
 def getSuggestions(query):
