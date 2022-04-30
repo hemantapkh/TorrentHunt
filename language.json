@@ -18,7 +18,7 @@
 
         "hindi": "✨ नमस्ते {}, मैं टोरेंट हंट बॉट हूं और मैं टेलीग्राम के भीतर टोरेंट को खोजने और अन्वेषण करने में आपकी मदद कर सकता हूं।\n\n<b>टोरेंट की खोज के लिए कोई भी कीवर्ड भेजें।</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>इनलाइन खोज के लिए, बस किसी भी चैट में @TorrentHuntBot टाइप करें और टोरेंट खोजें।</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "italian": "✨ Ciao {}, Sono Torrent Hunt Bot e posso aiutarti a cercare e sfogliare i torrent all'interno di Telegram.\n\n<b>Invia qualsiasi parola chiave per cercare torrent.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
+        "italian": "✨ Ciao {}, Sono Torrent Hunt Bot e posso aiutarti a cercare e scegliere i torrent all'interno di Telegram.\n\n<b>Invia qualsiasi parola chiave per cercare torrent.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
         "korean": "✨ 안녕하세요 {}, 저는 Torrent Hunt Bot이며 Telegram에서 급류를 검색하고 찾아 볼 수 있도록 도와 드릴 수 있습니다.\n\n<b>급류를 검색하려면 키워드를 보내십시오.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>인라인 검색의 경우 채팅에서 @TorrentHuntBot를 입력하고 토렌트를 검색하십시오.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
@@ -56,7 +56,7 @@
 
         "hindi": "✨ नमस्ते {}, मैं टोरेंट हंट बॉट हूं और मैं टेलीग्राम के भीतर टोरेंट को खोजने और अन्वेषण करने में आपकी मदद कर सकता हूं।\n\n<b>टोरेंट की खोज के लिए कोई भी कीवर्ड भेजें।</b>\n\nEg: /Avengers, /Naruto\n\n<b>इनलाइन खोज के लिए, बस किसी भी चैट में @TorrentHuntBot टाइप करें और टोरेंट खोजें।</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "italian": "✨ Ciao {}, Sono Torrent Hunt Bot e posso aiutarti a cercare e sfogliare i torrent all'interno di Telegram.\n\n<b>Invia qualsiasi parola chiave per cercare torrent.</b>\n\nEg: /Avengers, /Naruto\n\n<b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
+        "italian": "✨ Ciao {}, Sono Torrent Hunt Bot e posso aiutarti a cercare e scegliere i torrent all'interno di Telegram.\n\n<b>Invia qualsiasi parola chiave per cercare torrent.</b>\n\nEg: /Avengers, /Naruto\n\n<b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
         "korean": "✨ 안녕하세요 {}, 저는 Torrent Hunt Bot이며 Telegram에서 급류를 검색하고 찾아 볼 수 있도록 도와 드릴 수 있습니다.\n\n<b>급류를 검색하려면 키워드를 보내십시오.</b>\n\nEg: /Avengers, /Naruto\n\n<b>인라인 검색의 경우 채팅에서 @TorrentHuntBot를 입력하고 토렌트를 검색하십시오.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
@@ -95,7 +95,7 @@
 
         "hindi": "🗣️ अपनी इच्छानुसार भाषा चुनें",
 
-        "italian": "🗣️ Scegli una lingua che desideri",
+        "italian": "🗣️ Scegli la lingua che desideri",
 
         "korean": "🗣️ 원하는 언어를 선택하세요",
 
@@ -133,7 +133,7 @@
 
         "hindi": "🇮🇳 हिंदी को आपकी डिफ़ॉल्ट भाषा के रूप में चुना गया है। आप सेटिंग्स से दूसरी भाषा फिर से चुन सकते हैं।",
 
-        "italian": "🇮🇹 L'italiano è selezionato come lingua predefinita. Puoi scegliere di nuovo un'altra lingua dalle impostazioni.",
+        "italian": "🇮🇹 L'italiano è selezionato come la tua lingua predefinita. Puoi scegliere un'altra lingua dalle impostazioni.",
 
         "korean": "🇰🇷 한국어가 기본 언어로 선택됩니다. 설정에서 다른 언어를 다시 선택할 수 있습니다.",
 
@@ -171,7 +171,7 @@
 
         "hindi": "🗣️ भाषा सेटिंग",
 
-        "italian": "🗣️ Impostazione della lingua",
+        "italian": "🗣️ Impostazioni della lingua",
 
         "korean": "🗣️ 언어 설정",
 
@@ -187,7 +187,7 @@
 
         "turkish": "🗣️ Dil ayarı",
 
-        "ukrainian": "🗣️ Налаштування мови"   
+        "ukrainian": "🗣️ Налаштування мови"
     },
 
     "turnOnRestrictedMode": {
@@ -225,7 +225,7 @@
 
         "turkish": "🚫 Kısıtlı modu etkinleştirin",
 
-        "ukrainian": "🚫 Активуйте обмежений режим"   
+        "ukrainian": "🚫 Активуйте обмежений режим"
     },
 
     "turnOffRestrictedMode": {
@@ -263,7 +263,7 @@
 
         "turkish": "✔️ Kısıtlı modu devre dışı bırakın",
 
-        "ukrainian": "✔️ Вимкніть обмежений режим"   
+        "ukrainian": "✔️ Вимкніть обмежений режим"
     },
 
     "restrictedModeOn": {
@@ -285,7 +285,7 @@
 
         "hindi": "🚫 प्रतिबंधित मोड आपके लिए चालू है जो आपके परिणामों से वयस्क सामग्री छिपाएगा।",
 
-        "italian": "🚫 La modalità con restrizioni è attivata per te che nasconderà i contenuti per adulti dai tuoi risultati.",
+        "italian": "🚫 La modalità con restrizioni è attivata per te e nasconderà i contenuti per adulti dai tuoi risultati.",
 
         "korean": "🚫 검색 결과에서 성인용 콘텐츠를 숨기는 제한 모드가 켜져 있습니다.",
 
@@ -301,7 +301,7 @@
 
         "turkish": "🚫 Kısıtlı modu kendiniz için açtınız ve bu da şu anlama geliyor: Yetişkinlere yönelik içerik sonuçlarınızda gözükmeyecek.",
 
-        "ukrainian": "🚫 Для вас увімкнено обмежений режим, який буде приховувати вміст для дорослих з результатів."   
+        "ukrainian": "🚫 Для вас увімкнено обмежений режим, який буде приховувати вміст для дорослих з результатів."
     },
 
     "restrictedModeOff": {
@@ -339,7 +339,7 @@
 
         "turkish": "✔️ Kısıtlı mod başarıyla kapatıldı.",
 
-        "ukrainian": "✔️ Обмежений режим успішно вимкнено."   
+        "ukrainian": "✔️ Обмежений режим успішно вимкнено."
     },
 
     "cantView": {
@@ -377,12 +377,12 @@
 
         "turkish": "🚫 Kısıtlı mod açık olduğundan bu içeriği görüntüleyemezsiniz. Kısıtlamayı ayarlardan kapatabilirsiniz.",
 
-        "ukrainian": "🚫 Ви не можете переглянути цей вміст, оскільки ввімкнено обмежений режим. Ви можете вимкнути обмеження в налаштуваннях." 
+        "ukrainian": "🚫 Ви не можете переглянути цей вміст, оскільки ввімкнено обмежений режим. Ви можете вимкнути обмеження в налаштуваннях."
     },
 
     "notSubscribed": {
         "english": "🥺 It seems like you are not subscribed to our channel yet. Due to our limited resources, only our subscriers can use this service. Please support us by subscribing to our channel to use this service.",
-        
+
         "nepali": "🥺 यस्तो देखिन्छ कि तपाईं हाम्रो च्यानलको सदस्यता लिनुभएको छैन। हाम्रो सीमित संसाधनहरूको कारण, केवल हाम्रा ग्राहकहरूले यो सेवा प्रयोग गर्न सक्दछन्। यो सेवा प्रयोग गर्नको लागि कृपया हाम्रो च्यानलमा सदस्यता लिई हामीलाई समर्थन गर्नुहोस्।",
 
         "bengali": "🥺 দেখে মনে হচ্ছে আপনি এখনও আমাদের চ্যানেলে সাবস্ক্রাইব করেন নি। আমাদের সীমিত সংস্থানগুলির কারণে, কেবলমাত্র আমাদের গ্রাহকরা এই পরিষেবাটি ব্যবহার করতে পারবেন। এই পরিষেবাটি ব্যবহার করতে আমাদের চ্যানেলটিতে সাবস্ক্রাইব করে দয়া করে আমাদের সমর্থন করুন।",
@@ -552,7 +552,7 @@
 
         "hindi": "😇 <b>हमें समर्थन देने के लिए बहुत बहुत धन्यवाद !! हमारे चैनल का एक हिस्सा होने के नाते, आपको हमारी परियोजनाओं का नवीनतम अपडेट मिलेगा।</b>",
 
-        "italian": "😇 <b>Grazie mille per averci supportato !! Essendo parte del nostro canale, riceverai gli ultimi aggiornamenti dei nostri progetti.</b>",
+        "italian": "😇 <b>Grazie mille per averci supportato !! Facendo parte del nostro canale, riceverai gli ultimi aggiornamenti dei nostri progetti.</b>",
 
         "korean": "😇 <b>응원 해주셔서 감사합니다 !! 우리 채널의 일원이되면 우리 프로젝트의 최신 업데이트를받을 수 있습니다.</b>",
 
@@ -583,7 +583,7 @@
         "catalan": "<b>{}</b>\n\nTrieu la configuració que vulgueu canviar.",
 
         "dutch": "<b>{}</b>\n\nKies de instelling die u wilt wijzigen.",
-        
+
         "french": "<b>{}</b>\n\nChoisissez le paramètre que vous souhaitez modifier.",
 
         "german": "<b>{}</b>\n\nWählen Sie die Einstellung, die Sie ändern möchten.",
@@ -622,14 +622,14 @@
         "catalan": "<b>{}</b>\n\n/start - Inicieu la conversa amb el bot\n/trending - Aconsegueix tendències torrents\n/popular - Obteniu torrents populars\n/top - Obteniu els 100 torrents principals\n/browse - Navegar per torrents\n/settings - Canvieu la configuració\n/help - Mostra aquest menú d’ajuda\n/support - Ajudeu el desenvolupador\n\n<b>⬇️ Com descarregar torrents?</b>\n\nPer descarregar els torrents, heu d’instal·lar qualsevol client torrent al vostre dispositiu. Hi ha molts clients torrent. Alguns dels meus preferits són qBitTorrent (per a PC) i Flud (per a Android). Després d’instal·lar-lo, només heu de copiar l’enllaç magnet o carregar el fitxer .Torrent a l’aplicació i el torrent començarà a descarregar-se.\n\nA més, podeu utilitzar un client de torrent web, com seedr, que us descarregarà el torrent. L’ús d’un client web us permetrà veure torrents sense descarregar. Només heu de crear un compte a seedr i copiar-hi l'enllaç magnet. Podeu descarregar el fitxer o transmetre'ls directament al reproductor VLC sense descarregar-lo. Prefereixo fer servir un client web com seedr per descarregar torrents.\n\n<b>Envieu qualsevol paraula clau per cercar torrents.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Per a la cerca en línia, només cal que escriviu @TorrentHuntBot en qualsevol xat i cerqueu torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
         "dutch": "<b>{}</b>\n\n/start - Begin een gesprek met de bot\n/trending - Ontvang trending torrents\n/popular - Krijg populaire torrents\n/top - Krijg top 100 torrents\n/browse - Blader door torrents\n/settings - Verander je instellingen\n/help - Toon dit helpmenu\n/support - Steun de ontwikkelaar\n\n<b>⬇️ Hoe torrents te downloaden?</b>\n\nOm de torrents te downloaden, moet je een torrent-client op je apparaat installeren. Er zijn veel torrent-clients die er zijn. Enkele van mijn favorieten zijn qBitTorrent (voor pc) en Flud (voor Android). Na het installeren hoef je alleen maar de magneetlink te kopiëren of het .Torrent-bestand in de app te laden en je torrent zal beginnen met downloaden.\n\nVerder kun je een web-torrent-client gebruiken, zoals seedr, die de torrent voor je downloadt. Als je een webclient gebruikt, kun je torrents bekijken zonder te downloaden. U hoeft alleen maar een account in seedr aan te maken en de magneetlink daarheen te kopiëren. U kunt het bestand downloaden of ze rechtstreeks naar de VLC-speler streamen zonder te downloaden. Ik gebruik liever een webclient zoals seedr om torrents te downloaden.\n\n<b>Stuur trefwoorden om naar torrents te zoeken.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Voor inline zoeken typ je gewoon @TorrentHuntBot in een chat en zoek je naar torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
-        
+
         "french": "<b>{}</b>\n\n/start - Commencer la conversation avec le bot\n/trending - Obtenez des torrents tendance\n/popular - Obtenez des torrents populaires\n/top - Obtenez les 100 meilleurs torrents\n/browse - Parcourir les torrents\n/settings - Modifiez vos paramètres\n/help - Afficher ce menu d'aide\n/support - Soutenir le développeur\n\n<b>⬇️ Comment télécharger des torrents?</b>\n\nPour télécharger les torrents, vous devez installer n'importe quel client torrent sur votre appareil. Il existe de nombreux clients torrent. Certains de mes favoris sont qBitTorrent (pour PC) et Flud (pour Android). Après l'installation, il vous suffit de copier le lien magnétique ou de charger le fichier .Torrent dans l'application et votre torrent commencera à se télécharger.\n\nDe plus, vous pouvez utiliser un client torrent Web, comme seedr, qui téléchargera le torrent pour vous. L'utilisation d'un client Web vous permettra de regarder des torrents sans téléchargement. Il vous suffit de créer un compte dans seedr et d'y copier le lien magnétique. Vous pouvez télécharger le fichier ou le diffuser directement dans le lecteur VLC sans téléchargement. Je préfère utiliser un client Web comme seedr pour télécharger des torrents.\n\n<b>Envoyez des mots-clés pour rechercher des torrents.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Pour la recherche en ligne, tapez simplement @TorrentHuntBot dans n'importe quelle discussion et recherchez des torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
         "german": "<b>{}</b>\n\n/start - Starten Sie ein Gespräch mit dem Bot\n/trending - Holen Sie sich Trend-Torrents\n/popular - Holen Sie sich beliebte Torrents\n/top - Holen Sie sich Top 100 Torrents\n/browse - Torrents durchsuchen\n/settings - Ändern Sie Ihre Einstellungen\n/help - Dieses Hilfemenü anzeigen\n/support - Unterstützen Sie den Entwickler\n\n<b>⬇️ Wie lade ich Torrents herunter?</b>\n\nUm die Torrents herunterzuladen, müssen Sie einen beliebigen Torrent-Client auf Ihrem Gerät installieren. Es gibt viele Torrent-Clients da draußen. Einige meiner Favoriten sind qBitTorrent (für PC) und Flud (für Android). Nach der Installation müssen Sie nur den Magnet-Link kopieren oder die .Torrent-Datei in die App laden, und Ihr Torrent beginnt mit dem Download.\n\nDarüber hinaus können Sie einen Web-Torrent-Client wie seedr verwenden, der den Torrent für Sie herunterlädt. Mit einem Webclient können Sie Torrents ansehen, ohne sie herunterladen zu müssen. Sie müssen nur ein Konto in seedr erstellen und den Magnetlink dort kopieren. Sie können die Datei entweder herunterladen oder direkt in den VLC-Player streamen, ohne sie herunterladen zu müssen. Ich bevorzuge es, einen Web-Client wie seedr zu verwenden, um Torrents herunterzuladen.\n\n<b>Senden Sie beliebige Schlüsselwörter, um nach Torrents zu suchen.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Geben Sie für die Inline-Suche einfach @TorrentHuntBot in einen Chat ein und suchen Sie nach Torrents.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
         "hindi": "<b>{}</b>\n\n/start - बॉट के साथ बातचीत शुरू करें\n/trending - ट्रेंडिंग टॉरेंट्स प्राप्त करें\n/popular - लोकप्रिय torrents प्राप्त करें\n/top - शीर्ष 100 टोरेंट प्राप्त करें\n/browse - टॉरेंट ब्राउज़ करें\n/settings - अपनी सेटिंग्स बदलें\n/help - यह सहायता मेनू दिखाएँ\n/support - डेवलपर का समर्थन करें\n\n<b>⬇️ टोरेंट कैसे डाउनलोड करें?</b>\n\nटोरेंट डाउनलोड करने के लिए, आपको अपने डिवाइस पर कोई भी टोरेंट क्लाइंट इंस्टॉल करना होगा। वहाँ कई टोरेंट क्लाइंट हैं। मेरे कुछ पसंदीदा qBitTorrent (पीसी के लिए) और Flud (एंड्रॉइड के लिए) हैं। इंस्टॉल करने के बाद, आपको बस चुंबक लिंक को कॉपी करना होगा, या .टोरेंट फ़ाइल को ऐप में लोड करना होगा और आपका टोरेंट डाउनलोड होना शुरू हो जाएगा।\n\nइसके अलावा, आप एक वेब टोरेंट क्लाइंट का उपयोग कर सकते हैं, जैसे सीडर जो आपके लिए टोरेंट डाउनलोड करेगा। वेब क्लाइंट का उपयोग करने से आप बिना डाउनलोड किए टॉरेंट देख सकेंगे। आपको बस सीडर में एक खाता बनाने और वहां चुंबक लिंक को कॉपी करने की आवश्यकता है। आप या तो फ़ाइल को डाउनलोड कर सकते हैं या उन्हें बिना डाउनलोड किए सीधे वीएलसी प्लेयर में स्ट्रीम कर सकते हैं। मैं टोरेंट डाउनलोड करने के लिए सीडर जैसे वेब क्लाइंट का उपयोग करना पसंद करता हूं।\n\n<b>टोरेंट की खोज के लिए कोई भी कीवर्ड भेजें।</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>इनलाइन खोज के लिए, बस किसी भी चैट में @TorrentHuntBot टाइप करें और टोरेंट खोजें।</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
-        "italian": "<b>{}</b>\n\n/start - Inizia la conversazione con il bot\n/trending - Ottieni torrent di tendenza\n/popular - Ottieni torrent popolari\n/top - Ottieni i migliori 100 torrent\n/browse - Sfoglia i torrent\n/settings - Modifica le tue impostazioni\n/help - Mostra questo menu di aiuto\n/support - Supporta lo sviluppatore\n\n<b>⬇️ Come scaricare i torrent?</b>\n\nPer scaricare i torrent, devi installare un qualsiasi client torrent sul tuo dispositivo. Ci sono molti client torrent là fuori. Alcuni dei miei preferiti sono qBitTorrent (per PC) e Flud (per Android). Dopo l'installazione, devi solo copiare il collegamento magnetico o caricare il file .Torrent nell'app e il tuo torrent inizierà a scaricarsi.\n\nInoltre, puoi utilizzare un client torrent web, come seedr, che scaricherà il torrent per te. L'utilizzo di un client Web ti consentirà di guardare i torrent senza scaricarli. Devi solo creare un account in seedr e copiare il link magnetico lì. Puoi scaricare il file o riprodurlo in streaming direttamente nel lettore VLC senza scaricarlo. Preferisco usare un client web come seedr per scaricare torrent.\n\n<b>Invia qualsiasi parola chiave per cercare torrent.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
+        "italian": "<b>{}</b>\n\n/start - Inizia la conversazione con il bot\n/trending - Ottieni i torrent di tendenza\n/popular - Ottieni i torrent popolari\n/top - Ottieni i migliori 100 torrent\n/browse - Sfoglia i torrent\n/settings - Modifica le tue impostazioni\n/help - Mostra questo menu di aiuto\n/support - Supporta lo sviluppatore\n\n<b>⬇️ Come scaricare i torrent?</b>\n\nPer scaricare i torrent, devi installare un qualsiasi client torrent sul tuo dispositivo. Ci sono molti client torrent là fuori. Alcuni dei miei preferiti sono qBitTorrent (per PC) e Flud (per Android). Dopo l'installazione, devi solo copiare il collegamento magnetico o caricare il file .Torrent nell'app e il tuo torrent inizierà a scaricarsi.\n\nInoltre, puoi utilizzare un client torrent web, come seedr, che scaricherà il torrent per te. L'utilizzo di un client Web ti consentirà di guardare i torrent senza scaricarli. Devi solo creare un account in seedr e copiare il link magnetico lì. Puoi scaricare il file o riprodurlo in streaming direttamente nel lettore VLC senza scaricarlo. Preferisco usare un client web come seedr per scaricare torrent.\n\n<b>Invia qualsiasi parola chiave per cercare torrent.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
         "korean": "<b>{}</b>\n\n/start - 봇과 대화 시작\n/trending - 인기 급류 받기\n/popular - 인기 급류 받기\n/top - 상위 100 개 급류 얻기\n/browse - 토렌트 찾아보기\n/settings - 설정 변경\n/help - 이 도움말 메뉴 표시\n/support - 개발자 지원\n\n<b>⬇️ 급류를 다운로드하는 방법?</b>\n\n토렌트를 다운로드하려면 기기에 토렌트 클라이언트를 설치해야합니다. 많은 토렌트 클라이언트가 있습니다. 내가 좋아하는 것 중 일부는 qBitTorrent (PC 용)와 Flud (Android 용)입니다. 설치 후 마그넷 링크를 복사하거나 .Torrent 파일을 앱에로드하면 토렌트가 다운로드되기 시작합니다.\n\n또한 토렌트를 다운로드하는 seedr와 같은 웹 토렌트 클라이언트를 사용할 수 있습니다. 웹 클라이언트를 사용하면 다운로드하지 않고도 토렌트를 볼 수 있습니다. seedr에서 계정을 만들고 거기에 자석 링크를 복사하기 만하면됩니다. 파일을 다운로드하거나 다운로드하지 않고 VLC 플레이어로 직접 스트리밍 할 수 있습니다. 나는 급류를 다운로드하기 위해 seedr와 같은 웹 클라이언트를 사용하는 것을 선호합니다.\n\n<b>급류를 검색하려면 키워드를 보내십시오.</b>\n\nEg: <code>Avengers</code>, <code>Naruto</code>\n\n<b>인라인 검색의 경우 채팅에서 @TorrentHuntBot를 입력하고 토렌트를 검색하십시오.</b>\n\nEg: <code>@TorrentHuntBot Spider man</code>",
 
@@ -667,7 +667,7 @@
 
         "hindi": "<b>{}</b>\n\nयोगदान करने की इच्छा के लिए धन्यवाद। इस सेवा को जीवित रखने के लिए और मुझे नई सुविधाओं को जोड़ने की प्रेरणा देने के लिए कोई भी राशि दान करें ।😇\n\n🐛 बग की रिपोर्ट करने या एक नई सुविधा का अनुरोध करने के लिए, हमारी चर्चा चैट में शामिल हों और वहां चर्चा करें।",
 
-        "italian": "<b>{}</b>\n\nGrazie per il tuo desiderio di contribuire. Dona qualsiasi somma per mantenere vivo questo servizio e per darmi la motivazione per aggiungere nuove funzionalità.😇\n\n🐛 Per segnalare bug o richiedere una nuova funzionalità, unisciti alla nostra chat di discussione e discutine lì.",
+        "italian": "<b>{}</b>\n\nGrazie per il desiderio di contribuire. Dona qualsiasi somma per mantenere vivo questo servizio e per darmi la motivazione per aggiungere nuove funzionalità.😇\n\n🐛 Per segnalare bug o richiedere una nuova funzionalità, unisciti alla nostra chat di discussione e discutine lì.",
 
         "korean": "<b>{}</b>\n\n기부를 희망해주셔서 감사합니다. 이 서비스를 유지하고 새로운 기능을 추가할 동기를 부여하려면 얼마든지 기부하십시오.😇\n\n🐛 버그를보고하거나 새로운 기능을 요청하려면 토론 채팅에 참여하고 거기에서 토론하십시오.",
 
@@ -781,7 +781,7 @@
 
         "hindi": "❌ कोई परिणाम नहीं मिले। कृपया अपनी खोज को परिष्कृत करें।",
 
-        "italian": "❌ Nessun risultato è stato restituito. Per favore affina la tua ricerca.",
+        "italian": "❌ Nessun risultato è stato trovato. Per favore affina la tua ricerca.",
 
         "korean": "❌ 결과가 반환되지 않았습니다. 검색을 구체화하십시오.",
 
@@ -1220,7 +1220,7 @@
 
     "fetchingTorrentInfo": {
         "english": "🔎 <code>Fetching torrent info ...</code>",
- 
+
         "nepali": "🔎 <code>जानकारी प्राप्त गर्दै ...</code>",
 
         "bengali": "🔎 <code>টরেন্টের তথ্য আনা হচ্ছে ...</code>",
@@ -1405,7 +1405,7 @@
 
         "turkish": "⚠️ Buna erişmek için yeterli izinin yok.",
 
-        "ukrainian": "⚠️ У вас недостатньо дозволу для доступу до цього." 
+        "ukrainian": "⚠️ У вас недостатньо дозволу для доступу до цього."
     },
 
     "notYourMessage": {
@@ -1443,7 +1443,7 @@
 
         "turkish": "⚠️ Bu özelliği yalnızca iletiyi gönderen kullanabilir. Lütfen aramak için bana kendi mesajınızı gönderin.",
 
-        "ukrainian": "⚠️ Лише відправник повідомлення може використовувати цю функцію. Будь ласка, надішліть мені власне повідомлення для пошуку." 
+        "ukrainian": "⚠️ Лише відправник повідомлення може використовувати цю функцію. Будь ласка, надішліть мені власне повідомлення для пошуку."
     },
 
     "errorSendingImage": {
@@ -1733,7 +1733,7 @@
 
         "hindi": "भाषा: ",
 
-        "italian": "linguaggio: ",
+        "italian": "Lingua: ",
 
         "korean": "언어: ",
 
@@ -2151,7 +2151,7 @@
 
         "hindi": "🔍 ब्राउज टोरेन्ट",
 
-        "italian": "🔍 Sfoglia i torrent",
+        "italian": "🔍 Vedi i torrent",
 
         "korean": "🔍 급류 찾아보기",
 
@@ -2303,7 +2303,7 @@
 
         "hindi": "🎬 चलचित्र",
 
-        "italian": "🎬 Filmy",
+        "italian": "🎬 Film",
 
         "korean": "🎬 영화",
 
@@ -2379,7 +2379,7 @@
 
         "hindi": "🎥 डॉक्यूमेंट्री",
 
-        "italian": "🎥 Docu",
+        "italian": "🎥 Documenti",
 
         "korean": "🎥 기록한 것",
 
@@ -2417,7 +2417,7 @@
 
         "hindi": "🎮 खेल",
 
-        "italian": "🎮 Gioco",
+        "italian": "🎮 Giochi",
 
         "korean": "🎮 경기",
 
@@ -2493,7 +2493,7 @@
 
         "hindi": "🖥️ ऐप्स",
 
-        "italian": "🖥️ Apps",
+        "italian": "🖥️ App",
 
         "korean": "🖥️ 앱",
 
@@ -2835,7 +2835,7 @@
 
         "hindi": "🔎 इनलाइन खोज",
 
-        "italian": "🔎 ricerca in linea",
+        "italian": "🔎 Ricerca nella barra di ricerca",
 
         "korean": "🔎 인라인 검색",
 
@@ -3102,7 +3102,7 @@
 
         "hindi": "📢 Channel",
 
-        "italian": "📢 Channel",
+        "italian": "📢 Canale",
 
         "korean": "📢 Channel",
 
