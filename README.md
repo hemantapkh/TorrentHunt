@@ -71,7 +71,7 @@ Torrent Hunt Bot can talk in 18 different languages.
 - French
 - German
 - Hindi
-- Italian
+- Italian (Verified by [bacchilega](https://github.com/bacchilega)) 
 - Korean
 - Malay
 - Nepali
