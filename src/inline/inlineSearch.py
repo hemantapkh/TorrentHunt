@@ -103,7 +103,7 @@ def inlineSearch(inline_query):
                             
                             else:
                                 markup = telebot.types.InlineKeyboardMarkup()
-                                markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='t.me/h9discussion'))
+                                markup.add(telebot.types.InlineKeyboardButton(text=language['joinChannelBtn'][userLanguage], url='t.me/h9youtube'), telebot.types.InlineKeyboardButton(text=language['joinDiscussionBtn'][userLanguage], url='https://t.me/+mHmBQ2X3hB4zMDll'))
                             
                             queryResult.append(telebot.types.InlineQueryResultArticle(id=count, title=item['name'], url=item['url'] if validators.url(item['url']) else None, hide_url=True, thumb_url=thumbnail, thumb_width='123', thumb_height='182', description=f"{language['size'][userLanguage] + item['size'] if 'size' in item else ''} {', '+language['seeders'][userLanguage] + item['seeders'] if 'seeders' in item and item['seeders'] != '-' else ''} {', '+language['leechers'][userLanguage] + item['leechers'] if 'leechers' in item else ''}", input_message_content=telebot.types.InputTextMessageContent(queryMessageContent(inline_query.from_user.id, item, site), parse_mode='HTML'), reply_markup=markup))
                         
