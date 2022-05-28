@@ -16,11 +16,19 @@ if input1 == 'y':
 
     conn.execute('''CREATE TABLE data
             (key       TEXT PRIMARY KEY,
-            date      INT,
+            date       INT,
             magnetlink TEXT
             );''')
 
     print('[+] Table data created successfully.')
+
+    conn.execute('''CREATE TABLE wishlist
+            (wishlistId    INT PRIMARY KEY,
+            ownerId        INT,
+            magnetKey      TEXT
+            );''')
+
+    print('[+] Table wishlist created successfully.')
 
     conn.close()
 

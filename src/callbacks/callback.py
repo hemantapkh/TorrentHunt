@@ -86,5 +86,12 @@ def callbackHandler(call):
             else:
                 bot.answer_callback_query(call.id, language['notSubscribedCallback'][userLanguage])
 
+        #! Add items to wishlist
+        elif call.data.startswith('addWishlist'):
+            magnetKey = call.data[15:]
+            dbSql.addWishlist(call.from_user.id, magnetKey)
+
+            bot.answer_callback_query(call.id, language['wishlistAdded'][userLanguage])
+
     else:
         bot.answer_callback_query(call.id, language['notYourMessage'][userLanguage], show_alert=True)

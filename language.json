@@ -1446,6 +1446,44 @@
         "ukrainian": "⚠️ Лише відправник повідомлення може використовувати цю функцію. Будь ласка, надішліть мені власне повідомлення для пошуку."
     },
 
+    "wishlistAdded": {
+        "english": "✅ This item has been added in your wishlist.",
+
+        "nepali": "✅ This item has been added in your wishlist.",
+
+        "bengali": "✅ This item has been added in your wishlist.",
+
+        "belarusian": "✅ This item has been added in your wishlist.",
+
+        "catalan": "✅ This item has been added in your wishlist.",
+
+        "dutch": "✅ This item has been added in your wishlist.",
+
+        "french": "✅ This item has been added in your wishlist.",
+
+        "german": "✅ This item has been added in your wishlist.",
+
+        "hindi": "✅ This item has been added in your wishlist.",
+
+        "italian": "✅ This item has been added in your wishlist.",
+
+        "korean": "✅ This item has been added in your wishlist.",
+
+        "malay": "✅ This item has been added in your wishlist.",
+
+        "polish": "✅ This item has been added in your wishlist.",
+
+        "portuguese": "✅ This item has been added in your wishlist.",
+
+        "russian": "✅ This item has been added in your wishlist.",
+
+        "spanish": "✅ This item has been added in your wishlist.",
+
+        "turkish": "✅ This item has been added in your wishlist.",
+
+        "ukrainian": "✅ This item has been added in your wishlist."
+    },
+
     "errorSendingImage": {
         "english": "⚠️ Error while sending pictures.",
 

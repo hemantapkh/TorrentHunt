@@ -2,6 +2,7 @@ import sqlite3
 import uuid, time
 from datetime import datetime
 
+
 class dbQuery():
     def __init__(self, db, mdb):
         self.db = db
@@ -116,3 +117,14 @@ class dbQuery():
         con.commit()
 
         return key
+
+    #: Add item to the wishlist
+    def addWishlist(self, ownerId, magnetKey):
+        con = sqlite3.connect(self.mdb)
+        cur = con.cursor()
+
+        id = cur.execute(f'SELECT wishlistId FROM wishlist WHERE magnetKey="{magnetKey}"').fetchone()
+        if not id:
+            key = str(uuid.uuid4().int)[:8]
+            cur.execute(f'Insert into wishlist (wishlistId, ownerId, magnetKey) VALUES ("{key}", {ownerId}, "{magnetKey}")')
+            con.commit()
