@@ -25,7 +25,7 @@ if input1 == 'y':
     conn.execute('''CREATE TABLE wishlist
             (wishlistId    INT PRIMARY KEY,
             ownerId        INT,
-            magnetKey      TEXT
+            hash      TEXT
             );''')
 
     print('[+] Table wishlist created successfully.')
@@ -72,7 +72,7 @@ if input1 == 'y':
          lastMessage   INTEGER DEFAULT 0,
          blockTill     INTEGER DEFAULT 0
          );''')
-         
+
     print('[+] Table flood created successfully.')
 
     conn.close()
