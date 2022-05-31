@@ -108,12 +108,12 @@ class dbQuery():
         con.commit()
 
     #: Set magnet link in the database
-    def setMagnet(self, magnetLink):
+    def setMagnet(self, hash, title, magnetLink):
         con = sqlite3.connect(self.mdb)
         cur = con.cursor()
 
         key = uuid.uuid4().hex
-        cur.execute(f'Insert into data (key, date, magnetLink) VALUES ("{key}", {int(time.time())}, "{magnetLink}")')
+        cur.execute(f'Insert OR IGNORE INTO data (hash, title, magnetLink) VALUES ("{hash}", "{title}", "{magnetLink}")')
         con.commit()
 
         return key

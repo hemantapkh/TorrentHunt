@@ -98,7 +98,8 @@ def inlineSearch(inline_query):
                             
                             if botId == '1700458114' and 'magnet' in item:
                                 markup = telebot.types.InlineKeyboardMarkup()
-                                magnetKey = 'Db_'+dbSql.setMagnet(item['magnet'])
+                                dbSql.setMagnet(item['hash'], item['name'], item['magnet'])
+                                magnetKey = 'Db_'+item['hash']
                                 markup.add(telebot.types.InlineKeyboardButton(text='⭐', callback_data=f'addWishlist_{magnetKey}'))
                                 markup.add(telebot.types.InlineKeyboardButton(text=language['addToSeedr'][userLanguage], url=f't.me/torrentseedrbot?start=addTorrent{magnetKey}'))
                             

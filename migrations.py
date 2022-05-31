@@ -15,8 +15,8 @@ if input1 == 'y':
     print('[+] Magnetlink Database opened successfully.')
 
     conn.execute('''CREATE TABLE data
-            (key       TEXT PRIMARY KEY,
-            date       INT,
+            (hash       TEXT PRIMARY KEY COLLATE NOCASE,
+            title      TEXT,
             magnetlink TEXT
             );''')
 

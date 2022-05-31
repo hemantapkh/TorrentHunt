@@ -43,7 +43,8 @@ def getInfo(message, userLanguage=None, called=False):
                     magnetKey = 'URL_'+shortUrl[14:]
                 
                 else:
-                    magnetKey = 'Db_'+dbSql.setMagnet(response['magnetLink'])
+                    dbSql.setMagnet(response['infoHash'], response['name'], response['magnetLink'])
+                    magnetKey = 'Db_'+response['infoHash']
                     markup.add(telebot.types.InlineKeyboardButton(text='⭐', callback_data=f'addWishlist_{magnetKey}'))
                 
                 #markup.add(telebot.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}"), telebot.types.InlineKeyboardButton(text=language['magnetDownloadBtn'][userLanguage], url=shortUrl))
