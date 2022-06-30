@@ -43,7 +43,8 @@ if input1 == 'y':
 
     conn.execute('''CREATE TABLE users
             (UserId       INTEGER PRIMARY KEY,
-            date          STRING  NOT NULL
+            date          STRING  NOT NULL,
+            referrer      TEXT
             );''')
 
     print('[+] Table users created successfully.')

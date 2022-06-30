@@ -9,7 +9,7 @@ class dbQuery():
         self.mdb = mdb
 
     #: Add the user into the database if not registered
-    def setAccount(self, userId, userName=None):
+    def setAccount(self, userId, userName=None, referrer=None):
         chatType = 'users' if userId > 0 else 'groups'
         con = sqlite3.connect(self.db)
         cur = con.cursor()
@@ -18,7 +18,7 @@ class dbQuery():
 
         if not isRegistered:
             if chatType == 'users':
-                cur.execute(f'Insert into {chatType} (userId, date) values (?, ?)', (userId, datetime.today().strftime('%Y-%m-%d')))
+                cur.execute(f'Insert into {chatType} (userId, date, referrer) values (?, ?, ?)', (userId, datetime.today().strftime('%Y-%m-%d'), referrer))
                 cur.execute('Insert into flood (ownerId) values (?)', (userId,))
 
             else:
