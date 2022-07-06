@@ -41,16 +41,25 @@ class dbQuery():
         return True if isRegistered else False
 
     #: Get all the registered users
-    def getAllUsers(self, type='users', date=None, countOnly=False):
+    def getAllUsers(self, type='users', date=None, countOnly=False, langStats=False):
         con = sqlite3.connect(self.db)
         con.row_factory = lambda cursor, row: row[0]
         cur = con.cursor()
 
         if countOnly:
-            if date:
-                users = cur.execute(f'SELECT count(*) FROM {type} WHERE DATE=?', (date,)).fetchone()
+            cur = con.cursor()
+
+            if langStats:
+                con.row_factory = None
+                cur = con.cursor()
+
+                users = cur.execute(f'SELECT language,count(*) FROM SETTINGS GROUP BY LANGUAGE UNION SELECT "Total",count(*) FROM SETTINGS ORDER BY COUNT(*) DESC ').fetchall()
+
             else:
-                users = cur.execute(f'SELECT count(*) FROM {type}').fetchone()
+                if date:
+                    users = cur.execute(f'SELECT count(*) FROM {type} WHERE DATE=?', (date,)).fetchone()
+                else:
+                    users = cur.execute(f'SELECT count(*) FROM {type}').fetchone()
 
         else:
             users = cur.execute(f'SELECT userId FROM {type}').fetchall()

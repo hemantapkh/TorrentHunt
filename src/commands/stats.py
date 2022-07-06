@@ -30,22 +30,17 @@ def stats(message):
 
     if message.from_user.id == int(config['adminId']):
         currentDate = datetime.today().strftime('%Y-%m-%d')
-        
+
         msg = f'<b>📊 Statistics</b>\n\n'
-        
-        languageStats = {}
-        for i in languageSet:
-            languageStats[i.capitalize()] = dbSql.getUsers(i, countOnly=True)
 
-        languageStats = {k: v for k, v in sorted(languageStats.items(), key=lambda item: item[1], reverse=True)}
+        languageStats = dbSql.getAllUsers(countOnly=True, langStats=True)
 
-        for i in languageStats:
-            msg += f'{i}: {languageStats[i]}\n'
-        
-        totalUsers = dbSql.getAllUsers(countOnly=True)
+        for i in languageStats[1:]:
+            msg += f'{i[0].capitalize()}: {i[1]}\n'
+
         totalGroups = dbSql.getAllUsers(type="groups", countOnly=True)
 
-        msg += f'\n<b>Users: {totalUsers} <code>({dbSql.getAllUsers(date=currentDate, countOnly=True)} today)</code></b>'
+        msg += f'\n<b>Users: {languageStats[0][1]} <code>({dbSql.getAllUsers(date=currentDate, countOnly=True)} today)</code></b>'
         msg += f'\n<b>Groups: {totalGroups} <code>({dbSql.getAllUsers(type="groups", date=currentDate, countOnly=True)} today)</code></b>'
 
         bot.send_message(chat_id=message.chat.id, text=msg)
