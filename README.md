@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-<a href="https://t.me/torrenthuntbot">
+<a href="https://t.me/torrenthuntbot?start=githubReadme">
 <img src='https://img.shields.io/endpoint?logo=telegram&style=for-the-badge&url=https%3A%2F%2Fhemantapokharel.com.np%2Fshields%2FTorrentHunt%2F'>
 </a>
 <a href="https://t.me/h9youtube">
