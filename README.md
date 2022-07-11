@@ -20,10 +20,10 @@
 
 <p align="center">
 <a href="https://t.me/torrenthuntbot">
-<img src='https://img.shields.io/badge/Torrent Hunt-Active-blue?style=for-the-badge&logo=telegram'>
+<img src='https://img.shields.io/endpoint?logo=telegram&style=for-the-badge&url=https%3A%2F%2Fhemantapokharel.com.np%2Fshields%2FTorrentHunt%2F'>
 </a>
 <a href="https://t.me/h9youtube">
-<img src='https://img.shields.io/badge/Channel-Join-blue?style=for-the-badge&logo=telegram'>
+<img src='https://img.shields.io/endpoint?logo=telegram&style=for-the-badge&url=https%3A%2F%2Fhemantapokharel.com.np%2Fshields%2Fh9youtube%2F'>
 </a>
 </P>
 <h1 align='center'>🔍 Torrent Hunt Bot</h1>
