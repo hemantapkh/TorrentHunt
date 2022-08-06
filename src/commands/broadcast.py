@@ -43,11 +43,12 @@ def broadcast3(message, audience, exclude=None):
 
     else:
         bot.forward_message(message.chat.id, message.chat.id, message.id)
-        sent = bot.send_message(message.chat.id, 'Do you want to confirm the broadcast? <code>/confirm</code> <code>/cancel</code>')
+        sent = bot.send_message(message.chat.id, 'Do you want to confirm the broadcast? <code>/confirm</code> <code>/confirm_WN</code> <code>/cancel</code>')
         bot.register_next_step_handler(sent, broadcast4, audience=audience, exclude=exclude, content=message.id)
 
 def broadcast4(message, audience, exclude, content):
-    if message.text == '/confirm':
+    if message.text in ['/confirm', '/confirm_WN']:
+        disable_notification = True if message.text == '/confirm' else False
         sent = bot.send_message(chat_id=message.chat.id, text='<code>Broadcasting message</code>')
         if audience == 'all':
             if exclude:
@@ -65,7 +66,8 @@ def broadcast4(message, audience, exclude, content):
         if users:
             for userId in users:
                 try:
-                    bot.forward_message(userId, message.chat.id, content)
+                    sleep(5)
+                    bot.forward_message(userId, message.chat.id, content, disable_notification=disable_notification)
                     success += 1
                     updateCount += 1
 
