@@ -66,7 +66,6 @@ def broadcast4(message, audience, exclude, content):
         if users:
             for userId in users:
                 try:
-                    sleep(5)
                     bot.forward_message(userId, message.chat.id, content, disable_notification=disable_notification)
                     success += 1
                     updateCount += 1
