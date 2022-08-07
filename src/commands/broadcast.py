@@ -18,7 +18,7 @@ def broadcast2(message):
 
         elif message.text in ['/bengali', '/belarusian', '/catalan', '/dutch', '/english', '/french', '/german', '/hindi', '/italian', '/korean', '/malay', '/nepali', '/polish', '/portuguese', '/russian', '/spanish', '/turkish', '/ukrainian']:
             audience = message.text[1:]
-            sent = bot.send_message(chat_id=message.chat.id, text='Forward a message to broadcast.<b>\n\n/cancel to cancel the broadcast.</b>')
+            sent = bot.send_message(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
             bot.register_next_step_handler(sent, broadcast3, audience)
 
         else:
@@ -26,21 +26,31 @@ def broadcast2(message):
 
 def broadcastExclusion(message):
     if message.text == '/skip':
-        sent = bot.send_message(chat_id=message.chat.id, text='Forward a message to broadcast.<b>\n\n/cancel to cancel the broadcast.</b>')
+        sent = bot.send_message(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
         bot.register_next_step_handler(sent, broadcast3, audience='all', exclude=None)
 
     elif message.text == '/cancel':
         bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
 
     else:
-        sent = bot.send_message(chat_id=message.chat.id, text='Forward a message to broadcast.<b>\n\n/cancel to cancel the broadcast.</b>')
+        sent = bot.send_message(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
         exclude = [x.strip() for x in message.text.split(',')]
         bot.register_next_step_handler(sent, broadcast3, audience='all', exclude=exclude)
 
 def broadcast3(message, audience, exclude=None):
+    if message.text != '/cancel':
+        sent2 = bot.send_message(chat_id=message.chat.id, text='<b>To send embed button, send the link in the following format.</b>\n\n<code>Text1 -> URL1\nText2 -> URL2</code>\n\n/cancel to cancel the broadcast.\n/skip to skip the buttons.')
+        bot.register_next_step_handler(sent2, broadcast4, audience, exclude, message.text)
+
+    else:
+        bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
+
+def broadcast4(message, audience, exclude, textMessage):
+    markup = telebot.types.InlineKeyboardMarkup()
     if message.text == '/cancel':
         bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
 
+<<<<<<< HEAD
     else:
         bot.forward_message(message.chat.id, message.chat.id, message.id)
         sent = bot.send_message(message.chat.id, 'Do you want to confirm the broadcast? <code>/confirm</code> <code>/confirm_WN</code> <code>/cancel</code>')
@@ -49,6 +59,52 @@ def broadcast3(message, audience, exclude=None):
 def broadcast4(message, audience, exclude, content):
     if message.text in ['/confirm', '/confirm_WN']:
         disable_notification = True if message.text == '/confirm' else False
+=======
+    elif message.text == '/skip':
+        if audience == 'all':
+            if exclude:
+                users = dbSql.getUsersExcept(exclude)
+            else:
+                users = dbSql.getAllUsers()
+
+        else:
+            users = dbSql.getUsers(audience)
+
+        users = len(users) if users else 0
+
+        try:
+            bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}',)
+            sent = bot.send_message(message.chat.id, text=f"/send to broadcast this message.\n\nTarget Audience: {audience}\nExcluded Audience: {' '.join(exclude) if exclude else None}\nTotal audience: {users}")
+            bot.register_next_step_handler(sent, broadcast5, audience, exclude, textMessage, markup=None)
+        except Exception as e:
+            bot.send_message(chat_id=message.chat.id, text=f"<b>⚠️ Error</b>\n\n{str(e).replace('<','')}")
+
+    else:
+        if audience == 'all':
+            if exclude:
+                users = dbSql.getUsersExcept(exclude)
+            else:
+                users = dbSql.getAllUsers()
+
+        else:
+            users = dbSql.getUsers(audience)
+
+        users = len(users) if users else 0
+
+        try:
+            for i in message.text.split('\n'):
+                markup.add(telebot.types.InlineKeyboardButton(text=i.split('->')[0].strip(), url=i.split('->')[1].strip()))
+
+            bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}', reply_markup=markup)
+            sent = bot.send_message(message.chat.id, text=f"/send to broadcast this message.\n\nTarget Audience: {audience}\nExcluded Audience: {' '.join(exclude) if exclude else None}\nTotal audience: {users}")
+            bot.register_next_step_handler(sent, broadcast5, audience, exclude, textMessage, markup)
+
+        except Exception as e:
+            bot.send_message(message.chat.id, text=f"<b>⚠️ Error</b>\n\n{str(e).replace('<','')}")
+
+def broadcast5(message, audience, exclude, textMessage, markup):
+    if message.text == '/send':
+>>>>>>> parent of e26746f (Support forwarded message in broadcast)
         sent = bot.send_message(chat_id=message.chat.id, text='<code>Broadcasting message</code>')
         if audience == 'all':
             if exclude:
@@ -66,7 +122,11 @@ def broadcast4(message, audience, exclude, content):
         if users:
             for userId in users:
                 try:
+<<<<<<< HEAD
                     bot.forward_message(userId, message.chat.id, content, disable_notification=disable_notification)
+=======
+                    bot.send_message(chat_id=userId, text=textMessage, reply_markup=markup)
+>>>>>>> parent of e26746f (Support forwarded message in broadcast)
                     success += 1
                     updateCount += 1
 
