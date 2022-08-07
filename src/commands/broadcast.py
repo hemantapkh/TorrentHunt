@@ -40,7 +40,7 @@ def broadcastExclusion(message):
 def broadcast3(message, audience, exclude=None):
     if message.text != '/cancel':
         sent2 = bot.send_message(chat_id=message.chat.id, text='<b>To send embed button, send the link in the following format.</b>\n\n<code>Text1 -> URL1\nText2 -> URL2</code>\n\n/cancel to cancel the broadcast.\n/skip to skip the buttons.')
-        bot.register_next_step_handler(sent2, broadcast4, audience, exclude, message.text)
+        bot.register_next_step_handler(sent2, broadcast4, audience, exclude, message)
 
     else:
         bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
@@ -50,16 +50,6 @@ def broadcast4(message, audience, exclude, textMessage):
     if message.text == '/cancel':
         bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
 
-<<<<<<< HEAD
-    else:
-        bot.forward_message(message.chat.id, message.chat.id, message.id)
-        sent = bot.send_message(message.chat.id, 'Do you want to confirm the broadcast? <code>/confirm</code> <code>/confirm_WN</code> <code>/cancel</code>')
-        bot.register_next_step_handler(sent, broadcast4, audience=audience, exclude=exclude, content=message.id)
-
-def broadcast4(message, audience, exclude, content):
-    if message.text in ['/confirm', '/confirm_WN']:
-        disable_notification = True if message.text == '/confirm' else False
-=======
     elif message.text == '/skip':
         if audience == 'all':
             if exclude:
@@ -73,7 +63,11 @@ def broadcast4(message, audience, exclude, content):
         users = len(users) if users else 0
 
         try:
-            bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}',)
+            if textMessage.photo:
+                bot.send_photo(message.chat.id, photo=textMessage.photo[0].file_id, caption=textMessage.caption)
+
+            else:
+                bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage.text}',)
             sent = bot.send_message(message.chat.id, text=f"/send to broadcast this message.\n\nTarget Audience: {audience}\nExcluded Audience: {' '.join(exclude) if exclude else None}\nTotal audience: {users}")
             bot.register_next_step_handler(sent, broadcast5, audience, exclude, textMessage, markup=None)
         except Exception as e:
@@ -104,7 +98,6 @@ def broadcast4(message, audience, exclude, content):
 
 def broadcast5(message, audience, exclude, textMessage, markup):
     if message.text == '/send':
->>>>>>> parent of e26746f (Support forwarded message in broadcast)
         sent = bot.send_message(chat_id=message.chat.id, text='<code>Broadcasting message</code>')
         if audience == 'all':
             if exclude:
@@ -120,13 +113,14 @@ def broadcast5(message, audience, exclude, textMessage, markup):
         updateCount = 0
 
         if users:
+            users = users[31894:]
             for userId in users:
                 try:
-<<<<<<< HEAD
-                    bot.forward_message(userId, message.chat.id, content, disable_notification=disable_notification)
-=======
-                    bot.send_message(chat_id=userId, text=textMessage, reply_markup=markup)
->>>>>>> parent of e26746f (Support forwarded message in broadcast)
+                    if textMessage.photo:
+                        bot.send_photo(userId, photo=textMessage.photo[0].file_id, caption=textMessage.caption, reply_markup=markup, disable_notification=True)
+
+                    else:
+                        bot.send_message(chat_id=userId, text=textMessage.text, reply_markup=markup)
                     success += 1
                     updateCount += 1
 
@@ -138,7 +132,7 @@ def broadcast5(message, audience, exclude, textMessage, markup):
                     sleep(0.2)
                     if updateCount == 5000:
                         updateCount = 0
-                        bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<code>{failure+success} out of {len(users)} complete.</code>')
+                        bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<code>{failure+success} out of {len(users)} complete. Success: {success}, Failure: {failure}</code>')
 
             bot.edit_message_text(chat_id=message.chat.id, message_id=sent.message_id, text=f'<b>✈️ Broadcast Report</b>\n\nSuccess: {success}\nFailure: {failure}')
 
