@@ -64,14 +64,14 @@ def callbackHandler(call):
                 userLanguage = call.data.split('_')[3]
 
                 dbSql.setSetting(call.message.chat.id, 'language', userLanguage)
-                
+
                 if greet == 'True':
                     bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.id)
                     bot.send_message(chat_id=call.message.chat.id, text=language['greet'][userLanguage].format(call.from_user.first_name), reply_markup=mainReplyKeyboard(userLanguage) if call.message.chat.type == 'private' else None)
-                    
-                    if call.message.chat.type == 'private':
-                        bot.send_message(chat_id=call.message.chat.id, text=language['unlockAllFeatures'][userLanguage], reply_markup=notSubscribedMarkup(userLanguage))
-                
+
+                    #bot.send_message(chat_id=call.message.chat.id, text=language['unlockAllFeatures'][userLanguage], reply_markup=notSubscribedMarkup(userLanguage))
+                    bot.forward_message(call.message.chat.id, '-1001698852821', '127')
+
                 else:
                     bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.id)
                     bot.send_message(chat_id=call.message.chat.id, text=language['languageSelected'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage) if call.message.chat.type == 'private' else None)
