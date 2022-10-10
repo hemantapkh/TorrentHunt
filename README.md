@@ -61,8 +61,9 @@ Torrent Hunt Bot is a telegram bot to search and explore torrents from different
 
 # 🗣️ Languages
 
-Torrent Hunt Bot can talk in 18 different languages.
+Torrent Hunt Bot can talk in 19 different languages.
 
+- Arabic (Added by [Omar Khalid](https://github.com/omvrkhvlid))
 - Bengali (Verified by [sobuj53](https://github.com/sobuj53)) 
 - Belarusian
 - Catalan

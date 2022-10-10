@@ -52,7 +52,7 @@ def categoryReplyKeyboard(userLanguage, allCategories, restrictedMode):
 def lang(message, userLanguage, called=False, greet=False):
     markup = telebot.types.InlineKeyboardMarkup()
     
-    markup.add(telebot.types.InlineKeyboardButton('🌐 English', callback_data=f'cb_language_{greet}_english'), telebot.types.InlineKeyboardButton('🇳🇵 नेपाली', callback_data=f'cb_language_{greet}_nepali')) # English, Nepali
+    markup.add(telebot.types.InlineKeyboardButton('🇦🇪 عربى', callback_data=f'cb_language_{greet}_arabic'), telebot.types.InlineKeyboardButton('🇳🇵 नेपाली', callback_data=f'cb_language_{greet}_nepali')) # Arabic, Nepali
     markup.add(telebot.types.InlineKeyboardButton('🇧🇩 বাংলা', callback_data=f'cb_language_{greet}_bengali'), telebot.types.InlineKeyboardButton('🇧🇾 Беларуская', callback_data=f'cb_language_{greet}_belarusian')) # Bengali, Belarusian
     markup.add(telebot.types.InlineKeyboardButton('🏴󠁥󠁳󠁣󠁴󠁿 Català', callback_data=f'cb_language_{greet}_catalan'), telebot.types.InlineKeyboardButton('🇳🇱 Nederlands', callback_data=f'cb_language_{greet}_dutch')) # Catalan, Dutch
     markup.add(telebot.types.InlineKeyboardButton('🇫🇷 français', callback_data=f'cb_language_{greet}_french'), telebot.types.InlineKeyboardButton('🇩🇪 Deutsch', callback_data=f'cb_language_{greet}_german')) # French, German
@@ -61,6 +61,7 @@ def lang(message, userLanguage, called=False, greet=False):
     markup.add(telebot.types.InlineKeyboardButton('🇵🇱 Polski', callback_data=f'cb_language_{greet}_polish'), telebot.types.InlineKeyboardButton('🇧🇷 Português', callback_data=f'cb_language_{greet}_portuguese')) # Polish, Portuguese
     markup.add(telebot.types.InlineKeyboardButton('🇷🇺 русский', callback_data=f'cb_language_{greet}_russian'), telebot.types.InlineKeyboardButton('🇪🇸 español', callback_data=f'cb_language_{greet}_spanish')) # Russian, Spanish
     markup.add(telebot.types.InlineKeyboardButton('🇹🇷 Türkçe', callback_data=f'cb_language_{greet}_turkish'), telebot.types.InlineKeyboardButton('🇺🇦 Український', callback_data=f'cb_language_{greet}_ukrainian')) # Turkish, Ukrainian
+    markup.add(telebot.types.InlineKeyboardButton('🌐 English', callback_data=f'cb_language_{greet}_english')) # English
     
     if called:
         markup.add(telebot.types.InlineKeyboardButton(text=language['backBtn'][userLanguage], callback_data=f'cb_backToSettings{time()}'))
