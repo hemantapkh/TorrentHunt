@@ -32,7 +32,7 @@ def getInfo(message, userLanguage=None, called=False):
                 
                 markup.add(telebot.types.InlineKeyboardButton(text='🔗 ' + language['link'][userLanguage].replace(':',''), callback_data=f"cb_getLink:{torrentId}"))
                 
-                if response['images']:
+                if response['images'] and response['category'] != 'XXX':
                     markup.add(telebot.types.InlineKeyboardButton(text=language['imageBtn'][userLanguage], callback_data=f"cb_getImages:{torrentId}"), telebot.types.InlineKeyboardButton(text=language['torrentDownloadBtn'][userLanguage], callback_data=f"cb_getTorrent:{response['infoHash']}:{torrentId}"))
         
                 else:
