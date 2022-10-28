@@ -4,17 +4,11 @@ from src.objs import *
 #: Main reply keyboard
 def mainReplyKeyboard(userLanguage):
     keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
-    
-    button1 = telebot.types.KeyboardButton(text=language['trendingBtn'][userLanguage])
-    button2 = telebot.types.KeyboardButton(text=language['popularBtn'][userLanguage])
-    button3 = telebot.types.KeyboardButton(text=language['topBtn'][userLanguage])
-    button4 = telebot.types.KeyboardButton(text=language['browseBtn'][userLanguage])
+
     button5 = telebot.types.KeyboardButton(text=language['settingsBtn'][userLanguage])
     button6 = telebot.types.KeyboardButton(text=language['helpBtn'][userLanguage])
     button7 = telebot.types.KeyboardButton(text=language['supportBtn'][userLanguage])
     
-    keyboard.row(button1, button2)
-    keyboard.row(button3, button4)
     keyboard.row(button5, button6, button7)
 
     return keyboard

@@ -47,22 +47,6 @@ def text(message):
         elif message.text == language['mainMenuBtn'][userLanguage]:
             bot.send_message(message.chat.id, text=language['backToMenu'][userLanguage], reply_markup=mainReplyKeyboard(userLanguage))
         
-        #! Trending torrents
-        elif message.text in ['/trending', language['trendingBtn'][userLanguage]]:
-            browse(message, userLanguage, 'trending')
-
-        #! Popular torrents
-        elif message.text in ['/popular', language['popularBtn'][userLanguage]]:
-            browse(message, userLanguage, 'popular')
-            
-        #! Top torrents
-        elif message.text in ['/top', language['topBtn'][userLanguage]]:
-            browse(message, userLanguage, 'top')
-        
-        #! Browse torrents
-        elif message.text in ['/browse', language['browseBtn'][userLanguage]]:
-            browse(message, userLanguage, 'browse')
-
         # Settings
         elif message.text == language['settingsBtn'][userLanguage]:
             settings(message, userLanguage)

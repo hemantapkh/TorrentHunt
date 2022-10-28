@@ -6,7 +6,6 @@ from src.objs import bot, language
 from src.commands.help import help
 from src.commands.start import start
 from src.commands.stats import stats
-from src.commands.browse import browse
 from src.commands.getInfo import getInfo
 from src.commands.getLink import getLink
 from src.commands.support import support
