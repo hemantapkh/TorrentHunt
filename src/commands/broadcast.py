@@ -33,7 +33,7 @@ def broadcastExclusion(message):
         bot.send_message(chat_id=message.chat.id, text='❌ Broadcast cancelled')
 
     else:
-        sent = bot.send_message(chat_id=message.chat.id, text='<b>Send the message to broadcast.</b>\n\nMarkup: HTML\nTags allowed: a href, b, i, u, s, code, pre, h1, inv, br\n\n/cancel to cancel the broadcast.')
+        sent = bot.send_message(chat_id=message.chat.id, text='<b>Send the message to broadcast.\n/cancel to cancel the broadcast.')
         exclude = [x.strip() for x in message.text.split(',')]
         bot.register_next_step_handler(sent, broadcast3, audience='all', exclude=exclude)
 
@@ -116,10 +116,10 @@ def broadcast5(message, audience, exclude, textMessage, markup):
             for userId in users:
                 try:
                     if textMessage.photo:
-                        bot.send_photo(userId, photo=textMessage.photo[0].file_id, caption=textMessage.caption, reply_markup=markup, disable_notification=True)
+                        bot.send_photo(userId, photo=textMessage.photo[0].file_id, caption=textMessage.caption, reply_markup=markup, disable_notification=True, parse_mode='MarkdownV2')
 
                     else:
-                        bot.send_message(chat_id=userId, text=textMessage.text, reply_markup=markup)
+                        bot.send_message(chat_id=userId, text=textMessage.text, reply_markup=markup, parse_mode='MarkdownV2')
                     success += 1
                     updateCount += 1
 
