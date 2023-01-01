@@ -39,7 +39,7 @@ def broadcastExclusion(message):
 
 def broadcast3(message, audience, exclude=None):
     if message.text != '/cancel':
-        sent2 = bot.send_message(chat_id=message.chat.id, text='<b>To send embed button, send the link in the following format.</b>\n\n<code>Text1 -> URL1\nText2 -> URL2</code>\n\n/cancel to cancel the broadcast.\n/skip to skip the buttons.')
+        sent2 = bot.send_message(chat_id=message.chat.id, text='<b>To send embed button, send the link in the following format.</b>\n\n<code>Text1 - URL1\nText2 - URL2</code>\n\n/cancel to cancel the broadcast.\n/skip to skip the buttons.')
         bot.register_next_step_handler(sent2, broadcast4, audience, exclude, message)
 
     else:
@@ -87,9 +87,9 @@ def broadcast4(message, audience, exclude, textMessage):
 
         try:
             for i in message.text.split('\n'):
-                markup.add(telebot.types.InlineKeyboardButton(text=i.split('->')[0].strip(), url=i.split('->')[1].strip()))
+                markup.add(telebot.types.InlineKeyboardButton(text=i.split('-')[0].strip(), url=i.split('-')[1].strip()))
 
-            bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage}', reply_markup=markup)
+            bot.send_message(message.chat.id, text=textMessage.text or textMessage.caption, reply_markup=markup, parse_mode='MarkdownV2')
             sent = bot.send_message(message.chat.id, text=f"/send to broadcast this message.\n\nTarget Audience: {audience}\nExcluded Audience: {' '.join(exclude) if exclude else None}\nTotal audience: {users}")
             bot.register_next_step_handler(sent, broadcast5, audience, exclude, textMessage, markup)
 
