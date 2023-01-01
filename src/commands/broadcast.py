@@ -67,7 +67,7 @@ def broadcast4(message, audience, exclude, textMessage):
                 bot.send_photo(message.chat.id, photo=textMessage.photo[0].file_id, caption=textMessage.caption, parse_mode='MarkdownV2')
 
             else:
-                bot.send_message(message.chat.id, text=f'<b>Message Preview</b>\n\n{textMessage.text}', parse_mode='MarkdownV2')
+                bot.send_message(message.chat.id, text=textMessage.text, parse_mode='MarkdownV2')
             sent = bot.send_message(message.chat.id, text=f"/send to broadcast this message.\n\nTarget Audience: {audience}\nExcluded Audience: {' '.join(exclude) if exclude else None}\nTotal audience: {users}")
             bot.register_next_step_handler(sent, broadcast5, audience, exclude, textMessage, markup=None)
         except Exception as e:
