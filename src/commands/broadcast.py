@@ -113,7 +113,6 @@ def broadcast5(message, audience, exclude, textMessage, markup):
         updateCount = 0
 
         if users:
-            users = users[31894:]
             for userId in users:
                 try:
                     if textMessage.photo:
