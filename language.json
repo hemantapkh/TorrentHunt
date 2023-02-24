@@ -14,7 +14,7 @@
 
         "dutch": "✨ Hoi {}, Ik ben Torrent Hunt Bot en ik kan je helpen bij het zoeken en bladeren door torrents binnen Telegram.\n\n<b>Stuur trefwoorden om naar torrents te zoeken.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Voor inline zoeken typ je gewoon @TorrentHuntBot in een chat en zoek je naar torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
 
-        "french": "✨ Salut {}, Je suis Torrent Hunt Bot et je peux vous aider à rechercher et parcourir des torrents dans Telegram.\n\n<b>Envoyez des mots-clés pour rechercher des torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Pour la recherche en ligne, tapez simplement @TorrentHuntBot dans n'importe quelle discussion et recherchez des torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+        "french": "✨ Salut {}, Je suis le bot Torrent Hunt et je peux vous aider à rechercher et à parcourir des torrents dans Telegram.\n\n<b>Saisissez des mots-clés pour rechercher des torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Pour la recherche en ligne, tapez simplement @TorrentHuntBot dans n'importe quelle discussion et recherchez des torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
 
         "german": "✨ Hallo {}, Ich bin Torrent Hunt Bot und kann Ihnen helfen, Torrents in Telegram zu suchen und zu durchsuchen.\n\n<b>Senden Sie beliebige Schlüsselwörter, um nach Torrents zu suchen.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Geben Sie für die Inline-Suche einfach @TorrentHuntBot in einen Chat ein und suchen Sie nach Torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
 
@@ -54,7 +54,7 @@
 
         "dutch": "✨ Hoi {}, Ik ben Torrent Hunt Bot en ik kan je helpen bij het zoeken en bladeren door torrents binnen Telegram.\n\n<b>Stuur trefwoorden om naar torrents te zoeken.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Voor inline zoeken typ je gewoon @TorrentHuntBot in een chat en zoek je naar torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
 
-        "french": "✨ Salut {}, Je suis Torrent Hunt Bot et je peux vous aider à rechercher et parcourir des torrents dans Telegram.\n\n<b>Envoyez des mots-clés pour rechercher des torrents.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Pour la recherche en ligne, tapez simplement @TorrentHuntBot dans n'importe quelle discussion et recherchez des torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+        "french": "✨ Salut {}, Je suis le bot Torrent Hunt et je peux vous aider à rechercher et parcourir des torrents dans Telegram.\n\n<b>Saisissez des mots-clés pour rechercher des torrents.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Pour la recherche en ligne, mentionnez simplement @TorrentHuntBot dans n'importe quelle discussion et recherchez des torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
 
         "german": "✨ Hallo {}, Ich bin Torrent Hunt Bot und kann Ihnen helfen, Torrents in Telegram zu suchen und zu durchsuchen.\n\n<b>Senden Sie beliebige Schlüsselwörter, um nach Torrents zu suchen.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Geben Sie für die Inline-Suche einfach @TorrentHuntBot in einen Chat ein und suchen Sie nach Torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
 
@@ -95,7 +95,7 @@
 
         "dutch": "🗣️ Kies een taal die u wenst",
 
-        "french": "🗣️ Choisissez une langue que vous souhaitez",
+        "french": "🗣️ Choisissez la langue que vous souhaitez",
 
         "german": "🗣️ Wählen Sie eine Sprache, die Sie wünschen",
 
@@ -335,7 +335,7 @@
 
         "dutch": "✔️ De beperkte modus is met succes uitgeschakeld.",
 
-        "french": "✔️ Le mode restreint est désactivé avec succès.",
+        "french": "✔️ Le mode restreint à été désactivé avec succès.",
 
         "german": "✔️ Der eingeschränkte Modus wurde erfolgreich deaktiviert.",
 
@@ -375,7 +375,7 @@
 
         "dutch": "🚫 U kunt deze inhoud niet bekijken omdat de beperkte modus is ingeschakeld. U kunt de beperking uitschakelen via de instellingen.",
 
-        "french": "🚫 Vous ne pouvez pas afficher ce contenu car le mode restreint est activé. Vous pouvez désactiver la restriction à partir des paramètres.",
+        "french": "🚫 Vous ne pouvez pas voir ce contenu car le mode restreint est activé. Vous pouvez désactiver la restriction à partir des paramètres.",
 
         "german": "🚫 Sie können diesen Inhalt nicht anzeigen, da der eingeschränkte Modus aktiviert ist. Sie können die Einschränkung in den Einstellungen deaktivieren.",
 
@@ -657,7 +657,7 @@
 
         "dutch": "<b>{}\n\n⬇️ Hoe torrents te downloaden?</b>\n\nOm de torrents te downloaden, moet je een torrent-client op je apparaat installeren. Er zijn veel torrent-clients die er zijn. Enkele van mijn favorieten zijn qBitTorrent (voor pc) en Flud (voor Android). Na het installeren hoef je alleen maar de magneetlink te kopiëren of het .Torrent-bestand in de app te laden en je torrent zal beginnen met downloaden.\n\nVerder kun je een web-torrent-client gebruiken, zoals seedr, die de torrent voor je downloadt. Als je een webclient gebruikt, kun je torrents bekijken zonder te downloaden. U hoeft alleen maar een account in seedr aan te maken en de magneetlink daarheen te kopiëren. U kunt het bestand downloaden of ze rechtstreeks naar de VLC-speler streamen zonder te downloaden. Ik gebruik liever een webclient zoals seedr om torrents te downloaden.\n\n<b>Stuur trefwoorden om naar torrents te zoeken.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Voor inline zoeken typ je gewoon @TorrentHuntBot in een chat en zoek je naar torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
 
-        "french": "<b>{}\n\n⬇️ Comment télécharger des torrents?</b>\n\nPour télécharger les torrents, vous devez installer n'importe quel client torrent sur votre appareil. Il existe de nombreux clients torrent. Certains de mes favoris sont qBitTorrent (pour PC) et Flud (pour Android). Après l'installation, il vous suffit de copier le lien magnétique ou de charger le fichier .Torrent dans l'application et votre torrent commencera à se télécharger.\n\nDe plus, vous pouvez utiliser un client torrent Web, comme seedr, qui téléchargera le torrent pour vous. L'utilisation d'un client Web vous permettra de regarder des torrents sans téléchargement. Il vous suffit de créer un compte dans seedr et d'y copier le lien magnétique. Vous pouvez télécharger le fichier ou le diffuser directement dans le lecteur VLC sans téléchargement. Je préfère utiliser un client Web comme seedr pour télécharger des torrents.\n\n<b>Envoyez des mots-clés pour rechercher des torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Pour la recherche en ligne, tapez simplement @TorrentHuntBot dans n'importe quelle discussion et recherchez des torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+        "french": "<b>{}\n\n⬇️ Comment télécharger des torrents ?</b>\n\nPour télécharger des torrents, vous devez installer n'importe quel client torrent sur votre appareil. Il existe de nombreux clients torrent. Je recommande qBitTorrent (pour PC) et Flud (pour Android). Après l'installation, il vous suffit de copier le lien magnet ou d'ouvrir le fichier .Torrent dans l'application et votre torrent commencera à se télécharger.\n\nDe plus, vous pouvez utiliser un client torrent Web, comme seedr, qui téléchargera le torrent pour vous. L'utilisation d'un client Web vous permettra de regarder des torrents sans téléchargement. Il vous suffit de créer un compte dans seedr et d'y copier le lien magnétique. Vous pouvez télécharger le fichier ou le diffuser directement dans le lecteur VLC sans le télécharger. Je préfère utiliser un client Web comme seedr pour télécharger des torrents.\n\n<b>Saisissez des mots-clés pour rechercher des torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Pour la recherche en ligne, mentionnez simplement @TorrentHuntBot dans n'importe quelle discussion et recherchez des torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
 
         "german": "<b>{}\n\n⬇️ Wie lade ich Torrents herunter?</b>\n\nUm die Torrents herunterzuladen, müssen Sie einen beliebigen Torrent-Client auf Ihrem Gerät installieren. Es gibt viele Torrent-Clients da draußen. Einige meiner Favoriten sind qBitTorrent (für PC) und Flud (für Android). Nach der Installation müssen Sie nur den Magnet-Link kopieren oder die .Torrent-Datei in die App laden, und Ihr Torrent beginnt mit dem Download.\n\nDarüber hinaus können Sie einen Web-Torrent-Client wie seedr verwenden, der den Torrent für Sie herunterlädt. Mit einem Webclient können Sie Torrents ansehen, ohne sie herunterladen zu müssen. Sie müssen nur ein Konto in seedr erstellen und den Magnetlink dort kopieren. Sie können die Datei entweder herunterladen oder direkt in den VLC-Player streamen, ohne sie herunterladen zu müssen. Ich bevorzuge es, einen Web-Client wie seedr zu verwenden, um Torrents herunterzuladen.\n\n<b>Senden Sie beliebige Schlüsselwörter, um nach Torrents zu suchen.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Geben Sie für die Inline-Suche einfach @TorrentHuntBot in einen Chat ein und suchen Sie nach Torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
 
@@ -697,7 +697,7 @@
 
         "dutch": "<b>{}</b>\n\nBedankt voor je wens om bij te dragen. Doneer een willekeurig bedrag om deze service in leven te houden en om mij de motivatie te geven om nieuwe functies toe te voegen.😇\n\n🐛 Om bugs te melden of een nieuwe functie aan te vragen, neemt u deel aan onze discussiechat en bespreekt u deze daar.",
 
-        "french": "<b>{}</b>\n\nMerci pour votre souhait de contribuer. Faites un don pour maintenir ce service en vie et pour me motiver à ajouter de nouvelles fonctionnalités.😇\n\n🐛 Pour signaler des bogues ou pour demander une nouvelle fonctionnalité, rejoignez notre discussion en ligne et discutez-en ici.",
+        "french": "<b>{}</b>\n\nMerci pour votre envie de contribuer. Faites un don pour maintenir ce service en ligne et pour me motiver à ajouter de nouvelles fonctionnalités.😇\n\n🐛 Pour signaler des bugs ou pour demander une nouvelle fonctionnalité, rejoignez notre discussion en ligne et discutez-en ici.",
 
         "german": "<b>{}</b>\n\nVielen Dank für Ihren Wunsch, einen Beitrag zu leisten. Spenden Sie einen beliebigen Betrag, um diesen Service am Leben zu erhalten und mir die Motivation zu geben, neue Funktionen hinzuzufügen.😇\n\n🐛 Um Fehler zu melden oder eine neue Funktion anzufordern, nehmen Sie an unserem Diskussionschat teil und diskutieren Sie dort.",
 
@@ -737,7 +737,7 @@
 
         "dutch": "Hoi, met torrent-jacht kun je de link van je favoriete films, series, shows, games, software en nog veel meer binnen Telegram krijgen. Om de bot te gebruiken, klik je op de link hierboven en start je het gesprek ermee.",
 
-        "french": "salut, en utilisant la chasse au torrent, vous pouvez obtenir le lien de vos films, séries, émissions, jeux, logiciels et bien d'autres préférés dans Telegram. Pour utiliser le bot, cliquez sur le lien ci-dessus et lancez la conversation avec lui.",
+        "french": "Hey, en utilisant Torrent Hunt, vous pouvez obtenir le lien de tous vos contenus préférés (films, séries, jeux, logiciels, etc) directement dans Telegram. Pour utiliser le bot, cliquez sur le lien ci-dessus et lancez la conversation avec lui.",
 
         "german": "Hallo, mit Torrent Hunt können Sie den Link Ihrer Lieblingsfilme, -serien, -shows, -spiele, -software und vieles mehr in Telegram abrufen. Um den Bot zu verwenden, klicken Sie auf den Link oben und beginnen Sie das Gespräch damit.",
 
@@ -897,7 +897,7 @@
 
         "dutch": "❔ Kies een categorie voor je torrents",
 
-        "french": "❔ Choisissez une catégorie pour vos torrents",
+        "french": "❔ Choisissez une catégorie de torrents",
 
         "german": "❔ Wählen Sie eine Kategorie für Ihre Torrents",
 
@@ -1057,7 +1057,7 @@
 
         "dutch": "✨ De trending torrents van vandaag",
 
-        "french": "✨ Les torrents tendance d'aujourd'hui",
+        "french": "✨ Les torrents populaires d'aujourd'hui",
 
         "german": "✨ Die heutigen Trendströme",
 
@@ -1097,7 +1097,7 @@
 
         "dutch": "✨ de trending torrents van deze week",
 
-        "french": "✨ les torrents tendance de cette semaine",
+        "french": "✨ les torrents populaires de cette semaine",
 
         "german": "✨ Die Trendströme dieser Woche",
 
@@ -1137,7 +1137,7 @@
 
         "dutch": "⚡️ De populaire torrents van vandaag",
 
-        "french": "⚡️ Torrents populaires d'aujourd'hui",
+        "french": "⚡️ Torrents populaires aujourd'hui",
 
         "german": "⚡️ Die heutigen beliebten Ströme",
 
@@ -1297,7 +1297,7 @@
 
         "dutch": "🔎 <code>Informatie ophalen ...</code>",
 
-        "french": "🔎 <code>Récupération des informations ...</code>",
+        "french": "🔎 <code>Récupération des informations du Torrent ...</code>",
 
         "german": "🔎 <code>Informationen abrufen ...</code>",
 
@@ -1525,7 +1525,9 @@
     "wishlistAdded": {
         "english": "✅ This item has been added in your wishlist.",
 
-        "arabic": "✅ تمت اضافة هذا العنصر لقائمة امنياتك."
+        "arabic": "✅ تمت اضافة هذا العنصر لقائمة امنياتك.",
+        
+        "french": "✅ Ce torrent à été ajouté à votre liste de souhaits."
     },
 
     "errorSendingImage": {
@@ -1905,7 +1907,7 @@
 
         "dutch": "Uploader: ",
 
-        "french": "Téléchargeur: ",
+        "french": "Uploader: ",
 
         "german": "Uploader: ",
 
@@ -2025,7 +2027,7 @@
 
         "dutch": "Geüploade datum: ",
 
-        "french": "Date de téléchargement: ",
+        "french": "Date d'upload : ",
 
         "german": "Hochgeladenes Datum: ",
 
@@ -2143,7 +2145,7 @@
 
         "dutch": "✨ Trending Torrents",
 
-        "french": "✨ Tendance Torrents",
+        "french": "✨ Torrents tendances",
 
         "german": "✨ Trending Torrents",
 
@@ -2171,7 +2173,7 @@
     "popularBtn": {
         "english": "⚡ Popular Torrents",
 
-        "arabic": "✨ التورنتات المُنتشرة",
+        "arabic": "⚡ التورنتات المُنتشرة",
 
         "nepali": "⚡ लोकप्रिय टोरेन्ट",
 
@@ -2263,7 +2265,7 @@
 
         "dutch": "🔍 Blader door Torrents",
 
-        "french": "🔍 Parcourir Torrents",
+        "french": "🔍 Parcourir les Torrents",
 
         "german": "🔍 Torrents durchsuchen",
 
@@ -2343,7 +2345,7 @@
 
         "dutch": "⁉️ Helpen",
 
-        "french": "⁉️ Aider",
+        "french": "⁉️ Aide",
 
         "german": "⁉️ Hilfe",
 
@@ -2423,7 +2425,7 @@
 
         "dutch": "🎬 Film",
 
-        "french": "🎬 Film",
+        "french": "🎬 Films",
 
         "german": "🎬 Film",
 
@@ -2463,7 +2465,7 @@
 
         "dutch": "📺 TV",
 
-        "french": "📺 La télé",
+        "french": "📺 Télévision",
 
         "german": "📺 Fernseher",
 
@@ -2503,7 +2505,7 @@
 
         "dutch": "🎥 Docu",
 
-        "french": "🎥 Docu",
+        "french": "🎥 Documentaires",
 
         "german": "🎥 Docu",
 
@@ -2543,7 +2545,7 @@
 
         "dutch": "🎮 Spel",
 
-        "french": "🎮 Jeu",
+        "french": "🎮 Jeux",
 
         "german": "🎮 Spiel",
 
@@ -2623,7 +2625,7 @@
 
         "dutch": "🖥️ Apps",
 
-        "french": "🖥️ Apps",
+        "french": "🖥️ Applications",
 
         "german": "🖥️ Apps",
 
@@ -2663,7 +2665,7 @@
 
         "dutch": "🎎 Anime",
 
-        "french": "🎎 Animé",
+        "french": "🎎 Animés",
 
         "german": "🎎 Anime",
 
@@ -2863,7 +2865,7 @@
 
         "dutch": "⬅️ Terug",
 
-        "french": "⬅️ Dos",
+        "french": "⬅️ Retour",
 
         "german": "⬅️ Zurück",
 
@@ -3064,7 +3066,7 @@
 
         "dutch": "🖼️ Afbeeldingen",
 
-        "french": "🖼️ Des photos",
+        "french": "🖼️ Images",
 
         "german": "🖼️ Bilder",
 
@@ -3144,7 +3146,7 @@
 
         "dutch": "⬇️ Downloaden naar seedr",
 
-        "french": "⬇️ Télécharger dans le semoir",
+        "french": "⬇️ Ajouter à Seedr",
 
         "german": "⬇️ Download auf Seeder",
 
@@ -3264,7 +3266,7 @@
 
         "dutch": "📢 Channel",
 
-        "french": "📢 Channel",
+        "french": "📢 Chaîne",
 
         "german": "📢 Channel",
 
