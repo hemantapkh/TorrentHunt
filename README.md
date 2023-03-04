@@ -64,23 +64,23 @@ Torrent Hunt Bot is a telegram bot to search and explore torrents from different
 Torrent Hunt Bot can talk in 19 different languages.
 
 - Arabic (Added by [Omar Khalid](https://github.com/omvrkhvlid))
-- Bengali (Verified by [sobuj53](https://github.com/sobuj53)) 
+- Bengali (Checked and fixed by [sobuj53](https://github.com/sobuj53)) 
 - Belarusian
 - Catalan
 - Dutch
-- English (Verified)
-- French
+- English (Original)
+- French (Checked and fixed by [xav35000](https://github.com/xav35000))
 - German
 - Hindi
-- Italian (Verified by [bacchilega](https://github.com/bacchilega)) 
+- Italian (Checked and fixed by [bacchilega](https://github.com/bacchilega)) 
 - Korean
 - Malay
 - Nepali
-- Polish (Verified by [Oskar](https://discordapp.com/users/171642532818714624))
+- Polish (VChecked and fixed by [Oskar](https://discordapp.com/users/171642532818714624))
 - Portuguese
 - Russian
 - Spanish
-- Turkish (Verified by [Berce](https://github.com/must4f))
+- Turkish (Checked and fixed by [Berce](https://github.com/must4f))
 - Ukrainian
 
 `Unverified languages are translated with Google Translator and may contain errors. Feel free to create a Pull Request with modifications to the language.json file.`
