@@ -1,0 +1,3458 @@
+{
+    "STR":{
+        "greet": {
+            "english": "✨ Hi {}, I am Torrent Hunt Bot and I can help you to search and explore torrents within Telegram.\n\n<b>Send any keywords to search for torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>For inline search, just type @TorrentHuntBot in any chat and search for torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "arabic": "✨ مرحبًا {}, أنا Torrent Hunt Bot ويمكنني مساعدتك في البحث واستكشاف التورنت داخل تليجرام.\n\n<b>أرسل أي كلمة مفتاحية للبحث عن تورنت.</b>\n\nعلى سبيل المثال: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>للبحث المضمّن, ما عليك سوى كتابة @TorrentHuntBot في أي دردشة والبحث عن تورنت.</b>\n\nعلى سبيل المثال: <code>@TorrentHuntBot Sintel</code>",
+
+            "nepali": "✨ नमस्ते {}, म टोरेन्ट हन्ट बोट हुँ र म तपाईंलाई टेलिग्राममा टोरेन्टहरू खोज्न र अन्वेषण गर्न मद्दत गर्न सक्छु।\n\n<b>टोरेन्टको खोजी गर्न कुनै कुञ्जी शब्दहरू पठाउनुहोस्।</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>इनलाइन खोजीको लागि, कुनै पनि च्याटमा @TorrentHuntBot टाइप गर्नुहोस् र टोरेन्टहरूको लागि खोजी गर्नुहोस्।</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "bengali": "✨ হ্যালো {}, আমি টরেন্ট হান্ট বট এবং আমি আপনাকে টেলিগ্রামের মধ্যে টরেন্ট অনুসন্ধান এবং ব্রাউজ করতে সহায়তা করতে পারি।\n\n<b>টরেন্টস অনুসন্ধানের জন্য কোনও কীওয়ার্ড প্রেরণ করুন।</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>ইনলাইন অনুসন্ধানের জন্য, যে কোনও চ্যাটে কেবল @TorrentHuntBot টাইপ করুন এবং টরেন্টস অনুসন্ধান করুন।</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "belarusian": "✨ Прывітанне {}, Я Bont Hunt Bot, і я магу дапамагчы вам шукаць і праглядаць торэнты ў Telegram.\n\n<b>Адпраўляйце любыя ключавыя словы для пошуку торэнтаў.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Для ўбудаванага пошуку проста ўвядзіце @TorrentHuntBot у любым чаце і шукайце торэнты.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "catalan": "✨ Hola {}, Sóc Torrent Hunt Bot i puc ajudar-vos a buscar i navegar per torrents dins de Telegram.\n\n<b>Envieu qualsevol paraula clau per cercar torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Per a la cerca en línia, només cal que escriviu @TorrentHuntBot en qualsevol xat i cerqueu torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "dutch": "✨ Hoi {}, Ik ben Torrent Hunt Bot en ik kan je helpen bij het zoeken en bladeren door torrents binnen Telegram.\n\n<b>Stuur trefwoorden om naar torrents te zoeken.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Voor inline zoeken typ je gewoon @TorrentHuntBot in een chat en zoek je naar torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "french": "✨ Salut {}, Je suis le bot Torrent Hunt et je peux vous aider à rechercher et à parcourir des torrents dans Telegram.\n\n<b>Saisissez des mots-clés pour rechercher des torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Pour la recherche en ligne, tapez simplement @TorrentHuntBot dans n'importe quelle discussion et recherchez des torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "german": "✨ Hallo {}, Ich bin Torrent Hunt Bot und kann Ihnen helfen, Torrents in Telegram zu suchen und zu durchsuchen.\n\n<b>Senden Sie beliebige Schlüsselwörter, um nach Torrents zu suchen.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Geben Sie für die Inline-Suche einfach @TorrentHuntBot in einen Chat ein und suchen Sie nach Torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "hindi": "✨ नमस्ते {}, मैं टोरेंट हंट बॉट हूं और मैं टेलीग्राम के भीतर टोरेंट को खोजने और अन्वेषण करने में आपकी मदद कर सकता हूं।\n\n<b>टोरेंट की खोज के लिए कोई भी कीवर्ड भेजें।</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>इनलाइन खोज के लिए, बस किसी भी चैट में @TorrentHuntBot टाइप करें और टोरेंट खोजें।</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "italian": "✨ Ciao {}, Sono Torrent Hunt Bot e posso aiutarti a cercare e scegliere i torrent all'interno di Telegram.\n\n<b>Invia qualsiasi parola chiave per cercare torrent.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "korean": "✨ 안녕하세요 {}, 저는 Torrent Hunt Bot이며 Telegram에서 급류를 검색하고 찾아 볼 수 있도록 도와 드릴 수 있습니다.\n\n<b>급류를 검색하려면 키워드를 보내십시오.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>인라인 검색의 경우 채팅에서 @TorrentHuntBot를 입력하고 토렌트를 검색하십시오.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "malay": "✨ Hai {}, Saya Torrent Hunt Bot dan saya dapat membantu anda mencari dan meninjau torrents di Telegram.\n\n<b>Hantarkan sebarang kata kunci untuk mencari torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Untuk carian sebaris, ketik @TorrentHuntBot dalam mana-mana sembang dan cari torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "polish": "✨ Witaj {}, Nazywam się Torrent Hunt Bot i mogę ci pomóc w wyszukiwaniu i przeglądaniu torrentów w Telegramie.\n\n<b>Wyślij dowolne słowo klucz, aby wyszukać torrenty.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Aby wyszukać w trybie inline, po prostu wpisz @TorrentHuntBot na dowolnym czacie i wyszukaj torrenty.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "portuguese": "✨ Oi {}, Eu sou o Torrent Hunt Bot e posso ajudá-lo a pesquisar e navegar por torrents no Telegram.\n\n<b>Envie qualquer palavra-chave para pesquisar torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Para pesquisa inline, basta digitar @TorrentHuntBot em qualquer chat e pesquisar por torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "russian": "✨ Привет {}, Я Torrent Hunt Bot, и я могу помочь вам искать и просматривать торренты в Telegram.\n\n<b>Отправляйте любые ключевые слова для поиска торрентов.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Для встроенного поиска просто введите @TorrentHuntBot в любом чате и ищите торренты.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "spanish": "✨ Hola {}, Soy Torrent Hunt Bot y puedo ayudarte a buscar y explorar torrents dentro de Telegram.\n\n<b>Envíe cualquier palabra clave para buscar torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Para la búsqueda en línea, simplemente escriba @TorrentHuntBot en cualquier chat y busque torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "turkish": "✨ Selam {}, Ben Torrent Hunt Bot'um ve Telegram'da torrentleri aramanıza ve göz atmanıza yardımcı olabilirim.\n\n<b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>\n\nÖrneğin: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Satır içi arama için; herhangi bir sohbette @TorrentHuntBot yazıp torrentleri aramanız yeterlidir.</b>\n\nŞu şekilde: <code>@TorrentHuntBot Sintel</code>",
+
+            "ukrainian": "✨ Привіт {}, Я Torrent Hunt Bot, і я можу допомогти вам шукати та переглядати торренти в Telegram.\n\n<b>Надішліть будь-які ключові слова для пошуку торрентів.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Для вбудованого пошуку просто введіть @TorrentHuntBot у будь-якому чаті та шукайте торренти.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>"
+        },
+
+        "greetGroup": {
+            "english": "✨ Hi {}, I am Torrent Hunt Bot and I can help you to search and explore torrents within Telegram.\n\n<b>Send any keywords to search for torrents.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>For inline search, just type @TorrentHuntBot in any chat and search for torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "arabic": "✨ مرحبًا {}, أنا Torrent Hunt Bot ويمكنني مساعدتك في البحث واستكشاف التورنت داخل تليجرام.\n\n<b>أرسل أي كلمة مفتاحية للبحث عن تورنت.</b>\n\nعلى سبيل المثال: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>للبحث المضمّن, ما عليك سوى كتابة @TorrentHuntBot في أي دردشة والبحث عن تورنت.</b>\n\nعلى سبيل المثال: <code>@TorrentHuntBot Sintel</code>",
+
+            "nepali": "✨ नमस्ते {}, म टोरेन्ट हन्ट बोट हुँ र म तपाईंलाई टेलिग्राममा टोरेन्टहरू खोज्न र अन्वेषण गर्न मद्दत गर्न सक्छु।\n\n<b>टोरेन्टको खोजी गर्न कुनै कुञ्जी शब्दहरू पठाउनुहोस्।</b>\n\nEg: /VLC Media, /Sintel\n\n<b>इनलाइन खोजीको लागि, कुनै पनि च्याटमा @TorrentHuntBot टाइप गर्नुहोस् र टोरेन्टहरूको लागि खोजी गर्नुहोस्।</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "bengali": "✨ হ্যালো {}, আমি টরেন্ট হান্ট বট এবং আমি আপনাকে টেলিগ্রামের মধ্যে টরেন্ট অনুসন্ধান এবং ব্রাউজ করতে সহায়তা করতে পারি।\n\n<b>টরেন্টস অনুসন্ধানের জন্য কোনও কীওয়ার্ড প্রেরণ করুন।</b>\n\nEg: /VLC Media, /Sintel\n\n<b>ইনলাইন অনুসন্ধানের জন্য, যে কোনও চ্যাটে কেবল @TorrentHuntBot টাইপ করুন এবং টরেন্টস অনুসন্ধান করুন।</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "belarusian": "✨ Прывітанне {}, Я Bont Hunt Bot, і я магу дапамагчы вам шукаць і праглядаць торэнты ў Telegram.\n\n<b>Адпраўляйце любыя ключавыя словы для пошуку торэнтаў.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Для ўбудаванага пошуку проста ўвядзіце @TorrentHuntBot у любым чаце і шукайце торэнты.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "catalan": "✨ Hola {}, Sóc Torrent Hunt Bot i puc ajudar-vos a buscar i navegar per torrents dins de Telegram.\n\n<b>Envieu qualsevol paraula clau per cercar torrents.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Per a la cerca en línia, només cal que escriviu @TorrentHuntBot en qualsevol xat i cerqueu torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "dutch": "✨ Hoi {}, Ik ben Torrent Hunt Bot en ik kan je helpen bij het zoeken en bladeren door torrents binnen Telegram.\n\n<b>Stuur trefwoorden om naar torrents te zoeken.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Voor inline zoeken typ je gewoon @TorrentHuntBot in een chat en zoek je naar torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "french": "✨ Salut {}, Je suis le bot Torrent Hunt et je peux vous aider à rechercher et parcourir des torrents dans Telegram.\n\n<b>Saisissez des mots-clés pour rechercher des torrents.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Pour la recherche en ligne, mentionnez simplement @TorrentHuntBot dans n'importe quelle discussion et recherchez des torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "german": "✨ Hallo {}, Ich bin Torrent Hunt Bot und kann Ihnen helfen, Torrents in Telegram zu suchen und zu durchsuchen.\n\n<b>Senden Sie beliebige Schlüsselwörter, um nach Torrents zu suchen.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Geben Sie für die Inline-Suche einfach @TorrentHuntBot in einen Chat ein und suchen Sie nach Torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "hindi": "✨ नमस्ते {}, मैं टोरेंट हंट बॉट हूं और मैं टेलीग्राम के भीतर टोरेंट को खोजने और अन्वेषण करने में आपकी मदद कर सकता हूं।\n\n<b>टोरेंट की खोज के लिए कोई भी कीवर्ड भेजें।</b>\n\nEg: /VLC Media, /Sintel\n\n<b>इनलाइन खोज के लिए, बस किसी भी चैट में @TorrentHuntBot टाइप करें और टोरेंट खोजें।</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "italian": "✨ Ciao {}, Sono Torrent Hunt Bot e posso aiutarti a cercare e scegliere i torrent all'interno di Telegram.\n\n<b>Invia qualsiasi parola chiave per cercare torrent.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "korean": "✨ 안녕하세요 {}, 저는 Torrent Hunt Bot이며 Telegram에서 급류를 검색하고 찾아 볼 수 있도록 도와 드릴 수 있습니다.\n\n<b>급류를 검색하려면 키워드를 보내십시오.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>인라인 검색의 경우 채팅에서 @TorrentHuntBot를 입력하고 토렌트를 검색하십시오.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "malay": "✨ Hai {}, Saya Torrent Hunt Bot dan saya dapat membantu anda mencari dan meninjau torrents di Telegram.\n\n<b>Hantarkan sebarang kata kunci untuk mencari torrents.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Untuk carian sebaris, ketik @TorrentHuntBot dalam mana-mana sembang dan cari torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "polish": "✨ Witaj {}, Nazywam się Torrent Hunt Bot i mogę ci pomóc w wyszukiwaniu i przeglądaniu torrentów w Telegramie.\n\n<b>Wyślij dowolne słowo klucz, aby wyszukać torrenty.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Aby wyszukać w trybie inline, po prostu wpisz @TorrentHuntBot na dowolnym czacie i wyszukaj torrenty.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "portuguese": "✨ Oi {}, Eu sou o Torrent Hunt Bot e posso ajudá-lo a pesquisar e navegar por torrents no Telegram.\n\n<b>Envie qualquer palavra-chave para pesquisar torrents.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Para pesquisa inline, basta digitar @TorrentHuntBot em qualquer chat e pesquisar por torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "russian": "✨ Привет {}, Я Torrent Hunt Bot, и я могу помочь вам искать и просматривать торренты в Telegram.\n\n<b>Отправляйте любые ключевые слова для поиска торрентов.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Для встроенного поиска просто введите @TorrentHuntBot в любом чате и ищите торренты.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "spanish": "✨ Hola {}, Soy Torrent Hunt Bot y puedo ayudarte a buscar y explorar torrents dentro de Telegram.\n\n<b>Envíe cualquier palabra clave para buscar torrents.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Para la búsqueda en línea, simplemente escriba @TorrentHuntBot en cualquier chat y busque torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "turkish": "✨ Selam {}, Ben Torrent Hunt Bot'um ve Telegram'da torrentleri aramanıza ve göz atmanıza yardımcı olabilirim.\n\n<b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>\n\nÖrneğin: /VLC Media, /Sintel\n\n<b>Satır içi arama için; herhangi bir sohbette @TorrentHuntBot yazıp torrentleri aramanız yeterlidir.</b>\n\nŞu şekilde: <code>@TorrentHuntBot Sintel</code>",
+
+            "ukrainian": "✨ Привіт {}, Я Torrent Hunt Bot, і я можу допомогти вам шукати та переглядати торренти в Telegram.\n\n<b>Надішліть будь-які ключові слова для пошуку торрентів.</b>\n\nEg: /VLC Media, /Sintel\n\n<b>Для вбудованого пошуку просто введіть @TorrentHuntBot у будь-якому чаті та шукайте торренти.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>"
+        },
+
+
+        "chooseLanguage": {
+            "english": "🗣️ Choose a language you wish",
+
+            "arabic": "🗣️ إختر لغتك",
+
+            "nepali": "🗣️ तपाईले चाहानु भएको भाषा छान्नुहोस्",
+
+            "bengali": "🗣️ আপনার ইচ্ছা মতো একটি ভাষা পছন্দ করুন",
+
+            "belarusian": "🗣️ Выберыце мову, якую пажадаеце",
+
+            "catalan": "🗣️ Trieu l'idioma que desitgeu",
+
+            "dutch": "🗣️ Kies een taal die u wenst",
+
+            "french": "🗣️ Choisissez la langue que vous souhaitez",
+
+            "german": "🗣️ Wählen Sie eine Sprache, die Sie wünschen",
+
+            "hindi": "🗣️ अपनी इच्छानुसार भाषा चुनें",
+
+            "italian": "🗣️ Scegli la lingua che desideri",
+
+            "korean": "🗣️ 원하는 언어를 선택하세요",
+
+            "malay": "🗣️ Pilih bahasa yang anda mahukan",
+
+            "polish": "🗣️ Wybierz żądany język",
+
+            "portuguese": "🗣️ Escolha um idioma que você deseja",
+
+            "russian": "🗣️ Выберите желаемый язык",
+
+            "spanish": "🗣️ Elija un idioma que desee",
+
+            "turkish": "🗣️ Dilediğiniz dili seçin",
+
+            "ukrainian": "🗣️ Виберіть мову, яку бажаєте"
+        },
+
+        "languageSelected": {
+            "english": "🌐 English is selected as your default language. You can choose another language again from settings.",
+
+            "arabic": "🌐 تم اختيار اللغة العربية كلغتك الافتراضية، يمكنك اختيار لغة أخرى من الاعدادات.",
+
+            "nepali": "🇳🇵 नेपाली तपाईको पूर्वनिर्धारित भाषाको रूपमा चयन गरिएको छ। तपाईं सेटिंग्सबाट अर्को भाषा छान्न सक्नुहुन्छ।",
+
+            "bengali": "🇧🇩 আপনার ডিফল্ট ভাষা হিসাবে বাংলা নির্বাচন করা হয়েছে। আপনি সেটিংস থেকে আবার অন্য ভাষা নির্ধারণ করতে পারেন।",
+
+            "belarusian": "🇧🇾 У якасці мовы па змаўчанні абрана беларуская мова. Вы можаце зноў выбраць іншую мову ў наладах.",
+
+            "catalan": "🏴󠁥󠁳󠁣󠁴󠁿 El català està seleccionat com a idioma predeterminat. Podeu tornar a triar un altre idioma a la configuració.",
+
+            "dutch": "🇳🇱 Nederlands is geselecteerd als uw standaardtaal. U kunt via de instellingen opnieuw een andere taal kiezen.",
+
+            "french": "🇫🇷 Le français est sélectionné comme langue par défaut. Vous pouvez à nouveau choisir une autre langue dans les paramètres.",
+
+            "german": "🇩🇪 Deutsch ist als Standardsprache ausgewählt. Sie können in den Einstellungen erneut eine andere Sprache auswählen.",
+
+            "hindi": "🇮🇳 हिंदी को आपकी डिफ़ॉल्ट भाषा के रूप में चुना गया है। आप सेटिंग्स से दूसरी भाषा फिर से चुन सकते हैं।",
+
+            "italian": "🇮🇹 L'italiano è selezionato come la tua lingua predefinita. Puoi scegliere un'altra lingua dalle impostazioni.",
+
+            "korean": "🇰🇷 한국어가 기본 언어로 선택됩니다. 설정에서 다른 언어를 다시 선택할 수 있습니다.",
+
+            "malay": "🇮🇩 Bahasa Melayu dipilih sebagai bahasa lalai anda. Anda boleh memilih bahasa lain sekali lagi dari tetapan.",
+
+            "polish": "🇵🇱 Polski jest wybrany jako domyślny język. Możesz ponownie wybrać inny język w ustawieniach.",
+
+            "portuguese": "🇧🇷 Português é selecionado como seu idioma padrão. Você pode escolher outro idioma novamente nas configurações.",
+
+            "russian": "🇷🇺 Русский выбран в качестве языка по умолчанию. Вы можете снова выбрать другой язык в настройках.",
+
+            "spanish": "🇪🇸 El español está seleccionado como idioma predeterminado. Puede elegir otro idioma nuevamente desde la configuración.",
+
+            "turkish": "🇹🇷 Varsayılan diliniz artık Türkçe ! Dilerseniz ayarlardan başka bir dile tekrar geçebilirsiniz...",
+
+            "ukrainian": "🇺🇦 Українською мовою вибрано мовою за замовчуванням. Ви можете знову вибрати іншу мову з налаштувань."
+        },
+
+        "languageSetting": {
+            "english": "🗣️ Language setting",
+
+            "arabic": "🗣️ اعدادات اللغة",
+
+            "nepali": "🗣️ भाषा सेटिंग",
+
+            "bengali": "🗣️ ভাষা সেটিং",
+
+            "belarusian": "🗣️ Моўная ўстаноўка",
+
+            "catalan": "🗣️ Configuració d'idioma",
+
+            "dutch": "🗣️ Taalinstelling",
+
+            "french": "🗣️ Paramètres de langue",
+
+            "german": "🗣️ Spracheinstellungen",
+
+            "hindi": "🗣️ भाषा सेटिंग",
+
+            "italian": "🗣️ Impostazioni della lingua",
+
+            "korean": "🗣️ 언어 설정",
+
+            "malay": "🗣️ Tetapan bahasa",
+
+            "polish": "🗣️ Ustawienie języka",
+
+            "portuguese": "🗣️ Configuração de idioma",
+
+            "russian": "🗣️ Настройка языка",
+
+            "spanish": "🗣️ Configuración de idioma",
+
+            "turkish": "🗣️ Dil ayarı",
+
+            "ukrainian": "🗣️ Налаштування мови"
+        },
+
+        "turnOnRestrictedMode": {
+            "english": "🚫 Activate restricted mode",
+
+            "arabic": "🚫 تفعيل وضع الحظر",
+
+            "nepali": "🚫 प्रतिबन्धित मोड सक्रिय गर्नुहोस्",
+
+            "bengali": "🚫 সীমাবদ্ধ মোড সক্রিয় করুন",
+
+            "belarusian": "🚫 Актываваць абмежаваны рэжым",
+
+            "catalan": "🚫 Activeu el mode restringit",
+
+            "dutch": "🚫 Activeer de beperkte modus",
+
+            "french": "🚫 Activer le mode restreint",
+
+            "german": "🚫 Aktivieren Sie den eingeschränkten Modus",
+
+            "hindi": "🚫 प्रतिबंधित मोड को सक्रिय करें",
+
+            "italian": "🚫 Attiva la modalità con restrizioni",
+
+            "korean": "🚫 제한 모드 활성화",
+
+            "malay": "🚫 Aktifkan mod terhad",
+
+            "polish": "🚫 Aktywuj tryb ograniczonego dostępu",
+
+            "portuguese": "🚫 Ative o modo restrito",
+
+            "russian": "🚫 Активировать ограниченный режим",
+
+            "spanish": "🚫 Activar el modo restringido",
+
+            "turkish": "🚫 Kısıtlı modu etkinleştirin",
+
+            "ukrainian": "🚫 Активуйте обмежений режим"
+        },
+
+        "turnOffRestrictedMode": {
+            "english": "✔️ Deactivate restricted mode",
+
+            "arabic": "✔️ الغاء تفعيل وضع الحظر",
+
+            "nepali": "✔️ प्रतिबन्धित मोड निष्क्रिय गर्नुहोस्",
+
+            "bengali": "✔️ সীমাবদ্ধ মোড নিষ্ক্রিয় করুন",
+
+            "belarusian": "✔️ Адключыце абмежаваны рэжым",
+
+            "catalan": "✔️ Desactiveu el mode restringit",
+
+            "dutch": "✔️ Schakel de beperkte modus uit",
+
+            "french": "✔️ Désactiver le mode restreint",
+
+            "german": "✔️ Deaktivieren Sie den eingeschränkten Modus",
+
+            "hindi": "✔️ प्रतिबंधित मोड को निष्क्रिय करें",
+
+            "italian": "✔️ Disattiva la modalità con restrizioni",
+
+            "korean": "✔️ 제한 모드 비활성화",
+
+            "malay": "✔️ Nyahaktifkan mod terhad",
+
+            "polish": "✔️ Dezaktywuj tryb ograniczonego dostępu",
+
+            "portuguese": "✔️ Desative o modo restrito",
+
+            "russian": "✔️ Отключить ограниченный режим",
+
+            "spanish": "✔️ Desactivar el modo restringido",
+
+            "turkish": "✔️ Kısıtlı modu devre dışı bırakın",
+
+            "ukrainian": "✔️ Вимкніть обмежений режим"
+        },
+
+        "restrictedModeOn": {
+            "english": "🚫 Restricted mode is turned on for you which will hide adults content from your results.",
+
+            "arabic": "🚫 تم تفعيل وضع الحظر لإخفاء المتحوى الغير لائق من نتائج بحثك.",
+
+            "nepali": "🚫 प्रतिबन्धित मोड तपाईंको लागि सक्रिय गरिएको छ जुन तपाईंको परिणामहरूबाट वयस्क सामग्री लुकाउँछ।",
+
+            "bengali": "🚫 সীমাবদ্ধ মোড আপনার জন্য চালু আছে যা আপনার সার্চ থেকে ১৮+ ফলাফল লুকিয়ে রাখবে।",
+
+            "belarusian": "🚫 Для вас уключаны абмежаваны рэжым, які дазволіць схаваць змесціва для дарослых з вашых вынікаў.",
+
+            "catalan": "🚫 El mode restringit està activat per a vosaltres, que amagarà el contingut per a adults dels resultats.",
+
+            "dutch": "🚫 De beperkte modus is voor u ingeschakeld, waardoor inhoud voor volwassenen voor uw resultaten wordt verborgen.",
+
+            "french": "🚫 Le mode restreint est activé pour vous, ce qui masquera le contenu pour adultes de vos résultats.",
+
+            "german": "🚫 Der eingeschränkte Modus ist für Sie aktiviert, wodurch Inhalte für Erwachsene aus Ihren Ergebnissen ausgeblendet werden.",
+
+            "hindi": "🚫 प्रतिबंधित मोड आपके लिए चालू है जो आपके परिणामों से वयस्क सामग्री छिपाएगा।",
+
+            "italian": "🚫 La modalità con restrizioni è attivata per te e nasconderà i contenuti per adulti dai tuoi risultati.",
+
+            "korean": "🚫 검색 결과에서 성인용 콘텐츠를 숨기는 제한 모드가 켜져 있습니다.",
+
+            "malay": "🚫 Mod terhad dihidupkan untuk anda yang akan menyembunyikan kandungan dewasa dari hasil anda.",
+
+            "polish": "🚫 Tryb ograniczonego dostępu jest włączony, powoduje on ukrycie w wynikach treści dla dorosłych.",
+
+            "portuguese": "🚫 O modo restrito está ativado para você, o que ocultará o conteúdo adulto de seus resultados.",
+
+            "russian": "🚫 Для вас включен ограниченный режим, который скроет контент для взрослых из ваших результатов.",
+
+            "spanish": "🚫 El modo restringido está activado para usted, lo que ocultará el contenido para adultos de sus resultados.",
+
+            "turkish": "🚫 Kısıtlı modu kendiniz için açtınız ve bu da şu anlama geliyor: Yetişkinlere yönelik içerik sonuçlarınızda gözükmeyecek.",
+
+            "ukrainian": "🚫 Для вас увімкнено обмежений режим, який буде приховувати вміст для дорослих з результатів."
+        },
+
+        "restrictedModeOff": {
+            "english": "✔️ Restricted mode is turned off successfully.",
+
+            "arabic": "✔️ تم الغاء تفعيل وضع الحظر بنجاح.",
+
+            "nepali": "✔️ प्रतिबन्धित मोड सफलतापूर्वक बन्द गरिएको छ।",
+
+            "bengali": "✔️ সীমাবদ্ধ মোড সফলভাবে বন্ধ করা হয়েছে।",
+
+            "belarusian": "✔️ Абмежаваны рэжым паспяхова адключаны.",
+
+            "catalan": "✔️ El mode restringit està desactivat correctament.",
+
+            "dutch": "✔️ De beperkte modus is met succes uitgeschakeld.",
+
+            "french": "✔️ Le mode restreint à été désactivé avec succès.",
+
+            "german": "✔️ Der eingeschränkte Modus wurde erfolgreich deaktiviert.",
+
+            "hindi": "✔️ प्रतिबंधित मोड को सफलतापूर्वक बंद कर दिया गया है।",
+
+            "italian": "✔️ La modalità con restrizioni è stata disattivata correttamente.",
+
+            "korean": "✔️ 제한 모드가 성공적으로 해제되었습니다.",
+
+            "malay": "✔️ Mod terhad dimatikan dengan berjaya.",
+
+            "polish": "✔️ Tryb ograniczonego dostępu został pomyślnie wyłączony.",
+
+            "portuguese": "✔️ O modo restrito foi desativado com sucesso.",
+
+            "russian": "✔️ Ограниченный режим успешно отключен.",
+
+            "spanish": "✔️ El modo restringido se desactivó correctamente.",
+
+            "turkish": "✔️ Kısıtlı mod başarıyla kapatıldı.",
+
+            "ukrainian": "✔️ Обмежений режим успішно вимкнено."
+        },
+
+        "cantView": {
+            "english": "🚫 You can't view this content because the restricted mode is on. You can turn off the restriction from settings.",
+
+            "arabic": "🚫 لا يمكنك عرض هذا المحتوى نظرًا لتفعيلك وضع الحظر. يمكنك الغاء تفعيل وضع الحظر من الاعدادات.",
+
+            "nepali": "🚫 तपाईं यो सामग्री हेर्न सक्नुहुन्न किनकि प्रतिबन्धित मोड चालु छ। तपाईं सेटिंग्सबाट प्रतिबन्ध बन्द गर्न सक्नुहुनेछ।",
+
+            "bengali": "🚫 সীমাবদ্ধ মোড চালু থাকায় আপনি এই ফলাফলটি দেখতে পারবেন না। আপনি সেটিংস থেকে সীমাবদ্ধতা বন্ধ করতে পারেন।",
+
+            "belarusian": "🚫 Вы не можаце праглядаць гэты змест, бо ўключаны абмежаваны рэжым. Вы можаце адключыць абмежаванне ў наладах.",
+
+            "catalan": "🚫 No podeu veure aquest contingut perquè el mode restringit està activat. Podeu desactivar la restricció des de la configuració.",
+
+            "dutch": "🚫 U kunt deze inhoud niet bekijken omdat de beperkte modus is ingeschakeld. U kunt de beperking uitschakelen via de instellingen.",
+
+            "french": "🚫 Vous ne pouvez pas voir ce contenu car le mode restreint est activé. Vous pouvez désactiver la restriction à partir des paramètres.",
+
+            "german": "🚫 Sie können diesen Inhalt nicht anzeigen, da der eingeschränkte Modus aktiviert ist. Sie können die Einschränkung in den Einstellungen deaktivieren.",
+
+            "hindi": "🚫 आप इस सामग्री को नहीं देख सकते क्योंकि प्रतिबंधित मोड चालू है। आप सेटिंग्स से प्रतिबंध को बंद कर सकते हैं।",
+
+            "italian": "🚫 Non puoi visualizzare questo contenuto perché la modalità con restrizioni è attiva. Puoi disattivare la restrizione dalle impostazioni.",
+
+            "korean": "🚫 제한 모드가 켜져 있기 때문에이 콘텐츠를 볼 수 없습니다. 설정에서 제한을 해제 할 수 있습니다.",
+
+            "malay": "🚫 Anda tidak dapat melihat kandungan ini kerana mod terhad dihidupkan. Anda boleh mematikan sekatan dari tetapan.",
+
+            "polish": "🚫 Nie możesz wyświetlić tej zawartości, ponieważ włączony jest tryb ograniczonego dostępu. Możesz wyłączyć go w ustawieniach.",
+
+            "portuguese": "🚫 Você não pode visualizar este conteúdo porque o modo restrito está ativado. Você pode desativar a restrição nas configurações.",
+
+            "russian": "🚫 Вы не можете просматривать этот контент, потому что включен ограниченный режим. Вы можете отключить ограничение в настройках.",
+
+            "spanish": "🚫 No puede ver este contenido porque el modo restringido está activado. Puede desactivar la restricción desde la configuración.",
+
+            "turkish": "🚫 Kısıtlı mod açık olduğundan bu içeriği görüntüleyemezsiniz. Kısıtlamayı ayarlardan kapatabilirsiniz.",
+
+            "ukrainian": "🚫 Ви не можете переглянути цей вміст, оскільки ввімкнено обмежений режим. Ви можете вимкнути обмеження в налаштуваннях."
+        },
+
+        "notSubscribed": {
+            "english": "🥺 It seems like you are not subscribed to our channel yet. Due to our limited resources, only our subscriers can use this service. Please support us by subscribing to our channel to use this service.",
+
+            "arabic": "🥺 يبدوا انك لست مشتركًا في قناتنا بعد. نظرًا لمصادرنا المحدودة، يمكن لمشتركينا فقط استعمال هذه الخدمة. يرجى دعمنا بالإشتراك في قناتنا لإستعمال هذه الخدمة.",
+
+            "nepali": "🥺 यस्तो देखिन्छ कि तपाईं हाम्रो च्यानलको सदस्यता लिनुभएको छैन। हाम्रो सीमित संसाधनहरूको कारण, केवल हाम्रा ग्राहकहरूले यो सेवा प्रयोग गर्न सक्दछन्। यो सेवा प्रयोग गर्नको लागि कृपया हाम्रो च्यानलमा सदस्यता लिई हामीलाई समर्थन गर्नुहोस्।",
+
+            "bengali": "🥺 দেখে মনে হচ্ছে আপনি এখনও আমাদের চ্যানেলে সাবস্ক্রাইব করেন নি। আমাদের সীমিত সংস্থানগুলির কারণে, কেবলমাত্র আমাদের গ্রাহকরা এই পরিষেবাটি ব্যবহার করতে পারবেন। এই পরিষেবাটি ব্যবহার করতে আমাদের চ্যানেলটিতে সাবস্ক্রাইব করে দয়া করে আমাদের সমর্থন করুন।",
+
+            "belarusian": "🥺 Здаецца, вы яшчэ не падпісаны на наш канал. З-за абмежаваных рэсурсаў гэтай паслугай могуць карыстацца толькі нашы абаненты. Калі ласка, падтрымайце нас, падпісаўшыся на наш канал, каб карыстацца гэтай паслугай.",
+
+            "catalan": "🥺 Sembla que encara no esteu subscrit al nostre canal. A causa dels nostres recursos limitats, només els nostres subscriptors poden utilitzar aquest servei. Si us plau, ajudeu-nos subscrivint-vos al nostre canal per utilitzar aquest servei.",
+
+            "dutch": "🥺 Het lijkt erop dat je nog niet bent geabonneerd op ons kanaal. Vanwege onze beperkte middelen kunnen alleen onze abonnees deze service gebruiken. Steun ons alstublieft door u te abonneren op ons kanaal om deze service te gebruiken.",
+
+            "french": "🥺 Il semble que vous ne soyez pas encore abonné à notre chaîne. En raison de nos ressources limitées, seuls nos abonnés peuvent utiliser ce service. Veuillez nous soutenir en vous abonnant à notre chaîne pour utiliser ce service.",
+
+            "german": "🥺 Anscheinend haben Sie unseren Kanal noch nicht abonniert. Aufgrund unserer begrenzten Ressourcen können nur unsere Abonnenten diesen Service nutzen. Bitte unterstützen Sie uns, indem Sie unseren Kanal abonnieren, um diesen Service zu nutzen.",
+
+            "hindi": "🥺 ऐसा लगता है कि आप अभी तक हमारे चैनल के सदस्य नहीं हैं। हमारे सीमित संसाधनों के कारण, केवल हमारे ग्राहक ही इस सेवा का उपयोग कर सकते हैं। कृपया इस सेवा का उपयोग करने के लिए हमारे चैनल को सब्सक्राइब करें।",
+
+            "italian": "🥺 Sembra che tu non sia ancora iscritto al nostro canale. A causa delle nostre risorse limitate, solo i nostri abbonati possono utilizzare questo servizio. Ti preghiamo di sostenerci iscrivendoti al nostro canale per utilizzare questo servizio.",
+
+            "korean": "🥺 아직 저희 채널을 구독하지 않으신 것 같습니다. 제한된 리소스로 인해 구독자 만이 서비스를 사용할 수 있습니다. 이 서비스를 사용하려면 채널을 구독하여 지원하십시오.",
+
+            "malay": "🥺 Nampaknya anda belum melanggan saluran kami. Oleh kerana sumber daya kami terhad, hanya pelanggan kami yang dapat menggunakan perkhidmatan ini. Tolong menyokong kami dengan melanggan saluran kami untuk menggunakan perkhidmatan ini.",
+
+            "polish": "🥺 Wygląda na to, że nie subskrybujesz jeszcze naszego kanału. Ze względu na nasze ograniczone zasoby tylko nasi subskrybenci mogą korzystać z tej usługi. Wesprzyj nas, subskrybując nasz kanał, aby korzystać z tej usługi.",
+
+            "portuguese": "🥺 Parece que você ainda não se inscreveu em nosso canal. Devido aos nossos recursos limitados, apenas nossos assinantes podem usar este serviço. Apoie-nos subscrevendo o nosso canal para utilizar este serviço.",
+
+            "russian": "🥺 Похоже, вы еще не подписаны на наш канал. Из-за наших ограниченных ресурсов только наши подписчики могут использовать эту услугу. Пожалуйста, поддержите нас, подписавшись на наш канал, чтобы использовать эту услугу.",
+
+            "spanish": "🥺 Parece que aún no estás suscrito a nuestro canal. Debido a nuestros recursos limitados, solo nuestros suscriptores pueden utilizar este servicio. Por favor apóyenos suscribiéndose a nuestro canal para utilizar este servicio.",
+
+            "turkish": "🥺 Görünüşe göre henüz kanalımıza abone değilsiniz. Sınırlı kaynaklarımız nedeniyle, bu hizmeti yalnızca abonelerimiz kullanabilir. Lütfen bu hizmeti kullanmak için kanalımıza abone olarak bize destek olun.",
+
+            "ukrainian": "🥺 Здається, ви ще не підписані на наш канал. Через наші обмежені ресурси цією послугою можуть користуватися лише наші абоненти. Будь ласка, підтримайте нас, підписавшись на наш канал, щоб користуватися цією послугою."
+        },
+
+        "notSubscribedCallback": {
+            "english": "You are not subscribed yet.",
+
+            "arabic": "أنت لست مشترك بعد.",
+
+            "nepali": "तपाइँ अझै सदस्यता लिनुभएको छैन।",
+
+            "bengali": "আপনি এখনও সাবস্ক্রাইব করেননি।",
+
+            "belarusian": "Вы яшчэ не падпісаны.",
+
+            "catalan": "Encara no esteu subscrit.",
+
+            "dutch": "Je bent nog niet geabonneerd.",
+
+            "french": "Vous n'êtes pas encore abonné.",
+
+            "german": "Sie sind noch nicht abonniert.",
+
+            "hindi": "आपने अभी तक सदस्यता नहीं ली है।",
+
+            "italian": "Non sei ancora iscritto.",
+
+            "korean": "아직 구독하지 않았습니다.",
+
+            "malay": "Anda belum melanggan.",
+
+            "polish": "Nie jesteś jeszcze zasubskrybowany.",
+
+            "portuguese": "Você ainda não está inscrito.",
+
+            "russian": "Вы еще не подписаны.",
+
+            "spanish": "Aún no estás suscrito.",
+
+            "turkish": "Henüz abone değilsiniz.",
+
+            "ukrainian": "Ви ще не підписані."
+        },
+
+        "clickForMoreDetails": {
+            "english": "Click for more details.",
+
+            "arabic": "اضغط لعرض المزيد من التفاصيل.",
+
+            "nepali": "थप विवरणहरूको लागि क्लिक गर्नुहोस्।",
+
+            "bengali": "বিস্তারিত জানতে ক্লিক করুন।",
+
+            "belarusian": "Націсніце, каб даведацца больш.",
+
+            "catalan": "Feu clic per obtenir més informació.",
+
+            "dutch": "Klik voor meer details.",
+
+            "french": "Cliquez pour plus de détails.",
+
+            "german": "Klicken Sie hier für weitere Details.",
+
+            "hindi": "अधिक जानकारी के लिए क्लिक करें।",
+
+            "italian": "Fare clic per maggiori dettagli.",
+
+            "korean": "자세한 내용을 보려면 클릭하십시오.",
+
+            "malay": "Klik untuk maklumat lebih lanjut.",
+
+            "polish": "Kliknij, aby uzyskać więcej informacji.",
+
+            "portuguese": "Clique para mais detalhes.",
+
+            "russian": "Щелкните для получения более подробной информации.",
+
+            "spanish": "Haga clic para obtener más detalles.",
+
+            "turkish": "Daha fazla detay için tıklayınız.",
+
+            "ukrainian": "Клацніть для отримання детальної інформації."
+        },
+
+        "unlockAllFeatures": {
+            "english": "💫 <b>Make sure to subscribe to our channel to unlock all the features of the bot for free.</b>",
+
+            "arabic": "💫 <b>احرص على الاشتراك في قناتنا لفتح كل مميزات البوت مجانًا.</b>",
+
+            "nepali": "💫 <b>बोटका सबै सुविधाहरू निःशुल्क अनलक गर्न हाम्रो च्यानलको सदस्यता लिन निश्चित गर्नुहोस्।</b>",
+
+            "bengali": "💫 <b>বিনামূল্যের বটের সমস্ত বৈশিষ্ট্য আনলক করতে আমাদের চ্যানেলে সাবস্ক্রাইব করতে ভুলবেন না।</b>",
+
+            "belarusian": "💫 <b>Абавязкова падпішыцеся на наш канал, каб бясплатна разблакаваць усе магчымасці бота.</b>",
+
+            "catalan": "💫 <b>Assegura't de subscriure't al nostre canal per desbloquejar totes les funcions del bot de forma gratuïta.</b>",
+
+            "dutch": "💫 <b>Zorg ervoor dat je je abonneert op ons kanaal om alle functies van de bot gratis te ontgrendelen.</b>",
+
+            "french": "💫 <b>Assurez-vous de vous abonner à notre chaîne pour débloquer gratuitement toutes les fonctionnalités du bot.</b>",
+
+            "german": "💫 <b>Stellen Sie sicher, dass Sie unseren Kanal abonnieren, um alle Funktionen des Bots kostenlos freizuschalten.</b>",
+
+            "hindi": "💫 <b>बॉट की सभी सुविधाओं को मुफ्त में अनलॉक करने के लिए हमारे चैनल को सब्सक्राइब करना न भूलें।</b>",
+
+            "italian": "💫 <b>Assicurati di iscriverti al nostro canale per sbloccare gratuitamente tutte le funzionalità del bot.</b>",
+
+            "korean": "💫 <b>봇의 모든 기능을 무료로 잠금 해제하려면 채널을 구독하세요.</b>",
+
+            "malay": "💫 <b>Pastikan anda melanggan saluran kami untuk membuka kunci semua ciri bot secara percuma.</b>",
+
+            "polish": "💫 <b>Zasubskrybuj nasz kanał, aby odblokować wszystkie funkcje bota za darmo.</b>",
+
+            "portuguese": "💫 <b>Certifique-se de se inscrever em nosso canal para desbloquear todos os recursos do bot gratuitamente.</b>",
+
+            "russian": "💫 <b>Обязательно подпишитесь на наш канал, чтобы бесплатно получить доступ ко всем функциям бота.</b>",
+
+            "spanish": "💫 <b>Asegúrate de suscribirte a nuestro canal para desbloquear todas las funciones del bot de forma gratuita.</b>",
+
+            "turkish": "💫 <b>Botun tüm özelliklerinden ücretsiz yararlanmak için kanalımıza abone olmayı unutmayın.</b>",
+
+            "ukrainian": "💫 <b>Обов’язково підпишіться на наш канал, щоб безкоштовно розблокувати всі функції бота.</b>"
+        },
+
+
+        "thanksForSub": {
+            "english": "😇 <b>Thank you so much for supporting us!! Being a part of our channel, you will get the latest updates of our projects.</b>",
+
+            "arabic": "😇 <b>شكرًا جزيلًا لدعمنا!! كونك عضوًا في قناتنا، سوف تتلقى آخر تحديثات مشاريعنا.</b>",
+
+            "nepali": "😇 <b>हामीलाई सहयोग गर्न को लागी धेरै धन्यवाद! हाम्रो च्यानलको एक हिस्साको रूपमा, तपाईं हाम्रो परियोजनाहरूको नयाँ अपडेटहरू प्राप्त गर्नुहुनेछ।</b>",
+
+            "bengali": "😇 <b>আমাদের সমর্থন করার জন্য আপনাকে অনেক ধন্যবাদ !! আমাদের চ্যানেলের গ্রাহক হওয়ায় আপনি আমাদের প্রকল্পের সর্বশেষ আপডেট পাবেন।</b>",
+
+            "belarusian": "😇 <b>Вялікі дзякуй за падтрымку !! Будучы часткай нашага канала, вы будзеце атрымліваць апошнія абнаўленні нашых праектаў.</b>",
+
+            "catalan": "😇 <b>Moltes gràcies per donar-nos suport !! En formar part del nostre canal, obtindreu les darreres actualitzacions dels nostres projectes.</b>",
+
+            "dutch": "😇 <b>Heel erg bedankt voor je steun !! Als onderdeel van ons kanaal ontvang je de laatste updates van onze projecten.</b>",
+
+            "french": "😇 <b>Merci beaucoup de nous soutenir !! En faisant partie de notre chaîne, vous recevrez les dernières mises à jour de nos projets.</b>",
+
+            "german": "😇 <b>Vielen Dank für die Unterstützung! Als Teil unseres Kanals erhalten Sie die neuesten Updates unserer Projekte.</b>",
+
+            "hindi": "😇 <b>हमें समर्थन देने के लिए बहुत बहुत धन्यवाद !! हमारे चैनल का एक हिस्सा होने के नाते, आपको हमारी परियोजनाओं का नवीनतम अपडेट मिलेगा।</b>",
+
+            "italian": "😇 <b>Grazie mille per averci supportato !! Facendo parte del nostro canale, riceverai gli ultimi aggiornamenti dei nostri progetti.</b>",
+
+            "korean": "😇 <b>응원 해주셔서 감사합니다 !! 우리 채널의 일원이되면 우리 프로젝트의 최신 업데이트를받을 수 있습니다.</b>",
+
+            "malay": "😇 <b>Terima kasih banyak kerana menyokong kami !! Sebagai sebahagian daripada saluran kami, anda akan mendapat kemas kini terkini projek kami.</b>",
+
+            "polish": "😇 <b>Dziękuję bardzo za wsparcie! Będąc częścią naszego kanału, będziesz otrzymywać najnowsze aktualizacje naszych projektów.</b>",
+
+            "portuguese": "😇 <b>Muito obrigado por nos apoiar !! Fazendo parte do nosso canal, você receberá as últimas atualizações de nossos projetos.</b>",
+
+            "russian": "😇 <b>Большое вам спасибо за поддержку !! Будучи частью нашего канала, вы будете получать последние обновления наших проектов.</b>",
+
+            "spanish": "😇 <b>¡¡Muchas gracias por apoyarnos!! Al ser parte de nuestro canal, recibirá las últimas actualizaciones de nuestros proyectos.</b>",
+
+            "turkish": "😇 <b>Bizi desteklediğiniz için çok teşekkür ederim !! Kanalımızın bir parçası olarak projelerimizin en son güncellemelerini alacaksınız.</b>",
+
+            "ukrainian": "😇 <b>Щиро дякую за підтримку !! Будучи частиною нашого каналу, ви отримуватимете останні оновлення наших проектів.</b>"
+        },
+
+        "settings": {
+            "english": "<b>{}</b>\n\nChoose the setting you wish to change.",
+
+            "arabic": "<b>{}</b>\n\nاختر اللغة التي تريد التغيير إليها.",
+
+            "nepali": "<b>{}</b>\n\nतपाईंले परिवर्तन गर्न चाहानु भएको सेटिंग छनौट गर्नुहोस्।",
+
+            "bengali": "<b>{}</b>\n\nআপনি যে সেটিংসটি পরিবর্তন করতে চান তা নির্বচন করুন।",
+
+            "belarusian": "<b>{}</b>\n\nВыберыце параметр, які вы хочаце змяніць.",
+
+            "catalan": "<b>{}</b>\n\nTrieu la configuració que vulgueu canviar.",
+
+            "dutch": "<b>{}</b>\n\nKies de instelling die u wilt wijzigen.",
+
+            "french": "<b>{}</b>\n\nChoisissez le paramètre que vous souhaitez modifier.",
+
+            "german": "<b>{}</b>\n\nWählen Sie die Einstellung, die Sie ändern möchten.",
+
+            "hindi": "<b>{}</b>\n\nवह सेटिंग चुनें जिसे आप बदलना चाहते हैं।",
+
+            "italian": "<b>{}</b>\n\nScegli l'impostazione che desideri modificare.",
+
+            "korean": "<b>{}</b>\n\n변경할 설정을 선택하십시오.",
+
+            "malay": "<b>{}</b>\n\nPilih tetapan yang ingin anda ubah.",
+
+            "polish": "<b>{}</b>\n\nWybierz ustawienie, które chcesz zmienić.",
+
+            "portuguese": "<b>{}</b>\n\nEscolha a configuração que deseja alterar.",
+
+            "russian": "<b>{}</b>\n\nВыберите настройку, которую хотите изменить.",
+
+            "spanish": "<b>{}</b>\n\nElija la configuración que desea cambiar.",
+
+            "turkish": "<b>{}</b>\n\nDeğiştirmek istediğiniz ayarı seçin.",
+
+            "ukrainian": "<b>{}</b>\n\nВиберіть параметр, який ви хочете змінити."
+        },
+
+
+        "help": {
+            "english": "<b>{}\n\n⬇️ How to download torrents?</b>\n\nTo download the torrents, you need to install any torrent client on your device. There are many torrent clients out there. Some of my favorites are qBitTorrent (For PC) and Flud (For android). After installing, you just need to copy the magnet link, or load the .Torrent file into the app and your torrent shall begin to download.\n\nFurthermore, you can use a web torrent client, like seedr which will download the torrent for you. Using a web client will allow you to watch torrents without downloading. You just need to create an account in seedr and copy the magnet link there. You can either download the file or stream them directly into the VLC player without downloading. I prefer to use a web client like seedr to download torrents.\n\n<b>Send any keywords to search for torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>For inline search, just type @TorrentHuntBot in any chat and search for torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "arabic": "<b>{}\n\n⬇️ كيف تحمل التورنت؟</b>\n\nلتحميل التورنت, سوف تحتاج إلى تحميل عميل التورنت في جهازك. هنالك الكثير من العملاء (أي التطبيقات) qBitTorrent هو المفضل لدي (للحاسوب) و Flud (للأندرويد). بعد التثبيت, سوف تحتاج إلى نسخ رابط المغناطيس (اي رابط الملف), او فتح .رابط التورنت في التطبيق وسوف يبدأ تحميل الملف.\n\nللمزيد, يمكنك استخدام عميل تورنت للويب, كـseedr على سبيل المثال. اذا استخدمت عميل ويب سوف تتمكن من مشاهدة التورنت بدون تحميله. تحتاج فقط إلى انشاء حساب في seedr ولصق رابط التورنت هناك. يمكنك تحميل الملف او مشاهدته مباشرة بدون تحميله على جهازك. انا افضل استخدام عميل ويب كـseedr للتحميل .\n\n<b>ارسل أي كلمة مفتاحية للبحث عن تورنتات.</b>\n\nعلى سبيل المثال: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>للبحث المضمّن, فقط اكتب @TorrentHuntBot في أي دردشة للبحث عن التورنتات.</b>\n\nعلى سبيل المثال: <code>@TorrentHuntBot Sintel</code>",
+
+            "nepali": "<b>{}\n\n⬇️ कसरी टोरेन्ट डाउनलोड गर्ने?</b>\n\nटोरेन्टहरू डाउनलोड गर्न, तपाईंले आफ्नो उपकरणमा कुनै टोरेन्ट ग्राहक स्थापना गर्नु पर्छ। त्यहाँ धेरै टोरेन्ट ग्राहकहरू छन्। मेरो मनपर्ने केहि qBitTorrent (पीसी को लागी) र Flud (android को लागी) हुन्। स्थापना पछि, तपाईंले केवल चुम्बक लिंकको प्रतिलिपि गर्न आवश्यक पर्दछ, वा अनुप्रयोगमा टोरन्ट फाइल लोड गर्नुहोस् र तपाईंको टोरेन्ट डाउनलोड गर्न सुरु हुनेछ।\n\nयसका साथै तपाईले वेब टोरेन्ट क्लाइन्ट प्रयोग गर्न सक्नुहुनेछ, जस्तै सेडर जुन तपाईका लागि टोरेन्ट डाउनलोड गर्दछ। वेब क्लाइन्ट प्रयोग गर्नाले तपाईंलाई डाउनलोड नगरी टोरेन्टहरू हेर्नको लागि अनुमति दिनेछ। तपाईंले भर्खर सीडरमा एउटा खाता बनाउनुपर्नेछ र त्यहाँ चुम्बक लिंक प्रतिलिपि गर्नुहोस्। तपाईं या त फाईल डाउनलोड गर्न सक्नुहुनेछ वा तिनीहरूलाई डाउनलोड बिना सीधा VLC प्लेयरमा स्ट्रिम गर्न सक्नुहुनेछ। म टोरेन्टहरू डाउनलोड गर्न सीडर जस्तै वेब क्लाइन्ट प्रयोग गर्न रुचाउँछु।\n\n<b>टोरेन्टको खोजी गर्न कुनै कुञ्जी शब्दहरू पठाउनुहोस्।</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>इनलाइन खोजीको लागि, कुनै पनि च्याटमा @TorrentHuntBot टाइप गर्नुहोस् र टोरेन्टहरूको लागि खोजी गर्नुहोस्।</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "bengali": "<b>{}\n\n⬇️ টরেন্টস ডাউনলোড কিভাবে করবেন?</b>\n\nটরেন্টগুলি ডাউনলোড করতে আপনার ডিভাইসে কোনও টরেন্ট ক্লায়েন্ট ইনস্টল করতে হবে। অনেক ধরণের টরেন্ট ক্লায়েন্ট রয়েছে। আমার প্রিয় কয়েকটি হল, qBitTorrent (পিসির জন্য) এবং Flud (অ্যান্ড্রয়েডের জন্য)। ইনস্টল করার পরে, আপনাকে কেবল 🧲 magnet লিঙ্কটি অনুলিপি করতে হবে বা অ্যাপ্লিকেশনটিতে .Torrent ফাইলটি লোড করতে হবে, এতে আপনার টরেন্টটি ডাউনলোড শুরু হবে।\n\n এছাড়াও, আপনি ওয়েব টরেন্ট ক্লায়েন্ট যেমন সিডার ব্যবহার করতে পারেন যা আপনার জন্য টরেন্টটি ডাউনলোড করবে। ওয়েব ক্লায়েন্ট ব্যবহার করে আপনাকে ডাউনলোড না করে টরেন্টগুলি দেখার অনুমতি দেবে। আপনাকে কেবল সিডারে একটি অ্যাকাউন্ট তৈরি করতে হবে এবং সেখানে চৌম্বক লিঙ্কটি অনুলিপি করতে হবে। আপনি ফাইলটি ডাউনলোড করতে পারেন বা ডাউনলোড না করে সরাসরি ভিএলসি প্লেয়ারে এটিকে স্ট্রিম করতে পারেন। টরেন্টস ডাউনলোড করতে আমি সিডারের মতো একটি ওয়েব ক্লায়েন্ট ব্যবহার করতে পছন্দ করি।\n\n<b>টরেন্টস অনুসন্ধানের জন্য কোনও কীওয়ার্ড প্রেরণ করুন।</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>ইনলাইন অনুসন্ধানের জন্য, যে কোনও আড্ডায় কেবল @TorrentHuntBot টাইপ করুন এবং টরেন্টস অনুসন্ধান করুন।</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "belarusian": "<b>{}\n\n⬇️ Як спампаваць торэнты?</b>\n\nКаб загрузіць торэнты, вам трэба ўсталяваць любы торэнт-кліент на прыладзе. Там шмат кліентаў-торэнтаў. Некаторыя з маіх любімых - qBitTorrent (для ПК) і Flud (для Android). Пасля ўсталёўкі вам трэба проста скапіяваць магнітную спасылку альбо загрузіць у праграму файл .Torrent, і ваш торэнт пачне загружацца.\n\nАкрамя таго, вы можаце выкарыстоўваць вэб-торэнт-кліент, напрыклад seedr, які загрузіць торэнт за вас. Выкарыстанне вэб-кліента дазволіць вам глядзець торэнты без загрузкі. Вам проста трэба стварыць уліковы запіс у seedr і скапіяваць там спасылку на магніт. Вы можаце альбо загрузіць файл, альбо трансляваць іх непасрэдна ў плэер VLC без загрузкі. Я аддаю перавагу выкарыстоўваць вэб-кліент, напрыклад seedr, для загрузкі торэнтаў.\n\n<b>Адпраўляйце любыя ключавыя словы для пошуку торэнтаў.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Для ўбудаванага пошуку проста ўвядзіце @TorrentHuntBot у любым чаце і шукайце торэнты.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "catalan": "<b>{}\n\n⬇️ Com descarregar torrents?</b>\n\nPer descarregar els torrents, heu d’instal·lar qualsevol client torrent al vostre dispositiu. Hi ha molts clients torrent. Alguns dels meus preferits són qBitTorrent (per a PC) i Flud (per a Android). Després d’instal·lar-lo, només heu de copiar l’enllaç magnet o carregar el fitxer .Torrent a l’aplicació i el torrent començarà a descarregar-se.\n\nA més, podeu utilitzar un client de torrent web, com seedr, que us descarregarà el torrent. L’ús d’un client web us permetrà veure torrents sense descarregar. Només heu de crear un compte a seedr i copiar-hi l'enllaç magnet. Podeu descarregar el fitxer o transmetre'ls directament al reproductor VLC sense descarregar-lo. Prefereixo fer servir un client web com seedr per descarregar torrents.\n\n<b>Envieu qualsevol paraula clau per cercar torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Per a la cerca en línia, només cal que escriviu @TorrentHuntBot en qualsevol xat i cerqueu torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "dutch": "<b>{}\n\n⬇️ Hoe torrents te downloaden?</b>\n\nOm de torrents te downloaden, moet je een torrent-client op je apparaat installeren. Er zijn veel torrent-clients die er zijn. Enkele van mijn favorieten zijn qBitTorrent (voor pc) en Flud (voor Android). Na het installeren hoef je alleen maar de magneetlink te kopiëren of het .Torrent-bestand in de app te laden en je torrent zal beginnen met downloaden.\n\nVerder kun je een web-torrent-client gebruiken, zoals seedr, die de torrent voor je downloadt. Als je een webclient gebruikt, kun je torrents bekijken zonder te downloaden. U hoeft alleen maar een account in seedr aan te maken en de magneetlink daarheen te kopiëren. U kunt het bestand downloaden of ze rechtstreeks naar de VLC-speler streamen zonder te downloaden. Ik gebruik liever een webclient zoals seedr om torrents te downloaden.\n\n<b>Stuur trefwoorden om naar torrents te zoeken.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Voor inline zoeken typ je gewoon @TorrentHuntBot in een chat en zoek je naar torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "french": "<b>{}\n\n⬇️ Comment télécharger des torrents ?</b>\n\nPour télécharger des torrents, vous devez installer n'importe quel client torrent sur votre appareil. Il existe de nombreux clients torrent. Je recommande qBitTorrent (pour PC) et Flud (pour Android). Après l'installation, il vous suffit de copier le lien magnet ou d'ouvrir le fichier .Torrent dans l'application et votre torrent commencera à se télécharger.\n\nDe plus, vous pouvez utiliser un client torrent Web, comme seedr, qui téléchargera le torrent pour vous. L'utilisation d'un client Web vous permettra de regarder des torrents sans téléchargement. Il vous suffit de créer un compte dans seedr et d'y copier le lien magnétique. Vous pouvez télécharger le fichier ou le diffuser directement dans le lecteur VLC sans le télécharger. Je préfère utiliser un client Web comme seedr pour télécharger des torrents.\n\n<b>Saisissez des mots-clés pour rechercher des torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Pour la recherche en ligne, mentionnez simplement @TorrentHuntBot dans n'importe quelle discussion et recherchez des torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "german": "<b>{}\n\n⬇️ Wie lade ich Torrents herunter?</b>\n\nUm die Torrents herunterzuladen, müssen Sie einen beliebigen Torrent-Client auf Ihrem Gerät installieren. Es gibt viele Torrent-Clients da draußen. Einige meiner Favoriten sind qBitTorrent (für PC) und Flud (für Android). Nach der Installation müssen Sie nur den Magnet-Link kopieren oder die .Torrent-Datei in die App laden, und Ihr Torrent beginnt mit dem Download.\n\nDarüber hinaus können Sie einen Web-Torrent-Client wie seedr verwenden, der den Torrent für Sie herunterlädt. Mit einem Webclient können Sie Torrents ansehen, ohne sie herunterladen zu müssen. Sie müssen nur ein Konto in seedr erstellen und den Magnetlink dort kopieren. Sie können die Datei entweder herunterladen oder direkt in den VLC-Player streamen, ohne sie herunterladen zu müssen. Ich bevorzuge es, einen Web-Client wie seedr zu verwenden, um Torrents herunterzuladen.\n\n<b>Senden Sie beliebige Schlüsselwörter, um nach Torrents zu suchen.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Geben Sie für die Inline-Suche einfach @TorrentHuntBot in einen Chat ein und suchen Sie nach Torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "hindi": "<b>{}\n\n⬇️ टोरेंट कैसे डाउनलोड करें?</b>\n\nटोरेंट डाउनलोड करने के लिए, आपको अपने डिवाइस पर कोई भी टोरेंट क्लाइंट इंस्टॉल करना होगा। वहाँ कई टोरेंट क्लाइंट हैं। मेरे कुछ पसंदीदा qBitTorrent (पीसी के लिए) और Flud (एंड्रॉइड के लिए) हैं। इंस्टॉल करने के बाद, आपको बस चुंबक लिंक को कॉपी करना होगा, या .टोरेंट फ़ाइल को ऐप में लोड करना होगा और आपका टोरेंट डाउनलोड होना शुरू हो जाएगा।\n\nइसके अलावा, आप एक वेब टोरेंट क्लाइंट का उपयोग कर सकते हैं, जैसे सीडर जो आपके लिए टोरेंट डाउनलोड करेगा। वेब क्लाइंट का उपयोग करने से आप बिना डाउनलोड किए टॉरेंट देख सकेंगे। आपको बस सीडर में एक खाता बनाने और वहां चुंबक लिंक को कॉपी करने की आवश्यकता है। आप या तो फ़ाइल को डाउनलोड कर सकते हैं या उन्हें बिना डाउनलोड किए सीधे वीएलसी प्लेयर में स्ट्रीम कर सकते हैं। मैं टोरेंट डाउनलोड करने के लिए सीडर जैसे वेब क्लाइंट का उपयोग करना पसंद करता हूं।\n\n<b>टोरेंट की खोज के लिए कोई भी कीवर्ड भेजें।</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>इनलाइन खोज के लिए, बस किसी भी चैट में @TorrentHuntBot टाइप करें और टोरेंट खोजें।</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "italian": "<b>{}\n\n⬇️ Come scaricare i torrent?</b>\n\nPer scaricare i torrent, devi installare un qualsiasi client torrent sul tuo dispositivo. Ci sono molti client torrent là fuori. Alcuni dei miei preferiti sono qBitTorrent (per PC) e Flud (per Android). Dopo l'installazione, devi solo copiare il collegamento magnetico o caricare il file .Torrent nell'app e il tuo torrent inizierà a scaricarsi.\n\nInoltre, puoi utilizzare un client torrent web, come seedr, che scaricherà il torrent per te. L'utilizzo di un client Web ti consentirà di guardare i torrent senza scaricarli. Devi solo creare un account in seedr e copiare il link magnetico lì. Puoi scaricare il file o riprodurlo in streaming direttamente nel lettore VLC senza scaricarlo. Preferisco usare un client web come seedr per scaricare torrent.\n\n<b>Invia qualsiasi parola chiave per cercare torrent.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "korean": "<b>{}\n\n⬇️ 급류를 다운로드하는 방법?</b>\n\n토렌트를 다운로드하려면 기기에 토렌트 클라이언트를 설치해야합니다. 많은 토렌트 클라이언트가 있습니다. 내가 좋아하는 것 중 일부는 qBitTorrent (PC 용)와 Flud (Android 용)입니다. 설치 후 마그넷 링크를 복사하거나 .Torrent 파일을 앱에로드하면 토렌트가 다운로드되기 시작합니다.\n\n또한 토렌트를 다운로드하는 seedr와 같은 웹 토렌트 클라이언트를 사용할 수 있습니다. 웹 클라이언트를 사용하면 다운로드하지 않고도 토렌트를 볼 수 있습니다. seedr에서 계정을 만들고 거기에 자석 링크를 복사하기 만하면됩니다. 파일을 다운로드하거나 다운로드하지 않고 VLC 플레이어로 직접 스트리밍 할 수 있습니다. 나는 급류를 다운로드하기 위해 seedr와 같은 웹 클라이언트를 사용하는 것을 선호합니다.\n\n<b>급류를 검색하려면 키워드를 보내십시오.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>인라인 검색의 경우 채팅에서 @TorrentHuntBot를 입력하고 토렌트를 검색하십시오.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "malay": "<b>{}\n\n⬇️ Bagaimana memuat turun torrents?</b>\n\nUntuk memuat turun torrents, anda perlu memasang klien torrent pada peranti anda. Terdapat banyak pelanggan torrent di luar sana. Beberapa kegemaran saya adalah qBitTorrent (Untuk PC) dan Flud (Untuk android). Selepas memasang, anda hanya perlu menyalin pautan magnet, atau memuatkan fail .Torrent ke dalam aplikasi dan torrent anda akan mula dimuat turun.\n\nSelain itu, anda boleh menggunakan klien torrent web, seperti seedr yang akan memuat turun torrent untuk anda. Menggunakan pelanggan web akan membolehkan anda menonton torrent tanpa memuat turun. Anda hanya perlu membuat akaun di seedr dan menyalin pautan magnet di sana. Anda boleh memuat turun fail atau mengalirkannya terus ke pemain VLC tanpa memuat turun. Saya lebih suka menggunakan pelanggan web seperti seedr untuk memuat turun torrents.\n\n<b>Hantarkan sebarang kata kunci untuk mencari torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Untuk carian sebaris, ketik @TorrentHuntBot dalam mana-mana sembang dan cari torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "polish": "<b>{}\n\n⬇️ Jak pobierać torrenty?</b>\n\nAby pobrać torrenty, musisz zainstalować dowolnego klienta torrent na swoim urządzeniu. Istnieje wielu klientów torrentów. Niektóre z moich ulubionych to qBitTorrent (na PC) i Flud (na Androida). Po zainstalowaniu wystarczy skopiować link magnetyczny lub załadować plik .Torrent do aplikacji, a torrent zacznie się pobierać.\n\nPonadto możesz użyć internetowego klienta torrent, takiego jak seedr, który pobierze torrent za Ciebie. Korzystanie z klienta internetowego umożliwia oglądanie torrentów bez pobierania. Wystarczy założyć konto w seedr i skopiować tam link magnetyczny. Możesz pobrać plik lub przesłać go strumieniowo bezpośrednio do odtwarzacza VLC bez pobierania. Wolę używać klienta internetowego, takiego jak seedr, do pobierania torrentów.\n\n<b>Wyślij dowolne słowo klucz, aby wyszukać torrenty.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Aby wyszukać w trybie inline, po prostu wpisz @TorrentHuntBot na dowolnym czacie i wyszukaj torrenty.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "portuguese": "<b>{}\n\n⬇️ Como baixar torrents?</b>\n\nPara baixar os torrents, você precisa instalar qualquer cliente de torrent no seu dispositivo. Existem muitos clientes de torrent por aí. Alguns dos meus favoritos são qBitTorrent (para PC) e Flud (para android). Após a instalação, você só precisa copiar o link magnético ou carregar o arquivo .Torrent no aplicativo e o download do seu torrent deve começar.\n\nAlém disso, você pode usar um cliente de torrent da web, como o seedr, que fará o download do torrent para você. Usar um cliente web permitirá que você assista a torrents sem fazer download. Você só precisa criar uma conta no seedr e copiar o link magnético para lá. Você pode baixar o arquivo ou transmiti-los diretamente para o player VLC sem fazer download. Eu prefiro usar um cliente web como o seedr para baixar torrents.\n\n<b>Envie qualquer palavra-chave para pesquisar torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Para pesquisa inline, basta digitar @TorrentHuntBot em qualquer chat e pesquisar por torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "russian": "<b>{}</b>\n\n⬇️ Как скачать торренты?</b>\n\nЧтобы скачать торренты, вам необходимо установить на свое устройство любой торрент-клиент. Есть много торрент-клиентов. Некоторые из моих любимых - qBitTorrent (для ПК) и Flud (для Android). После установки вам просто нужно скопировать магнитную ссылку или загрузить файл .Torrent в приложение, и ваш торрент начнет скачиваться.\n\nКроме того, вы можете использовать веб-торрент-клиент, например, seedr, который скачает за вас торрент. Использование веб-клиента позволит вам смотреть торренты без скачивания. Вам просто нужно создать аккаунт в seedr и скопировать туда магнитную ссылку. Вы можете либо загрузить файл, либо передать его прямо в проигрыватель VLC без загрузки. Я предпочитаю использовать веб-клиент, например seedr, для загрузки торрентов.\n\n<b>Отправляйте любые ключевые слова для поиска торрентов.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Для встроенного поиска просто введите @TorrentHuntBot в любом чате и ищите торренты.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "spanish": "<b>{}\n\n⬇️ ¿Cómo descargar torrents?</b>\n\nPara descargar los torrents, debe instalar cualquier cliente de torrent en su dispositivo. Hay muchos clientes de torrents por ahí. Algunos de mis favoritos son qBitTorrent (para PC) y Flud (para Android). Después de la instalación, solo necesita copiar el enlace magnético o cargar el archivo .Torrent en la aplicación y su torrent comenzará a descargarse.\n\nAdemás, puede utilizar un cliente web torrent, como seedr, que descargará el torrent por usted. El uso de un cliente web le permitirá ver torrents sin descargar. Solo necesita crear una cuenta en seedr y copiar el enlace magnético allí. Puede descargar el archivo o transmitirlo directamente al reproductor VLC sin descargarlo. Prefiero usar un cliente web como seedr para descargar torrents.\n\n<b>Envíe cualquier palabra clave para buscar torrents.</b>\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Para la búsqueda en línea, simplemente escriba @TorrentHuntBot en cualquier chat y busque torrents.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "turkish": "<b>{}\n\n⬇️ Torrentler nasıl indirilir?</b>\n\nTorrentleri indirmek için, cihazınıza herhangi bir Torrent istemcisi yüklemeniz gerekir. Dışarıda birçok Torrent istemcisi var. Favorilerimden bazıları qBitTorrent (PC için) ve Flud (Android için). Yükledikten sonra, mıknatıs bağlantısını kopyalamanız veya .Torrent dosyasını uygulamaya yüklemeniz yeterlidir; Torrent'iniz indirilmeye başlayacaktır.\n\nAyrıca, torrent'i sizin için indirecek seedr gibi bir web torrent istemcisi de kullanabilirsiniz. Bir web istemcisi kullanmak, indirmeden Torrentleri izlemenize izin verir. Sadece seedr'de bir hesap oluşturmanız ve mıknatıs bağlantısını oraya kopyalamanız yeterlidir. Dosyayı indirebilir veya indirmeden doğrudan VLC oynatıcıya aktarabilirsiniz. Torrentleri indirmek için seedr gibi bir web istemcisi kullanmayı tercih ediyorum.\n\n<b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>\n\nÖrneğin: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Satır içi arama için, herhangi bir sohbette @TorrentHuntBot yazıp torrentleri aramanız yeterlidir.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>",
+
+            "ukrainian": "<b>{}\n\n⬇️ Як завантажити торренти?</b>\n\nЩоб завантажити торренти, вам потрібно встановити будь-який торрент-клієнт на свій пристрій. Там є багато клієнтів-торрент. Деякі з моїх улюблених - qBitTorrent (для ПК) та Flud (для android). Після встановлення потрібно просто скопіювати магнітне посилання або завантажити файл .Torrent у програму, і ваш торрент почне завантажуватися.\n\nКрім того, ви можете використовувати веб-клієнт-торрент, наприклад seedr, який завантажить торрент для вас. Використання веб-клієнта дозволить переглядати торренти без завантаження. Вам просто потрібно створити обліковий запис у seedr і скопіювати там магнітне посилання. Ви можете завантажити файл або передати їх прямо в програвач VLC без завантаження. Я віддаю перевагу використовувати веб-клієнт, такий як seedr, для завантаження торентів.\n\nEg: <code>VLC Media</code>, <code>Sintel</code>\n\n<b>Для вбудованого пошуку просто введіть @TorrentHuntBot у будь-якому чаті та шукайте торренти.</b>\n\nEg: <code>@TorrentHuntBot Sintel</code>"
+        },
+
+        "support": {
+            "english": "<b>{}</b>\n\nThank you for your wish to contribute. Donate any amount to keep this service alive and to give me a motivation to add new features.😇\n\n🐛 To report bugs or to request a new feature, join our discussion chat, and discuss it there.",
+
+            "arabic": "<b>{}</b>\n\nشكرًا لرغبتك في التطوع، تبرع بأي قدر للحفاظ على بقاء هذه الخدمة ولتحفيزي لإضافة مميزات جديدة.😇\n\n🐛 للإبلاغ عن مشكلة او طلب إضافة ميزة جديدة، انضم لدردشة المناقشة، واطرحها هناك.",
+
+            "nepali": "<b>{}</b>\n\nयोगदान गर्न चाहानु भएकोमा धन्यवाद। यस सेवा लाई जीवित राख्न र मलाई नयाँ सुविधाहरु थप्न को लागी प्रेरणा दिन को लागी कुनै पनि रकम दान गर्नुहोस्।😇\n\n🐛 बगहरू रिपोर्ट गर्न वा नयाँ सुविधा अनुरोध गर्न, हाम्रो छलफल च्याटमा समावेश हुनुहोस्, र त्यहाँ छलफल गर्नुहोस्।",
+
+            "bengali": "<b>{}</b>\n\nআমাকে সমর্থন করার আপনার ইচ্ছার জন্য আপনাকে ধন্যবাদ। এই পরিষেবাটি বাঁচিয়ে রাখতে এবং নতুন বৈশিষ্ট্য যুক্ত করার অনুপ্রেরণা দেওয়ার জন্য যে কোনও পরিমাণ অনুদান দিন।😇\n\n🐛 ত্রুটিগুলি জানতে পারেন বা একটি নতুন বৈশিষ্ট্যের জন্য অনুরোধ জানাতে, আমাদের আলোচনার আড্ডায় যোগ দিন, এবং সেখানে আলোচনা করুন।",
+
+            "belarusian": "<b>{}</b>\n\nআপনার অবদানের ইচ্ছার জন্য ধন্যবাদ। এই পরিষেবাটি বাঁচিয়ে রাখতে এবং নতুন বৈশিষ্ট্য যুক্ত করার অনুপ্রেরণা দেওয়ার জন্য যে কোনও পরিমাণ অনুদান দিন।😇\n\n🐛 Каб паведаміць пра памылкі альбо запытаць новую функцыю, далучайцеся да нашага дыскусійнага чата і абмяркуйце яго там.",
+
+            "catalan": "<b>{}</b>\n\nGràcies pel vostre desig de contribuir. Doneu qualsevol quantitat per mantenir viu aquest servei i donar-me la motivació per afegir noves funcions.😇\n\n🐛 Per informar d'errors o sol·licitar una nova característica, uniu-vos al xat de debat i discutiu-lo allà.",
+
+            "dutch": "<b>{}</b>\n\nBedankt voor je wens om bij te dragen. Doneer een willekeurig bedrag om deze service in leven te houden en om mij de motivatie te geven om nieuwe functies toe te voegen.😇\n\n🐛 Om bugs te melden of een nieuwe functie aan te vragen, neemt u deel aan onze discussiechat en bespreekt u deze daar.",
+
+            "french": "<b>{}</b>\n\nMerci pour votre envie de contribuer. Faites un don pour maintenir ce service en ligne et pour me motiver à ajouter de nouvelles fonctionnalités.😇\n\n🐛 Pour signaler des bugs ou pour demander une nouvelle fonctionnalité, rejoignez notre discussion en ligne et discutez-en ici.",
+
+            "german": "<b>{}</b>\n\nVielen Dank für Ihren Wunsch, einen Beitrag zu leisten. Spenden Sie einen beliebigen Betrag, um diesen Service am Leben zu erhalten und mir die Motivation zu geben, neue Funktionen hinzuzufügen.😇\n\n🐛 Um Fehler zu melden oder eine neue Funktion anzufordern, nehmen Sie an unserem Diskussionschat teil und diskutieren Sie dort.",
+
+            "hindi": "<b>{}</b>\n\nयोगदान करने की इच्छा के लिए धन्यवाद। इस सेवा को जीवित रखने के लिए और मुझे नई सुविधाओं को जोड़ने की प्रेरणा देने के लिए कोई भी राशि दान करें ।😇\n\n🐛 बग की रिपोर्ट करने या एक नई सुविधा का अनुरोध करने के लिए, हमारी चर्चा चैट में शामिल हों और वहां चर्चा करें।",
+
+            "italian": "<b>{}</b>\n\nGrazie per il desiderio di contribuire. Dona qualsiasi somma per mantenere vivo questo servizio e per darmi la motivazione per aggiungere nuove funzionalità.😇\n\n🐛 Per segnalare bug o richiedere una nuova funzionalità, unisciti alla nostra chat di discussione e discutine lì.",
+
+            "korean": "<b>{}</b>\n\n기부를 희망해주셔서 감사합니다. 이 서비스를 유지하고 새로운 기능을 추가할 동기를 부여하려면 얼마든지 기부하십시오.😇\n\n🐛 버그를보고하거나 새로운 기능을 요청하려면 토론 채팅에 참여하고 거기에서 토론하십시오.",
+
+            "malay": "<b>{}</b>\n\nTerima kasih kerana sudi menyumbang. Sumbangkan sejumlah wang untuk memastikan perkhidmatan ini tetap hidup dan memberi saya motivasi untuk menambahkan ciri baru.😇\n\n🐛 Untuk melaporkan bug atau meminta ciri baru, sertai sembang perbincangan kami, dan bincangkan di sana.",
+
+            "polish": "<b>{}</b>\n\nDziękuję za chęć wniesienia wkładu. Przekaż dowolną kwotę, aby utrzymać tę usługę przy życiu i dać mi motywację do dodawania nowych funkcji.😇\n\n🐛 Aby zgłosić błędy lub poprosić o nową funkcję, dołącz do naszego czatu dyskusyjnego i tam o tym porozmawiaj.",
+
+            "portuguese": "<b>{}</b>\n\nObrigado por seu desejo de contribuir. Doe qualquer quantia para manter este serviço vivo e para me motivar a adicionar novos recursos.😇\n\n🐛 Para relatar bugs ou solicitar um novo recurso, participe do nosso chat de discussão e discuta nele.",
+
+            "russian": "<b>{}</b>\n\nСпасибо за ваше желание внести свой вклад. Пожертвуйте любую сумму, чтобы поддержать этот сервис и дать мне мотивацию добавлять новые функции.😇\n\n🐛 Чтобы сообщить об ошибках или запросить новую функцию, присоединяйтесь к нашему дискуссионному чату и обсуждайте это там.",
+
+            "spanish": "<b>{}</b>\n\nGracias por su deseo de contribuir. Done cualquier cantidad para mantener vivo este servicio y darme la motivación para agregar nuevas funciones.😇\n\n🐛 Para informar errores o solicitar una nueva función, únase a nuestro chat de discusión y discútalo allí.",
+
+            "turkish": "<b>{}</b>\n\nKatkı sağlama isteğiniz için teşekkür ederiz. Bu hizmeti canlı tutmak ve bana yeni özellikler ekleme motivasyonu vermek için herhangi bir miktar bağış yapın.😇\n\n🐛 Hataları bildirmek veya yeni bir özellik talep etmek için destek grubumuza katılın ve orada bize anlatın.",
+
+            "ukrainian": "<b>{}</b>\n\nДякуємо за ваше бажання внести свій внесок. Пожертвуйте будь -яку суму, щоб підтримати цю послугу і дати мені мотивацію додавати нові функції.😇\n\n🐛 Щоб повідомити про помилки або запросити нову функцію, приєднуйтесь до нашого дискусійного чату та обговорюйте його там."
+        },
+
+        "shareText": {
+            "english": "Hey, using torrent hunt you can get the link of your favorites movies, series, shows, games, software, and many more within Telegram. To use the bot, click on the link above and start the conversation with it.🚀",
+
+            "arabic": "مرحبٌا، باستخدام torrent hunt يمكنك الحصول على رابط افلامك المفضلة، ومسلسلات، العاب وبرامج، والمزيد من داخل تيليجرام، لاستخدام هذا البوت، اضغط على الرابط ادناه وابدأ معه المحادثة.🚀",
+
+            "nepali": "नमस्ते, टोरेन्ट हन्ट प्रयोग गरेर तपाईं तपाईंको मनपर्ने चलचित्र, श्रृंखला, कार्यक्रमहरू, खेलहरू, सफ्टवेयर, र अधिकमा टेलिग्रामको लिंक प्राप्त गर्न सक्नुहुनेछ। बोट प्रयोग गर्न माथिको लिंकमा क्लिक गर्नुहोस् र यससँग कुराकानी सुरू गर्नुहोस्।",
+
+            "bengali": "হ্যালো, টরেন্ট হান্ট ব্যবহার করে আপনি টেলিগ্রামের মধ্যে আপনার পছন্দসই সিনেমা, সিরিজ, শো, গেমস, সফ্টওয়্যার এবং আরও অনেকে কিছুর ম্যাগনেট লিঙ্ক পেতে পারেন। বটটি ব্যবহার করতে উপরের লিঙ্কটিতে ক্লিক করুন এবং এর সাথে কথোপকথনটি শুরু করুন।🚀",
+
+            "belarusian": "Прывітанне, выкарыстоўваючы торэнт-паляванне, вы можаце атрымаць спасылку на свае любімыя фільмы, серыялы, шоў, гульні, праграмнае забеспячэнне і шмат іншага ў Telegram. Каб выкарыстоўваць бота, націсніце на спасылку вышэй і пачніце з ім размову.",
+
+            "catalan": "Hola, amb la cerca de torrents podeu obtenir l'enllaç de les vostres pel·lícules, sèries, programes, jocs, programari i molts altres preferits a Telegram. Per utilitzar el bot, feu clic a l'enllaç superior i inicieu la conversa amb ell.",
+
+            "dutch": "Hoi, met torrent-jacht kun je de link van je favoriete films, series, shows, games, software en nog veel meer binnen Telegram krijgen. Om de bot te gebruiken, klik je op de link hierboven en start je het gesprek ermee.",
+
+            "french": "Hey, en utilisant Torrent Hunt, vous pouvez obtenir le lien de tous vos contenus préférés (films, séries, jeux, logiciels, etc) directement dans Telegram. Pour utiliser le bot, cliquez sur le lien ci-dessus et lancez la conversation avec lui.",
+
+            "german": "Hallo, mit Torrent Hunt können Sie den Link Ihrer Lieblingsfilme, -serien, -shows, -spiele, -software und vieles mehr in Telegram abrufen. Um den Bot zu verwenden, klicken Sie auf den Link oben und beginnen Sie das Gespräch damit.",
+
+            "hindi": "नमस्ते, टोरेंट हंट का उपयोग करके आप टेलीग्राम के भीतर अपनी पसंदीदा फिल्मों, श्रृंखलाओं, शो, गेम्स, सॉफ्टवेयर, और बहुत से लिंक प्राप्त कर सकते हैं। बॉट का उपयोग करने के लिए, ऊपर दिए गए लिंक पर क्लिक करें और इसके साथ बातचीत शुरू करें।",
+
+            "italian": "Ciao, usando la caccia al torrent puoi ottenere il link dei tuoi film, serie, programmi, giochi, software e molti altri preferiti all'interno di Telegram. Per utilizzare il bot, fare clic sul collegamento in alto e avviare la conversazione con esso.",
+
+            "korean": "안녕하세요, 토렌트 헌트를 사용하면 좋아하는 영화, 시리즈, 쇼, 게임, 소프트웨어 등의 링크를 Telegram에서 얻을 수 있습니다. 봇을 사용하려면 위의 링크를 클릭하고 대화를 시작하세요.",
+
+            "malay": "Hai, dengan menggunakan torrent hunt, anda boleh mendapatkan pautan filem kegemaran anda, siri, rancangan, permainan, perisian, dan banyak lagi dalam Telegram. Untuk menggunakan bot, klik pada pautan di atas dan mulakan perbualan dengannya.",
+
+            "polish": "Cześć, korzystając z Torrent Hunt, możesz uzyskać link do swoich ulubionych filmów, seriali, programów, gier, oprogramowań i wielu innych w Telegramie. Aby skorzystać z bota, kliknij w powyższy link i rozpocznij z nim rozmowę.",
+
+            "portuguese": "Olá, usando o torrent hunt você pode obter o link de seus filmes, séries, programas, jogos, softwares e muito mais favoritos dentro do Telegram. Para usar o bot, clique no link acima e inicie a conversa com ele.",
+
+            "russian": "Привет, используя торрент-охоту, вы можете получить ссылку на свои любимые фильмы, сериалы, шоу, игры, программное обеспечение и многое другое в Telegram. Чтобы использовать бот, нажмите на ссылку выше и начните с ним разговор.",
+
+            "spanish": "Hola, con Torrent Hunt puedes obtener el enlace de tus películas, series, programas, juegos, software y muchos más favoritos dentro de Telegram. Para usar el bot, haga clic en el enlace de arriba y comience la conversación con él.",
+
+            "turkish": "Merhaba, Torrent Hunt kullanarak Telegram'da en sevdiğiniz filmlerin, dizilerin, şovların, oyunların, yazılımların ve çok daha fazlasının bağlantısını alabilirsiniz. Botu kullanmak için yukarıdaki bağlantıya tıklayın ve keyfini çıkarın.",
+
+            "ukrainian": "Привіт, за допомогою торрент-полювання ви можете отримати посилання на свої улюблені фільми, серіали, шоу, ігри, програмне забезпечення та багато іншого в Telegram. Щоб скористатися ботом, натисніть на посилання вище та розпочніть з ним розмову."
+        },
+
+        "searchingQuery": {
+            "english": "🔎 <code>Searching {} ...</code>",
+
+            "arabic": "🔎 <code>جار البحث عن {} ...</code>",
+
+            "nepali": "🔎 <code>{} खोजी गर्दै ...</code>",
+
+            "bengali": "🔎 <code>{} অনুসন্ধান করা হচ্ছে ...</code>",
+
+            "belarusian": "🔎 <code>Пошук ...</code>",
+
+            "catalan": "🔎 <code>Cercant ...</code>",
+
+            "dutch": "🔎 <code>Zoeken ...</code>",
+
+            "french": "🔎 <code>Recherche ...</code>",
+
+            "german": "🔎 <code>Suchen ...</code>",
+
+            "hindi": "🔎 <code>{} खोज रहे हैं ...</code>",
+
+            "italian": "🔎 <code>Ricerca ...</code>",
+
+            "korean": "🔎 <code>수색 ...</code>",
+
+            "malay": "🔎 <code>Mencari ...</code>",
+
+            "polish": "🔎 <code>Szukam {} ...</code>",
+
+            "portuguese": "🔎 <code>Procurando ...</code>",
+
+            "russian": "🔎 <code>Поиск ...</code>",
+
+            "spanish": "🔎 <code>buscando ...</code>",
+
+            "turkish": "🔎 <code>Aranıyor ...</code>",
+
+            "ukrainian": "🔎 <code>Пошук ...</code>"
+        },
+
+        "noResults": {
+            "english": "❌ No results were returned. Please refine your search.",
+
+            "arabic": "❌ لا توجد نتائج، يرجى اعادة البحث.",
+
+            "nepali": "❌ कुनै परिणाम भेटिएन। कृपया तपाइँको खोज परिष्कृत गर्नुहोस्।",
+
+            "bengali": "❌ কোন ফলাফল পাওয়া যায়নি। দয়া করে আপনার অনুসন্ধানটি পরিমার্জন করুন।",
+
+            "belarusian": "❌ Вынікаў не знойдзена. Удакладніце пошук.",
+
+            "catalan": "❌ No s'han trobat resultats. Refineu la vostra cerca.",
+
+            "dutch": "❌ Er zijn geen resultaten gevonden. Verfijn uw zoekopdracht.",
+
+            "french": "❌ Aucun resultat n'a été trouvé. Veuillez affiner votre recherche.",
+
+            "german": "❌ Es wurden keine Ergebnisse gefunden. Bitte verfeinern Sie Ihre Suche.",
+
+            "hindi": "❌ कोई परिणाम नहीं मिले। कृपया अपनी खोज को परिष्कृत करें।",
+
+            "italian": "❌ Nessun risultato è stato trovato. Per favore affina la tua ricerca.",
+
+            "korean": "❌ 결과가 반환되지 않았습니다. 검색을 구체화하십시오.",
+
+            "malay": "❌ Tidak ada hasil yang dikembalikan. Sila perbaiki carian anda.",
+
+            "polish": "❌ Nie zwrócono żadnych wyników. Sprecyzuj swoje wyszukiwanie.",
+
+            "portuguese": "❌ Nenhum resultado foi retornado. Por favor, refine sua pesquisa.",
+
+            "russian": "❌ Никаких результатов не было. Пожалуйста, уточните свой поиск.",
+
+            "spanish": "❌ No se devolvieron resultados. Por favor refine su búsqueda.",
+
+            "turkish": "❌ Hiçbir sonuç yok. Lütfen aramanızı daraltın.",
+
+            "ukrainian": "❌ Результати не повернуто. Уточніть пошук."
+        },
+
+        "fileNotFound": {
+            "english": "😿 The requested file is not found on the server.",
+
+            "arabic": "😿 لم يتم ايجاد الملف المطلوب على السيرفر.",
+
+            "nepali": "😿 अनुरोध गरिएको फाईल सर्भरमा फेला परेन।",
+
+            "bengali": "😿 অনুরোধ করা ফাইলটি সার্ভারে পাওয়া যায় নি।",
+
+            "belarusian": "😿 Запытаны файл не знойдзены на серверы.",
+
+            "catalan": "😿 El fitxer sol·licitat no es troba al servidor.",
+
+            "dutch": "😿 Het opgevraagde bestand is niet gevonden op de server.",
+
+            "french": "😿 Le fichier demandé est introuvable sur le serveur.",
+
+            "german": "😿 Die angeforderte Datei wurde nicht auf dem Server gefunden.",
+
+            "hindi": "😿 अनुरोधित फ़ाइल सर्वर पर नहीं मिली।",
+
+            "italian": "😿 Il file richiesto non è stato trovato sul server.",
+
+            "korean": "😿 요청한 파일을 서버에서 찾을 수 없습니다.",
+
+            "malay": "😿 Fail yang diminta tidak dijumpai di pelayan.",
+
+            "polish": "😿 Żądanego pliku nie znaleziono na serwerze.",
+
+            "portuguese": "😿 O arquivo solicitado não foi encontrado no servidor.",
+
+            "russian": "😿 Запрошенный файл не найден на сервере.",
+
+            "spanish": "😿 El archivo solicitado no se encuentra en el servidor.",
+
+            "turkish": "😿 İstenen dosya sunucuda bulunamadı...",
+
+            "ukrainian": "😿 Запитаний файл не знайдено на сервері."
+        },
+
+        "selectCategory": {
+            "english": "❔ Choose a category for your torrents",
+
+            "arabic": "❔ اختر فئة للتورنت",
+
+            "nepali": "❔ तपाईंको टोरेन्टका लागि कोटी छान्नुहोस्",
+
+            "bengali": "❔ আপনার টরেন্টস এর জন্য একটি বিভাগ পছন্দ করুন",
+
+            "belarusian": "❔ Выберыце катэгорыю для вашых торэнтаў",
+
+            "catalan": "❔ Trieu una categoria per als vostres torrents",
+
+            "dutch": "❔ Kies een categorie voor je torrents",
+
+            "french": "❔ Choisissez une catégorie de torrents",
+
+            "german": "❔ Wählen Sie eine Kategorie für Ihre Torrents",
+
+            "hindi": "❔ अपने टोरेंट के लिए एक श्रेणी चुनें",
+
+            "italian": "❔ Scegli una categoria per i tuoi torrent",
+
+            "korean": "❔ 토렌트 카테고리를 선택하세요",
+
+            "malay": "❔ Pilih kategori untuk torrents anda",
+
+            "polish": "❔ Wybierz kategorię swoich torrentów",
+
+            "portuguese": "❔ Escolha uma categoria para seus torrents",
+
+            "russian": "❔ Выберите категорию для своих торрентов",
+
+            "spanish": "❔ Elija una categoría para sus torrents",
+
+            "turkish": "❔ Torrentleriniz için bir kategori seçin",
+
+            "ukrainian": "❔ Виберіть категорію для своїх торрентів"
+        },
+
+        "unknownCategory": {
+            "english": "❔ Please choose the correct category",
+
+            "arabic": "❔ يرجى اختيار الفئة الصحيحة",
+
+            "nepali": "❔ कृपया सही कोटी छनौट गर्नुहोस्",
+
+            "bengali": "❔ সঠিক বিভাগটি পছন্দ করুন",
+
+            "belarusian": "❔ Калі ласка, абярыце правільную катэгорыю",
+
+            "catalan": "❔ Seleccioneu la categoria correcta",
+
+            "dutch": "❔ Kies de juiste categorie",
+
+            "french": "❔ Veuillez choisir la bonne catégorie",
+
+            "german": "❔ Bitte wählen Sie die richtige Kategorie",
+
+            "hindi": "❔ कृपया सही श्रेणी चुनें",
+
+            "italian": "❔ Si prega di scegliere la categoria corretta",
+
+            "korean": "❔ 올바른 카테고리를 선택하세요",
+
+            "malay": "❔ Sila pilih kategori yang betul",
+
+            "polish": "❔ Wybierz odpowiednią kategorię",
+
+            "portuguese": "❔ Por favor, escolha a categoria correta",
+
+            "russian": "❔ Пожалуйста, выберите правильную категорию",
+
+            "spanish": "❔ Elija la categoría correcta",
+
+            "turkish": "❔ Lütfen doğru kategoriyi seçin",
+
+            "ukrainian": "❔ Виберіть правильну категорію"
+        },
+
+        "selectTimePeriod": {
+            "english": "⏰ Choose a period",
+
+            "arabic": "⏰ اختر مدة",
+
+            "nepali": "⏰ अवधि छनौट गर्नुहोस्",
+
+            "bengali": "⏰ একটি সময়কাল নির্ধারণ করুন",
+
+            "belarusian": "⏰ Выберыце перыяд",
+
+            "catalan": "⏰ Trieu un punt",
+
+            "dutch": "⏰ Kies een periode",
+
+            "french": "⏰ Choisissez une période",
+
+            "german": "⏰ Wählen Sie einen Zeitraum",
+
+            "hindi": "⏰ एक अवधि चुनें",
+
+            "italian": "⏰ Scegli un periodo",
+
+            "korean": "⏰ 기간 선택",
+
+            "malay": "⏰ Pilih tempoh",
+
+            "polish": "⏰ Wybierz okres",
+
+            "portuguese": "⏰ Escolha um período",
+
+            "russian": "⏰ Выберите период",
+
+            "spanish": "⏰ Elige un período",
+
+            "turkish": "⏰ Bir dönem seçin",
+
+            "ukrainian": "⏰ Виберіть період"
+        },
+
+        "unknownTimePeriod": {
+            "english": "⏰ Please choose the correct period",
+
+            "arabic": "⏰ يرجى اختيار المدة الصحيحة",
+
+            "nepali": "⏰ कृपया सही अवधि छनौट गर्नुहोस्",
+
+            "bengali": "⏰ সঠিক সময়কাল নির্ধারণ করুন",
+
+            "belarusian": "⏰ Калі ласка, абярыце правільны перыяд",
+
+            "catalan": "⏰ Escolliu el període correcte",
+
+            "dutch": "⏰ Kies de juiste periode",
+
+            "french": "⏰ Veuillez choisir la bonne période",
+
+            "german": "⏰ Bitte wählen Sie den richtigen Zeitraum",
+
+            "hindi": "⏰ कृपया सही अवधि चुनें",
+
+            "italian": "⏰ Si prega di scegliere il periodo corretto",
+
+            "korean": "⏰ 정확한 기간을 선택하세요",
+
+            "malay": "⏰ Sila pilih tempoh yang betul",
+
+            "polish": "⏰ Wybierz właściwy okres",
+
+            "portuguese": "⏰ Por favor escolha o período correto",
+
+            "russian": "⏰ Пожалуйста, выберите правильный период",
+
+            "spanish": "⏰ Elija el período correcto",
+
+            "turkish": "⏰ Lütfen doğru dönemi seçin",
+
+            "ukrainian": "⏰ Виберіть правильний період"
+        },
+
+        "trendingToday": {
+            "english": "✨ Trending torrents today",
+
+            "arabic": "✨ تورنتات متداولة اليوم",
+
+            "nepali": "✨ आजको ट्रेंडिंग टोरेन्टहरू",
+
+            "bengali": "✨ আজকের ট্রেন্ডিং টরেন্টস",
+
+            "belarusian": "✨ Сённяшнія трэнды",
+
+            "catalan": "✨ Els actuals torrents d’avui",
+
+            "dutch": "✨ De trending torrents van vandaag",
+
+            "french": "✨ Les torrents populaires d'aujourd'hui",
+
+            "german": "✨ Die heutigen Trendströme",
+
+            "hindi": "✨ आज का ट्रेंडिंग टॉरेंट",
+
+            "italian": "✨ I torrent di tendenza di oggi",
+
+            "korean": "✨ 오늘의 인기 급류",
+
+            "malay": "✨ Torrents yang sedang meningkat kini",
+
+            "polish": "✨ Torrenty popularne dzisiaj",
+
+            "portuguese": "✨ Torrents populares de hoje",
+
+            "russian": "✨ Современные торренты",
+
+            "spanish": "✨ Los torrents de tendencia de hoy",
+
+            "turkish": "✨ Bugünün Trend Olan Torrentleri",
+
+            "ukrainian": "✨ Сьогоднішні поточні потоки"
+        },
+
+        "trendingThisWeek": {
+            "english": "✨ Trending torrents this week",
+
+            "arabic": "✨ تورنتات متداولة هذا الاسبوع",
+
+            "nepali": "✨ यस हप्ताको ट्रेंडिंग टोरेन्टहरू",
+
+            "bengali": "✨ এই সপ্তাহের ট্রেন্ডিং টরেন্টস",
+
+            "belarusian": "✨ трэнды торэнтаў на гэтым тыдні",
+
+            "catalan": "✨ els torrents de tendència d’aquesta setmana",
+
+            "dutch": "✨ de trending torrents van deze week",
+
+            "french": "✨ les torrents populaires de cette semaine",
+
+            "german": "✨ Die Trendströme dieser Woche",
+
+            "hindi": "✨ इस हफ्ते की ट्रेंडिंग टॉरेंट्स",
+
+            "italian": "✨ I torrent di tendenza di questa settimana",
+
+            "korean": "✨ 이번주의 인기 급류",
+
+            "malay": "✨ Torrents trending minggu ini",
+
+            "polish": "✨ Torrenty popularne w tym tygodniu",
+
+            "portuguese": "✨ Torrents populares desta semana",
+
+            "russian": "✨ популярные торренты на этой неделе",
+
+            "spanish": "✨ los torrents de tendencia de esta semana",
+
+            "turkish": "✨ Bu Haftanın Trend Olan Torrentleri",
+
+            "ukrainian": "✨ поточні потоки цього тижня"
+        },
+
+        "popularToday": {
+            "english": "⚡️ Popular torrents today",
+
+            "arabic": "⚡️ التورنتات المنتشرة حاليًا",
+
+            "nepali": "⚡️ आजको लोकप्रिय टोरेन्टहरू",
+
+            "bengali": "⚡️ আজকের জনপ্রিয় টরেন্টস",
+
+            "belarusian": "⚡️ папулярныя сёння торэнты",
+
+            "catalan": "⚡️ Torrents populars d’avui",
+
+            "dutch": "⚡️ De populaire torrents van vandaag",
+
+            "french": "⚡️ Torrents populaires aujourd'hui",
+
+            "german": "⚡️ Die heutigen beliebten Ströme",
+
+            "hindi": "⚡️ आज के लोकप्रिय टॉरेंट्स",
+
+            "italian": "⚡️ I torrent popolari di oggi",
+
+            "korean": "⚡️ 오늘의 인기 급류",
+
+            "malay": "⚡️ Torrents popular hari ini",
+
+            "polish": "⚡️ Dzisiejsze popularne torrenty",
+
+            "portuguese": "⚡️ Torrents populares de hoje",
+
+            "russian": "⚡️ Популярные торренты сегодня",
+
+            "spanish": "⚡️ Torrents populares de hoy",
+
+            "turkish": "⚡️ Günümüzün Popüler Torrentleri",
+
+            "ukrainian": "⚡️ Популярні сьогодні торренти"
+        },
+
+        "popularThisWeek": {
+            "english": "⚡️ Popular torrents this week",
+
+            "arabic": "⚡️ التورنتات المنتشرة هذا الاسبوع",
+
+            "nepali": "⚡️ यस हप्ताको लोकप्रिय टोरेन्टहरू",
+
+            "bengali": "⚡️ এই সপ্তাহের জনপ্রিয় টরেন্টস",
+
+            "belarusian": "⚡️ Папулярныя на гэтым тыдні торэнты",
+
+            "catalan": "⚡️ Els torrents populars d’aquesta setmana",
+
+            "dutch": "⚡️ De populaire torrents van deze week",
+
+            "french": "⚡️ Les torrents populaires de cette semaine",
+
+            "german": "⚡️ Die beliebten Torrents dieser Woche",
+
+            "hindi": "⚡️ इस सप्ताह के लोकप्रिय torrents",
+
+            "italian": "⚡️ I torrent popolari di questa settimana",
+
+            "korean": "⚡️ 이번 주 인기 급류",
+
+            "malay": "⚡️ Torrents popular minggu ini",
+
+            "polish": "⚡️ Popularne torrenty w tym tygodniu",
+
+            "portuguese": "⚡️ Torrents populares desta semana",
+
+            "russian": "⚡️ Популярные торренты на этой неделе",
+
+            "spanish": "⚡️ Los torrents populares de esta semana",
+
+            "turkish": "⚡️ Bu Haftanın Popüler Torrentleri",
+
+            "ukrainian": "⚡️ Популярні потоки цього тижня"
+        },
+
+        "fetchingTorrents": {
+            "english": "🔎 <code>Searching torrents ...</code>",
+
+            "arabic": "🔎 <code>البحث عن تورنتات ...</code>",
+
+            "nepali": "🔎 <code>टोरेन्टहरू खोजी गर्दै ...</code>",
+
+            "bengali": "🔎 <code>টরেন্টস অনুসন্ধান করা হচ্ছে ...</code>",
+
+            "belarusian": "🔎 <code>Пошук торэнтаў ...</code>",
+
+            "catalan": "🔎 <code>S'estan cercant torrents ...</code>",
+
+            "dutch": "🔎 <code>Torrents zoeken ...</code>",
+
+            "french": "🔎 <code>Recherche de torrents ...</code>",
+
+            "german": "🔎 <code>Torrents suchen ...</code>",
+
+            "hindi": "🔎 <code>टोरेंट खोज रहे हैं ...</code>",
+
+            "italian": "🔎 <code>Ricerca torrent ...</code>",
+
+            "korean": "🔎 <code>급류 검색 중 ...</code>",
+
+            "malay": "🔎 <code>Mencari torrents ...</code>",
+
+            "polish": "🔎 <code>Wyszukiwanie torrentów ...</code>",
+
+            "portuguese": "🔎 <code>Pesquisando torrents ...</code>",
+
+            "russian": "🔎 <code>Поиск торрентов ...</code>",
+
+            "spanish": "🔎 <code>Buscando torrents ...</code>",
+
+            "turkish": "🔎 <code>Torrent aranıyor ...</code>",
+
+            "ukrainian": "🔎 <code>Пошук торрентів ...</code>"
+        },
+
+        "emptyPage": {
+            "english": "⚠️ This page doesn't have any content.",
+
+            "arabic": "⚠️ لا يوجد أي محتوى في هذه الصفحة.",
+
+            "nepali": "⚠️ यस पृष्ठमा कुनै सामग्री छैन।",
+
+            "bengali": "⚠️ এই পৃষ্ঠায় কিছুই নেই।",
+
+            "belarusian": "⚠️ На гэтай старонцы няма змесціва.",
+
+            "catalan": "⚠️ Aquesta pàgina no té cap contingut.",
+
+            "dutch": "⚠️ Deze pagina heeft geen inhoud.",
+
+            "french": "⚠️ Cette page n'a aucun contenu.",
+
+            "german": "⚠️ Diese Seite hat keinen Inhalt.",
+
+            "hindi": "⚠️ इस पृष्ठ में कोई सामग्री नहीं है।",
+
+            "italian": "⚠️ Questa pagina non ha alcun contenuto.",
+
+            "korean": "⚠️ 이 페이지에는 콘텐츠가 없습니다.",
+
+            "malay": "⚠️ Halaman ini tidak mempunyai kandungan.",
+
+            "polish": "⚠️ Ta strona nie zawiera żadnych treści.",
+
+            "portuguese": "⚠️ Esta página não possui nenhum conteúdo.",
+
+            "russian": "⚠️ На этой странице нет контента.",
+
+            "spanish": "⚠️ Esta página no tiene ningún contenido.",
+
+            "turkish": "⚠️ Bu sayfada herhangi bir içerik yok...",
+
+            "ukrainian": "⚠️ Ця сторінка не має жодного вмісту."
+        },
+
+        "fetchingTorrentInfo": {
+            "english": "🔎 <code>Fetching torrent info ...</code>",
+
+            "arabic": "🔎 <code>جار استخراج معلومات التورنت ...</code>",
+
+            "nepali": "🔎 <code>जानकारी प्राप्त गर्दै ...</code>",
+
+            "bengali": "🔎 <code>টরেন্টের তথ্য আনা হচ্ছে ...</code>",
+
+            "belarusian": "🔎 <code>Атрыманне інфармацыі ...</code>",
+
+            "catalan": "🔎 <code>S'està obtenint informació ...</code>",
+
+            "dutch": "🔎 <code>Informatie ophalen ...</code>",
+
+            "french": "🔎 <code>Récupération des informations du Torrent ...</code>",
+
+            "german": "🔎 <code>Informationen abrufen ...</code>",
+
+            "hindi": "🔎 <code>जानकारी प्राप्त कर रहा है ...</code>",
+
+            "italian": "🔎 <code>Recupero informazioni in corso ...</code>",
+
+            "korean": "🔎 <code>정보를 가져 오는 중 ...</code>",
+
+            "malay": "🔎 <code>Mengambil maklumat ...</code>",
+
+            "polish": "🔎 <code>Pobieram informacje ...</code>",
+
+            "portuguese": "🔎 <code>Buscando informações ...</code>",
+
+            "russian": "🔎 <code>Получение информации ...</code>",
+
+            "spanish": "🔎 <code>Obteniendo información ...</code>",
+
+            "turkish": "🔎 <code>Bilgi alınıyor ...</code>",
+
+            "ukrainian": "🔎 <code>Отримання інформації ...</code>"
+        },
+
+        "errorFetchingInfo": {
+            "english": "⚠️ <code>Error while fetching info. ..</code>",
+
+            "arabic": "⚠️ <code>حدث خطأ اثناء استخراج المعلومات. ..</code>",
+
+            "nepali": "⚠️ <code>जानकारी प्राप्त गर्दा त्रुटि ...</code>",
+
+            "bengali": "⚠️ <code>তথ্য আনার সময় একটা সমস্যা হয়েছে ...</code>",
+
+            "belarusian": "⚠️ <code>Памылка пры атрыманні інфармацыі ...</code>",
+
+            "catalan": "⚠️ <code>Error en obtenir informació ...</code>",
+
+            "dutch": "⚠️ <code>Fout bij het ophalen van informatie ...</code>",
+
+            "french": "⚠️ <code>Erreur lors de la récupération des informations ...</code>",
+
+            "german": "⚠️ <code>Fehler beim Abrufen der Informationen ...</code>",
+
+            "hindi": "⚠️ <code>जानकारी प्राप्त करते समय त्रुटि ...</code>",
+
+            "italian": "⚠️ <code>Errore durante il recupero delle informazioni ...</code>",
+
+            "korean": "⚠️ <code>정보를 가져 오는 중에 오류가 발생했습니다 ...</code>",
+
+            "malay": "⚠️ <code>Ralat semasa mengambil maklumat ...</code>",
+
+            "polish": "⚠️ <code>Błąd podczas pobierania informacji ...</code>",
+
+            "portuguese": "⚠️ <code>Erro ao buscar informações ...</code>",
+
+            "russian": "⚠️ <code>Ошибка при получении информации ...</code>",
+
+            "spanish": "⚠️ <code>Error al obtener información ...</code>",
+
+            "turkish": "⚠️ <code>Bilgi alınırken hata ...</code>",
+
+            "ukrainian": "⚠️ <code>Помилка під час отримання інформації ...</code>"
+        },
+
+        "fetchingMagnetLink": {
+            "english": "🔎 <code>Fetching link ...</code>",
+
+            "arabic": "🔎 <code>جار استخراج الرابط ...</code>",
+
+            "nepali": "🔎 <code>लिंक खोज्दै ...</code>",
+
+            "bengali": "🔎 <code>লিঙ্ক সন্ধান করা হচ্ছে ...</code>",
+
+            "belarusian": "🔎 <code>Пошук спасылкі ...</code>",
+
+            "catalan": "🔎 <code>S'està cercant l'enllaç ...</code>",
+
+            "dutch": "🔎 <code>Link zoeken ...</code>",
+
+            "french": "🔎 <code>Recherche du lien ...</code>",
+
+            "german": "🔎 <code>Link finden ...</code>",
+
+            "hindi": "🔎 <code>लिंक ढूंढ रहा है ...</code>",
+
+            "italian": "🔎 <code>Ricerca collegamento in corso ...</code>",
+
+            "korean": "🔎 <code>링크 찾는 중 ...</code>",
+
+            "malay": "🔎 <code>Mencari pautan ...</code>",
+
+            "polish": "🔎 <code>Szukam linku ...</code>",
+
+            "portuguese": "L🔎 <code>ocalizando link ...</code>",
+
+            "russian": "🔎 <code>Поиск ссылки ...</code>",
+
+            "spanish": "🔎 <code>Buscando enlace ...</code>",
+
+            "turkish": "🔎 <code>Bağlantı bulunuyor ...</code>",
+
+            "ukrainian": "🔎 <code>Пошук посилання ...</code>"
+        },
+
+        "errorFetchingLink": {
+            "english": "⚠️ <code>Error while fetching link ...</code>",
+
+            "arabic": "⚠️ <code>حدث خطأ اثناء استخراج الرابط ...</code>",
+
+            "nepali": "⚠️ <code>लिंक ल्याउँदा त्रुटि ...</code>",
+
+            "bengali": "⚠️ <code>লিঙ্কটি আনার সময় একটা সমস্যা হয়েছে ...</code>",
+
+            "belarusian": "⚠️ <code>Памылка пры атрыманні спасылкі ...</code>",
+
+            "catalan": "⚠️ <code>Error en obtenir l'enllaç ...</code>",
+
+            "dutch": "⚠️ <code>Fout bij het ophalen van link ...</code>",
+
+            "french": "⚠️ <code>Erreur lors de la récupération du lien ...</code>",
+
+            "german": "⚠️ <code>Fehler beim Abrufen des Links ...</code>",
+
+            "hindi": "⚠️ <code>लिंक प्राप्त करते समय त्रुटि ...</code>",
+
+            "italian": "⚠️ <code>Errore durante il recupero del collegamento ...</code>",
+
+            "korean": "⚠️ <code>링크를 가져 오는 동안 오류가 발생했습니다 ...</code>",
+
+            "malay": "⚠️ <code>Ralat semasa mengambil pautan ...</code>",
+
+            "polish": "⚠️ <code>Błąd podczas pobierania linku ...</code>",
+
+            "portuguese": "⚠️ <code>Erro ao buscar link ...</code>",
+
+            "russian": "⚠️ <code>Ошибка при получении ссылки ...</code>",
+
+            "spanish": "⚠️ <code>Error al obtener el enlace ...</code>",
+
+            "turkish": "⚠️ <code>Bağlantı alınırken hata ...</code>",
+
+            "ukrainian": "⚠️ <code>Помилка під час отримання посилання ...</code>"
+        },
+
+        "noPermission": {
+            "english": "⚠️ You don’t have enough permission to access this.",
+
+            "arabic": "⚠️ ليست لديك الصلاحية للولوج إلى هذا.",
+
+            "nepali": "⚠️ तपाईंसँग यो पहुँच गर्न पर्याप्त अनुमति छैन।",
+
+            "bengali": "⚠️ এটি অ্যাক্সেস করার জন্য আপনার পর্যাপ্ত অনুমতি নেই।",
+
+            "belarusian": "⚠️ У вас недастаткова дазволу на доступ.",
+
+            "catalan": "⚠️ No teniu prou permís per accedir-hi.",
+
+            "dutch": "⚠️ Je hebt niet genoeg toestemming om hier toegang toe te krijgen.",
+
+            "french": "⚠️ Vous n’avez pas suffisamment d’autorisation pour y accéder.",
+
+            "german": "⚠️ Sie haben nicht genügend Berechtigungen, um darauf zuzugreifen.",
+
+            "hindi": "⚠️ आपके पास इसे एक्सेस करने के लिए पर्याप्त अनुमति नहीं है।",
+
+            "italian": "⚠️ Non disponi di autorizzazioni sufficienti per accedervi.",
+
+            "korean": "⚠️ 여기에 액세스 할 수있는 권한이 없습니다.",
+
+            "malay": "⚠️ Anda tidak mempunyai kebenaran yang mencukupi untuk mengaksesnya.",
+
+            "polish": "⚠️ Nie masz wystarczających uprawnień, aby uzyskać do tego dostęp.",
+
+            "portuguese": "⚠️ Você não tem permissão suficiente para acessar isso.",
+
+            "russian": "⚠️ У вас недостаточно прав для доступа к этому.",
+
+            "spanish": "⚠️ No tienes permiso suficiente para acceder a esto.",
+
+            "turkish": "⚠️ Buna erişmek için yeterli izinin yok.",
+
+            "ukrainian": "⚠️ У вас недостатньо дозволу для доступу до цього."
+        },
+
+        "notYourMessage": {
+            "english": "⚠️ Only the message sender can use this feature. Please send me your own message to search for.",
+
+            "arabic": "⚠️ يمكن لمرسل الرسالة فقط استخدام هذه الميزة. من فضلك ارسل لي رسالتك الخاصة للبحث عنها.",
+
+            "nepali": "⚠️ सन्देश पठाउनेले मात्र यो सुविधा प्रयोग गर्न सक्छ। खोज्नको लागि कृपया मलाई आफ्नो सन्देश पठाउनुहोस्।",
+
+            "bengali": "⚠️ শুধুমাত্র বার্তা প্রেরক এই বৈশিষ্ট্যটি ব্যবহার করতে পারেন। অনুসন্ধান করার জন্য আমাকে আপনার নিজস্ব বার্তা পাঠান.",
+
+            "belarusian": "⚠️ Толькі адпраўнік паведамлення можа выкарыстоўваць гэтую функцыю. Калі ласка, дашліце мне ўласнае паведамленне для пошуку.",
+
+            "catalan": "⚠️ Només el remitent del missatge pot utilitzar aquesta funció. Envieu-me el vostre propi missatge per cercar-lo.",
+
+            "dutch": "⚠️ Alleen de afzender van het bericht kan deze functie gebruiken. Stuur me alsjeblieft je eigen bericht om naar te zoeken.",
+
+            "french": "⚠️ Seul l'expéditeur du message peut utiliser cette fonction. S'il vous plaît envoyez-moi votre propre message pour rechercher.",
+
+            "german": "⚠️ Nur der Absender der Nachricht kann diese Funktion verwenden. Bitte senden Sie mir Ihre eigene Nachricht, um danach zu suchen.",
+
+            "hindi": "⚠️ केवल संदेश भेजने वाला ही इस सुविधा का उपयोग कर सकता है। कृपया मुझे खोजने के लिए अपना संदेश भेजें।",
+
+            "italian": "⚠️ Solo il mittente del messaggio può utilizzare questa funzione. Per favore mandami il tuo messaggio da cercare.",
+
+            "korean": "⚠️ 메시지 보낸 사람만 이 기능을 사용할 수 있습니다. 검색할 나만의 메시지를 보내주세요.",
+
+            "malay": "⚠️ Hanya pengirim mesej yang boleh menggunakan ciri ini. Sila hantar mesej anda sendiri untuk saya cari.",
+
+            "polish": "⚠️ Tylko nadawca wiadomości może korzystać z tej funkcji. Proszę o przesłanie własnej wiadomości do wyszukania.",
+
+            "portuguese": "⚠️ Apenas o remetente da mensagem pode usar este recurso. Por favor, envie-me sua própria mensagem para pesquisar.",
+
+            "russian": "⚠️ Только отправитель сообщения может использовать эту функцию. Пожалуйста, отправьте мне свое собственное сообщение для поиска.",
+
+            "spanish": "⚠️ Solo el remitente del mensaje puede utilizar esta función. Por favor envíeme su propio mensaje para buscar.",
+
+            "turkish": "⚠️ Bu özelliği yalnızca iletiyi gönderen kullanabilir. Lütfen aramak için bana kendi mesajınızı gönderin.",
+
+            "ukrainian": "⚠️ Лише відправник повідомлення може використовувати цю функцію. Будь ласка, надішліть мені власне повідомлення для пошуку."
+        },
+
+        "wishlistAdded": {
+            "english": "✅ This item has been added in your wishlist.",
+
+            "arabic": "✅ تمت اضافة هذا العنصر لقائمة امنياتك.",
+
+            "french": "✅ Ce torrent à été ajouté à votre liste de souhaits."
+        },
+
+        "errorSendingImage": {
+            "english": "⚠️ Error while sending pictures.",
+
+            "arabic": "⚠️ حدث خطأ اثناء ارسال الصورة.",
+
+            "nepali": "⚠️ चित्रहरु पठाउँदा त्रुटि ।",
+
+            "bengali": "⚠️ ছবি পাঠানোর সময় একটা সমস্যা হয়েছে।",
+
+            "belarusian": "⚠️ Памылка пры адпраўцы малюнкаў.",
+
+            "catalan": "⚠️ Error en enviar fotografies.",
+
+            "dutch": "⚠️ Fout bij het verzenden van afbeeldingen.",
+
+            "french": "⚠️ Erreur lors de l'envoi des photos.",
+
+            "german": "⚠️ Fehler beim Senden von Bildern.",
+
+            "hindi": "⚠️ चित्र भेजते समय त्रुटि।",
+
+            "italian": "⚠️ Errore durante l'invio delle immagini.",
+
+            "korean": "⚠️ 사진을 보내는 동안 오류가 발생했습니다.",
+
+            "malay": "⚠️ Ralat semasa menghantar gambar.",
+
+            "polish": "⚠️ Błąd podczas wysyłania zdjęć.",
+
+            "portuguese": "⚠️ Erro ao enviar fotos.",
+
+            "russian": "⚠️ Ошибка при отправке картинок.",
+
+            "spanish": "⚠️ Error al enviar imágenes.",
+
+            "turkish": "⚠️ Resimleri gönderirken bir hata oluştu.",
+
+            "ukrainian": "⚠️ Помилка під час надсилання зображень."
+        },
+
+        "backToMenu": {
+            "english": "⬅️ Back to main menu",
+
+            "arabic": "⬅️ الرجوع للقائمة الرئيسية",
+
+            "nepali": "⬅️ मुख्य मेनूमा फिर्ता",
+
+            "bengali": "⬅️ প্রধান মেনুতে ফিরে যাই",
+
+            "belarusian": "⬅️ Вярнуцца да галоўнага меню",
+
+            "catalan": "⬅️ Torna al menú principal",
+
+            "dutch": "⬅️ Terug naar het hoofdmenu",
+
+            "french": "⬅️ Retour au menu principal",
+
+            "german": "⬅️ Zurück zum Hauptmenü",
+
+            "hindi": "⬅️ मुख्य मेनू में वापस",
+
+            "italian": "⬅️ Indietro al menù principale",
+
+            "korean": "⬅️ 메인 메뉴로 돌아 가기",
+
+            "malay": "⬅️ Kembali ke menu utama",
+
+            "polish": "⬅️ Powrót do menu głównego",
+
+            "portuguese": "⬅️ Voltar ao menu principal",
+
+            "russian": "⬅️ Вернуться в главное меню",
+
+            "spanish": "⬅️ Volver al menú principal",
+
+            "turkish": "⬅️ Ana menüye dön",
+
+            "ukrainian": "⬅️ Повернутися до головного меню"
+        },
+
+
+        "warningTooFast": {
+            "english": "🛑 You are sending messages too fast. Please slow down or you may get banned.",
+
+            "arabic": "🛑 انك ترسل رسائلًا بسرعة كبيرة. ابطئ قليلًا لكي لا تتعرض للحظر.",
+
+            "nepali": "🛑 तपाइँ धेरै छिटो सन्देश पठाउँदै हुनुहुन्छ। कृपया ढिलो गर्नुहोस् वा तपाइँ प्रतिबन्धित हुन सक्नुहुन्छ।",
+
+            "bengali": "🛑 আপনি খুব দ্রুত বার্তা পাঠাচ্ছেন। অনুগ্রহ করে ধীর করুন অথবা আপনি নিষিদ্ধ হতে পারেন।",
+
+            "belarusian": "🛑 Вы адпраўляеце паведамленні занадта хутка. Калі ласка, павольней, інакш вас могуць забараніць.",
+
+            "catalan": "🛑 Esteu enviant missatges massa ràpid. Si us plau, reduïu la velocitat o és possible que se us prohibeixi.",
+
+            "dutch": "🛑 Je verstuurt berichten te snel. Alsjeblieft, vertraag of je kunt een ban krijgen.",
+
+            "french": "🛑 Vous envoyez des messages trop rapidement. Veuillez ralentir ou vous pourriez être banni.",
+
+            "german": "🛑 Sie senden zu schnell Nachrichten. Bitte verlangsamen Sie, sonst werden Sie möglicherweise gesperrt.",
+
+            "hindi": "🛑 आप संदेश बहुत तेजी से भेज रहे हैं। कृपया धीमा करें या आप पर प्रतिबंध लगाया जा सकता है।",
+
+            "italian": "🛑 Stai inviando messaggi troppo velocemente. Per favore rallenta o potresti essere bannato.",
+
+            "korean": "🛑 메시지를 너무 빨리 보내고 있습니다. 속도를 줄이지 않으면 차단될 수 있습니다.",
+
+            "malay": "🛑 Anda menghantar mesej terlalu cepat. Harap perlahan atau anda mungkin dilarang.",
+
+            "polish": "🛑 Wysyłasz wiadomości za szybko. Zwolnij, bo możesz zostać zbanowany.",
+
+            "portuguese": "🛑 Você está enviando mensagens muito rápido. Por favor, diminua a velocidade ou você pode ser banido.",
+
+            "russian": "🛑 Вы отправляете сообщения слишком быстро. Пожалуйста, притормози, иначе вас могут забанить.",
+
+            "spanish": "🛑 Estás enviando mensajes demasiado rápido. Por favor, reduzca la velocidad o puede ser expulsado.",
+
+            "turkish": "🛑 Çok hızlı mesaj gönderiyorsun. Lütfen yavaşlayın yoksa yasaklanabilirsiniz.",
+
+            "ukrainian": "🛑 Ви надсилаєте повідомлення надто швидко. Будь ласка, пригальмуйте, інакше вас можуть заборонити."
+        },
+
+
+        "blockedTooFast": {
+            "english": "⛔ You have been banned for 5 minutes for spamming the bot.",
+
+            "arabic": "⛔ تم حظرك 5 مرات لإرسالك رسائل متعددة في وقت قصير.",
+
+            "nepali": "⛔ तपाइँ बोट स्पामिंग को लागी 5 मिनेट को लागी प्रतिबन्धित गरीएको छ।",
+
+            "bengali": "⛔ বট স্প্যাম করার জন্য আপনাকে 5 মিনিটের জন্য নিষিদ্ধ করা হয়েছে।",
+
+            "belarusian": "⛔ Вас забаранілі на 5 хвілін за спам боту.",
+
+            "catalan": "⛔ Se us ha prohibit durant 5 minuts per brossa de correu brossa.",
+
+            "dutch": "⛔ Je bent 5 minuten verbannen voor het spammen van de bot.",
+
+            "french": "⛔ Vous avez été banni pendant 5 minutes pour spammer le bot.",
+
+            "german": "⛔ Sie wurden für 5 Minuten gesperrt, weil Sie den Bot spammen.",
+
+            "hindi": "⛔ बॉट को स्पैम करने के लिए आपको 5 मिनट के लिए प्रतिबंधित कर दिया गया है।",
+
+            "italian": "⛔ Sei stato bannato per 5 minuti per aver inviato spam al bot.",
+
+            "korean": "⛔ 봇을 스팸하여 5분 동안 차단되었습니다.",
+
+            "malay": "⛔ Anda telah dilarang selama 5 minit kerana menghantar spam ke bot.",
+
+            "polish": "⛔ Zostałeś zbanowany na 5 minut za spamowanie bota.",
+
+            "portuguese": "⛔ Você foi banido por 5 minutos por enviar spam para o bot.",
+
+            "russian": "⛔ Вас забанили на 5 минут за рассылку спама боту.",
+
+            "spanish": "⛔ Ha sido baneado durante 5 minutos por enviar spam al bot.",
+
+            "turkish": "⛔ Bot'a spam gönderdiğiniz için 5 dakika süreyle yasaklandınız.",
+
+            "ukrainian": "⛔ Вас заблокували на 5 хвилин за спам боту."
+        },
+
+        "link": {
+            "english": "Link: ",
+
+            "arabic": "رابط: ",
+
+            "nepali": "लिंक: ",
+
+            "bengali": "লিঙ্ক: ",
+
+            "belarusian": "Спасылка: ",
+
+            "catalan": "Enllaç: ",
+
+            "dutch": "Koppeling: ",
+
+            "french": "Relier: ",
+
+            "german": "Verknüpfung: ",
+
+            "hindi": "लिंक: ",
+
+            "italian": "Link: ",
+
+            "korean": "링크: ",
+
+            "malay": "Pautan: ",
+
+            "polish": "Link: ",
+
+            "portuguese": "Link: ",
+
+            "russian": "Ссылка на сайт: ",
+
+            "spanish": "Enlace: ",
+
+            "turkish": "Bağlantı: ",
+
+            "ukrainian": "Посилання: "
+        },
+
+        "moreInfo": {
+            "english": "Info: ",
+
+            "arabic": "معلومات: ",
+
+            "nepali": "जानकारी: ",
+
+            "bengali": "তথ্য: ",
+
+            "belarusian": "Інфармацыя: ",
+
+            "catalan": "Informació: ",
+
+            "dutch": "Info: ",
+
+            "french": "Info: ",
+
+            "german": "Die Info: ",
+
+            "hindi": "जानकारी: ",
+
+            "italian": "Informazioni: ",
+
+            "korean": "정보: ",
+
+            "malay": "Maklumat: ",
+
+            "polish": "Informacje: ",
+
+            "portuguese": "Informações: ",
+
+            "russian": "Информация: ",
+
+            "spanish": "Info: ",
+
+            "turkish": "Bilgi: ",
+
+            "ukrainian": "Інформація: "
+        },
+
+        "category": {
+            "english": "Category: ",
+
+            "arabic": "الفئة: ",
+
+            "nepali": "कोटि: ",
+
+            "bengali": "বিভাগ: ",
+
+            "belarusian": "Катэгорыя: ",
+
+            "catalan": "Categoria: ",
+
+            "dutch": "Categorie: ",
+
+            "french": "Catégorie: ",
+
+            "german": "Kategorie: ",
+
+            "hindi": "वर्ग: ",
+
+            "italian": "Categoria: ",
+
+            "korean": "범주: ",
+
+            "malay": "Kategori: ",
+
+            "polish": "Kategoria: ",
+
+            "portuguese": "Categoria: ",
+
+            "russian": "Категория: ",
+
+            "spanish": "Categoría: ",
+
+            "turkish": "Kategori: ",
+
+            "ukrainian": "Категорія: "
+        },
+
+        "language": {
+            "english": "Language: ",
+
+            "arabic": "اللغة: ",
+
+            "nepali": "भाषा: ",
+
+            "bengali": "ভাষা: ",
+
+            "belarusian": "Мова: ",
+
+            "catalan": "Llenguatge: ",
+
+            "dutch": "Taal: ",
+
+            "french": "Langue: ",
+
+            "german": "Sprache: ",
+
+            "hindi": "भाषा: ",
+
+            "italian": "Lingua: ",
+
+            "korean": "언어: ",
+
+            "malay": "Bahasa: ",
+
+            "polish": "Język: ",
+
+            "portuguese": "Língua: ",
+
+            "russian": "Язык: ",
+
+            "spanish": "Idioma: ",
+
+            "turkish": "Dil: ",
+
+            "ukrainian": "Мову: "
+        },
+
+        "size": {
+            "english": "Size: ",
+
+            "arabic": "الحجم: ",
+
+            "nepali": "साइज: ",
+
+            "bengali": "আকার: ",
+
+            "belarusian": "Памер: ",
+
+            "catalan": "Mida: ",
+
+            "dutch": "Grootte: ",
+
+            "french": "Taille: ",
+
+            "german": "Größe: ",
+
+            "hindi": "साइज: ",
+
+            "italian": "Dimensione: ",
+
+            "korean": "크기: ",
+
+            "malay": "Saiz: ",
+
+            "polish": "Rozmiar: ",
+
+            "portuguese": "Tamanho: ",
+
+            "russian": "Размер: ",
+
+            "spanish": "Tamaño: ",
+
+            "turkish": "Boyutu: ",
+
+            "ukrainian": "Розмір: "
+        },
+
+        "uploadedBy": {
+            "english": "Uploader: ",
+
+            "arabic": "المحمّل: ",
+
+            "nepali": "अपलोडर: ",
+
+            "bengali": "আপলোডার: ",
+
+            "belarusian": "Загрузчык: ",
+
+            "catalan": "Carregador: ",
+
+            "dutch": "Uploader: ",
+
+            "french": "Uploader: ",
+
+            "german": "Uploader: ",
+
+            "hindi": "अपलोडर: ",
+
+            "italian": "Uploader: ",
+
+            "korean": "업 로더: ",
+
+            "malay": "Pemuat naik: ",
+
+            "polish": "Uploader: ",
+
+            "portuguese": "Uploader: ",
+
+            "russian": "Загрузчик: ",
+
+            "spanish": "Cargador: ",
+
+            "turkish": "Yükleyici: ",
+
+            "ukrainian": "Завантажувач: "
+        },
+
+        "downloads": {
+            "english": "Downloads: ",
+
+            "arabic": "التحميلات: ",
+
+            "nepali": "डाउनलोडस: ",
+
+            "bengali": "ডাউনলোড: ",
+
+            "belarusian": "Загрузкі: ",
+
+            "catalan": "Descàrregues: ",
+
+            "dutch": "Downloads: ",
+
+            "french": "Téléchargements: ",
+
+            "german": "Downloads: ",
+
+            "hindi": "डाउनलोडस: ",
+
+            "italian": "Downloads: ",
+
+            "korean": "다운로드: ",
+
+            "malay": "Muat turun: ",
+
+            "polish": "Pliki do pobrania: ",
+
+            "portuguese": "Transferências: ",
+
+            "russian": "Загрузки: ",
+
+            "spanish": "Descargas: ",
+
+            "turkish": "İndirilenler: ",
+
+            "ukrainian": "Завантаження: "
+        },
+
+        "lastChecked": {
+            "english": "Last Checked: ",
+
+            "arabic": "تم التحقق آخر مرة: ",
+
+            "nepali": "अन्तिम जाँच: ",
+
+            "bengali": "সর্বশেষ চেক করা হয়েছে: ",
+
+            "belarusian": "Апошняя праверка: ",
+
+            "catalan": "Darrera revisió: ",
+
+            "dutch": "Laatst gecontroleerd: ",
+
+            "french": "Dernière vérification: ",
+
+            "german": "Zuletzt überprüft: ",
+
+            "hindi": "अंतिम बार जाँच: ",
+
+            "italian": "Ultimo controllo: ",
+
+            "korean": "마지막 확인: ",
+
+            "malay": "Pemeriksaan Terakhir: ",
+
+            "polish": "Ostatnio sprawdzone: ",
+
+            "portuguese": "Verificado pela última vez: ",
+
+            "russian": "Последняя проверка: ",
+
+            "spanish": "Última comprobación: ",
+
+            "turkish": "Son Kontrol Edilen: ",
+
+            "ukrainian": "Востаннє перевірено: "
+        },
+
+        "uploadedOn": {
+            "english": "Uploaded On: ",
+
+            "arabic": "الرفع على: ",
+
+            "nepali": "अपलोड गरिएको मिति: ",
+
+            "bengali": "আপলোডের তারিখ: ",
+
+            "belarusian": "Дата загрузкі: ",
+
+            "catalan": "Data de pujada: ",
+
+            "dutch": "Geüploade datum: ",
+
+            "french": "Date d'upload : ",
+
+            "german": "Hochgeladenes Datum: ",
+
+            "hindi": "अपलोड की गई तारीख: ",
+
+            "italian": "Data di caricamento: ",
+
+            "korean": "업로드 됨: ",
+
+            "malay": "Dimuat naik: ",
+
+            "polish": "Data Przesłania: ",
+
+            "portuguese": "Carregado: ",
+
+            "russian": "Загружено: ",
+
+            "spanish": "Subido: ",
+
+            "turkish": "Yüklendi: ",
+
+            "ukrainian": "Завантажено: "
+        },
+
+        "seeders": {
+            "english": "Seeders: ",
+
+            "arabic": "Seeders: ",
+
+            "nepali": "सीडर्स: ",
+
+            "bengali": "Seeders: ",
+
+            "belarusian": "Seeders: ",
+
+            "catalan": "Seeders: ",
+
+            "dutch": "Seeders: ",
+
+            "french": "Seeders: ",
+
+            "german": "Seeders: ",
+
+            "hindi": "सीडर्स: ",
+
+            "italian": "Seeders: ",
+
+            "korean": "Seeders: ",
+
+            "malay": "Seeders: ",
+
+            "polish": "Seederzy: ",
+
+            "portuguese": "Seeders: ",
+
+            "russian": "Seeders: ",
+
+            "spanish": "Seeders: ",
+
+            "turkish": "Seeders: ",
+
+            "ukrainian": "Seeders: "
+        },
+
+        "leechers": {
+            "english": "Leechers: ",
+
+            "nepali": "लीचर्स: ",
+
+            "bengali": "লিচার: ",
+
+            "belarusian": "Leechers: ",
+
+            "catalan": "Leechers: ",
+
+            "dutch": "Leechers: ",
+
+            "french": "Leechers: ",
+
+            "german": "Leechers: ",
+
+            "hindi": "लीचर्स: ",
+
+            "italian": "Leechers: ",
+
+            "korean": "Leechers: ",
+
+            "malay": "Leechers: ",
+
+            "polish": "Leecherzy: ",
+
+            "portuguese": "Leechers: ",
+
+            "russian": "Leechers: ",
+
+            "spanish": "Leechers: ",
+
+            "turkish": "Leechers: ",
+
+            "ukrainian": "Leechers: "
+        }
+    },
+
+    "BTN":{
+
+        "trending": {
+            "english": "✨ Trending Torrents",
+
+            "arabic": "✨ التورنتات الشائعة",
+
+            "nepali": "✨ ट्रेन्डिंग टोरेन्ट",
+
+            "bengali": "✨ ট্রেন্ডিং টরেন্টস",
+
+            "belarusian": "✨ Тэндэнцыі торэнтаў",
+
+            "catalan": "✨ Torrents de tendència",
+
+            "dutch": "✨ Trending Torrents",
+
+            "french": "✨ Torrents tendances",
+
+            "german": "✨ Trending Torrents",
+
+            "hindi": "✨ ट्रेंडिंग टेंटेंट्स",
+
+            "italian": "✨ Torrent di tendenza",
+
+            "korean": "✨ 급류 급류",
+
+            "malay": "✨ Tren Tending",
+
+            "polish": "✨ Popularne torrenty",
+
+            "portuguese": "✨ Torrents populares",
+
+            "russian": "✨ Популярные торренты",
+
+            "spanish": "✨ Trending Torrents",
+
+            "turkish": "✨ Trend Olan Torrentler",
+
+            "ukrainian": "✨ Популярні потоки"
+        },
+
+        "popular": {
+            "english": "⚡ Popular Torrents",
+
+            "arabic": "⚡ التورنتات المُنتشرة",
+
+            "nepali": "⚡ लोकप्रिय टोरेन्ट",
+
+            "bengali": "⚡ জনপ্রিয় টরেন্টস",
+
+            "belarusian": "⚡ Папулярныя торэнты",
+
+            "catalan": "⚡ Torrents populars",
+
+            "dutch": "⚡ Populaire Torrents",
+
+            "french": "⚡ Torrents populaires",
+
+            "german": "⚡ Beliebte Torrents",
+
+            "hindi": "⚡ लोकप्रिय टोरेंट",
+
+            "italian": "⚡ Torrent popolari",
+
+            "korean": "⚡ 인기 급류",
+
+            "malay": "⚡ Torrents yang popular",
+
+            "polish": "⚡ Popularne torrenty",
+
+            "portuguese": "⚡ Torrents populares",
+
+            "russian": "⚡ Популярные торренты",
+
+            "spanish": "⚡ Torrents populares",
+
+            "turkish": "⚡ Popüler Torrentler",
+
+            "ukrainian": "⚡ Популярні торренти"
+        },
+
+        "top": {
+            "english": "💯 Top Torrents",
+
+            "arabic": "💯 قائمة اشهر تورنتات",
+
+            "nepali": "💯 शीर्ष टोरेन्ट",
+
+            "bengali": "💯 শীর্ষ টরেন্টস",
+
+            "belarusian": "💯 Лепшыя торэнты",
+
+            "catalan": "💯 Torrents principals",
+
+            "dutch": "💯 Top Torrents",
+
+            "french": "💯 Top Torrents",
+
+            "german": "💯 Top Torrents",
+
+            "hindi": "💯 शीर्ष टोरेंट",
+
+            "italian": "💯 I migliori torrent",
+
+            "korean": "💯 최고 급류",
+
+            "malay": "💯 Torrents Teratas",
+
+            "polish": "💯 Najpopularniejsze Torrenty",
+
+            "portuguese": "💯 Top Torrents",
+
+            "russian": "💯 Лучшие торренты",
+
+            "spanish": "💯 Torrentes principales",
+
+            "turkish": "💯 En İyi Torrentler",
+
+            "ukrainian": "💯 Топ торрентів"
+        },
+
+        "browse": {
+            "english": "🔍 Browse Torrents",
+
+            "arabic": "🔍 تصفح التورنتات",
+
+            "nepali": "🔍 ब्राउज टोरेन्ट",
+
+            "bengali": "🔍 টরেন্টস ব্রাউজ করুন",
+
+            "belarusian": "🔍 Агляд торэнтаў",
+
+            "catalan": "🔍 Navegar per torrents",
+
+            "dutch": "🔍 Blader door Torrents",
+
+            "french": "🔍 Parcourir les Torrents",
+
+            "german": "🔍 Torrents durchsuchen",
+
+            "hindi": "🔍 ब्राउज टोरेन्ट",
+
+            "italian": "🔍 Vedi i torrent",
+
+            "korean": "🔍 급류 찾아보기",
+
+            "malay": "🔍 Layari Torrents",
+
+            "polish": "🔍 Przeglądaj torrenty",
+
+            "portuguese": "🔍 Navegue por Torrents",
+
+            "russian": "🔍 Обзор торрентов",
+
+            "spanish": "🔍 Explorar torrents",
+
+            "turkish": "🔍 Torrentlere Göz At",
+
+            "ukrainian": "🔍 Переглядайте торренти"
+        },
+
+        "settings": {
+            "english": "⚙️ Settings",
+
+            "arabic": "⚙️ الاعدادات",
+
+            "nepali": "⚙️ सेटिंग्स",
+
+            "bengali": "⚙️ সেটিংস",
+
+            "belarusian": "⚙️ Налады",
+
+            "catalan": "⚙️ Configuració",
+
+            "dutch": "⚙️ Instellingen",
+
+            "french": "⚙️ Paramètres",
+
+            "german": "⚙️ Die Einstellungen",
+
+            "hindi": "⚙️ सेटिंग्स",
+
+            "italian": "⚙️ impostazioni",
+
+            "korean": "⚙️ 설정",
+
+            "malay": "⚙️ Tetapan",
+
+            "polish": "⚙️ Ustawienia",
+
+            "portuguese": "⚙️ Definições",
+
+            "russian": "⚙️ Настройки",
+
+            "spanish": "⚙️ Ajustes",
+
+            "turkish": "⚙️ Ayarlar",
+
+            "ukrainian": "⚙️ Налаштування"
+        },
+
+        "help": {
+            "english": "⁉️ Help",
+
+            "arabic": "⁉️ مساعدة",
+
+            "nepali": "⁉️ मद्दत",
+
+            "bengali": "⁉️ সহায়তা",
+
+            "belarusian": "⁉️ Дапамажыце",
+
+            "catalan": "⁉️ Ajuda",
+
+            "dutch": "⁉️ Helpen",
+
+            "french": "⁉️ Aide",
+
+            "german": "⁉️ Hilfe",
+
+            "hindi": "⁉️ मदद",
+
+            "italian": "⁉️ Aiuto",
+
+            "korean": "⁉️ 도움",
+
+            "malay": "⁉️ Tolonglah",
+
+            "polish": "⁉️ Pomoc",
+
+            "portuguese": "⁉️ Ajuda",
+
+            "russian": "⁉️ Помощь",
+
+            "spanish": "⁉️ Ayudar",
+
+            "turkish": "⁉️ Yardım",
+
+            "ukrainian": "⁉️ Допомога"
+        },
+
+        "support": {
+            "english": "🎁 Support",
+
+            "arabic": "🎁 الدعم",
+
+            "nepali": "🎁 सहयोग",
+
+            "bengali": "🎁 সাপোর্ট",
+
+            "belarusian": "🎁 Падтрымка",
+
+            "catalan": "🎁 Suport",
+
+            "dutch": "🎁 Ondersteuning",
+
+            "french": "🎁 Support",
+
+            "german": "🎁 Unterstützung",
+
+            "hindi": "🎁 सहयोग",
+
+            "italian": "🎁 Supporto",
+
+            "korean": "🎁 지원하다",
+
+            "malay": "🎁 Sokongan",
+
+            "polish": "🎁 Wsparcie",
+
+            "portuguese": "🎁 Apoiar",
+
+            "russian": "🎁 Служба поддержки",
+
+            "spanish": "🎁 Apoyo",
+
+            "turkish": "🎁 Destek",
+
+            "ukrainian": "🎁 Підтримка"
+        },
+
+        "movies": {
+            "english": "🎬 Movies",
+
+            "arabic": "🎬 افلام",
+
+            "nepali": "🎬 चलचित्र",
+
+            "bengali": "🎬 সিনেমা",
+
+            "belarusian": "🎬 Кіно",
+
+            "catalan": "🎬 Pel·lícula",
+
+            "dutch": "🎬 Film",
+
+            "french": "🎬 Films",
+
+            "german": "🎬 Film",
+
+            "hindi": "🎬 चलचित्र",
+
+            "italian": "🎬 Film",
+
+            "korean": "🎬 영화",
+
+            "malay": "🎬 Filem",
+
+            "polish": "🎬 Film",
+
+            "portuguese": "🎬 Filme",
+
+            "russian": "🎬 Кино",
+
+            "spanish": "🎬 Película",
+
+            "turkish": "🎬 Film",
+
+            "ukrainian": "🎬 Фільм"
+        },
+
+        "tv": {
+            "english": "📺 TV",
+
+            "arabic": "📺 تلفزيون",
+
+            "nepali": "📺 टिभी",
+
+            "bengali": "📺 টিভি শো",
+
+            "belarusian": "📺 Тэлевізар",
+
+            "catalan": "📺 TV",
+
+            "dutch": "📺 TV",
+
+            "french": "📺 Télévision",
+
+            "german": "📺 Fernseher",
+
+            "hindi": "📺 टीवी",
+
+            "italian": "📺 TV",
+
+            "korean": "📺 텔레비전",
+
+            "malay": "📺 Televisyen",
+
+            "polish": "📺 Telewizja",
+
+            "portuguese": "📺 Televisão",
+
+            "russian": "📺 Телевизор",
+
+            "spanish": "📺 Televisor",
+
+            "turkish": "📺 Televizyon",
+
+            "ukrainian": "📺 телевізор"
+        },
+
+        "docs": {
+            "english": "🎥 Docu",
+
+            "arabic": "🎥 وثائقيات",
+
+            "nepali": "🎥 वृत्तचित्र",
+
+            "bengali": "🎥 ডকুমেন্টারি",
+
+            "belarusian": "🎥 дакументы",
+
+            "catalan": "🎥 Docu",
+
+            "dutch": "🎥 Docu",
+
+            "french": "🎥 Documentaires",
+
+            "german": "🎥 Docu",
+
+            "hindi": "🎥 डॉक्यूमेंट्री",
+
+            "italian": "🎥 Documenti",
+
+            "korean": "🎥 기록한 것",
+
+            "malay": "🎥 Doku",
+
+            "polish": "🎥 Dokument",
+
+            "portuguese": "🎥 Docu",
+
+            "russian": "🎥 доку",
+
+            "spanish": "🎥 Docu",
+
+            "turkish": "🎥 Belgesel",
+
+            "ukrainian": "🎥 доку"
+        },
+
+        "games": {
+            "english": "🎮 Games",
+
+            "arabic": "🎮 العاب",
+
+            "nepali": "🎮 खेल",
+
+            "bengali": "🎮 গেম",
+
+            "belarusian": "🎮 Гульня",
+
+            "catalan": "🎮 Joc",
+
+            "dutch": "🎮 Spel",
+
+            "french": "🎮 Jeux",
+
+            "german": "🎮 Spiel",
+
+            "hindi": "🎮 खेल",
+
+            "italian": "🎮 Giochi",
+
+            "korean": "🎮 경기",
+
+            "malay": "🎮 Permainan",
+
+            "polish": "🎮 Gry",
+
+            "portuguese": "🎮 Jogo",
+
+            "russian": "🎮 Игра",
+
+            "spanish": "🎮 Juego",
+
+            "turkish": "🎮 Oyun",
+
+            "ukrainian": "🎮 Гра"
+        },
+
+        "music": {
+            "english": "🎵 Music",
+
+            "arabic": "🎵 موسيقى",
+
+            "nepali": "🎵 संगीत",
+
+            "bengali": "🎵 সংগীত",
+
+            "belarusian": "🎵 Музыка",
+
+            "catalan": "🎵 Música",
+
+            "dutch": "🎵 Muziek",
+
+            "french": "🎵 Musique",
+
+            "german": "🎵 Musik",
+
+            "hindi": "🎵 संगीत",
+
+            "italian": "🎵 Musica",
+
+            "korean": "🎵 음악",
+
+            "malay": "🎵 Muzik",
+
+            "polish": "🎵 Muzyka",
+
+            "portuguese": "🎵 Música",
+
+            "russian": "🎵 Музыка",
+
+            "spanish": "🎵 Música",
+
+            "turkish": "🎵 Müzik",
+
+            "ukrainian": "🎵 Музика"
+        },
+
+        "apps": {
+            "english": "🖥️ Apps",
+
+            "arabic": "🖥️ تطبيقات",
+
+            "nepali": "🖥️ एप्स",
+
+            "bengali": "🖥️ অ্যাপস",
+
+            "belarusian": "🖥️ Праграмы",
+
+            "catalan": "🖥️ Apps",
+
+            "dutch": "🖥️ Apps",
+
+            "french": "🖥️ Applications",
+
+            "german": "🖥️ Apps",
+
+            "hindi": "🖥️ ऐप्स",
+
+            "italian": "🖥️ App",
+
+            "korean": "🖥️ 앱",
+
+            "malay": "🖥️ Aplikasi",
+
+            "polish": "🖥️ Aplikacje",
+
+            "portuguese": "🖥️ Apps",
+
+            "russian": "🖥️ Программы",
+
+            "spanish": "🖥️ Apps",
+
+            "turkish": "🖥️ Uygulamalar",
+
+            "ukrainian": "🖥️ Програми"
+        },
+
+        "anime": {
+            "english": "🎎 Anime",
+
+            "arabic": "🎎 انمي",
+
+            "nepali": "🎎 एनिमे",
+
+            "bengali": "🎎 এনিমে",
+
+            "belarusian": "🎎 Анімэ",
+
+            "catalan": "🎎 Anime",
+
+            "dutch": "🎎 Anime",
+
+            "french": "🎎 Animés",
+
+            "german": "🎎 Anime",
+
+            "hindi": "🎎 एनिमे",
+
+            "italian": "🎎 Anime",
+
+            "korean": "🎎 애니메이션",
+
+            "malay": "🎎 Anime",
+
+            "polish": "🎎 Anime",
+
+            "portuguese": "🎎 Anime",
+
+            "russian": "🎎 Аниме",
+
+            "spanish": "🎎 Anime",
+
+            "turkish": "🎎 Anime",
+
+            "ukrainian": "🎎 Аніме"
+        },
+
+        "xxx": {
+            "english": "🔞 XXX",
+
+            "arabic": "🔞 جنس",
+
+            "nepali": "🔞 XXX",
+
+            "bengali": "🔞 ১৮+",
+
+            "belarusian": "🔞 XXX",
+
+            "catalan": "🔞 XXX",
+
+            "dutch": "🔞 XXX",
+
+            "french": "🔞 XXX",
+
+            "german": "🔞 XXX",
+
+            "hindi": "🔞 XXX",
+
+            "italian": "🔞 XXX",
+
+            "korean": "🔞 XXX",
+
+            "malay": "🔞 XXX",
+
+            "polish": "🔞 XXX",
+
+            "portuguese": "🔞 XXX",
+
+            "russian": "🔞 XXX",
+
+            "spanish": "🔞 XXX",
+
+            "turkish": "🔞 XXX",
+
+            "ukrainian": "🔞 XXX"
+        },
+
+        "others": {
+            "english": "📦 Others",
+
+            "arabic": "📦 اخرى",
+
+            "nepali": "📦 अन्य",
+
+            "bengali": "📦 অন্যান্য",
+
+            "belarusian": "📦 Іншыя",
+
+            "catalan": "📦 Altres",
+
+            "dutch": "📦 Anderen",
+
+            "french": "📦 Autres",
+
+            "german": "📦 Andere",
+
+            "hindi": "📦 अन्य",
+
+            "italian": "📦 Altri",
+
+            "korean": "📦 기타",
+
+            "malay": "📦 Yang lain",
+
+            "polish": "📦 Inne",
+
+            "portuguese": "📦 Outros",
+
+            "russian": "📦 Другие",
+
+            "spanish": "📦 Otros",
+
+            "turkish": "📦 Diğerleri",
+
+            "ukrainian": "📦 Інші"
+        },
+
+        "all": {
+            "english": "✅ All",
+
+            "arabic": "✅ الكل",
+
+            "nepali": "✅ सबै",
+
+            "bengali": "✅ সব",
+
+            "belarusian": "✅ Усе",
+
+            "catalan": "✅ Tots",
+
+            "dutch": "✅ Alle",
+
+            "french": "✅ Tout",
+
+            "german": "✅ Alle",
+
+            "hindi": "✅ सब",
+
+            "italian": "✅ Tutti",
+
+            "korean": "✅ 모두",
+
+            "malay": "✅ Semua",
+
+            "polish": "✅ Wszystko",
+
+            "portuguese": "✅ Tudo",
+
+            "russian": "✅ Все",
+
+            "spanish": "✅ Todas",
+
+            "turkish": "✅ Herşey",
+
+            "ukrainian": "✅ Всі"
+        },
+
+        "mainMenu": {
+            "english": "⬅️ Main menu",
+
+            "arabic": "⬅️ القائمة الرئيسية",
+
+            "nepali": "⬅️ मुख्य सूची",
+
+            "bengali": "⬅️ প্রধান মেনু",
+
+            "belarusian": "⬅️ Галоўнае меню",
+
+            "catalan": "⬅️ Menú principal",
+
+            "dutch": "⬅️ Hoofdmenu",
+
+            "french": "⬅️ Menu principal",
+
+            "german": "⬅️ Hauptmenü",
+
+            "hindi": "⬅️ मुख्य मेन्यू",
+
+            "italian": "⬅️ Menu principale",
+
+            "korean": "⬅️ 메인 메뉴",
+
+            "malay": "⬅️ Menu utama",
+
+            "polish": "⬅️ Menu główne",
+
+            "portuguese": "⬅️ Menu principal",
+
+            "russian": "⬅️ Главное меню",
+
+            "spanish": "⬅️ Menú principal",
+
+            "turkish": "⬅️ Ana menü",
+
+            "ukrainian": "⬅️ Головне меню"
+        },
+
+        "back": {
+            "english": "⬅️ Back",
+
+            "arabic": "⬅️ رجوع",
+
+            "nepali": "⬅️ पछाडि",
+
+            "bengali": "⬅️ পেছনে",
+
+            "belarusian": "⬅️ Назад",
+
+            "catalan": "⬅️ esquena",
+
+            "dutch": "⬅️ Terug",
+
+            "french": "⬅️ Retour",
+
+            "german": "⬅️ Zurück",
+
+            "hindi": "⬅️ वापस",
+
+            "italian": "⬅️ Indietro",
+
+            "korean": "⬅️ 뒤",
+
+            "malay": "⬅️ Belakang",
+
+            "polish": "⬅️ Powrót",
+
+            "portuguese": "⬅️ Voltar",
+
+            "russian": "⬅️ Назад",
+
+            "spanish": "⬅️ atrás",
+
+            "turkish": "⬅️ Geri",
+
+            "ukrainian": "⬅️ Назад"
+        },
+
+        "next": {
+            "english": "⏭️ Next",
+
+            "arabic": "⏭️ التالي",
+
+            "nepali": "⏭️ अर्को",
+
+            "bengali": "⏭️ পরবর্তী",
+
+            "belarusian": "⏭️ Далей",
+
+            "catalan": "⏭️ Pròxim",
+
+            "dutch": "⏭️ De volgende",
+
+            "french": "⏭️ Suivant",
+
+            "german": "⏭️ Nächster",
+
+            "hindi": "⏭️ अगला",
+
+            "italian": "⏭️ Il prossimo",
+
+            "korean": "⏭️ 다음",
+
+            "malay": "⏭️ Seterusnya",
+
+            "polish": "⏭️ Następne",
+
+            "portuguese": "⏭️ Próximo",
+
+            "russian": "⏭️ Следующий",
+
+            "spanish": "⏭️ Próximo",
+
+            "turkish": "⏭️ Sonraki",
+
+            "ukrainian": "⏭️ Далі"
+        },
+
+        "previous": {
+            "english": "⏮️ Previous",
+
+            "arabic": "⏮️ السابق",
+
+            "nepali": "⏮️ अघिल्लो",
+
+            "bengali": "⏮️ আগে",
+
+            "belarusian": "⏮️ Папярэдняя",
+
+            "catalan": "⏮️ Anterior",
+
+            "dutch": "⏮️ Vorige",
+
+            "french": "⏮️ Précédent",
+
+            "german": "⏮️ Bisherige",
+
+            "hindi": "⏮️ पहले का",
+
+            "italian": "⏮️ Precedente",
+
+            "korean": "⏮️ 이전",
+
+            "malay": "⏮️ Sebelumnya",
+
+            "polish": "⏮️ Poprzednie",
+
+            "portuguese": "⏮️ Anterior",
+
+            "russian": "⏮️ Предыдущий",
+
+            "spanish": "⏮️ Previo",
+
+            "turkish": "⏮️ Önceki",
+
+            "ukrainian": "⏮️ Попередній"
+        },
+
+        "inlineSearch": {
+            "english": "🔎 Inline search",
+
+            "arabic": "🔎 البحث الداخلي",
+
+            "nepali": "🔎 इनलाइन खोज",
+
+            "bengali": "🔎 ইনলাইন অনুসন্ধান",
+
+            "belarusian": "🔎 убудаваны пошук",
+
+            "catalan": "🔎 cerca en línia",
+
+            "dutch": "🔎 inline zoeken",
+
+            "french": "🔎 recherche en ligne",
+
+            "german": "🔎 Inline-Suche",
+
+            "hindi": "🔎 इनलाइन खोज",
+
+            "italian": "🔎 Ricerca nella barra di ricerca",
+
+            "korean": "🔎 인라인 검색",
+
+            "malay": "🔎 carian sebaris",
+
+            "polish": "🔎 wyszukiwanie w treści",
+
+            "portuguese": "🔎 pesquisa inline",
+
+            "russian": "🔎 встроенный поиск",
+
+            "spanish": "🔎 búsqueda en línea",
+
+            "turkish": "🔎 Satır içi arama",
+
+            "ukrainian": "🔎 вбудований пошук"
+        },
+
+
+        "magnetDownload": {
+            "english": "🧲 Magnet",
+
+            "arabic": "🧲 Magnet",
+
+            "nepali": "🧲 म्याग्नेट",
+
+            "bengali": "🧲 ম্যাগনিট",
+
+            "belarusian": "🧲 Magnet",
+
+            "catalan": "🧲 Magnet",
+
+            "dutch": "🧲 Magnet",
+
+            "french": "🧲 Magnet",
+
+            "german": "🧲 Magnet",
+
+            "hindi": "🧲 Magnet",
+
+            "italian": "🧲 Magnet",
+
+            "korean": "🧲 Magnet",
+
+            "malay": "🧲 Magnet",
+
+            "polish": "🧲 Magnet",
+
+            "portuguese": "🧲 Magnet",
+
+            "russian": "🧲 Magnet",
+
+            "spanish": "🧲 Magnet",
+
+            "turkish": "🧲 Magnet",
+
+            "ukrainian": "🧲 Magnet"
+        },
+
+        "image": {
+            "english": "🖼️ Images",
+
+            "arabic": "🖼️ الصور",
+
+            "nepali": "🖼️ चित्रहरु",
+
+            "bengali": "🖼️ ছবি",
+
+            "belarusian": "🖼️ Малюнкі",
+
+            "catalan": "🖼️ Imatges",
+
+            "dutch": "🖼️ Afbeeldingen",
+
+            "french": "🖼️ Images",
+
+            "german": "🖼️ Bilder",
+
+            "hindi": "🖼️ चित्रों",
+
+            "italian": "🖼️ Immagini",
+
+            "korean": "🖼️ 영화",
+
+            "malay": "🖼️ Gambar",
+
+            "polish": "🖼️ Kino",
+
+            "portuguese": "🖼️ Fotos",
+
+            "russian": "🖼️ Фотографий",
+
+            "spanish": "🖼️ Fotos",
+
+            "turkish": "🖼️ Fotoğraflar",
+
+            "ukrainian": "🖼️ Картинки"
+        },
+
+        "torrentDownload": {
+            "english": "📄 Torrent",
+
+            "arabic": "📄 تورنت",
+
+            "nepali": "📄 टोरेन्ट",
+
+            "bengali": "📄 টরেন্ট",
+
+            "belarusian": "📄 торэнта",
+
+            "catalan": "📄 Torrent",
+
+            "dutch": "📄 Torrent",
+
+            "french": "📄 Torrent",
+
+            "german": "📄 Torrent",
+
+            "hindi": "📄 टोरेन्ट",
+
+            "italian": "📄 Torrent",
+
+            "korean": "📄 토렌트",
+
+            "malay": "📄 Torrent",
+
+            "polish": "📄 Torrentów",
+
+            "portuguese": "📄 Torrent",
+
+            "russian": "📄 Торрент",
+
+            "spanish": "📄 Torrent",
+
+            "turkish": "📄 Torrent",
+
+            "ukrainian": "📄 торрент"
+        },
+
+        "addToSeedr": {
+            "english": "⬇️ Add to seedr",
+
+            "arabic": "⬇️ إضافة إلى seedr",
+
+            "nepali": "⬇️ सीडरमा डाउनलोड गर्नुहोस्",
+
+            "bengali": "⬇️ সিডারে ডাউনলোড করুন",
+
+            "belarusian": "⬇️ загрузіць у seedr",
+
+            "catalan": "⬇️ Descarregar a seedr",
+
+            "dutch": "⬇️ Downloaden naar seedr",
+
+            "french": "⬇️ Ajouter à Seedr",
+
+            "german": "⬇️ Download auf Seeder",
+
+            "hindi": "⬇️ सीडर में डाउनलोड करें",
+
+            "italian": "⬇️ Scarica su seedr",
+
+            "korean": "⬇️ 파종기에 다운로드",
+
+            "malay": "⬇️ Muat turun ke seedr",
+
+            "polish": "⬇️ Pobierz do seedera",
+
+            "portuguese": "⬇️ Baixar para seedr",
+
+            "russian": "⬇️ Скачать в seedr",
+
+            "spanish": "⬇️ Descargar a seedr",
+
+            "turkish": "⬇️ Seedr'e indir",
+
+            "ukrainian": "⬇️ Завантажити на сівалку"
+        },
+
+        "done": {
+            "english": "❤️ Done",
+
+            "arabic": "❤️ تم",
+
+            "nepali": "❤️ भयो",
+
+            "bengali": "❤️ সম্পন্ন হয়েছে",
+
+            "belarusian": "❤️ Гатова",
+
+            "catalan": "❤️ Fet",
+
+            "dutch": "❤️ Gedaan",
+
+            "french": "❤️ Fait",
+
+            "german": "❤️ Getan",
+
+            "hindi": "❤️ हुआ",
+
+            "italian": "❤️ Fatto",
+
+            "korean": "❤️ 끝난",
+
+            "malay": "❤️ Selesai",
+
+            "polish": "❤️ Gotowe",
+
+            "portuguese": "❤️ Feito",
+
+            "russian": "❤️ Сделанный",
+
+            "spanish": "❤️ Hecho",
+
+            "turkish": "❤️ Bitti",
+
+            "ukrainian": "❤️ Готово"
+        },
+
+        "youtube": {
+            "english": "📺 YouTube",
+
+            "arabic": "📺 يوتيوب",
+
+            "nepali": "📺 YouTube",
+
+            "bengali": "📺 YouTube",
+
+            "belarusian": "📺 YouTube",
+
+            "catalan": "📺 YouTube",
+
+            "dutch": "📺 YouTube",
+
+            "french": "📺 YouTube",
+
+            "german": "📺 YouTube",
+
+            "hindi": "📺 YouTube",
+
+            "italian": "📺 YouTube",
+
+            "korean": "📺 YouTube",
+
+            "malay": "📺 YouTube",
+
+            "polish": "📺 YouTube",
+
+            "portuguese": "📺 YouTube",
+
+            "russian": "📺 YouTube",
+
+            "spanish": "📺 YouTube",
+
+            "turkish": "📺 YouTube",
+
+            "ukrainian": "📺 YouTube"
+        },
+
+        "channel": {
+            "english": "📢 Channel",
+
+            "arabic": "📢 القناة",
+
+            "nepali": "📢 Channel",
+
+            "bengali": "📢 Channel",
+
+            "belarusian": "📢 Channel",
+
+            "catalan": "📢 Channel",
+
+            "dutch": "📢 Channel",
+
+            "french": "📢 Chaîne",
+
+            "german": "📢 Channel",
+
+            "hindi": "📢 Channel",
+
+            "italian": "📢 Canale",
+
+            "korean": "📢 Channel",
+
+            "malay": "📢 Channel",
+
+            "polish": "📢 Kanał",
+
+            "portuguese": "📢 Channel",
+
+            "russian": "📢 Channel",
+
+            "spanish": "📢 Channel",
+
+            "turkish": "📢 Kanal",
+
+            "ukrainian": "📢 Channel"
+        },
+
+        "group": {
+            "english": "🗣️ Group Chat",
+
+            "arabic": "🗣️ مجموعة الدردشة",
+
+            "nepali": "🗣️ समूह च्याट",
+
+            "bengali": "🗣️ গ্রুপ চ্যাট",
+
+            "belarusian": "🗣️ Групавы чат",
+
+            "catalan": "🗣️ Xat en grup",
+
+            "dutch": "🗣️ Groeps chat",
+
+            "french": "🗣️ Discussion de groupe",
+
+            "german": "🗣️ Gruppenchat",
+
+            "hindi": "🗣️ समूह बातचीत",
+
+            "italian": "🗣️ Chat di gruppo",
+
+            "korean": "🗣️ 그룹 채팅",
+
+            "malay": "🗣️ Sembang berkumpulan",
+
+            "polish": "🗣️ Czat Grupowy",
+
+            "portuguese": "🗣️ Conversa em grupo",
+
+            "russian": "🗣️ Групповой чат",
+
+            "spanish": "🗣️ Grupo de chat",
+
+            "turkish": "🗣️ Grup sohbeti",
+
+            "ukrainian": "🗣️ Груповий чат"
+        },
+
+        "github": {
+            "english": "🌟 GitHub",
+
+            "arabic": "🌟 غيت هب",
+
+            "nepali": "🌟 GitHub",
+
+            "bengali": "🌟 GitHub",
+
+            "belarusian": "🌟 GitHub",
+
+            "catalan": "🌟 GitHub",
+
+            "dutch": "🌟 GitHub",
+
+            "french": "🌟 GitHub",
+
+            "german": "🌟 GitHub",
+
+            "hindi": "🌟 GitHub",
+
+            "italian": "🌟 GitHub",
+
+            "korean": "🌟 GitHub",
+
+            "malay": "🌟 GitHub",
+
+            "polish": "🌟 GitHub",
+
+            "portuguese": "🌟 GitHub",
+
+            "russian": "🌟 GitHub",
+
+            "spanish": "🌟 GitHub",
+
+            "turkish": "🌟 GitHub",
+
+            "ukrainian": "🌟 GitHub"
+        },
+
+        "donate": {
+            "english": "☕  Donate",
+
+            "arabic": "☕  تبرع",
+
+            "nepali": "☕  दान गर्नुहोस्",
+
+            "bengali": "☕  দান করুন",
+
+            "belarusian": "☕  Ахвяруйце",
+
+            "catalan": "☕  Donar",
+
+            "dutch": "☕  Doneren",
+
+            "french": "☕  Faire un don",
+
+            "german": "☕  Spenden",
+
+            "hindi": "☕  दान करना",
+
+            "italian": "☕  Donare",
+
+            "korean": "☕  기부",
+
+            "malay": "☕  Sumbang",
+
+            "polish": "☕  Podarować",
+
+            "portuguese": "☕  Doar",
+
+            "russian": "☕  Пожертвовать",
+
+            "spanish": "☕  Donar",
+
+            "turkish": "☕  Bağış yapmak",
+
+            "ukrainian": "☕  Пожертвувати"
+        },
+
+        "share": {
+            "english": "💬 Share",
+
+            "arabic": "💬 مشاركة",
+
+            "nepali": "💬 सेयर",
+
+            "bengali": "💬 শেয়ার",
+
+            "belarusian": "💬 падзяліцца",
+
+            "catalan": "💬 Compartir",
+
+            "dutch": "💬 delen",
+
+            "french": "💬 partager",
+
+            "german": "💬 Teilen",
+
+            "hindi": "💬 शेयर",
+
+            "italian": "💬 Condividere",
+
+            "korean": "💬 공유",
+
+            "malay": "💬 berkongsi",
+
+            "polish": "💬 Udostępnij",
+
+            "portuguese": "💬 compartilhar",
+
+            "russian": "💬 Поделиться",
+
+            "spanish": "💬 Cuota",
+
+            "turkish": "💬 Paylaş",
+
+            "ukrainian": "💬 поділитися"
+        }
+    }
+}
