@@ -1,5 +1,7 @@
 'Miscillaneous functions'
 
+from ast import literal_eval
+
 from loguru import logger
 
 
@@ -25,3 +27,22 @@ class Misc:
             except Exception as err:
                 logger.error(f'Error sending message to admin: {err}')
                 pass
+
+    # Get google suggestions of a keyword
+    async def google_suggestions(self, query):
+        headers = {
+            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:90.0) Gecko/20100101 Firefox/90.0',
+        }
+
+        params = (
+            ('client', 'Firefox'),
+            ('q', query),
+        )
+
+        response = await self.client.requests.get(
+            'https://www.google.com/complete/search',
+            headers=headers,
+            params=params,
+        )
+
+        return literal_eval(response)[1]
