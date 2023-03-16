@@ -9,6 +9,7 @@ from loguru import logger
 from pyrogram import Client, types
 
 from apis.database import DataBase
+from apis.requests import Requests
 from langs.lang import Lang
 from plugins.functions.keyboards import KeyBoard
 from plugins.functions.misc import Misc
@@ -49,6 +50,7 @@ bot = Client(
 Client.MISC = Misc(bot)
 Client.KB = KeyBoard(bot)
 Client.LG = Lang('langs/lang.json', bot)
+Client.requests = Requests()
 
 commands = [
     types.BotCommand('start', '💫 Start using bot'),
