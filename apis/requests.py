@@ -5,18 +5,21 @@ from loguru import logger
 
 
 class Requests:
-    def __init__(self, verify_ssl=False):
-        self.connector = aiohttp.TCPConnector(verify_ssl=verify_ssl)
-        self.session = aiohttp.ClientSession(connector=self.connector)
-
     # Perform async HTTP request
     async def request(self, method, url, params=None, data=None, headers=None):
+        self.connector = aiohttp.TCPConnector(verify_ssl=False)
+        self.session = aiohttp.ClientSession(connector=self.connector)
+
         try:
             async with aiohttp.ClientSession(connector=self.connector) as session:
                 async with session.request(
                     method, url, params=params, data=data, headers=headers,
                 ) as resp:
-                    return await resp.json()
+                    try:
+                        return  await resp.json()
+                    
+                    except aiohttp.client_exceptions.ContentTypeError:
+                        return await resp.text()
 
         except Exception as err:
             logger.error(
