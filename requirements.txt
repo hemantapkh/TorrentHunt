@@ -1,5 +1,11 @@
+1337x==1.2.4
+aiohttp==3.8.4
 asyncpg==0.27.0
 loguru==0.6.0
-pyrogram==2.0.102
+pip-chill==1.0.1
+pre-commit==3.1.1
+pyropatch==1.3
 python-dotenv==1.0.0
+tgcrypto==1.2.5
 uvloop==0.17.0
+validators==0.20.0
