@@ -49,7 +49,7 @@ bot = Client(
 # Loading required instances in the Client
 Client.MISC = Misc(bot)
 Client.KB = KeyBoard(bot)
-Client.LG = Lang('langs/lang.json', bot)
+Client.LG = Lang('langs/string.json', 'langs/lang.json')
 Client.requests = Requests()
 
 commands = [
