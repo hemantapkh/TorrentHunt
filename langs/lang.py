@@ -13,7 +13,12 @@ class Lang:
 
     def __getattr__(self, name):
         def get_value(key, code='english'):
-            return self.data.get(name, {}).get(key, {}).get(code)
+            return (
+                self.data.get(name, {}).get(key, {}).get(code)
+                or
+                # If translation not available, return english
+                self.data.get(name, {}).get(key, {}).get('english')
+            )
 
         return get_value
 
