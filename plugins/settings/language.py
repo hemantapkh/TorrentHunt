@@ -11,8 +11,6 @@ async def language(Client, callback):
         reply_markup=Client.KB.language(),
     )
 
-# Set language
-
 
 @Client.on_callback_query(filters.regex('setLanguage'))
 async def set_language(Client, callback):
