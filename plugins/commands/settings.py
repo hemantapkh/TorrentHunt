@@ -27,7 +27,7 @@ async def settings(Client, message):
         [
             types.InlineKeyboardButton(
                 text=res_button_text,
-                callback_data=f'restriction_{restriction_mode}',
+                callback_data=f'restriction_{not restriction_mode}',
             ),
         ],
     ]
