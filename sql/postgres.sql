@@ -18,3 +18,11 @@ CREATE TABLE IF NOT EXISTS ADMINS(
     user_id     BIGINT PRIMARY KEY REFERENCES USERS(user_id) ON DELETE CASCADE,
     date        TIMESTAMP DEFAULT current_timestamp
 );
+
+CREATE TABLE IF NOT EXISTS REFERRERS(
+    referrer_id     TEXT PRIMARY KEY,
+    title           TEXT NOT NULL,
+    description     TEXT,
+    clicks          INTEGER NOT NULL DEFAULT 0,
+    date            TIMESTAMP DEFAULT current_timestamp
+);
