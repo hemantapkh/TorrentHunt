@@ -1574,441 +1574,441 @@
         },
 
         "link": {
-            "english": "Link: ",
+            "english": "Link",
 
-            "arabic": "رابط: ",
+            "arabic": "رابط",
 
-            "nepali": "लिंक: ",
+            "nepali": "लिंक",
 
-            "bengali": "লিঙ্ক: ",
+            "bengali": "লিঙ্ক",
 
-            "belarusian": "Спасылка: ",
+            "belarusian": "Спасылка",
 
-            "catalan": "Enllaç: ",
+            "catalan": "Enllaç",
 
-            "dutch": "Koppeling: ",
+            "dutch": "Koppeling",
 
-            "french": "Relier: ",
+            "french": "Relier",
 
-            "german": "Verknüpfung: ",
+            "german": "Verknüpfung",
 
-            "hindi": "लिंक: ",
+            "hindi": "लिंक",
 
-            "italian": "Link: ",
+            "italian": "Link",
 
-            "korean": "링크: ",
+            "korean": "링크",
 
-            "malay": "Pautan: ",
+            "malay": "Pautan",
 
-            "polish": "Link: ",
+            "polish": "Link",
 
-            "portuguese": "Link: ",
+            "portuguese": "Link",
 
-            "russian": "Ссылка на сайт: ",
+            "russian": "Ссылка на сайт",
 
-            "spanish": "Enlace: ",
+            "spanish": "Enlace",
 
-            "turkish": "Bağlantı: ",
+            "turkish": "Bağlantı",
 
-            "ukrainian": "Посилання: "
+            "ukrainian": "Посилання"
         },
 
         "moreInfo": {
-            "english": "Info: ",
+            "english": "Info",
 
-            "arabic": "معلومات: ",
+            "arabic": "معلومات",
 
-            "nepali": "जानकारी: ",
+            "nepali": "जानकारी",
 
-            "bengali": "তথ্য: ",
+            "bengali": "তথ্য",
 
-            "belarusian": "Інфармацыя: ",
+            "belarusian": "Інфармацыя",
 
-            "catalan": "Informació: ",
+            "catalan": "Informació",
 
-            "dutch": "Info: ",
+            "dutch": "Info",
 
-            "french": "Info: ",
+            "french": "Info",
 
             "german": "Die Info: ",
 
             "hindi": "जानकारी: ",
 
-            "italian": "Informazioni: ",
+            "italian": "Informazioni",
 
-            "korean": "정보: ",
+            "korean": "정보",
 
-            "malay": "Maklumat: ",
+            "malay": "Maklumat",
 
-            "polish": "Informacje: ",
+            "polish": "Informacje",
 
-            "portuguese": "Informações: ",
+            "portuguese": "Informações",
 
-            "russian": "Информация: ",
+            "russian": "Информация",
 
-            "spanish": "Info: ",
+            "spanish": "Info",
 
-            "turkish": "Bilgi: ",
+            "turkish": "Bilgi",
 
-            "ukrainian": "Інформація: "
+            "ukrainian": "Інформація"
         },
 
         "category": {
-            "english": "Category: ",
+            "english": "Category",
 
-            "arabic": "الفئة: ",
+            "arabic": "الفئة",
 
-            "nepali": "कोटि: ",
+            "nepali": "कोटि",
 
-            "bengali": "বিভাগ: ",
+            "bengali": "বিভাগ",
 
-            "belarusian": "Катэгорыя: ",
+            "belarusian": "Катэгорыя",
 
-            "catalan": "Categoria: ",
+            "catalan": "Categoria",
 
-            "dutch": "Categorie: ",
+            "dutch": "Categorie",
 
-            "french": "Catégorie: ",
+            "french": "Catégorie",
 
-            "german": "Kategorie: ",
+            "german": "Kategorie",
 
-            "hindi": "वर्ग: ",
+            "hindi": "वर्ग",
 
-            "italian": "Categoria: ",
+            "italian": "Categoria",
 
-            "korean": "범주: ",
+            "korean": "범주",
 
-            "malay": "Kategori: ",
+            "malay": "Kategori",
 
-            "polish": "Kategoria: ",
+            "polish": "Kategoria",
 
-            "portuguese": "Categoria: ",
+            "portuguese": "Categoria",
 
-            "russian": "Категория: ",
+            "russian": "Категория",
 
-            "spanish": "Categoría: ",
+            "spanish": "Categoría",
 
-            "turkish": "Kategori: ",
+            "turkish": "Kategori",
 
-            "ukrainian": "Категорія: "
+            "ukrainian": "Категорія"
         },
 
         "language": {
-            "english": "Language: ",
+            "english": "Language",
 
-            "arabic": "اللغة: ",
+            "arabic": "اللغة",
 
-            "nepali": "भाषा: ",
+            "nepali": "भाषा",
 
-            "bengali": "ভাষা: ",
+            "bengali": "ভাষা",
 
-            "belarusian": "Мова: ",
+            "belarusian": "Мова",
 
-            "catalan": "Llenguatge: ",
+            "catalan": "Llenguatge",
 
-            "dutch": "Taal: ",
+            "dutch": "Taal",
 
-            "french": "Langue: ",
+            "french": "Langue",
 
-            "german": "Sprache: ",
+            "german": "Sprache",
 
-            "hindi": "भाषा: ",
+            "hindi": "भाषा",
 
-            "italian": "Lingua: ",
+            "italian": "Lingua",
 
-            "korean": "언어: ",
+            "korean": "언어",
 
-            "malay": "Bahasa: ",
+            "malay": "Bahasa",
 
-            "polish": "Język: ",
+            "polish": "Język",
 
-            "portuguese": "Língua: ",
+            "portuguese": "Língua",
 
-            "russian": "Язык: ",
+            "russian": "Язык",
 
-            "spanish": "Idioma: ",
+            "spanish": "Idioma",
 
-            "turkish": "Dil: ",
+            "turkish": "Dil",
 
-            "ukrainian": "Мову: "
+            "ukrainian": "Мову"
         },
 
         "size": {
-            "english": "Size: ",
+            "english": "Size",
 
-            "arabic": "الحجم: ",
+            "arabic": "الحجم",
 
-            "nepali": "साइज: ",
+            "nepali": "साइज",
 
-            "bengali": "আকার: ",
+            "bengali": "আকার",
 
-            "belarusian": "Памер: ",
+            "belarusian": "Памер",
 
-            "catalan": "Mida: ",
+            "catalan": "Mida",
 
-            "dutch": "Grootte: ",
+            "dutch": "Grootte",
 
-            "french": "Taille: ",
+            "french": "Taille",
 
-            "german": "Größe: ",
+            "german": "Größe",
 
-            "hindi": "साइज: ",
+            "hindi": "साइज",
 
-            "italian": "Dimensione: ",
+            "italian": "Dimensione",
 
-            "korean": "크기: ",
+            "korean": "크기",
 
-            "malay": "Saiz: ",
+            "malay": "Saiz",
 
-            "polish": "Rozmiar: ",
+            "polish": "Rozmiar",
 
-            "portuguese": "Tamanho: ",
+            "portuguese": "Tamanho",
 
-            "russian": "Размер: ",
+            "russian": "Размер",
 
-            "spanish": "Tamaño: ",
+            "spanish": "Tamaño",
 
-            "turkish": "Boyutu: ",
+            "turkish": "Boyutu",
 
-            "ukrainian": "Розмір: "
+            "ukrainian": "Розмір"
         },
 
         "uploadedBy": {
-            "english": "Uploader: ",
+            "english": "Uploader",
 
-            "arabic": "المحمّل: ",
+            "arabic": "المحمّل",
 
-            "nepali": "अपलोडर: ",
+            "nepali": "अपलोडर",
 
-            "bengali": "আপলোডার: ",
+            "bengali": "আপলোডার",
 
-            "belarusian": "Загрузчык: ",
+            "belarusian": "Загрузчык",
 
-            "catalan": "Carregador: ",
+            "catalan": "Carregador",
 
-            "dutch": "Uploader: ",
+            "dutch": "Uploader",
 
-            "french": "Uploader: ",
+            "french": "Uploader",
 
-            "german": "Uploader: ",
+            "german": "Uploader",
 
-            "hindi": "अपलोडर: ",
+            "hindi": "अपलोडर",
 
-            "italian": "Uploader: ",
+            "italian": "Uploader",
 
-            "korean": "업 로더: ",
+            "korean": "업 로더",
 
-            "malay": "Pemuat naik: ",
+            "malay": "Pemuat naik",
 
-            "polish": "Uploader: ",
+            "polish": "Uploader",
 
-            "portuguese": "Uploader: ",
+            "portuguese": "Uploader",
 
-            "russian": "Загрузчик: ",
+            "russian": "Загрузчик",
 
-            "spanish": "Cargador: ",
+            "spanish": "Cargador",
 
-            "turkish": "Yükleyici: ",
+            "turkish": "Yükleyici",
 
-            "ukrainian": "Завантажувач: "
+            "ukrainian": "Завантажувач"
         },
 
         "downloads": {
-            "english": "Downloads: ",
+            "english": "Downloads",
 
-            "arabic": "التحميلات: ",
+            "arabic": "التحميلات",
 
-            "nepali": "डाउनलोडस: ",
+            "nepali": "डाउनलोडस",
 
-            "bengali": "ডাউনলোড: ",
+            "bengali": "ডাউনলোড",
 
-            "belarusian": "Загрузкі: ",
+            "belarusian": "Загрузкі",
 
-            "catalan": "Descàrregues: ",
+            "catalan": "Descàrregues",
 
-            "dutch": "Downloads: ",
+            "dutch": "Downloads",
 
-            "french": "Téléchargements: ",
+            "french": "Téléchargements",
 
-            "german": "Downloads: ",
+            "german": "Downloads",
 
-            "hindi": "डाउनलोडस: ",
+            "hindi": "डाउनलोडस",
 
-            "italian": "Downloads: ",
+            "italian": "Downloads",
 
-            "korean": "다운로드: ",
+            "korean": "다운로드",
 
-            "malay": "Muat turun: ",
+            "malay": "Muat turun",
 
-            "polish": "Pliki do pobrania: ",
+            "polish": "Pliki do pobrania",
 
-            "portuguese": "Transferências: ",
+            "portuguese": "Transferências",
 
-            "russian": "Загрузки: ",
+            "russian": "Загрузки",
 
-            "spanish": "Descargas: ",
+            "spanish": "Descargas",
 
-            "turkish": "İndirilenler: ",
+            "turkish": "İndirilenler",
 
-            "ukrainian": "Завантаження: "
+            "ukrainian": "Завантаження"
         },
 
         "lastChecked": {
-            "english": "Last Checked: ",
+            "english": "Last Checked",
 
-            "arabic": "تم التحقق آخر مرة: ",
+            "arabic": "تم التحقق آخر مرة",
 
-            "nepali": "अन्तिम जाँच: ",
+            "nepali": "अन्तिम जाँच",
 
-            "bengali": "সর্বশেষ চেক করা হয়েছে: ",
+            "bengali": "সর্বশেষ চেক করা হয়েছে",
 
-            "belarusian": "Апошняя праверка: ",
+            "belarusian": "Апошняя праверка",
 
-            "catalan": "Darrera revisió: ",
+            "catalan": "Darrera revisió",
 
-            "dutch": "Laatst gecontroleerd: ",
+            "dutch": "Laatst gecontroleerd",
 
-            "french": "Dernière vérification: ",
+            "french": "Dernière vérification",
 
-            "german": "Zuletzt überprüft: ",
+            "german": "Zuletzt überprüft",
 
-            "hindi": "अंतिम बार जाँच: ",
+            "hindi": "अंतिम बार जाँच",
 
-            "italian": "Ultimo controllo: ",
+            "italian": "Ultimo controllo",
 
-            "korean": "마지막 확인: ",
+            "korean": "마지막 확인",
 
-            "malay": "Pemeriksaan Terakhir: ",
+            "malay": "Pemeriksaan Terakhir",
 
-            "polish": "Ostatnio sprawdzone: ",
+            "polish": "Ostatnio sprawdzone",
 
-            "portuguese": "Verificado pela última vez: ",
+            "portuguese": "Verificado pela última vez",
 
-            "russian": "Последняя проверка: ",
+            "russian": "Последняя проверка",
 
-            "spanish": "Última comprobación: ",
+            "spanish": "Última comprobación",
 
-            "turkish": "Son Kontrol Edilen: ",
+            "turkish": "Son Kontrol Edilen",
 
-            "ukrainian": "Востаннє перевірено: "
+            "ukrainian": "Востаннє перевірено"
         },
 
         "uploadedOn": {
-            "english": "Uploaded On: ",
+            "english": "Uploaded On",
 
-            "arabic": "الرفع على: ",
+            "arabic": "الرفع على",
 
-            "nepali": "अपलोड गरिएको मिति: ",
+            "nepali": "अपलोड गरिएको मिति",
 
-            "bengali": "আপলোডের তারিখ: ",
+            "bengali": "আপলোডের তারিখ",
 
-            "belarusian": "Дата загрузкі: ",
+            "belarusian": "Дата загрузкі",
 
-            "catalan": "Data de pujada: ",
+            "catalan": "Data de pujada",
 
-            "dutch": "Geüploade datum: ",
+            "dutch": "Geüploade datum",
 
-            "french": "Date d'upload : ",
+            "french": "Date d'upload",
 
-            "german": "Hochgeladenes Datum: ",
+            "german": "Hochgeladenes Datum",
 
-            "hindi": "अपलोड की गई तारीख: ",
+            "hindi": "अपलोड की गई तारीख",
 
-            "italian": "Data di caricamento: ",
+            "italian": "Data di caricamento",
 
-            "korean": "업로드 됨: ",
+            "korean": "업로드 됨",
 
-            "malay": "Dimuat naik: ",
+            "malay": "Dimuat naik",
 
-            "polish": "Data Przesłania: ",
+            "polish": "Data Przesłania",
 
-            "portuguese": "Carregado: ",
+            "portuguese": "Carregado",
 
-            "russian": "Загружено: ",
+            "russian": "Загружено",
 
-            "spanish": "Subido: ",
+            "spanish": "Subido",
 
-            "turkish": "Yüklendi: ",
+            "turkish": "Yüklendi",
 
-            "ukrainian": "Завантажено: "
+            "ukrainian": "Завантажено"
         },
 
         "seeders": {
-            "english": "Seeders: ",
+            "english": "Seeders",
 
-            "arabic": "Seeders: ",
+            "arabic": "Seeders",
 
-            "nepali": "सीडर्स: ",
+            "nepali": "सीडर्स",
 
-            "bengali": "Seeders: ",
+            "bengali": "Seeders",
 
-            "belarusian": "Seeders: ",
+            "belarusian": "Seeders",
 
-            "catalan": "Seeders: ",
+            "catalan": "Seeders",
 
-            "dutch": "Seeders: ",
+            "dutch": "Seeders",
 
-            "french": "Seeders: ",
+            "french": "Seeders",
 
-            "german": "Seeders: ",
+            "german": "Seeders",
 
-            "hindi": "सीडर्स: ",
+            "hindi": "सीडर्स",
 
-            "italian": "Seeders: ",
+            "italian": "Seeders",
 
-            "korean": "Seeders: ",
+            "korean": "Seeders",
 
-            "malay": "Seeders: ",
+            "malay": "Seeders",
 
-            "polish": "Seederzy: ",
+            "polish": "Seederzy",
 
-            "portuguese": "Seeders: ",
+            "portuguese": "Seeders",
 
-            "russian": "Seeders: ",
+            "russian": "Seeders",
 
-            "spanish": "Seeders: ",
+            "spanish": "Seeders",
 
-            "turkish": "Seeders: ",
+            "turkish": "Seeders",
 
-            "ukrainian": "Seeders: "
+            "ukrainian": "Seeders"
         },
 
         "leechers": {
-            "english": "Leechers: ",
+            "english": "Leechers",
 
-            "nepali": "लीचर्स: ",
+            "nepali": "लीचर्स",
 
-            "bengali": "লিচার: ",
+            "bengali": "লিচার",
 
-            "belarusian": "Leechers: ",
+            "belarusian": "Leechers",
 
-            "catalan": "Leechers: ",
+            "catalan": "Leechers",
 
-            "dutch": "Leechers: ",
+            "dutch": "Leechers",
 
-            "french": "Leechers: ",
+            "french": "Leechers",
 
-            "german": "Leechers: ",
+            "german": "Leechers",
 
-            "hindi": "लीचर्स: ",
+            "hindi": "लीचर्स",
 
-            "italian": "Leechers: ",
+            "italian": "Leechers",
 
-            "korean": "Leechers: ",
+            "korean": "Leechers",
 
-            "malay": "Leechers: ",
+            "malay": "Leechers",
 
-            "polish": "Leecherzy: ",
+            "polish": "Leecherzy",
 
-            "portuguese": "Leechers: ",
+            "portuguese": "Leechers",
 
-            "russian": "Leechers: ",
+            "russian": "Leechers",
 
-            "spanish": "Leechers: ",
+            "spanish": "Leechers",
 
-            "turkish": "Leechers: ",
+            "turkish": "Leechers",
 
-            "ukrainian": "Leechers: "
+            "ukrainian": "Leechers"
         }
     },
 
