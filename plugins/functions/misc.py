@@ -40,8 +40,6 @@ class Misc:
         else:
             user_id = message.chat.id
 
-            logger.info(f'User language: {user_id}')
-
         lang = await self.Client.DB.query(
             'fetchval',
             'SELECT language FROM SETTINGS WHERE user_id = $1',

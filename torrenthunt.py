@@ -11,6 +11,7 @@ from pyrogram import Client, filters, types
 
 from apis.database import DataBase
 from apis.requests import Requests
+from apis.torrenthunt import TorrentHunt
 from langs.lang import Lang
 from plugins.blueprint.schema import Schema
 from plugins.functions.filters import Filter
@@ -50,6 +51,10 @@ bot = Client(
 )
 
 # Loading required instances in the Client
+Client.TH = TorrentHunt(
+    environ.get('TORRENTHUNT_API_URL'),
+    environ.get('TORRENTHUNT_API_KEY'),
+)
 Client.MISC = Misc(bot)
 Client.KB = KeyBoard(bot)
 Client.LG = Lang('langs/string.json', 'langs/lang.json')
@@ -60,6 +65,7 @@ filters.CF = Filter(bot)
 
 commands = [
     types.BotCommand('start', '💫 Start using bot'),
+    types.BotCommand('settings', '⚙️ Change bot settings'),
 ]
 
 
