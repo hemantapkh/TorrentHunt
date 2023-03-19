@@ -6,11 +6,13 @@ from os import environ
 import uvloop
 from dotenv import load_dotenv
 from loguru import logger
+from py1337x import py1337x
 from pyrogram import Client, filters, types
 
 from apis.database import DataBase
 from apis.requests import Requests
 from langs.lang import Lang
+from plugins.blueprint.schema import Schema
 from plugins.functions.filters import Filter
 from plugins.functions.keyboards import KeyBoard
 from plugins.functions.misc import Misc
@@ -52,6 +54,8 @@ Client.MISC = Misc(bot)
 Client.KB = KeyBoard(bot)
 Client.LG = Lang('langs/string.json', 'langs/lang.json')
 Client.requests = Requests()
+Client.py1337x = py1337x()
+Client.STRUCT = Schema(bot)
 filters.CF = Filter(bot)
 
 commands = [
