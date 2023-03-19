@@ -34,6 +34,9 @@ class Misc:
         if isinstance(message, types.InlineQuery):
             user_id = message.from_user.id
 
+        elif isinstance(message, types.CallbackQuery):
+            user_id = message.message.chat.id
+
         else:
             user_id = message.chat.id
 
