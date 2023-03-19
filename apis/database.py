@@ -34,7 +34,7 @@ class DataBase:
             username = $3,
             first_name = $4,
             last_name = $5
-        RETURNING CASE xmax WHEN 0 THEN TRUE ELSE FALSE END;
+        RETURNING CASE WHEN xmax = 0 THEN True ELSE False END;
         '''
 
         # If chat type if group/channel
@@ -42,7 +42,7 @@ class DataBase:
             message.chat.first_name = message.chat.title
             message.chat.last_name = None
 
-        res = await self.query(
+        return await self.query(
             'fetchval',
             query,
             message.chat.id,
@@ -52,5 +52,3 @@ class DataBase:
             message.chat.last_name,
             str(referrer) if referrer else None,
         )
-
-        return True if res == 'INSERT 0 1' else False
