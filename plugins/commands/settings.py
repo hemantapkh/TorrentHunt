@@ -5,6 +5,18 @@ from pyrogram import Client, filters, types
 async def settings(Client, message):
     user_lang = await Client.MISC.user_lang(message)
 
+    restriction_mode = await Client.DB.query(
+        'fetchval',
+        'SELECT restricted_mode FROM settings WHERE user_id=$1',
+        message.chat.id,
+    )
+
+    if restriction_mode:
+        res_button_text = Client.LG.BTN('turnOffRestrictedMode', user_lang)
+
+    else:
+        res_button_text = Client.LG.BTN('turnOnRestrictedMode', user_lang)
+
     buttons = [
         [
             types.InlineKeyboardButton(
@@ -14,8 +26,8 @@ async def settings(Client, message):
         ],
         [
             types.InlineKeyboardButton(
-                text=Client.LG.BTN('turnOnRestrictedMode', user_lang),
-                callback_data='restricted_mode',
+                text=res_button_text,
+                callback_data=f'restriction_{restriction_mode}',
             ),
         ],
     ]
