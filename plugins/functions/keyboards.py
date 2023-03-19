@@ -33,11 +33,11 @@ class KeyBoard:
             self.client.MISC.split_list(results, 3),
         )
 
-    def language(self):
+    def language(self, welcome=False):
         results = [
             types.InlineKeyboardButton(
                 text=self.client.LG.config[key]['title'],
-                callback_data=f'setLanguage_{key}',
+                callback_data=f'setLanguage{"New" if welcome else ""}_{key}',
             )
 
             for key in
