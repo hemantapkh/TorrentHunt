@@ -12,10 +12,9 @@ class KeyBoard:
             [
                 [
                     self.client.LG.CMD('settings', lang),
-                    self.client.LG.CMD('help', lang),
-                    self.client.LG.CMD('support', lang),
                 ],
             ],
+            is_persistent=True,
             resize_keyboard=True,
         )
 
