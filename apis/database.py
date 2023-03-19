@@ -33,7 +33,8 @@ class DataBase:
             user_type = $2,
             username = $3,
             first_name = $4,
-            last_name = $5
+            last_name = $5,
+            last_active=CURRENT_TIMESTAMP
         RETURNING CASE WHEN xmax = 0 THEN True ELSE False END;
         '''
 

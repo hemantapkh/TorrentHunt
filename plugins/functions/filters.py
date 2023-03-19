@@ -28,3 +28,11 @@ class Filter:
                     return True
 
         return filters.create(func, data=data)
+
+    # Filter message from bot admins
+    async def initFlt(_, Client, message):
+        await Client.DB.set_user(message)
+
+        return True
+
+    init = filters.create(initFlt)
