@@ -7,19 +7,19 @@ class KeyBoard:
     def __init__(self, client):
         self.client = client
 
-    async def main(self, lang):
+    def main(self, lang):
         return types.ReplyKeyboardMarkup(
             [
                 [
-                    self.client.LG.BTN('settings', lang),
-                    self.client.LG.BTN('help', lang),
-                    self.client.LG.BTN('support', lang),
+                    self.client.LG.CMD('settings', lang),
+                    self.client.LG.CMD('help', lang),
+                    self.client.LG.CMD('support', lang),
                 ],
             ],
             resize_keyboard=True,
         )
 
-    async def sites(self, keyword):
+    def sites(self, keyword):
         results = [
             types.InlineKeyboardButton(
                 text=self.client.sites[key]['title'],
@@ -38,7 +38,7 @@ class KeyBoard:
         results = [
             types.InlineKeyboardButton(
                 text=self.client.LG.config[key]['title'],
-                callback_data=f"setLanguage_{self.client.LG.config[key]['code']}",
+                callback_data=f'setLanguage_{key}',
             )
 
             for key in

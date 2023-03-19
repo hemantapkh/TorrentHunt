@@ -6,11 +6,12 @@ from os import environ
 import uvloop
 from dotenv import load_dotenv
 from loguru import logger
-from pyrogram import Client, types
+from pyrogram import Client, filters, types
 
 from apis.database import DataBase
 from apis.requests import Requests
 from langs.lang import Lang
+from plugins.functions.filters import Filter
 from plugins.functions.keyboards import KeyBoard
 from plugins.functions.misc import Misc
 
@@ -51,6 +52,7 @@ Client.MISC = Misc(bot)
 Client.KB = KeyBoard(bot)
 Client.LG = Lang('langs/string.json', 'langs/lang.json')
 Client.requests = Requests()
+filters.CF = Filter(bot)
 
 commands = [
     types.BotCommand('start', '💫 Start using bot'),
