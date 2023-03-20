@@ -31,7 +31,7 @@ class KeyBoard:
 
         return types.InlineKeyboardMarkup(
             self.client.MISC.split_list(results, 3),
-        )
+        ) if results else None
 
     def language(self, welcome=False):
         results = [

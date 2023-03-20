@@ -10,6 +10,23 @@ class Misc:
     def __init__(self, Client):
         self.Client = Client
 
+    # Initialize the bot
+    async def init_bot(self):
+        # Get available sites
+        config = await self.Client.TH.request(
+            '/config',
+        )
+
+        if 'error' in config:
+            logger.error('Error connecting to Torrent Hunt API.')
+            self.Client.sites = {}
+
+        else:
+            logger.info('Successfully fetched config for Torrent Hunt API')
+            self.Client.sites = config
+
+        await self.message_admins('🔃 Bot has been restarted.')
+
     # Message admins
     async def message_admins(self, message):
         admins = await self.Client.DB.query(
@@ -18,11 +35,12 @@ class Misc:
         )
 
         for admin in admins:
+            user_lang = await self.user_lang(admin.get('user_id'))
             try:
                 await self.Client.send_message(
                     chat_id=admin.get('user_id'),
                     text=message,
-                    reply_markup=await self.Client.KB.main(),
+                    reply_markup=self.Client.KB.main(user_lang),
                 )
 
             except Exception as err:
@@ -36,6 +54,9 @@ class Misc:
 
         elif isinstance(message, types.CallbackQuery):
             user_id = message.message.chat.id
+
+        elif isinstance(message, int):
+            user_id = message
 
         else:
             user_id = message.chat.id

@@ -81,8 +81,8 @@ async def main():
             scope=types.BotCommandScopeAllPrivateChats(),
         )
 
-        # Sending notification to admins
-        await Client.MISC.message_admins('Bot has been restarted')
+        # Initializing bot
+        await bot.MISC.init_bot()
 
 if __name__ == '__main__':
     logger.info(f"Starting {environ.get('BOT_NAME')}")
