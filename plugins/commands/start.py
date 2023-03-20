@@ -11,11 +11,11 @@ async def message(Client, message):
     if params:
         try:
             # If params is a registered user
-            referrer = int(params)
-            referrer = params if await Client.DB.query(
+            user_id = int(params)
+            referrer = user_id if await Client.DB.query(
                 'fetchval',
-                'SELECT EXISTS(*) FROM users WHERE user_id=$1',
-                params,
+                'SELECT EXISTS (SELECT * FROM users WHERE user_id=$1)',
+                user_id,
             ) else None
 
         except ValueError:
