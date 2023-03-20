@@ -683,6 +683,46 @@
             "ukrainian": "🔎 <code>Пошук ...</code>"
         },
 
+        "searchingInline": {
+            "english": "🔎 Searching {} ...",
+
+            "arabic": "🔎 جار البحث عن {} ...",
+
+            "nepali": "🔎 {} खोजी गर्दै ...",
+
+            "bengali": "🔎 {} অনুসন্ধান করা হচ্ছে ...",
+
+            "belarusian": "🔎 Пошук ...",
+
+            "catalan": "🔎 Cercant ...",
+
+            "dutch": "🔎 Zoeken ...",
+
+            "french": "🔎 Recherche ...",
+
+            "german": "🔎 Suchen ...",
+
+            "hindi": "🔎 {} खोज रहे हैं ...",
+
+            "italian": "🔎 Ricerca ...",
+
+            "korean": "🔎 수색 ...",
+
+            "malay": "🔎 Mencari ...",
+
+            "polish": "🔎 Szukam {} ...",
+
+            "portuguese": "🔎 Procurando ...",
+
+            "russian": "🔎 Поиск ...",
+
+            "spanish": "🔎 buscando ...",
+
+            "turkish": "🔎 Aranıyor ...",
+
+            "ukrainian": "🔎 Пошук ..."
+        },
+
         "noResults": {
             "english": "❌ No results were returned. Please refine your search.",
 
@@ -2009,7 +2049,16 @@
             "turkish": "Leechers",
 
             "ukrainian": "Leechers"
+        },
+
+        "keywordToSearch": {
+            "english": "💬 Type a keyword to search"
+        },
+
+        "resultsFor": {
+            "english": "📜 Results for {}"
         }
+
     },
 
     "BTN":{
