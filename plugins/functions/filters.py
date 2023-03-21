@@ -22,7 +22,7 @@ class Filter:
         async def func(flt, Client, message):
             if message.text:
                 language = await Client.MISC.user_lang(message)
-                text = re.sub('/?', '', message.text)
+                text = re.sub(r'^\/?([^@]+).*', r'\1', message.text)
 
                 if text in [flt.data, self.Client.LG.CMD(flt.data, language)]:
                     return True
