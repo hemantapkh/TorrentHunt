@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 
 
 # Show language options
-@Client.on_callback_query(filters.regex('language'))
+@Client.on_callback_query(filters.regex('language') & filters.CF.chat_admin())
 async def language(Client, callback, called=False):
     user_lang = await Client.MISC.user_lang(callback)
 
@@ -24,7 +24,7 @@ async def language(Client, callback, called=False):
         )
 
 
-@Client.on_callback_query(filters.regex('setLanguage'))
+@Client.on_callback_query(filters.regex('setLanguage') & filters.CF.chat_admin())
 async def set_language(Client, callback):
     new_user = callback.data.startswith('setLanguageNew')
     language = callback.data.split('_')[1]

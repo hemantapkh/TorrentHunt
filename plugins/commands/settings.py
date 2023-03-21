@@ -1,7 +1,7 @@
 from pyrogram import Client, filters, types
 
 
-@Client.on_message(filters.CF.cmd('settings'))
+@Client.on_message(filters.CF.cmd('settings') & filters.CF.chat_admin())
 async def settings(Client, message):
     user_lang = await Client.MISC.user_lang(message)
 

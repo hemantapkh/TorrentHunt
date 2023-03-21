@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 
 
 # Turn on or off restricted mode
-@Client.on_callback_query(filters.regex('restriction'))
+@Client.on_callback_query(filters.regex('restriction') & filters.CF.chat_admin())
 async def restriction(Client, callback):
     restriction = callback.data.split('_')[1]
     user_lang = await Client.MISC.user_lang(callback)
