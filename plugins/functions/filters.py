@@ -2,20 +2,59 @@
 
 import re
 
-from pyrogram import filters
+from pyrogram import filters, types
 
 
 class Filter:
     def __init__(self, Client):
         self.Client = Client
 
+    # Filter to set user to DB
+    async def init_flt(_, Client, message):
+        await Client.DB.set_user(message)
+
+        return True
+
     # Filter message from bot admins
-    async def admin(self, message):
-        return await self.DB.query(
+    async def admin_flt(_, Client, message):
+        return await Client.DB.query(
             'fetchval',
             'SELECT EXISTS (SELECT * FROM ADMINS WHERE user_id=$1)',
             message.from_user.id,
         )
+
+    # Filter message from chat admins
+    def chat_admin_flt(self, alert=True):
+        async def func(flt, Client, message):
+            if message.chat.type.name == 'PRIVATE':
+                return True
+
+            member = await Client.get_chat_member(
+                chat_id=message.chat.id,
+                user_id=message.from_user.id,
+            )
+
+            if member.status.name != 'MEMBER':
+                return True
+
+            # Show alert message to non-admins users
+            if flt.alert:
+                user_lang = Client.MISC.user_lang(message)
+                if isinstance(message, types.CallbackQuery):
+                    await Client.answer_callback_query(
+                        callback_query_id=message.id,
+                        text=Client.LG.STR('noPermission', user_lang),
+                        show_alert=True,
+                    )
+
+                else:
+                    await Client.send_message(
+                        chat_id=message.chat.id,
+                        text=Client.LG.STR('noPermission', user_lang),
+                        reply_to_message_id=message.id,
+                    )
+
+        return filters.create(func, alert=alert)
 
     # Command filters with reply keyboard
     def cmd(self, data):
@@ -29,17 +68,12 @@ class Filter:
 
         return filters.create(func, data=data)
 
-    # Filter message from bot admins
-    async def init_flt(_, Client, message):
-        await Client.DB.set_user(message)
-
-        return True
-
-    init = filters.create(init_flt)
-
     # Filter via message from own
     async def via_flt(_, Client, message):
         if message.via_bot:
             return message.via_bot.id == Client.me.id
 
+    init = filters.create(init_flt)
+    admin = filters.create(admin_flt)
     via_me = filters.create(via_flt)
+    chat_admin = filters.create(chat_admin_flt)
