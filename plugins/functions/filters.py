@@ -26,6 +26,12 @@ class Filter:
     # Filter message from chat admins
     def chat_admin_flt(self, alert=True):
         async def func(flt, Client, message):
+            if isinstance(message, types.CallbackQuery):
+                callback_id = message.id
+                from_user = message.from_user.id
+                message = message.message
+                message.from_user.id = from_user
+
             if message.chat.type.name == 'PRIVATE':
                 return True
 
@@ -39,10 +45,10 @@ class Filter:
 
             # Show alert message to non-admins users
             if flt.alert:
-                user_lang = Client.MISC.user_lang(message)
-                if isinstance(message, types.CallbackQuery):
+                user_lang = await Client.MISC.user_lang(message)
+                if 'callback_id' in locals():
                     await Client.answer_callback_query(
-                        callback_query_id=message.id,
+                        callback_query_id=callback_id,
                         text=Client.LG.STR('noPermission', user_lang),
                         show_alert=True,
                     )
