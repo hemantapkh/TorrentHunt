@@ -7,7 +7,10 @@ class KeyBoard:
     def __init__(self, client):
         self.client = client
 
-    def main(self, lang):
+    def main(self, lang, message=None):
+        if message and message.chat.type.name != 'PRIVATE':
+            return None
+
         return types.ReplyKeyboardMarkup(
             [
                 [

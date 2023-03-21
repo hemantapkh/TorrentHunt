@@ -53,7 +53,7 @@ async def set_language(Client, callback):
             text=Client.LG.STR('greet', language).format(
                 callback.from_user.first_name,
             ),
-            reply_markup=Client.KB.main(language),
+            reply_markup=Client.KB.main(language, callback.message),
         )
 
         # Send ads on start if configured
@@ -69,5 +69,5 @@ async def set_language(Client, callback):
         await Client.send_message(
             chat_id=callback.message.chat.id,
             text=Client.LG.STR('languageSelected', language),
-            reply_markup=Client.KB.main(language),
+            reply_markup=Client.KB.main(language, callback.message),
         )

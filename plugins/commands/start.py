@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from plugins.settings.language import language
 
 
-@Client.on_message(filters.command('start') & filters.private)
+@Client.on_message(filters.command('start'))
 async def message(Client, message):
     params = message.command[-1] if message.command[-1] != 'start' else None
 
@@ -39,5 +39,5 @@ async def message(Client, message):
             text=Client.LG.STR('greet', user_lang).format(
                 message.from_user.first_name,
             ),
-            reply_markup=Client.KB.main(user_lang),
+            reply_markup=Client.KB.main(user_lang, message),
         )
