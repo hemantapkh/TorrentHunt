@@ -30,9 +30,16 @@ class Filter:
         return filters.create(func, data=data)
 
     # Filter message from bot admins
-    async def initFlt(_, Client, message):
+    async def init_flt(_, Client, message):
         await Client.DB.set_user(message)
 
         return True
 
-    init = filters.create(initFlt)
+    init = filters.create(init_flt)
+
+    # Filter via message from own
+    async def via_flt(_, Client, message):
+        if message.via_bot:
+            return message.via_bot.id == Client.me.id
+
+    via_me = filters.create(via_flt)
