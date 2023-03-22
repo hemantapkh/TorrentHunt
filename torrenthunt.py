@@ -28,7 +28,7 @@ load_dotenv()
 
 # Configure logger to write logs to file and console
 logger.add(
-    f"{environ.get('WORKDIR')}/logs",
+    f"{environ.get('WORKDIR')}/logs/logs",
     backtrace=True,
     rotation='10 MB',
 )
@@ -68,6 +68,15 @@ commands = [
     types.BotCommand('settings', '⚙️ Change bot settings'),
 ]
 
+group_commands = [
+    types.BotCommand('search', '🔍 Search for torrents'),
+]
+
+group_commands_admins = [
+    types.BotCommand('search', '🔍 Search for torrents'),
+    types.BotCommand('settings', '⚙️ Change bot settings'),
+]
+
 
 async def main():
     async with bot:
@@ -76,6 +85,22 @@ async def main():
         Client.USERNAME = me.username
 
         logger.info('Setting bot commands')
+
+        await bot.set_bot_commands(
+            commands=[],
+            scope=types.BotCommandScopeDefault(),
+        )
+
+        await bot.set_bot_commands(
+            commands=group_commands,
+            scope=types.BotCommandScopeAllGroupChats(),
+        )
+
+        await bot.set_bot_commands(
+            commands=group_commands_admins,
+            scope=types.BotCommandScopeAllChatAdministrators(),
+        )
+
         await bot.set_bot_commands(
             commands=commands,
             scope=types.BotCommandScopeAllPrivateChats(),

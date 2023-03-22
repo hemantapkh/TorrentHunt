@@ -1,7 +1,5 @@
 'Miscillaneous functions'
 
-from ast import literal_eval
-
 from loguru import logger
 from pyrogram import types
 
@@ -77,22 +75,3 @@ class Misc:
     def code_to_site(self, code):
         data = self.Client.sites
         return next((key for key, value in data.items() if value['code'] == code), None)
-
-    # Get google suggestions of a keyword
-    async def google_suggestions(self, query):
-        headers = {
-            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:90.0) Gecko/20100101 Firefox/90.0',
-        }
-
-        params = (
-            ('Client', 'Firefox'),
-            ('q', query),
-        )
-
-        response = await self.Client.requests.get(
-            'https://www.google.com/complete/search',
-            headers=headers,
-            params=params,
-        )
-
-        return literal_eval(response)[1]

@@ -683,6 +683,10 @@
             "ukrainian": "🔎 <code>Пошук ...</code>"
         },
 
+        "queryToSearch": {
+            "english": "🔎 Please send the keyword to search for"
+        },
+
         "searchingInline": {
             "english": "🔎 Searching {} ...",
 
