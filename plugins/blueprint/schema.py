@@ -21,9 +21,12 @@ class Schema:
                 link_str=self.Client.LG.STR('size', language),
             ) + message
 
-        return message
+        return message or self.Client.LG.STR('noResults', language)
 
     def content_message(self, data, language):
+        if not data.get('name'):
+            return self.Client.LG.STR('errorFetchingLink', language), False
+
         message = content_struct.format(
             title=data.get('name'),
             size=data.get('size'),
@@ -37,4 +40,4 @@ class Schema:
             uploaded_on_str=self.Client.LG.STR('uploadedOn', language),
         )
 
-        return message
+        return message, True
