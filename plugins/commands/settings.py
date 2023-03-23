@@ -38,4 +38,5 @@ async def settings(Client, message):
             Client.LG.CMD('settings', user_lang),
         ),
         reply_markup=types.InlineKeyboardMarkup(buttons),
+        reply_to_message_id=message.id,
     )

@@ -40,4 +40,5 @@ async def message(Client, message):
                 message.from_user.first_name,
             ),
             reply_markup=Client.KB.main(user_lang, message),
+            reply_to_message_id=message.id,
         )

@@ -13,6 +13,7 @@ async def language(Client, callback, called=False):
             chat_id=callback.chat.id,
             text=Client.LG.STR('chooseLanguage', user_lang),
             reply_markup=Client.KB.language(welcome=True),
+            reply_to_message_id=callback.id,
         )
 
     else:
