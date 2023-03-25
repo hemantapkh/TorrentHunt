@@ -13,17 +13,7 @@ async def query_search(Client, inline_query):
         keyword = ' '.join(query_list[1:])
         site = Client.MISC.code_to_site(query_list[0])
         if not inline_query.offset:
-            results = [
-                types.InlineQueryResultArticle(
-                    title='[ADS] Media Downloader Bot',
-                    description='Click here to get access to media downloader bot.',
-                    thumb_url='https://cdn.iconscout.com/icon/free/png-512/tiktok-4069944-3365463.png',
-                    url='https://t.me/vmatebot?start=torrenthuntAds',
-                    input_message_content=types.InputTextMessageContent(
-                        message_text='Click here: https://t.me/vmatebot?start=torrenthuntAds',
-                    ),
-                ),
-            ]
+            results = inline_ads()
             await Client.answer_inline_query(
                 inline_query.id,
                 results=results,
@@ -97,3 +87,30 @@ async def query_search(Client, inline_query):
         next_offset=str(next_offset) if next_offset else None,
         switch_pm_parameter='inlineQuery',
     )
+
+
+# Inline ads
+def inline_ads():
+    return [
+        types.InlineQueryResultCachedVideo(
+            video_file_id='BAACAgIAAxkBAAHjPQFkHmVgfftbIEcd_SCdvhkD67J_qgAC7CQAAs-h-EgJ9SAqnNG96B4E',
+            title='[ADS] Giant Of Trading',
+            description='Get best content related to crypto here on Telegram.',
+            caption=ads_text,
+        ),
+    ]
+
+
+ads_text = '''
+<b>GIANT OF TRADING</b> is the BEST Channel on Telegram
+
+FREE CRYPTO ANALYSIS EVERY DAY
+
+AMAZING GAIN EVERY DAY!
+
+<b>Don't believe it? CHECK IT NOW!</b>
+
+https://t.me/+qQAtnVzfy7EyNTQy
+
+ 👆👆👆
+'''
