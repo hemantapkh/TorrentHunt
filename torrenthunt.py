@@ -35,9 +35,10 @@ logger.add(
 
 logger.info('Creating database instance')
 Client.DB = DataBase(
+    dsn=environ.get('DATABASE_DSN'),
     user=environ.get('DATABASE_USERNAME'),
     password=environ.get('DATABASE_PASSWORD'),
-    database=environ.get('DATABASE_URL'),
+    database=environ.get('DATABASE_NAME'),
 )
 
 logger.info('Creating bot instance')

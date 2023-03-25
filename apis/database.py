@@ -4,7 +4,8 @@ import asyncpg
 
 
 class DataBase:
-    def __init__(self, user, password, database):
+    def __init__(self, dsn, user, password, database):
+        self.dsn = dsn
         self.user = user
         self.password = password
         self.database = database
@@ -12,6 +13,7 @@ class DataBase:
     # Query on the database
     async def query(self, method, query, *args):
         con = await asyncpg.connect(
+            dsn=self.dsn,
             user=self.user,
             password=self.password,
             database=self.database,
