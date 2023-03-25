@@ -51,7 +51,10 @@ class Misc:
             user_id = message.from_user.id
 
         elif isinstance(message, types.CallbackQuery):
-            user_id = message.message.chat.id
+            if message.message:
+                user_id = message.message.chat.id
+            else:
+                user_id = message.from_user.id
 
         elif isinstance(message, int):
             user_id = message
