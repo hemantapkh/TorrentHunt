@@ -2,8 +2,8 @@ from pyrogram import Client, filters
 
 
 @Client.on_message(
-    ~filters.me & ~filters.CF.via_me & ~ filters.service & filters.CF.init
-    & ~filters.command('settings'),
+    filters.text & ~filters.me & ~filters.CF.via_me &
+    filters.CF.init & ~filters.command('settings'),
 )
 async def search(Client, message):
     user_lang = await Client.MISC.user_lang(message)
