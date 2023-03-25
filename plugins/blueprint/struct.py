@@ -18,5 +18,5 @@ content_struct = '''
 {leechers_str}: {leechers}
 {uploaded_on_str}: {uploaded_on}
 
-<b>Magnet Link: </b><code>{magnet}</code>
+<b>{magnet_link_str}: </b><code>{magnet}</code>
 '''

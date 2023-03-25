@@ -1448,11 +1448,15 @@
         },
 
         "wishlistAdded": {
-            "english": "✅ This item has been added in your wishlist.",
+            "english": "✅ This item has been added in your bookmark.",
 
             "arabic": "✅ تمت اضافة هذا العنصر لقائمة امنياتك.",
 
             "french": "✅ Ce torrent à été ajouté à votre liste de souhaits."
+        },
+
+        "wishlistRemoved": {
+            "english": "✅ This item has been removed from your bookmark."
         },
 
         "errorSendingImage": {
@@ -2989,6 +2993,18 @@
             "turkish": "⬇️ Seedr'e indir",
 
             "ukrainian": "⬇️ Завантажити на сівалку"
+        },
+
+        "addToBookmark": {
+            "english": "🔖 Add to Bookmark"
+        },
+
+        "removeFromBookmark": {
+            "english": "🗑 Remove from Bookmark"
+        },
+
+        "errorOccured": {
+            "english": "⚠️ Something went wrong. Please try again later."
         },
 
         "done": {

@@ -51,14 +51,32 @@ class KeyBoard:
             self.client.MISC.split_list(results, 2),
         )
 
-    def torrent_info(self, hash):
-        results = [
-            types.InlineKeyboardButton(
-                text=self.client.LG.BTN('addToSeedr'),
-                url=f'https://t.me/torrentseedrbot?start=addTorrent_{hash}',
-            ),
-        ]
+    def torrent_info(self, user_lang, hash, bookmarked=False):
+        if bookmarked:
+            results = [[
+                types.InlineKeyboardButton(
+                    text=self.client.LG.BTN('removeFromBookmark', user_lang),
+                    callback_data=f'removeFromBookmark_{hash}',
+                ),
+            ]]
+
+        else:
+            results = [[
+                types.InlineKeyboardButton(
+                    text=self.client.LG.BTN('addToBookmark', user_lang),
+                    callback_data=f'addToBookmark_{hash}',
+                ),
+            ]]
+
+        results.append(
+            [
+                types.InlineKeyboardButton(
+                    text=self.client.LG.BTN('addToSeedr', user_lang),
+                    url=f'https://t.me/torrentseedrbot?start=addTorrent_{hash}',
+                ),
+            ],
+        )
 
         return types.InlineKeyboardMarkup(
-            [results],
+            results,
         )

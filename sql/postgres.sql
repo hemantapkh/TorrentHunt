@@ -30,6 +30,19 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER user_insert_trigger AFTER INSERT ON USERS
 FOR EACH ROW EXECUTE FUNCTION insert_default_settings();
 
+-- Table for storing bookmarks
+CREATE TABLE IF NOT EXISTS BOOKMARKS(
+    user_id         BIGINT NOT NULL,
+    hash            TEXT NOT NULL,
+    title           TEXT NOT NULL,
+    magnet          TEXT NOT NULL,
+    seeders         TEXT,
+    leechers        TEXT,
+    size            TEXT,
+    uploaded_on     TEXT,
+    PRIMARY KEY     (user_id, hash),
+    FOREIGN KEY     (user_id) REFERENCES USERS(user_id) ON DELETE CASCADE
+);
 
 -- Table for admins
 CREATE TABLE IF NOT EXISTS ADMINS(

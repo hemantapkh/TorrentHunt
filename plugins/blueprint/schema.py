@@ -24,20 +24,21 @@ class Schema:
         return message or self.Client.LG.STR('noResults', language)
 
     def content_message(self, data, language):
-        if not data.get('name'):
+        if not data.get('name') and not data.get('title'):
             return self.Client.LG.STR('errorFetchingLink', language), False
 
         message = content_struct.format(
-            title=data.get('name'),
+            title=data.get('name') or data.get('title'),
             size=data.get('size'),
             seeders=data.get('seeders'),
             leechers=data.get('leechers'),
-            uploaded_on=data.get('uploadDate'),
-            magnet=data.get('magnetLink'),
+            uploaded_on=data.get('uploadDate') or data.get('uploaded_on'),
+            magnet=data.get('magnetLink') or data.get('magnet'),
             size_str=self.Client.LG.STR('size', language),
             seeders_str=self.Client.LG.STR('seeders', language),
             leechers_str=self.Client.LG.STR('leechers', language),
             uploaded_on_str=self.Client.LG.STR('uploadedOn', language),
+            magnet_link_str=self.Client.LG.STR('link', language),
         )
 
         return message, True

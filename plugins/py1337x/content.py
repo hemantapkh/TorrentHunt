@@ -21,6 +21,7 @@ async def results(Client, message):
         message_id=msg.id,
         text=text,
         reply_markup=Client.KB.torrent_info(
+            user_lang,
             response.get('infoHash'),
         ) if success else None,
     )

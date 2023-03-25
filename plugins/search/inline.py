@@ -59,9 +59,10 @@ async def query_search(Client, inline_query):
                         input_message_content=types.InputTextMessageContent(
                             message_text=Client.STRUCT.content_message(
                                 res, 'english',
-                            ),
+                            )[0],
                         ),
                         reply_markup=Client.KB.torrent_info(
+                            user_lang,
                             res.get('infoHash'),
                         ),
                     ),
