@@ -2061,6 +2061,10 @@
 
         "resultsFor": {
             "english": "📜 Results for {}"
+        },
+
+        "userStats": {
+            "english": "📊 User Stats\n\n Total users: {}\nJoined today: {}"
         }
 
     },
