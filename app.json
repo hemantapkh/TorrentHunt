@@ -12,72 +12,72 @@
     "repository": "https://github.com/hemantapkh/TorrentHunt",
     "env": {
         "BOT_TOKEN": {
-            "description": "Your bot token.",
-            "value": "",
-            "required": false
-        },
-        "API_ID": {
-            "description": "Get this value from https://my.telegram.org",
-            "value": "",
-            "required": false
-        },
-        "API_HASH": {
-            "description": "Get this value from https://my.telegram.org",
-            "value": "",
-            "required": false
-        },
-        "BOT_NAME": {
-            "description": "Bot Name",
+            "description": "Bot token, get it from https://t.me/botfather",
             "value": "",
             "required": true
         },
+        "API_ID": {
+            "description": "Get the value from https://my.telegram.org",
+            "value": "",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Get the value from https://my.telegram.org",
+            "value": "",
+            "required": true
+        },
+        "BOT_NAME": {
+            "description": "Bot Name",
+            "value": "Torrent Hunt Clone",
+            "required": true
+        },
         "DATABASE_URL": {
-            "description": "Db Url",
+            "description": "Postgres connection string (Not required if DATABASE_USERNAME, DATABASE_NAME and DATABASE_PASSWORD is provided)",
             "value": "",
             "required": false
         },
         "DATABASE_USERNAME": {
-            "description": "Db Username",
+            "description": "Postgres Username (Not required if DATABASE_URL is provided)",
             "value": "",
             "required": false
         },
         "DATABASE_PASSWORD": {
-            "description": "Db Password",
+            "description": "Postgres Password (Not required if DATABASE_URL is provided)",
             "value": "",
             "required": false
         },
         "DATABASE_NAME": {
-            "description": "Db Name",
+            "description": "Postgres Database Name (Not required if DATABASE_URL is provided)",
             "value": "",
             "required": false
         },
         "TORRENTHUNT_API_URL": {
-            "description": "Torrenthunt Api Url",
-            "value": "torrenthunt.p.rapidapi.com",
-            "required": false
+            "description": "Torrent Hunt API URL",
+            "value": "https://torrenthunt.p.rapidapi.com",
+            "required": true
         },
         "TORRENTHUNT_API_KEY": {
-            "description": "Torrenthunt Api Key",
+            "description": "Get your key from https://rapidapi.com/hemantapkh/api/torrenthunt",
             "value": "",
-            "required": false
-        },		
+            "required": true
+        },
         "START_ADS": {
-            "description": "Ads",
+            "description": "Send message from a channel to a user when they start the bot",
             "value": "",
             "required": false
         },
         "START_ADS_CHANNEL": {
-            "description": "Ads Channel",
+            "description": "Username of the channel to send the message from",
             "value": "",
             "required": false
         },
         "START_ADS_MESSAGE": {
-            "description": "Start Ads",
+            "description": "ID of the message to send",
             "value": "",
             "required": false
         },
         "WORKDIR": {
-            "description": "workdir",
+            "description": "Directory where the session, logs and other info will be saved",
             "value": ".",
             "required": false
         }
