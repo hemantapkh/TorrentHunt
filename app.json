@@ -53,7 +53,7 @@
         },
         "TORRENTHUNT_API_URL": {
             "description": "Torrenthunt Api Url",
-            "value": "https://torrenthunt.p.rapidapi.com/",
+            "value": "torrenthunt.p.rapidapi.com",
             "required": false
         },
         "TORRENTHUNT_API_KEY": {
@@ -78,7 +78,7 @@
         },
         "WORKDIR": {
             "description": "workdir",
-            "value": "",
+            "value": ".",
             "required": false
         }
     },
