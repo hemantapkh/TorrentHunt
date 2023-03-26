@@ -1,0 +1,98 @@
+{
+    "name": "Torrenthunt",
+    "description": "Torrenthunt",
+    "stack": "container",
+    "keywords": [
+      "auto-filter",
+      "filter",
+      "best",
+      "inline"
+    ],
+    "website": "https://github.com/hemantapkh/TorrentHunt",
+    "repository": "https://github.com/hemantapkh/TorrentHunt",
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your bot token.",
+            "value": "",
+            "required": false
+        },
+        "API_ID": {
+            "description": "Get this value from https://my.telegram.org",
+            "value": "",
+            "required": false
+        },
+        "API_HASH": {
+            "description": "Get this value from https://my.telegram.org",
+            "value": "",
+            "required": false
+        },
+        "BOT_NAME": {
+            "description": "Bot Name",
+            "value": "",
+            "required": true
+        },
+        "DATABASE_URL": {
+            "description": "Db Url",
+            "value": "",
+            "required": false
+        },
+        "DATABASE_USERNAME": {
+            "description": "Db Username",
+            "value": "",
+            "required": false
+        },
+        "DATABASE_PASSWORD": {
+            "description": "Db Password",
+            "value": "",
+            "required": false
+        },
+        "DATABASE_NAME": {
+            "description": "Db Name",
+            "value": "",
+            "required": false
+        },
+        "TORRENTHUNT_API_URL": {
+            "description": "Torrenthunt Api Url",
+            "value": "torrenthunt.p.rapidapi.com",
+            "required": false
+        },
+        "TORRENTHUNT_API_KEY": {
+            "description": "Torrenthunt Api Key",
+            "value": "",
+            "required": false
+        },		
+        "START_ADS": {
+            "description": "Ads",
+            "value": "",
+            "required": false
+        },
+        "START_ADS_CHANNEL": {
+            "description": "Ads Channel",
+            "value": "",
+            "required": false
+        },
+        "START_ADS_MESSAGE": {
+            "description": "Start Ads",
+            "value": "",
+            "required": false
+        },
+        "WORKDIR": {
+            "description": "workdir",
+            "value": ".",
+            "required": false
+        }
+    },
+    "addons": [{
+
+      "plan": "heroku-postgresql"
+	}],
+    "buildpacks": [{
+        "url": "heroku/python"
+    }],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "eco"
+        }
+    }
+}
