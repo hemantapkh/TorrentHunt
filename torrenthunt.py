@@ -35,7 +35,7 @@ logger.add(
 
 logger.info('Creating database instance')
 Client.DB = DataBase(
-    dsn=environ.get('DATABASE_DSN'),
+    dsn=environ.get('DATABASE_URL'),
     user=environ.get('DATABASE_USERNAME') or None,
     password=environ.get('DATABASE_PASSWORD') or None,
     database=environ.get('DATABASE_NAME') or None,

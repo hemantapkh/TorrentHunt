@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS BOOKMARKS(
     leechers        TEXT,
     size            TEXT,
     uploaded_on     TEXT,
-    date            TIMESTAMP DEFAULT current_timestamp
+    date            TIMESTAMP DEFAULT current_timestamp,
     PRIMARY KEY     (user_id, hash),
     FOREIGN KEY     (user_id) REFERENCES USERS(user_id) ON DELETE CASCADE
 );
