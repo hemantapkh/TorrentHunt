@@ -66,6 +66,7 @@ filters.CF = Filter(bot)
 
 commands = [
     types.BotCommand('start', '💫 Start using bot'),
+    types.BotCommand('bookmarks', '🔖 View your bookmarks'),
     types.BotCommand('settings', '⚙️ Change bot settings'),
 ]
 

@@ -14,7 +14,10 @@ class KeyBoard:
         return types.ReplyKeyboardMarkup(
             [
                 [
-                    self.client.LG.CMD('settings', lang),
+                    types.KeyboardButton(
+                        self.client.LG.CMD('bookmarks', lang),
+                    ),
+                    types.KeyboardButton(self.client.LG.CMD('settings', lang)),
                 ],
             ],
             is_persistent=True,

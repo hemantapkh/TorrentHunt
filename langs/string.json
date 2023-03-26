@@ -2069,6 +2069,10 @@
 
         "userStats": {
             "english": "📊 User Stats\n\n Total users: {}\nJoined today: {}"
+        },
+
+        "bookmarks": {
+            "english": "🔖 Click the button below to view your bookmarks"
         }
 
     },
@@ -3447,6 +3451,10 @@
         "turkish": "⚙️ Ayarlar",
 
         "ukrainian": "⚙️ Налаштування"
+    },
+
+    "bookmarks": {
+        "english": "🔖 Bookmarks"
     },
 
     "help": {
