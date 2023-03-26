@@ -3,9 +3,6 @@
     "description": "Torrenthunt",
     "stack": "container",
     "keywords": [
-      "auto-filter",
-      "filter",
-      "best",
       "inline"
     ],
     "website": "https://github.com/hemantapkh/TorrentHunt",
