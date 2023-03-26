@@ -58,7 +58,7 @@
         },
         "START_ADS": {
             "description": "Send message from a channel to a user when they start the bot",
-            "value": "",
+            "value": false,
             "required": false
         },
         "START_ADS_CHANNEL": {
