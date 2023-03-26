@@ -53,7 +53,6 @@ bot = Client(
 
 # Loading required instances in the Client
 Client.TH = TorrentHunt(
-    environ.get('TORRENTHUNT_API_URL'),
     environ.get('TORRENTHUNT_API_KEY'),
 )
 Client.MISC = Misc(bot)

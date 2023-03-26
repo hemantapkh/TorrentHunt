@@ -51,11 +51,6 @@
             "value": "",
             "required": false
         },
-        "TORRENTHUNT_API_URL": {
-            "description": "Torrent Hunt API URL",
-            "value": "https://torrenthunt.p.rapidapi.com",
-            "required": true
-        },
         "TORRENTHUNT_API_KEY": {
             "description": "Get your key from https://rapidapi.com/hemantapkh/api/torrenthunt",
             "value": "",

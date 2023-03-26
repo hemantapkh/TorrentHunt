@@ -1,10 +1,15 @@
 '''Connecting with Torrent Hunt API'''
 
+from os import environ
+
 from .requests import Requests
 
 
 class TorrentHunt():
-    def __init__(self, url, api_key):
+    def __init__(self, api_key):
+        url = environ.get(
+            'TORRENTHUNT_API_URL',
+        ) or 'https://torrenthunt.p.rapidapi.com'
         self.requests = Requests()
         self.url = url.strip('/')
         self.headers = {
