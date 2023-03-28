@@ -8,8 +8,8 @@ class Misc:
     def __init__(self, Client):
         self.Client = Client
 
-    # Initialize the bot
-    async def init_bot(self):
+    # Fetching config from Torrent Hunt API
+    async def fetch_config(self):
         # Get available sites
         config = await self.Client.TH.request(
             '/config',

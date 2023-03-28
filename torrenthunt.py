@@ -2,12 +2,13 @@
 
 import asyncio
 from os import environ
+from sys import argv
 
 import uvloop
 from dotenv import load_dotenv
 from loguru import logger
 from py1337x import py1337x
-from pyrogram import Client, filters, types
+from pyrogram import Client, filters
 
 from apis.database import DataBase
 from apis.requests import Requests
@@ -15,6 +16,7 @@ from apis.torrenthunt import TorrentHunt
 from langs.lang import Lang
 from plugins.blueprint.schema import Schema
 from plugins.functions.filters import Filter
+from plugins.functions.init import Init
 from plugins.functions.keyboards import KeyBoard
 from plugins.functions.misc import Misc
 
@@ -63,54 +65,22 @@ Client.py1337x = py1337x()
 Client.STRUCT = Schema(bot)
 filters.CF = Filter(bot)
 
-commands = [
-    types.BotCommand('start', '💫 Start using bot'),
-    types.BotCommand('bookmarks', '🔖 View your bookmarks'),
-    types.BotCommand('settings', '⚙️ Change bot settings'),
-]
-
-group_commands = [
-    types.BotCommand('search', '🔍 Search for torrents'),
-]
-
-group_commands_admins = [
-    types.BotCommand('search', '🔍 Search for torrents'),
-    types.BotCommand('settings', '⚙️ Change bot settings'),
-]
-
 
 async def main():
     async with bot:
+        if '--no-init' not in argv:
+            logger.info('Initializing requirements for bot')
+            bot_init = Init(bot)
+            await bot_init.init()
+
         logger.info('Getting bot information')
         me = await bot.get_me()
         Client.USERNAME = me.username
 
-        logger.info('Setting bot commands')
-
-        await bot.set_bot_commands(
-            commands=[],
-            scope=types.BotCommandScopeDefault(),
-        )
-
-        await bot.set_bot_commands(
-            commands=group_commands,
-            scope=types.BotCommandScopeAllGroupChats(),
-        )
-
-        await bot.set_bot_commands(
-            commands=group_commands_admins,
-            scope=types.BotCommandScopeAllChatAdministrators(),
-        )
-
-        await bot.set_bot_commands(
-            commands=commands,
-            scope=types.BotCommandScopeAllPrivateChats(),
-        )
-
-        # Initializing bot
-        await bot.MISC.init_bot()
+        # Fetching config from API
+        await bot.MISC.fetch_config()
 
 if __name__ == '__main__':
-    logger.info(f"Starting {environ.get('BOT_NAME')}")
     bot.run(main())
+    logger.info(f"Starting {environ.get('BOT_NAME')}")
     asyncio.run(bot.run())

@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS SETTINGS(
 );
 
 -- Trigger function to insert a new row into SETTINGS when a new row is inserted into USERS
-CREATE FUNCTION insert_default_settings() RETURNS TRIGGER AS $$
+CREATE OR REPLACE FUNCTION insert_default_settings() RETURNS TRIGGER AS $$
 BEGIN
   INSERT INTO SETTINGS (user_id) VALUES (NEW.user_id);
   RETURN NEW;
@@ -27,7 +27,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Trigger to call the function above
-CREATE TRIGGER user_insert_trigger AFTER INSERT ON USERS
+CREATE OR REPLACE TRIGGER user_insert_trigger AFTER INSERT ON USERS
 FOR EACH ROW EXECUTE FUNCTION insert_default_settings();
 
 -- Table for storing bookmarks
@@ -48,8 +48,7 @@ CREATE TABLE IF NOT EXISTS BOOKMARKS(
 -- Table for admins
 CREATE TABLE IF NOT EXISTS ADMINS(
     user_id         BIGINT PRIMARY KEY,
-    date            TIMESTAMP DEFAULT current_timestamp,
-    FOREIGN KEY     (user_id) REFERENCES USERS(user_id) ON DELETE CASCADE
+    date            TIMESTAMP DEFAULT current_timestamp
 );
 
 -- Table for creating tracking links

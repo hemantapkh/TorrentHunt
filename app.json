@@ -31,6 +31,11 @@
             "value": "Torrent Hunt Clone",
             "required": true
         },
+        "BOT_ADMINS": {
+            "description": "Admins of bot",
+            "value": "User ID of bot admins separated by a comma",
+            "required": false
+        },
         "DATABASE_URL": {
             "description": "Postgres connection string (Not required if DATABASE_USERNAME, DATABASE_NAME and DATABASE_PASSWORD is provided)",
             "value": "",
