@@ -93,11 +93,23 @@ async def query_search(Client, inline_query):
 # Inline ads
 def inline_ads():
     return [
-        types.InlineQueryResultCachedVideo(
-            video_file_id='BAACAgIAAxkBAAHjPQFkHmVgfftbIEcd_SCdvhkD67J_qgAC7CQAAs-h-EgJ9SAqnNG96B4E',
-            title='[ADS] Giant Of Trading',
-            description='Get best content related to crypto here on Telegram.',
-            caption=ads_text,
+        types.InlineQueryResultArticle(
+            title='[ADS] Media Downloader Bot',
+            description='The ultimate media downloader bot on Telegram.\n👆 SCROLL UP TO SEE THE RESULTS👆',
+            thumb_url='https://i.ibb.co/dQZNmB2/videodownloader-512-7395df698c5e.png',
+            input_message_content=types.InputTextMessageContent(
+                message_text=ads_text,
+            ),
+            reply_markup=types.InlineKeyboardMarkup(
+                [
+                    [
+                        types.InlineKeyboardButton(
+                            text='👉 JOIN NOW 👈',
+                            url='https://t.me/vmateBot?start=torrentHuntInlineAds',
+                        ),
+                    ],
+                ],
+            ),
         ),
     ]
 
