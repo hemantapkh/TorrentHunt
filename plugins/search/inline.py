@@ -104,7 +104,7 @@ def inline_ads():
                 [
                     [
                         types.InlineKeyboardButton(
-                            text='👉 JOIN NOW 👈',
+                            text='👉 Click To Use 👈',
                             url='https://t.me/vmateBot?start=torrentHuntInlineAds',
                         ),
                     ],
@@ -115,15 +115,8 @@ def inline_ads():
 
 
 ads_text = '''
-<b>GIANT OF TRADING</b> is the BEST Channel on Telegram
+<b>vmate - The media downloader Bot</b>
 
-FREE CRYPTO ANALYSIS EVERY DAY
-
-AMAZING GAIN EVERY DAY!
-
-<b>Don't believe it? CHECK IT NOW!</b>
-
-https://t.me/+qQAtnVzfy7EyNTQy
-
- 👆👆👆
+Introducing VMate - the ultimate media downloader bot that makes downloading videos from your favorite social media platforms a breeze!
+With VMate, you can easily download media from Facebook, YouTube, TikTok, and many others in just a few second.
 '''
