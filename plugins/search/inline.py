@@ -45,6 +45,11 @@ async def query_search(Client, inline_query):
             )
 
             for res in response.get('items'):
+                text, markup = Client.STRUCT.content_message(
+                    res,
+                    chat_id=inline_query.from_user.id,
+                    language=user_lang,
+                )
                 results.append(
                     types.InlineQueryResultArticle(
                         title=res.get('name'),
@@ -57,14 +62,9 @@ async def query_search(Client, inline_query):
                             res.get('uploadDate'),
                         ),
                         input_message_content=types.InputTextMessageContent(
-                            message_text=Client.STRUCT.content_message(
-                                res, 'english',
-                            )[0],
+                            message_text=text,
                         ),
-                        reply_markup=Client.KB.torrent_info(
-                            user_lang,
-                            res.get('infoHash'),
-                        ),
+                        reply_markup=markup,
                     ),
                 )
 

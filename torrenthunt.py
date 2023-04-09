@@ -14,6 +14,7 @@ from apis.database import DataBase
 from apis.requests import Requests
 from apis.torrenthunt import TorrentHunt
 from langs.lang import Lang
+from models.explicit_detector.explicit_detector import ExplicitDetector
 from plugins.blueprint.schema import Schema
 from plugins.functions.filters import Filter
 from plugins.functions.init import Init
@@ -64,6 +65,7 @@ Client.requests = Requests()
 Client.py1337x = py1337x()
 Client.STRUCT = Schema(bot)
 filters.CF = Filter(bot)
+Client.EXPLICIT = ExplicitDetector()
 
 
 async def main():

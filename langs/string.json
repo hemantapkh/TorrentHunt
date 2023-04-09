@@ -242,7 +242,7 @@
         },
 
         "cantView": {
-            "english": "🚫 You can't view this content because the restricted mode is on. You can turn off the restriction from settings.",
+            "english": "🚫 The result may contain explicit adult content and has been filtered by your settings. To view the results, deactivate the restriction mode from settings.",
 
             "arabic": "🚫 لا يمكنك عرض هذا المحتوى نظرًا لتفعيلك وضع الحظر. يمكنك الغاء تفعيل وضع الحظر من الاعدادات.",
 

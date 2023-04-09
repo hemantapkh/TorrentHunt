@@ -14,14 +14,15 @@ async def results(Client, message):
 
     response = Client.py1337x.info(torrentId=torrent_id)
 
-    text, success = Client.STRUCT.content_message(response, user_lang)
+    text, markup = Client.STRUCT.content_message(
+        response,
+        chat_id=message.chat.id,
+        language=user_lang,
+    )
 
     await Client.edit_message_text(
         chat_id=message.chat.id,
         message_id=msg.id,
         text=text,
-        reply_markup=Client.KB.torrent_info(
-            user_lang,
-            response.get('infoHash'),
-        ) if success else None,
+        reply_markup=markup,
     )
