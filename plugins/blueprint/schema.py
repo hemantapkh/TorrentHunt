@@ -1,3 +1,5 @@
+from pyrogram import types
+
 from .struct import content_struct, search_struct
 
 
@@ -23,13 +25,15 @@ class Schema:
 
         return message or self.Client.LG.STR('noResults', language)
 
-    def content_message(self, data, chat_id, language):
+    def content_message(self, data, language, restricted_mode, bookmarked=False):
         # Check if the data is valid
         if not data.get('name') and not data.get('title'):
             return self.Client.LG.STR('errorFetchingLink', language), None
 
         # Check if the content is explicit
-        elif self.Client.EXPLICIT.predict(data.get('name') or data.get('title')):
+        elif restricted_mode and self.Client.EXPLICIT.predict(
+            data.get('name') or data.get('title'),
+        ):
             return self.Client.LG.STR('cantView', language), None
 
         message = content_struct.format(
@@ -49,6 +53,7 @@ class Schema:
         markup = self.Client.KB.torrent_info(
             language,
             data.get('infoHash'),
+            bookmarked=bookmarked,
         )
 
         return message, markup

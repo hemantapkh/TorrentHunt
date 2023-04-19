@@ -5,6 +5,11 @@ from pyrogram import Client, filters, types
 @Client.on_inline_query(filters.regex('!'))
 async def query_search(Client, inline_query):
     user_lang = await Client.MISC.user_lang(inline_query)
+    restricted_mode = await Client.DB.query(
+        'fetchval',
+        'SELECT restricted_mode FROM settings WHERE user_id = $1',
+        inline_query.from_user.id,
+    )
     query_list = inline_query.query.split()
     results = []
 
@@ -47,8 +52,8 @@ async def query_search(Client, inline_query):
             for res in response.get('items'):
                 text, markup = Client.STRUCT.content_message(
                     res,
-                    chat_id=inline_query.from_user.id,
                     language=user_lang,
+                    restricted_mode=restricted_mode,
                 )
                 results.append(
                     types.InlineQueryResultArticle(

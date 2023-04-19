@@ -4,6 +4,11 @@ from pyrogram import Client, filters, types
 @Client.on_inline_query(filters.regex('#bookmarks'))
 async def query_search(Client, inline_query):
     user_lang = await Client.MISC.user_lang(inline_query)
+    restricted_mode = await Client.DB.query(
+        'fetchval',
+        'SELECT restricted_mode FROM settings WHERE user_id = $1',
+        inline_query.from_user.id,
+    )
     results = []
 
     offset = int(inline_query.offset) if inline_query.offset else 0
@@ -17,6 +22,12 @@ async def query_search(Client, inline_query):
 
     if response:
         for res in response:
+            input_message_content, reply_markup = Client.STRUCT.content_message(
+                res, user_lang, restricted_mode, bookmarked=True,
+            )
+            input_message_content = types.InputTextMessageContent(
+                input_message_content,
+            )
             results.append(
                 types.InlineQueryResultArticle(
                     title=res.get('title'),
@@ -27,16 +38,8 @@ async def query_search(Client, inline_query):
                         res.get('leechers'),
                         res.get('uploaded_on'),
                     ),
-                    input_message_content=types.InputTextMessageContent(
-                        message_text=Client.STRUCT.content_message(
-                            res, user_lang,
-                        )[0],
-                    ),
-                    reply_markup=Client.KB.torrent_info(
-                        user_lang,
-                        res.get('hash'),
-                        bookmarked=True,
-                    ),
+                    input_message_content=input_message_content,
+                    reply_markup=reply_markup,
                 ),
             )
 

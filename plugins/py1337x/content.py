@@ -4,6 +4,11 @@ from pyrogram import Client, filters
 @Client.on_message(filters.regex('getLink'))
 async def results(Client, message):
     user_lang = await Client.MISC.user_lang(message)
+    restricted_mode = await Client.DB.query(
+        'fetchval',
+        'SELECT restricted_mode FROM settings WHERE user_id = $1',
+        message.chat.id,
+    )
     torrent_id = message.text.split('_')[1].split('@')[0]
 
     msg = await Client.send_message(
@@ -16,8 +21,8 @@ async def results(Client, message):
 
     text, markup = Client.STRUCT.content_message(
         response,
-        chat_id=message.chat.id,
         language=user_lang,
+        restricted_mode=restricted_mode,
     )
 
     await Client.edit_message_text(
