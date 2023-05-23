@@ -12,7 +12,7 @@ charset-normalizer==2.0.6
 idna==3.2
 multidict==5.2.0
 pyTelegramBotAPI==4.1.0
-requests==2.26.0
+requests==2.31.0
 requests-cache==0.9.6
 six==1.16.0
 soupsieve==2.2.1
