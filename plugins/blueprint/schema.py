@@ -26,6 +26,7 @@ class Schema:
         return message or self.Client.LG.STR('noResults', language)
 
     def content_message(self, data, language, restricted_mode, bookmarked=False):
+        print(data)
         # Check if the data is valid
         if not data.get('name') and not data.get('title'):
             return self.Client.LG.STR('errorFetchingLink', language), None
@@ -52,7 +53,7 @@ class Schema:
 
         markup = self.Client.KB.torrent_info(
             language,
-            data.get('infoHash'),
+            data.get('infoHash') or data.get('hash'),
             bookmarked=bookmarked,
         )
 
