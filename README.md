@@ -82,6 +82,7 @@ Torrent Hunt Bot can talk in 19 different languages.
 
 * All the people invloved in language translation
 * [Samip Timalsina](https://samiptimalsena.com.np/) for the explicit content detector model
+* [rinrinx](https://github.com/rinrinx) for Heroku support
 
 -----
 
