@@ -63,7 +63,7 @@ Torrent Hunt Bot can talk in 19 different languages.
 - Korean
 - Malay
 - Nepali
-- Polish (VChecked and fixed by [Oskar](https://discordapp.com/users/171642532818714624))
+- Polish (Checked and fixed by [Oskar](https://discordapp.com/users/171642532818714624))
 - Portuguese
 - Russian
 - Spanish
