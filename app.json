@@ -87,17 +87,7 @@
             "required": false
         }
     },
-    "addons": [{
-
-      "plan": "heroku-postgresql"
-	}],
     "buildpacks": [{
         "url": "heroku/python"
-    }],
-    "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "eco"
-        }
-    }
+    }]
 }
