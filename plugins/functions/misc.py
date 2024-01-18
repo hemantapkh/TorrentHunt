@@ -12,7 +12,7 @@ class Misc:
     async def fetch_config(self):
         # Get available sites
         config = await self.Client.TH.request(
-            '/config',
+            '/api/config',
         )
 
         if 'error' in config:

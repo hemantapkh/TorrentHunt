@@ -36,7 +36,7 @@ async def query_search(Client, inline_query):
         logger.info(f'Inline searching {keyword} on {site} on page {page}')
 
         response = await Client.TH.request(
-            route='/search',
+            route='/api/search',
             params={
                 'query': keyword,
                 'site': site,
