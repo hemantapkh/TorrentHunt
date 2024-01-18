@@ -74,7 +74,7 @@ Torrent Hunt Bot can talk in 19 different languages.
 
 ## ⚒️ Deployment
 
-* Not yet deployable, please check the older version in the [branch](https://github.com/hemantapkh/TorrentHunt/tree/pyTelegramBotApi).
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/hemantapkh/torrenthunt)
 
 ---
 
