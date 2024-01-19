@@ -1,22 +1,13 @@
-FROM ubuntu:latest
+FROM python:3.11.2-slim
 
-WORKDIR /usr/src/app
-RUN chmod 777 /usr/src/app
+WORKDIR /opt/torrenthunt
 
-ENV DEBIAN_FRONTEND=noninteractive
-ENV TZ=America/Los_Angeles
+RUN apt-get -qq update
 
-RUN apt-get -qq update --fix-missing 
-
-RUN apt-get -qq install -y git wget curl busybox python3 python3-pip locales
-
-RUN apt install python3-pip
-
+COPY app app
 COPY requirements.txt .
 
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
+CMD ["python3","app/torrenthunt.py"]
 
-COPY . .
-
-CMD ["python3","torrenthunt.py"]

@@ -3,6 +3,7 @@
 import asyncio
 from os import environ
 from sys import argv
+from init import exec_dir # noqa
 
 import uvloop
 from dotenv import load_dotenv
@@ -30,11 +31,13 @@ logger.info('Loading variables from .env file')
 load_dotenv()
 
 # Configure logger to write logs to file and console
-logger.add(
-    f"{environ.get('WORKDIR')}/logs/logs",
-    backtrace=True,
-    rotation='10 MB',
-)
+log_file = environ.get('LOGFILE')
+if log_file:
+    logger.add(
+        log_file,
+        backtrace=True,
+        rotation='10 MB',
+    )
 
 logger.info('Creating database instance')
 Client.DB = DataBase(
@@ -46,12 +49,12 @@ Client.DB = DataBase(
 
 logger.info('Creating bot instance')
 bot = Client(
-    name=environ.get('BOT_NAME'),
+    name=environ.get('BOT_NAME') or "Torrent Hunt",
     api_id=environ.get('API_ID'),
     api_hash=environ.get('API_HASH'),
     bot_token=environ.get('BOT_TOKEN'),
     plugins=dict(root='plugins'),
-    workdir=environ.get('WORKDIR'),
+    workdir=environ.get('WORKDIR') or exec_dir,
 )
 
 # Loading required instances in the Client
