@@ -7,22 +7,22 @@ on:
   workflow_dispatch:
 
 jobs:
-      push-store-image:
-        runs-on: ubuntu-latest
+  push-store-image:
+    runs-on: ubuntu-latest
 
-        steps:
-          - name: 'Checkout'
-            uses: actions/checkout@main
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@main
 
-          - name: 'Login to GHCR'
-            uses: docker/login-action@v1
-            with:
-              registry: ghcr.io
-              username: ${{ github.actor }}
-              password: ${{ github.token }}
+      - name: 'Login to GHCR'
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
 
-          - name: 'Build Image'
-            run: docker build . --tag ghcr.io/hemantapkh/torrenthunt:latest
-              
-          - push: 'Push to GHCR'
-            run: docker push ghcr.io/hemantapkh/torrenthunt:latest
+      - name: 'Build Image'
+        run: docker build . --tag ghcr.io/hemantapkh/torrenthunt:latest
+          
+      - name: 'Push to GHCR'
+        run: docker push ghcr.io/hemantapkh/torrenthunt:latest
