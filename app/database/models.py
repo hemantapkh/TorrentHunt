@@ -8,7 +8,7 @@ from sqlalchemy.sql import func
 Base = declarative_base()
 
 engine = create_async_engine(
-    environ.get("DATABASE_URL", "sqlite+aiosqlite:///torrenthunt.db")
+    environ.get("DATABASE_URL", "sqlite+aiosqlite:///torrenthunt.db"),
 )
 Session = sessionmaker(bind=engine, class_=AsyncSession)
 

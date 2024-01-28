@@ -3,7 +3,7 @@ from database.models import User
 from pyrogram import Client, filters
 
 
-@Client.on_message(filters.command("stats"))
+@Client.on_message(filters.command("stats") & filters.CF.admin)
 async def stats(Client, message):
     query = sqlalchemy.select(sqlalchemy.func.count(User.user_id))
     total_users = await Client.DB.execute(query)
