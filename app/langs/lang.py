@@ -1,4 +1,4 @@
-'Get translation of string'
+"Get translation of string"
 
 import json
 
@@ -12,12 +12,12 @@ class Lang:
             self.config = json.load(f)
 
     def __getattr__(self, name):
-        def get_value(key, code='english'):
+        def get_value(key, code="english"):
             return (
                 self.data.get(name, {}).get(key, {}).get(code)
                 or
                 # If translation not available, return english
-                self.data.get(name, {}).get(key, {}).get('english')
+                self.data.get(name, {}).get(key, {}).get("english")
             )
 
         return get_value

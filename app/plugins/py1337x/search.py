@@ -2,15 +2,18 @@ from pyrogram import Client, filters
 
 
 @Client.on_message(
-    filters.text & ~filters.me & ~filters.CF.via_me &
-    filters.CF.init & ~filters.command('settings'),
+    filters.text
+    & ~filters.me
+    & ~filters.CF.via_me
+    & filters.CF.init
+    & ~filters.command("settings"),
 )
 async def search(Client, message):
     user_lang = await Client.MISC.user_lang(message)
 
     msg = await Client.send_message(
         chat_id=message.chat.id,
-        text=Client.LG.STR('searchingQuery', user_lang).format(message.text),
+        text=Client.LG.STR("searchingQuery", user_lang).format(message.text),
         reply_to_message_id=message.id,
     )
 
