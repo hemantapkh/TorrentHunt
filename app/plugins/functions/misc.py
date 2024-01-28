@@ -3,7 +3,7 @@
 from database.models import Setting
 from loguru import logger
 from pyrogram import types
-from sqlalchemy import Select
+from sqlalchemy import select
 
 
 class Misc:
@@ -64,7 +64,7 @@ class Misc:
         else:
             user_id = message.chat.id
 
-        statement = Select(Setting.language).where(Setting.user_id == user_id)
+        statement = select(Setting.language).where(Setting.user_id == user_id)
         lang = await self.Client.DB.execute(statement)
         lang = lang.fetchone()
 

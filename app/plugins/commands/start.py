@@ -1,7 +1,7 @@
 from database.models import Referrer, User
 from plugins.settings.language import language
 from pyrogram import Client, filters
-from sqlalchemy import Update, exists, select
+from sqlalchemy import exists, select, update
 
 
 @Client.on_message(filters.command("start"))
@@ -21,7 +21,7 @@ async def message(Client, message):
         except ValueError:
             # If params is a valid tracking ID
             query = (
-                Update(Referrer)
+                update(Referrer)
                 .where(Referrer.referrer_id == params)
                 .values(clicks=Referrer.clicks + 1)
             )

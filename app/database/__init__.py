@@ -11,7 +11,9 @@ class DataBase:
 
     async def _query(self, method, *args, **kwargs):
         async with self.session() as session:
-            return await getattr(session, method)(*args, **kwargs)
+            result = await getattr(session, method)(*args, **kwargs)
+            await session.commit()
+            return result
 
     def __getattr__(self, method):
         def wrapper(*args, **kwargs):
