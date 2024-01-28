@@ -1,16 +1,11 @@
-from database.models import Bookmark, Setting
+from plugins.functions.database import get_restricted_mode
 from pyrogram import Client, filters
-from sqlalchemy import select
 
 
 @Client.on_message(filters.regex("getLink"))
 async def results(Client, message):
     user_lang = await Client.MISC.user_lang(message)
-
-    query = select(Setting.restricted_mode).where(Setting.user_id == message.chat.id)
-    restricted_mode = await Client.DB.execute(query)
-    restricted_mode = restricted_mode.scalar()
-
+    restricted_mode = await get_restricted_mode(message.chat.id)
     torrent_id = message.text.split("_")[1].split("@")[0]
 
     msg = await Client.send_message(
@@ -20,18 +15,9 @@ async def results(Client, message):
     )
 
     response = Client.py1337x.info(torrentId=torrent_id)
-    data = Bookmark(
-        hash=response.get("hash"),
-        title=response.get("name"),
-        magnet=response.get("magnetLink"),
-        seeders=response.get("seeders"),
-        leechers=response.get("leechers"),
-        size=response.get("size"),
-        uploaded_on=response.get("uploadDate"),
-    )
 
     text, markup = Client.STRUCT.content_message(
-        data,
+        response,
         language=user_lang,
         restricted_mode=restricted_mode,
     )

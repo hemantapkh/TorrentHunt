@@ -1,6 +1,6 @@
 from database.models import Bookmark
 from pyrogram import Client, filters
-from sqlalchemy import exists, insert, select
+from sqlalchemy import and_, exists, insert, select
 
 
 @Client.on_callback_query(filters.regex("addToBookmark"))
@@ -10,11 +10,15 @@ async def add_bookmark(Client, callback):
 
     # If item is already on bookmarks
     query = select(exists(Bookmark)).where(
-        Bookmark.user_id == callback.from_user.id and Bookmark.hash == hash
+        and_(
+            Bookmark.user_id == callback.from_user.id,
+            Bookmark.hash == hash,
+        )
     )
     bookmark_exists = await Client.DB.execute(query)
 
     if bookmark_exists.scalar():
+        print("Already on bookmarks")
         pass
 
     else:

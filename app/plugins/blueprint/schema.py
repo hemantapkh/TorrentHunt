@@ -1,5 +1,3 @@
-from database.models import Bookmark
-
 from .struct import content_struct, search_struct
 
 
@@ -28,26 +26,25 @@ class Schema:
 
         return message or self.Client.LG.STR("noResults", language)
 
-    def content_message(
-        self, data: Bookmark, language, restricted_mode, bookmarked=False
-    ):
+    def content_message(self, data, language, restricted_mode, bookmarked=False):
+        print(data)
         # Check if the data is valid
-        if not data.title:
+        if not data.get("name") and not data.get("title"):
             return self.Client.LG.STR("errorFetchingLink", language), None
 
         # Check if the content is explicit
         elif restricted_mode and self.Client.EXPLICIT.predict(
-            data.title,
+            data.get("name") or data.get("title"),
         ):
             return self.Client.LG.STR("cantView", language), None
 
         message = content_struct.format(
-            title=data.title,
-            size=data.size,
-            seeders=data.seeders,
-            leechers=data.leechers,
-            uploaded_on=data.uploaded_on,
-            magnet=data.magnet,
+            title=data.get("name") or data.get("title"),
+            size=data.get("size"),
+            seeders=data.get("seeders"),
+            leechers=data.get("leechers"),
+            uploaded_on=data.get("uploadDate") or data.get("uploaded_on"),
+            magnet=data.get("magnetLink") or data.get("magnet"),
             size_str=self.Client.LG.STR("size", language),
             seeders_str=self.Client.LG.STR("seeders", language),
             leechers_str=self.Client.LG.STR("leechers", language),
@@ -57,7 +54,7 @@ class Schema:
 
         markup = self.Client.KB.torrent_info(
             language,
-            data.hash,
+            data.get("infoHash") or data.get("hash"),
             bookmarked=bookmarked,
         )
 

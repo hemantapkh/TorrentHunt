@@ -1,5 +1,5 @@
 from database.models import Bookmark
-from plugins.functions.database import get_restricted_mode
+from plugins.functions.database import get_restricted_mode, row2dict
 from pyrogram import Client, filters, types
 from sqlalchemy import select
 
@@ -19,11 +19,12 @@ async def query_search(Client, inline_query):
         .offset(offset * 50)
         .limit(50)
     )
-    response = await Client.DB.execute(query, auto_commit=False)
-    response = [res[0] for res in response.fetchall()]
+    rows = await Client.DB.execute(query, auto_commit=False)
+    rows = [res[0] for res in rows.fetchall()]
 
-    if response:
-        for res in response:
+    if rows:
+        for row in rows:
+            res = row2dict(row)
             input_message_content, reply_markup = Client.STRUCT.content_message(
                 res,
                 user_lang,
@@ -35,13 +36,13 @@ async def query_search(Client, inline_query):
             )
             results.append(
                 types.InlineQueryResultArticle(
-                    title=res.title,
+                    title=row.title,
                     thumb_url="https://i.ibb.co/vYb4cY4/pngtree-bookmark-icon-vector-illustration-in-flat-style-for-any-purpose-png-image-975552.jpg",
                     description="💾 {}, 🟢 {}, 🔴 {}, 📅 {}".format(
-                        res.size,
-                        res.seeders,
-                        res.leechers,
-                        res.uploaded_on,
+                        row.size,
+                        row.seeders,
+                        row.leechers,
+                        row.uploaded_on,
                     ),
                     input_message_content=input_message_content,
                     reply_markup=reply_markup,

@@ -8,3 +8,11 @@ async def get_restricted_mode(user_id: int):
     restricted_mode = await Client.DB.execute(query)
 
     return restricted_mode.scalar()
+
+
+def row2dict(row):
+    d = {}
+    for column in row.__table__.columns:
+        d[column.name] = str(getattr(row, column.name))
+
+    return d
