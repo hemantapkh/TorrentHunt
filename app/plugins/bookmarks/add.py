@@ -18,7 +18,6 @@ async def add_bookmark(Client, callback):
     bookmark_exists = await Client.DB.execute(query)
 
     if bookmark_exists.scalar():
-        print("Already on bookmarks")
         pass
 
     else:
