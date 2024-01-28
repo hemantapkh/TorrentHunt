@@ -37,24 +37,9 @@
             "required": false
         },
         "DATABASE_URL": {
-            "description": "Postgres connection string (Not required if DATABASE_USERNAME, DATABASE_NAME and DATABASE_PASSWORD is provided)",
-            "value": "",
-            "required": false
-        },
-        "DATABASE_USERNAME": {
-            "description": "Postgres Username (Not required if DATABASE_URL is provided)",
-            "value": "",
-            "required": false
-        },
-        "DATABASE_PASSWORD": {
-            "description": "Postgres Password (Not required if DATABASE_URL is provided)",
-            "value": "",
-            "required": false
-        },
-        "DATABASE_NAME": {
-            "description": "Postgres Database Name (Not required if DATABASE_URL is provided)",
-            "value": "",
-            "required": false
+            "description": "Database connection string",
+            "value": "sqlite+aiosqlite:///torrenthunt.db",
+            "required": true
         },
         "TORRENTHUNT_API_URL": {
             "description": "URL of Torrent Hunt API",
