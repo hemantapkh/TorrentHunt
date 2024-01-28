@@ -4,7 +4,15 @@ from uuid import uuid4
 from asyncpg import Connection as asyncpg_connection
 from dotenv import load_dotenv
 from loguru import logger
-from sqlalchemy import TIMESTAMP, Boolean, Column, ForeignKey, Integer, String
+from sqlalchemy import (
+    TIMESTAMP,
+    BigInteger,
+    Boolean,
+    Column,
+    ForeignKey,
+    Integer,
+    String,
+)
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from sqlalchemy.sql import func
@@ -44,7 +52,7 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = "users"
 
-    user_id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(BigInteger, primary_key=True, index=True)
     user_type = Column(String, nullable=False)
     username = Column(String)
     first_name = Column(String)
@@ -59,7 +67,9 @@ class User(Base):
 class Setting(Base):
     __tablename__ = "settings"
 
-    user_id = Column(Integer, ForeignKey("users.user_id"), primary_key=True, index=True)
+    user_id = Column(
+        BigInteger, ForeignKey("users.user_id"), primary_key=True, index=True
+    )
     language = Column(String, default="english")
     restricted_mode = Column(Boolean, default=True)
 
@@ -69,7 +79,9 @@ class Setting(Base):
 class Bookmark(Base):
     __tablename__ = "bookmarks"
 
-    user_id = Column(Integer, ForeignKey("users.user_id"), primary_key=True, index=True)
+    user_id = Column(
+        BigInteger, ForeignKey("users.user_id"), primary_key=True, index=True
+    )
     hash = Column(String, primary_key=True, index=True)
     title = Column(String, nullable=False)
     magnet = Column(String, nullable=False)
@@ -85,7 +97,7 @@ class Bookmark(Base):
 class Admin(Base):
     __tablename__ = "admins"
 
-    user_id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(BigInteger, primary_key=True, index=True)
     date = Column(TIMESTAMP, server_default=func.current_timestamp())
 
 
