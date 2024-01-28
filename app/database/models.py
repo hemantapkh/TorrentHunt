@@ -30,13 +30,13 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = "users"
 
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, primary_key=True, index=True)
     user_type = Column(String, nullable=False)
     username = Column(String)
     first_name = Column(String)
     last_name = Column(String)
     referrer = Column(String)
-    join_date = Column(TIMESTAMP, server_default=func.current_timestamp())
+    join_date = Column(TIMESTAMP, server_default=func.current_timestamp(), index=True)
     last_active = Column(TIMESTAMP, server_default=func.current_timestamp())
 
     setting = relationship("Setting", uselist=False, back_populates="user")
@@ -45,7 +45,7 @@ class User(Base):
 class Setting(Base):
     __tablename__ = "settings"
 
-    user_id = Column(Integer, ForeignKey("users.user_id"), primary_key=True)
+    user_id = Column(Integer, ForeignKey("users.user_id"), primary_key=True, index=True)
     language = Column(String, default="english")
     restricted_mode = Column(Boolean, default=True)
 
@@ -55,8 +55,8 @@ class Setting(Base):
 class Bookmark(Base):
     __tablename__ = "bookmarks"
 
-    user_id = Column(Integer, ForeignKey("users.user_id"), primary_key=True)
-    hash = Column(String, primary_key=True)
+    user_id = Column(Integer, ForeignKey("users.user_id"), primary_key=True, index=True)
+    hash = Column(String, primary_key=True, index=True)
     title = Column(String, nullable=False)
     magnet = Column(String, nullable=False)
     seeders = Column(String)
@@ -71,14 +71,14 @@ class Bookmark(Base):
 class Admin(Base):
     __tablename__ = "admins"
 
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, primary_key=True, index=True)
     date = Column(TIMESTAMP, server_default=func.current_timestamp())
 
 
 class Referrer(Base):
     __tablename__ = "referrers"
 
-    referrer_id = Column(String, primary_key=True)
+    referrer_id = Column(String, primary_key=True, index=True)
     title = Column(String, nullable=False)
     description = Column(String)
     clicks = Column(Integer, nullable=False, default=0)
