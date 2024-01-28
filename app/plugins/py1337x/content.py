@@ -1,4 +1,4 @@
-from database.models import Setting
+from database.models import Bookmark, Setting
 from pyrogram import Client, filters
 from sqlalchemy import select
 
@@ -20,9 +20,18 @@ async def results(Client, message):
     )
 
     response = Client.py1337x.info(torrentId=torrent_id)
+    data = Bookmark(
+        hash=response.get("hash"),
+        title=response.get("name"),
+        magnet=response.get("magnetLink"),
+        seeders=response.get("seeders"),
+        leechers=response.get("leechers"),
+        size=response.get("size"),
+        uploaded_on=response.get("uploadDate"),
+    )
 
     text, markup = Client.STRUCT.content_message(
-        response,
+        data,
         language=user_lang,
         restricted_mode=restricted_mode,
     )
