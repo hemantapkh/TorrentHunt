@@ -21,15 +21,17 @@ from plugins.functions.misc import Misc
 from py1337x import py1337x
 from pyrogram import Client, filters
 
+# Loading variables from .env file
+logger.info("Loading variables from .env file")
+load_dotenv()
+
+# Creating metadata for database
+logger.info("Creating metadata for database")
 asyncio.run(init_models())
 
 # Installing UVloop for better performance
 logger.info("Installing uvloop")
 uvloop.install()
-
-# Loading variables from .env file
-logger.info("Loading variables from .env file")
-load_dotenv()
 
 # Configure logger to write logs to file and console
 log_file = environ.get("LOGFILE")

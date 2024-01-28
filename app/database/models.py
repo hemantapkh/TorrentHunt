@@ -1,3 +1,5 @@
+from os import environ
+
 from sqlalchemy import TIMESTAMP, Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
@@ -5,7 +7,9 @@ from sqlalchemy.sql import func
 
 Base = declarative_base()
 
-engine = create_async_engine("sqlite+aiosqlite:///test.db")
+engine = create_async_engine(
+    environ.get("DATABASE_URL", "sqlite+aiosqlite:///torrenthunt.db")
+)
 Session = sessionmaker(bind=engine, class_=AsyncSession)
 
 Base = declarative_base()
