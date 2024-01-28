@@ -3,7 +3,9 @@
 from os import environ
 
 import pyrogram
+from database.models import Admin
 from loguru import logger
+from sqlalchemy import select
 
 
 class Init:
@@ -20,12 +22,8 @@ class Init:
         if admins:
             logger.info("Adding admins to database")
             for admin in admins.split(","):
-                await self.Client.DB.query(
-                    "execute",
-                    """INSERT INTO ADMINS (user_id) VALUES ($1)
-                        ON CONFLICT (user_id) DO NOTHING""",
-                    int(admin),
-                )
+                new_admin = Admin(user_id=admin)
+                await self.Client.DB.merge(new_admin)
 
     async def add_commands(self):
         logger.info("Setting bot commands")
@@ -49,20 +47,17 @@ class Init:
         )
 
         # Commands for bot admins
-        admins = (
-            await self.Client.DB.query(
-                "fetch",
-                "SELECT user_id FROM ADMINS",
-            )
-            or []
-        )
+        query = select(Admin.user_id)
+
+        admins = await self.Client.DB.execute(query)
+        admins = admins.all()
 
         for admin in admins:
             try:
                 await self.Client.set_bot_commands(
                     commands=admin_commands,
                     scope=pyrogram.types.BotCommandScopeChat(
-                        chat_id=admin.get("user_id"),
+                        chat_id=admin.user_id,
                     ),
                 )
             except pyrogram.errors.exceptions.bad_request_400.PeerIdInvalid as err:

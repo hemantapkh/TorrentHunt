@@ -16,6 +16,7 @@ from loguru import logger
 from models.explicit_detector.explicit_detector import ExplicitDetector
 from plugins.blueprint.schema import Schema
 from plugins.functions.filters import Filter
+from plugins.functions.init import Init
 from plugins.functions.keyboards import KeyBoard
 from plugins.functions.misc import Misc
 from py1337x import py1337x
@@ -71,10 +72,10 @@ Client.EXPLICIT = ExplicitDetector()
 
 async def main():
     async with bot:
-        # if '--no-init' not in argv:
-        #     logger.info('Initializing requirements for bot')
-        #     bot_init = Init(bot)
-        #     await bot_init.init()
+        if "--no-init" not in argv:
+            logger.info("Initializing requirements for bot")
+            bot_init = Init(bot)
+            await bot_init.init()
 
         logger.info("Getting bot information")
         me = await bot.get_me()
