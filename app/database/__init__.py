@@ -1,4 +1,5 @@
 """API to connect to the database server"""
+
 import datetime
 
 import sqlalchemy
