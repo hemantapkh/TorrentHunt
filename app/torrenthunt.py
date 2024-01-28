@@ -21,10 +21,6 @@ from plugins.functions.misc import Misc
 from py1337x import py1337x
 from pyrogram import Client, filters
 
-# Creating metadata for database
-logger.info("Creating metadata for database")
-asyncio.run(init_models())
-
 # Installing UVloop for better performance
 logger.info("Installing uvloop")
 uvloop.install()
@@ -67,6 +63,7 @@ Client.explicit_detector = ExplicitDetector()
 
 async def main():
     async with bot:
+        await init_models()
         if "--no-init" not in argv:
             logger.info("Initializing requirements for bot")
             bot_init = Init(bot)

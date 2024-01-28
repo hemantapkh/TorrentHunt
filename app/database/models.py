@@ -1,5 +1,7 @@
 from os import environ
+from uuid import uuid4
 
+from asyncpg import Connection as asyncpg_connection
 from dotenv import load_dotenv
 from loguru import logger
 from sqlalchemy import TIMESTAMP, Boolean, Column, ForeignKey, Integer, String
@@ -12,15 +14,27 @@ load_dotenv()
 
 connection_string = (
     environ.get("DATABASE_URL", "")
-    .lower()
-    .replace("sqlite:///", "sqlite+aiosqlite:///")
+    .replace("sqlite://", "sqlite+aiosqlite://")
+    .replace("postgres://", "postgresql+asyncpg://")
     .replace("postgresql://", "postgresql+asyncpg://")
 )
+
+connection_args = {}
+if "postgresql+asyncpg://" in connection_string:
+    # https://github.com/sqlalchemy/sqlalchemy/issues/6467#issuecomment-864943824
+    class Connection(asyncpg_connection):
+        def _get_unique_id(self, prefix: str) -> str:
+            return f"__asyncpg_{prefix}_{uuid4()}__"
+
+    connection_args = {
+        "connection_class": Connection,
+    }
 
 Base = declarative_base()
 
 engine = create_async_engine(
     connection_string,
+    connect_args=connection_args,
 )
 Session = sessionmaker(bind=engine, class_=AsyncSession)
 
@@ -86,5 +100,6 @@ class Referrer(Base):
 
 
 async def init_models():
+    logger.info("Creating metadata for database")
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
