@@ -6,7 +6,7 @@ from sqlalchemy import select
 
 @Client.on_inline_query(filters.regex("#bookmarks"))
 async def query_search(Client, inline_query):
-    user_lang = await Client.MISC.user_lang(inline_query)
+    user_lang = await Client.misc.user_lang(inline_query)
     restricted_mode = await get_restricted_mode(inline_query.from_user.id)
     results = []
 
@@ -25,7 +25,7 @@ async def query_search(Client, inline_query):
     if rows:
         for row in rows:
             res = row2dict(row)
-            input_message_content, reply_markup = Client.STRUCT.content_message(
+            input_message_content, reply_markup = Client.struct.content_message(
                 res,
                 user_lang,
                 restricted_mode,

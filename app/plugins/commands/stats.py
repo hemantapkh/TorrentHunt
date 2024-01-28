@@ -3,7 +3,7 @@ from database.models import User
 from pyrogram import Client, filters
 
 
-@Client.on_message(filters.command("stats") & filters.CF.admin)
+@Client.on_message(filters.command("stats") & filters.custom.admin)
 async def stats(Client, message):
     query = sqlalchemy.select(sqlalchemy.func.count(User.user_id))
     total_users = await Client.DB.execute(query)
@@ -17,7 +17,7 @@ async def stats(Client, message):
 
     await Client.send_message(
         message.chat.id,
-        text=Client.LG.STR("userStats").format(
+        text=Client.language.STR("userStats").format(
             total_users,
             joined_today,
         ),

@@ -5,7 +5,7 @@ from pyrogram import Client, filters, types
 
 @Client.on_inline_query(filters.regex("!"))
 async def query_search(Client, inline_query):
-    user_lang = await Client.MISC.user_lang(inline_query)
+    user_lang = await Client.misc.user_lang(inline_query)
     restricted_mode = await get_restricted_mode(inline_query.from_user.id)
     query_list = inline_query.query.split()
     results = []
@@ -13,7 +13,7 @@ async def query_search(Client, inline_query):
     # If keyword is not empty
     if len(query_list) > 1:
         keyword = " ".join(query_list[1:])
-        site = Client.MISC.code_to_site(query_list[0])
+        site = Client.misc.code_to_site(query_list[0])
         if not inline_query.offset:
             results = inline_ads()
             await Client.answer_inline_query(
@@ -21,7 +21,7 @@ async def query_search(Client, inline_query):
                 results=results,
                 cache_time=0,
                 is_personal=True,
-                switch_pm_text=Client.LG.STR(
+                switch_pm_text=Client.language.STR(
                     "searchingInline",
                     user_lang,
                 ).format(keyword),
@@ -33,7 +33,7 @@ async def query_search(Client, inline_query):
         page = int(inline_query.offset) if inline_query.offset else 1
         logger.info(f"Inline searching {keyword} on {site} on page {page}")
 
-        response = await Client.TH.request(
+        response = await Client.torrent_hunt_api.request(
             route="/api/search",
             params={
                 "query": keyword,
@@ -43,12 +43,12 @@ async def query_search(Client, inline_query):
         )
 
         if response.get("items"):
-            pm_text = Client.LG.STR("resultsFor", user_lang).format(
+            pm_text = Client.language.STR("resultsFor", user_lang).format(
                 keyword,
             )
 
             for res in response.get("items"):
-                text, markup = Client.STRUCT.content_message(
+                text, markup = Client.struct.content_message(
                     res,
                     language=user_lang,
                     restricted_mode=restricted_mode,
@@ -80,7 +80,7 @@ async def query_search(Client, inline_query):
 
     # If keyword is empty
     else:
-        pm_text = Client.LG.STR("keywordToSearch", user_lang)
+        pm_text = Client.language.STR("keywordToSearch", user_lang)
         next_offset = None
 
     await Client.answer_inline_query(

@@ -9,8 +9,7 @@ from apis.requests import Requests
 from apis.torrenthunt import TorrentHunt
 from database import DataBase
 from database.models import init_models
-from dotenv import load_dotenv
-from init import exec_dir  # noqa
+from init import exec_dir
 from langs.lang import Lang
 from loguru import logger
 from models.explicit_detector.explicit_detector import ExplicitDetector
@@ -53,17 +52,17 @@ bot = Client(
 )
 
 # Loading required instances in the Client
-Client.TH = TorrentHunt(
+Client.torrent_hunt_api = TorrentHunt(
     environ.get("TORRENTHUNT_API_KEY"),
 )
-Client.MISC = Misc(bot)
-Client.KB = KeyBoard(bot)
-Client.LG = Lang("langs/string.json", "langs/lang.json")
+Client.misc = Misc(bot)
+Client.keyboard = KeyBoard(bot)
+Client.language = Lang("langs/string.json", "langs/lang.json")
 Client.requests = Requests()
 Client.py1337x = py1337x(proxy="1377x.to")
-Client.STRUCT = Schema(bot)
-filters.CF = Filter(bot)
-Client.EXPLICIT = ExplicitDetector()
+Client.struct = Schema(bot)
+filters.custom = Filter(bot)
+Client.explicit_detector = ExplicitDetector()
 
 
 async def main():
@@ -78,7 +77,7 @@ async def main():
         Client.USERNAME = me.username
 
         # Fetching config from API
-        await bot.MISC.fetch_config()
+        await bot.misc.fetch_config()
 
 
 if __name__ == "__main__":

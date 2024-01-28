@@ -4,10 +4,10 @@ from sqlalchemy import update
 
 
 # Turn on or off restricted mode
-@Client.on_callback_query(filters.regex("restriction") & filters.CF.chat_admin())
+@Client.on_callback_query(filters.regex("restriction") & filters.custom.chat_admin())
 async def restriction(Client, callback):
     restriction = callback.data.split("_")[1]
-    user_lang = await Client.MISC.user_lang(callback)
+    user_lang = await Client.misc.user_lang(callback)
 
     query = (
         update(Setting)
@@ -21,5 +21,5 @@ async def restriction(Client, callback):
     await Client.edit_message_text(
         chat_id=callback.message.chat.id,
         message_id=callback.message.id,
-        text=Client.LG.STR(f"restrictedMode{restriction}", user_lang),
+        text=Client.language.STR(f"restrictedMode{restriction}", user_lang),
     )

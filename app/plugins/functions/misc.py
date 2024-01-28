@@ -13,7 +13,7 @@ class Misc:
     # Fetching config from Torrent Hunt API
     async def fetch_config(self):
         # Get available sites
-        config = await self.Client.TH.request(
+        config = await self.Client.torrent_hunt_api.request(
             "/api/config",
         )
 
@@ -40,7 +40,7 @@ class Misc:
                 await self.Client.send_message(
                     chat_id=admin.user_id,
                     text=message,
-                    reply_markup=self.Client.KB.main(user_lang),
+                    reply_markup=self.Client.keyboard.main(user_lang),
                 )
 
             except Exception as err:

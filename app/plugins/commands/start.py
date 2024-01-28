@@ -36,12 +36,12 @@ async def message(Client, message):
 
     else:
         # Send welcome message
-        user_lang = await Client.MISC.user_lang(message)
+        user_lang = await Client.misc.user_lang(message)
         await Client.send_message(
             chat_id=message.chat.id,
-            text=Client.LG.STR("greet", user_lang).format(
+            text=Client.language.STR("greet", user_lang).format(
                 message.from_user.first_name,
             ),
-            reply_markup=Client.KB.main(user_lang, message),
+            reply_markup=Client.keyboard.main(user_lang, message),
             reply_to_message_id=message.id,
         )

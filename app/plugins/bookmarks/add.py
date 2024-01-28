@@ -6,7 +6,7 @@ from sqlalchemy import and_, exists, insert, select
 @Client.on_callback_query(filters.regex("addToBookmark"))
 async def add_bookmark(Client, callback):
     hash = callback.data.split("_")[1]
-    user_lang = await Client.MISC.user_lang(callback)
+    user_lang = await Client.misc.user_lang(callback)
 
     # If item is already on bookmarks
     query = select(exists(Bookmark)).where(
@@ -43,5 +43,5 @@ async def add_bookmark(Client, callback):
 
     await Client.answer_callback_query(
         callback.id,
-        text=Client.LG.STR("wishlistAdded", user_lang),
+        text=Client.language.STR("wishlistAdded", user_lang),
     )
