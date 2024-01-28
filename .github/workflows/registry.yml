@@ -1,10 +1,10 @@
 name: Deploy Images to GHCR
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+  push:
+    tags:
+      - '**'
 
 jobs:
   push-to-ghcr:
