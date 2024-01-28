@@ -1,7 +1,9 @@
-'Miscillaneous functions'
+"Miscillaneous functions"
 
+from database.models import Setting
 from loguru import logger
 from pyrogram import types
+from sqlalchemy import Select
 
 
 class Misc:
@@ -12,37 +14,37 @@ class Misc:
     async def fetch_config(self):
         # Get available sites
         config = await self.Client.TH.request(
-            '/api/config',
+            "/api/config",
         )
 
-        if 'error' in config:
-            logger.error('Error connecting to Torrent Hunt API.')
+        if "error" in config:
+            logger.error("Error connecting to Torrent Hunt API.")
             self.Client.sites = {}
 
         else:
-            logger.info('Successfully fetched config for Torrent Hunt API')
+            logger.info("Successfully fetched config for Torrent Hunt API")
             self.Client.sites = config
 
-        await self.message_admins('🔃 Bot has been restarted.')
+        # await self.message_admins('🔃 Bot has been restarted.')
 
     # Message admins
     async def message_admins(self, message):
         admins = await self.Client.DB.query(
-            'fetch',
-            'SELECT user_id FROM ADMINS',
+            "fetch",
+            "SELECT user_id FROM ADMINS",
         )
 
         for admin in admins:
-            user_lang = await self.user_lang(admin.get('user_id'))
+            user_lang = await self.user_lang(admin.get("user_id"))
             try:
                 await self.Client.send_message(
-                    chat_id=admin.get('user_id'),
+                    chat_id=admin.get("user_id"),
                     text=message,
                     reply_markup=self.Client.KB.main(user_lang),
                 )
 
             except Exception as err:
-                logger.error(f'Error sending message to admin: {err}')
+                logger.error(f"Error sending message to admin: {err}")
                 pass
 
     # Get user language
@@ -62,19 +64,17 @@ class Misc:
         else:
             user_id = message.chat.id
 
-        lang = await self.Client.DB.query(
-            'fetchval',
-            'SELECT language FROM SETTINGS WHERE user_id = $1',
-            user_id,
-        )
+        statement = Select(Setting.language).where(Setting.user_id == user_id)
+        lang = await self.Client.DB.execute(statement)
+        lang = lang.fetchone()
 
-        return lang or 'english'
+        return lang or "english"
 
     # Split message
     def split_list(self, lst, size):
-        return [lst[i:i+size] for i in range(0, len(lst), size)]
+        return [lst[i : i + size] for i in range(0, len(lst), size)]
 
     # Get the site by it's code
     def code_to_site(self, code):
         data = self.Client.sites
-        return next((key for key, value in data.items() if value['code'] == code), None)
+        return next((key for key, value in data.items() if value["code"] == code), None)

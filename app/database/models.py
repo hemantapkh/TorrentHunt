@@ -1,5 +1,3 @@
-import asyncio
-
 from sqlalchemy import TIMESTAMP, Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
@@ -14,7 +12,7 @@ Base = declarative_base()
 
 
 class User(Base):
-    __tablename__ = "USERS"
+    __tablename__ = "users"
 
     user_id = Column(Integer, primary_key=True)
     user_type = Column(String, nullable=False)
@@ -25,23 +23,23 @@ class User(Base):
     join_date = Column(TIMESTAMP, server_default=func.current_timestamp())
     last_active = Column(TIMESTAMP, server_default=func.current_timestamp())
 
-    settings = relationship("Settings", uselist=False, back_populates="user")
+    setting = relationship("Setting", uselist=False, back_populates="User")
 
 
-class Settings(Base):
-    __tablename__ = "SETTINGS"
+class Setting(Base):
+    __tablename__ = "settings"
 
-    user_id = Column(Integer, ForeignKey("USERS.user_id"), primary_key=True)
+    user_id = Column(Integer, ForeignKey("users.user_id"), primary_key=True)
     language = Column(String, default="english")
     restricted_mode = Column(Boolean, default=True)
 
-    user = relationship("User", back_populates="settings", foreign_keys=[user_id])
+    user = relationship("User", back_populates="Setting", foreign_keys=[user_id])
 
 
 class Bookmark(Base):
-    __tablename__ = "BOOKMARKS"
+    __tablename__ = "bookmarks"
 
-    user_id = Column(Integer, ForeignKey("USERS.user_id"), primary_key=True)
+    user_id = Column(Integer, ForeignKey("users.user_id"), primary_key=True)
     hash = Column(String, primary_key=True)
     title = Column(String, nullable=False)
     magnet = Column(String, nullable=False)
@@ -51,18 +49,18 @@ class Bookmark(Base):
     uploaded_on = Column(String)
     date = Column(TIMESTAMP, server_default=func.current_timestamp())
 
-    user = relationship("User", backref="bookmarks")
+    user = relationship("User", backref="Bookmark")
 
 
 class Admin(Base):
-    __tablename__ = "ADMINS"
+    __tablename__ = "admins"
 
     user_id = Column(Integer, primary_key=True)
     date = Column(TIMESTAMP, server_default=func.current_timestamp())
 
 
 class Referrer(Base):
-    __tablename__ = "REFERRERS"
+    __tablename__ = "referrers"
 
     referrer_id = Column(String, primary_key=True)
     title = Column(String, nullable=False)
@@ -74,6 +72,3 @@ class Referrer(Base):
 async def init_models():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-
-
-asyncio.run(init_models())

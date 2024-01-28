@@ -1,4 +1,4 @@
-'''Initialize the requirements for bot'''
+"""Initialize the requirements for bot"""
 
 from os import environ
 
@@ -11,35 +11,24 @@ class Init:
         self.Client = Client
 
     async def init(self):
-        await self.create_table('sql/postgres.sql')
         await self.add_admins()
         await self.add_commands()
 
-    async def create_table(self, sql_file):
-        logger.info('Creating database tables')
-        with open(sql_file) as file:
-            sql = file.read()
-
-        await self.Client.DB.query(
-            'execute',
-            sql,
-        )
-
     async def add_admins(self):
-        admins = environ.get('BOT_ADMINS')
+        admins = environ.get("BOT_ADMINS")
 
         if admins:
-            logger.info('Adding admins to database')
-            for admin in admins.split(','):
+            logger.info("Adding admins to database")
+            for admin in admins.split(","):
                 await self.Client.DB.query(
-                    'execute',
-                    '''INSERT INTO ADMINS (user_id) VALUES ($1)
-                        ON CONFLICT (user_id) DO NOTHING''',
+                    "execute",
+                    """INSERT INTO ADMINS (user_id) VALUES ($1)
+                        ON CONFLICT (user_id) DO NOTHING""",
                     int(admin),
                 )
 
     async def add_commands(self):
-        logger.info('Setting bot commands')
+        logger.info("Setting bot commands")
 
         # Commands for private chats
         await self.Client.set_bot_commands(
@@ -60,29 +49,32 @@ class Init:
         )
 
         # Commands for bot admins
-        admins = await self.Client.DB.query(
-            'fetch',
-            'SELECT user_id FROM ADMINS',
-        ) or []
+        admins = (
+            await self.Client.DB.query(
+                "fetch",
+                "SELECT user_id FROM ADMINS",
+            )
+            or []
+        )
 
         for admin in admins:
             try:
                 await self.Client.set_bot_commands(
                     commands=admin_commands,
                     scope=pyrogram.types.BotCommandScopeChat(
-                        chat_id=admin.get('user_id'),
+                        chat_id=admin.get("user_id"),
                     ),
                 )
             except pyrogram.errors.exceptions.bad_request_400.PeerIdInvalid as err:
-                logger.error(f'Error setting commands for admins: {err}')
+                logger.error(f"Error setting commands for admins: {err}")
 
 
 all_commands = [
-    pyrogram.types.BotCommand('start', '💫 Start using bot'),
-    pyrogram.types.BotCommand('bookmarks', '🔖 View your bookmarks'),
-    pyrogram.types.BotCommand('settings', '⚙️ Change bot settings'),
-    pyrogram.types.BotCommand('search', '🔍 Search for torrents'),
-    pyrogram.types.BotCommand('stats', '📊 See bot stats'),
+    pyrogram.types.BotCommand("start", "💫 Start using bot"),
+    pyrogram.types.BotCommand("bookmarks", "🔖 View your bookmarks"),
+    pyrogram.types.BotCommand("settings", "⚙️ Change bot settings"),
+    pyrogram.types.BotCommand("search", "🔍 Search for torrents"),
+    pyrogram.types.BotCommand("stats", "📊 See bot stats"),
 ]
 
 default_commands = [
