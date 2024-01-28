@@ -23,7 +23,7 @@ class User(Base):
     join_date = Column(TIMESTAMP, server_default=func.current_timestamp())
     last_active = Column(TIMESTAMP, server_default=func.current_timestamp())
 
-    setting = relationship("Setting", uselist=False, back_populates="User")
+    setting = relationship("Setting", uselist=False, back_populates="user")
 
 
 class Setting(Base):
@@ -33,7 +33,7 @@ class Setting(Base):
     language = Column(String, default="english")
     restricted_mode = Column(Boolean, default=True)
 
-    user = relationship("User", back_populates="Setting", foreign_keys=[user_id])
+    user = relationship("User", back_populates="setting", foreign_keys=[user_id])
 
 
 class Bookmark(Base):
@@ -49,7 +49,7 @@ class Bookmark(Base):
     uploaded_on = Column(String)
     date = Column(TIMESTAMP, server_default=func.current_timestamp())
 
-    user = relationship("User", backref="Bookmark")
+    user = relationship("User", backref="bookmark")
 
 
 class Admin(Base):
