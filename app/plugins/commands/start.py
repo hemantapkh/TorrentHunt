@@ -29,19 +29,5 @@ async def message(Client, message):
 
             referrer = params if update_clicks.rowcount else None
 
-    new_user = await Client.DB.set_user(message, referrer)
-
-    if new_user:
-        await language(Client, message, called=True)
-
-    else:
-        # Send welcome message
-        user_lang = await Client.misc.user_lang(message)
-        await Client.send_message(
-            chat_id=message.chat.id,
-            text=Client.language.STR("greet", user_lang).format(
-                message.from_user.first_name,
-            ),
-            reply_markup=Client.keyboard.main(user_lang, message),
-            reply_to_message_id=message.id,
-        )
+    await Client.DB.set_user(message, referrer)
+    await language(Client, message, called=True)

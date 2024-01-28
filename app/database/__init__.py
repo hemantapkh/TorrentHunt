@@ -24,7 +24,7 @@ class DataBase:
 
         return wrapper
 
-    async def set_user(self, message, referrer=None) -> bool:
+    async def set_user(self, message, referrer=None):
         # If chat type if group/channel
         if message.chat.type.name != "PRIVATE":
             message.chat.first_name = message.chat.title
@@ -37,35 +37,13 @@ class DataBase:
             first_name=message.chat.first_name,
             last_name=message.chat.last_name,
             referrer=str(referrer) if referrer else None,
+            last_active=datetime.datetime.now(),
         )
 
-        # TODO: Implement this in a better way with single query
+        settings = Setting(user_id=message.chat.id)
+
         async with Session() as session:
-            try:
-                session.add(user)
-                settings = Setting(user_id=message.chat.id)
-                session.add(settings)
+            await session.merge(user)
+            await session.merge(settings)
 
-                await session.commit()
-
-                return True
-
-            except sqlalchemy.exc.IntegrityError:
-                await session.rollback()
-
-                query = (
-                    sqlalchemy.update(User)
-                    .where(User.user_id == user.user_id)
-                    .values(
-                        user_type=user.user_type,
-                        username=user.username,
-                        first_name=user.first_name,
-                        last_name=user.last_name,
-                        last_active=datetime.datetime.now(),
-                    )
-                )
-
-                await session.execute(query)
-                await session.commit()
-
-                return False
+            await session.commit()
