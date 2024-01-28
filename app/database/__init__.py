@@ -23,7 +23,7 @@ class DataBase:
 
         return wrapper
 
-    async def set_user(self, message, referrer=None):
+    async def set_user(self, message, referrer=None) -> bool:
         # If chat type if group/channel
         if message.chat.type.name != "PRIVATE":
             message.chat.first_name = message.chat.title
@@ -47,6 +47,8 @@ class DataBase:
 
                 await session.commit()
 
+                return True
+
             except sqlalchemy.exc.IntegrityError:
                 await session.rollback()
 
@@ -64,3 +66,5 @@ class DataBase:
 
                 await session.execute(query)
                 await session.commit()
+
+                return False
