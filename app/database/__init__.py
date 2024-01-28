@@ -11,8 +11,10 @@ class DataBase:
 
     async def _query(self, method, *args, **kwargs):
         async with self.session() as session:
+            auto_commmit = kwargs.pop("auto_commit", True)
             result = await getattr(session, method)(*args, **kwargs)
-            await session.commit()
+            if auto_commmit:
+                await session.commit()
             return result
 
     def __getattr__(self, method):
