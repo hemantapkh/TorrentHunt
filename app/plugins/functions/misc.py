@@ -66,7 +66,7 @@ class Misc:
 
         statement = select(Setting.language).where(Setting.user_id == user_id)
         lang = await self.Client.DB.execute(statement)
-        lang = lang.fetchone()
+        lang = lang.scalar()
 
         return lang or "english"
 
