@@ -13,17 +13,21 @@ class Requests:
         try:
             async with aiohttp.ClientSession(connector=self.connector) as session:
                 async with session.request(
-                    method, url, params=params, data=data, headers=headers,
+                    method,
+                    url,
+                    params=params,
+                    data=data,
+                    headers=headers,
                 ) as resp:
                     try:
-                        return  await resp.json()
-                    
+                        return await resp.json()
+
                     except aiohttp.client_exceptions.ContentTypeError:
                         return await resp.text()
 
         except Exception as err:
             logger.error(
-                'HTTP Error: {} {} PARAMS: {} DATA: {} HEADERS: {} ERR: {}'.format(
+                "HTTP Error: {} {} PARAMS: {} DATA: {} HEADERS: {} ERR: {}".format(
                     method,
                     url,
                     params,
@@ -33,14 +37,14 @@ class Requests:
                 ),
             )
             return {
-                'success': False,
-                'error': f'APIexception: {err}',
+                "success": False,
+                "error": f"APIexception: {err}",
             }
 
     # Perform async GET request
     async def get(self, url, params=None, headers=None):
-        return await self.request('GET', url, params=params, headers=headers)
+        return await self.request("GET", url, params=params, headers=headers)
 
     # Perform async POST request
     async def post(self, url, data=None, headers=None):
-        return await self.request('POST', url, data=data, headers=headers)
+        return await self.request("POST", url, data=data, headers=headers)

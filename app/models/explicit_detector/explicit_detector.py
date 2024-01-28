@@ -1,10 +1,10 @@
 import pickle
 
 vectorizer = pickle.load(
-    open('models/explicit_detector/vectorizer.pickle', 'rb'),
+    open("models/explicit_detector/vectorizer.pickle", "rb"),
 )
 model = pickle.load(
-    open('models/explicit_detector/RandomForestClassifier.pickle', 'rb'),
+    open("models/explicit_detector/RandomForestClassifier.pickle", "rb"),
 )
 
 

@@ -1,8 +1,10 @@
-'''Custom filters'''
+"""Custom filters"""
 
 import re
 
+from database.models import Admin
 from pyrogram import filters, types
+from sqlalchemy import exists, select
 
 
 class Filter:
@@ -17,11 +19,10 @@ class Filter:
 
     # Filter message from bot admins
     async def admin_flt(_, Client, message):
-        return await Client.DB.query(
-            'fetchval',
-            'SELECT EXISTS (SELECT * FROM ADMINS WHERE user_id=$1)',
-            message.from_user.id,
-        )
+        query = select(exists().where(Admin.user_id == message.from_user.id))
+        is_admin = await Client.DB.execute(query)
+
+        return is_admin.scalar()
 
     # Filter message from chat admins
     def chat_admin_flt(self, alert=True):
@@ -32,7 +33,7 @@ class Filter:
                 message = message.message
                 message.from_user.id = from_user
 
-            if message.chat.type.name == 'PRIVATE':
+            if message.chat.type.name == "PRIVATE":
                 return True
 
             member = await Client.get_chat_member(
@@ -40,23 +41,23 @@ class Filter:
                 user_id=message.from_user.id,
             )
 
-            if member.status.name != 'MEMBER':
+            if member.status.name != "MEMBER":
                 return True
 
             # Show alert message to non-admins users
             if flt.alert:
-                user_lang = await Client.MISC.user_lang(message)
-                if 'callback_id' in locals():
+                user_lang = await Client.misc.user_lang(message)
+                if "callback_id" in locals():
                     await Client.answer_callback_query(
                         callback_query_id=callback_id,
-                        text=Client.LG.STR('noPermission', user_lang),
+                        text=Client.language.STR("noPermission", user_lang),
                         show_alert=True,
                     )
 
                 else:
                     await Client.send_message(
                         chat_id=message.chat.id,
-                        text=Client.LG.STR('noPermission', user_lang),
+                        text=Client.language.STR("noPermission", user_lang),
                         reply_to_message_id=message.id,
                     )
 
@@ -66,10 +67,10 @@ class Filter:
     def cmd(self, data):
         async def func(flt, Client, message):
             if message.text:
-                language = await Client.MISC.user_lang(message)
-                text = re.sub(r'^\/?([^@]+).*', r'\1', message.text)
+                language = await Client.misc.user_lang(message)
+                text = re.sub(r"^\/?([^@]+).*", r"\1", message.text)
 
-                if text in [flt.data, self.Client.LG.CMD(flt.data, language)]:
+                if text in [flt.data, self.Client.language.CMD(flt.data, language)]:
                     return True
 
         return filters.create(func, data=data)

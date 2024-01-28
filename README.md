@@ -51,7 +51,7 @@ The ultimate torrent searching bot on telegram
 Torrent Hunt Bot can talk in 19 different languages.
 
 - Arabic (Added by [Omar Khalid](https://github.com/omvrkhvlid))
-- Bengali (Checked and fixed by [sobuj53](https://github.com/sobuj53)) 
+- Bengali (Checked and fixed by [sobuj53](https://github.com/sobuj53))
 - Belarusian
 - Catalan
 - Dutch
@@ -59,7 +59,7 @@ Torrent Hunt Bot can talk in 19 different languages.
 - French (Checked and fixed by [xav35000](https://github.com/xav35000))
 - German
 - Hindi
-- Italian (Checked and fixed by [bacchilega](https://github.com/bacchilega)) 
+- Italian (Checked and fixed by [bacchilega](https://github.com/bacchilega))
 - Korean
 - Malay
 - Nepali

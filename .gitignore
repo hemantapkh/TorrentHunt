@@ -136,3 +136,7 @@ dmypy.json
 logs
 *.logs
 *.log
+
+# Database
+*.sqlite3
+*.db
