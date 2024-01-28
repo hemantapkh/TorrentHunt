@@ -1,4 +1,4 @@
-from .struct import content_struct, search_struct
+from plugins.blueprint.struct import content_struct, search_struct
 
 
 class Schema:

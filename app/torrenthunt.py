@@ -22,10 +22,6 @@ from plugins.functions.misc import Misc
 from py1337x import py1337x
 from pyrogram import Client, filters
 
-# Loading variables from .env file
-logger.info("Loading variables from .env file")
-load_dotenv()
-
 # Creating metadata for database
 logger.info("Creating metadata for database")
 asyncio.run(init_models())

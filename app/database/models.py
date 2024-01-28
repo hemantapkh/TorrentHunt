@@ -1,9 +1,14 @@
 from os import environ
 
+from dotenv import load_dotenv
+from loguru import logger
 from sqlalchemy import TIMESTAMP, Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from sqlalchemy.sql import func
+
+logger.info("Loading variables from .env file")
+load_dotenv()
 
 Base = declarative_base()
 

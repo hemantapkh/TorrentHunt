@@ -2,7 +2,7 @@
 
 from os import environ
 
-from .requests import Requests
+from apis.requests import Requests
 
 
 class TorrentHunt:
