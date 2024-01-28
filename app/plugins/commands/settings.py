@@ -1,5 +1,4 @@
-import sqlalchemy
-from database.models import Setting
+from plugins.functions.database import get_restricted_mode
 from pyrogram import Client, filters, types
 
 
@@ -7,11 +6,7 @@ from pyrogram import Client, filters, types
 async def settings(Client, message):
     user_lang = await Client.misc.user_lang(message)
 
-    query = sqlalchemy.select(Setting.restricted_mode).where(
-        Setting.user_id == message.chat.id
-    )
-    restriction_mode = await Client.DB.execute(query)
-    restriction_mode = restriction_mode.scalar_one()
+    restriction_mode = await get_restricted_mode(message.chat.id)
 
     if restriction_mode:
         res_button_text = Client.language.BTN("turnOffRestrictedMode", user_lang)
