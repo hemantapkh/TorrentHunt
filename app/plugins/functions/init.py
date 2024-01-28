@@ -21,9 +21,14 @@ class Init:
 
         if admins:
             logger.info("Adding admins to database")
-            for admin in admins.split(","):
-                new_admin = Admin(user_id=admin)
-                await self.Client.DB.merge(new_admin)
+            for user_id in admins.split(","):
+                try:
+                    user_id = int(user_id)
+                    new_admin = Admin(user_id=user_id)
+                    await self.Client.DB.merge(new_admin)
+
+                except ValueError:
+                    logger.error(f"Invalid user id: {user_id}")
 
     async def add_commands(self):
         logger.info("Setting bot commands")
