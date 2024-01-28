@@ -10,10 +10,17 @@ from sqlalchemy.sql import func
 logger.info("Loading variables from .env file")
 load_dotenv()
 
+connection_string = (
+    environ.get("DATABASE_URL", "")
+    .lower()
+    .replace("sqlite:///", "sqlite+aiosqlite:///")
+    .replace("postgresql://", "postgresql+asyncpg://")
+)
+
 Base = declarative_base()
 
 engine = create_async_engine(
-    environ.get("DATABASE_URL"),
+    connection_string,
 )
 Session = sessionmaker(bind=engine, class_=AsyncSession)
 

@@ -38,7 +38,7 @@
         },
         "DATABASE_URL": {
             "description": "Database connection string",
-            "value": "sqlite+aiosqlite:///torrenthunt.db",
+            "value": "sqlite:///torrenthunt.db",
             "required": true
         },
         "TORRENTHUNT_API_URL": {
