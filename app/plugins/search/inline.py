@@ -16,21 +16,6 @@ async def query_search(Client, inline_query):
     if len(query_list) > 1:
         keyword = " ".join(query_list[1:])
         site = Client.misc.code_to_site(query_list[0])
-        if not inline_query.offset:
-            results = inline_ads() if environ.get("INLINE_ADS") else []
-            await Client.answer_inline_query(
-                inline_query.id,
-                results=results,
-                cache_time=0,
-                is_personal=True,
-                switch_pm_text=Client.language.STR(
-                    "searchingInline",
-                    user_lang,
-                ).format(keyword),
-                next_offset=str(1),
-                switch_pm_parameter="inlineQuery",
-            )
-            return
 
         page = int(inline_query.offset) if inline_query.offset else 1
         logger.info(f"Inline searching {keyword} on {site} on page {page}")
@@ -93,35 +78,3 @@ async def query_search(Client, inline_query):
         next_offset=str(next_offset) if next_offset else None,
         switch_pm_parameter="inlineQuery",
     )
-
-
-# Inline ads
-def inline_ads():
-    return [
-        types.InlineQueryResultArticle(
-            title="[ADS] Media Downloader Bot",
-            description="The ultimate media downloader bot on Telegram.\n👆 SCROLL UP TO SEE THE RESULTS👆",
-            thumb_url="https://i.ibb.co/dQZNmB2/videodownloader-512-7395df698c5e.png",
-            input_message_content=types.InputTextMessageContent(
-                message_text=ads_text,
-            ),
-            reply_markup=types.InlineKeyboardMarkup(
-                [
-                    [
-                        types.InlineKeyboardButton(
-                            text="👉 Click To Use 👈",
-                            url="https://t.me/vmateBot?start=torrentHuntInlineAds",
-                        ),
-                    ],
-                ],
-            ),
-        ),
-    ]
-
-
-ads_text = """
-<b>vmate - The media downloader Bot</b>
-
-Introducing VMate - the ultimate media downloader bot that makes downloading videos from your favorite social media platforms a breeze!
-With VMate, you can easily download media from Facebook, YouTube, TikTok, and many others in just a few second.
-"""
