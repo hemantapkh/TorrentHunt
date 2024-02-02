@@ -56,7 +56,7 @@ async def query_search(Client, inline_query):
                 results.append(
                     types.InlineQueryResultArticle(
                         title=res.get("name"),
-                        thumb_url=res.get("poster")
+                        thumb_url=res.get("thumbnail")
                         or f"https://raw.githubusercontent.com/hemantapkh/torrenthunt/main/images/{site}.jpg",
                         description="💾 {}, 🟢 {}, 🔴 {}, 📅 {}".format(
                             res.get("size"),
