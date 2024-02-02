@@ -1,3 +1,5 @@
+from os import environ
+
 from loguru import logger
 from plugins.functions.database import get_restricted_mode
 from pyrogram import Client, filters, types
@@ -15,7 +17,7 @@ async def query_search(Client, inline_query):
         keyword = " ".join(query_list[1:])
         site = Client.misc.code_to_site(query_list[0])
         if not inline_query.offset:
-            results = inline_ads()
+            results = inline_ads() if environ.get("INLINE_ADS") else []
             await Client.answer_inline_query(
                 inline_query.id,
                 results=results,
