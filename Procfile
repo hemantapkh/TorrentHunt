@@ -1,1 +1,1 @@
-worker: python3 torrenthunt.py
+worker: bash start.sh
