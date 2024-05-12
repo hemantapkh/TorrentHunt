@@ -1,7 +1,6 @@
 {
     "name": "Torrenthunt",
     "description": "Torrenthunt",
-    "stack": "container",
     "keywords": [
       "auto-filter",
       "filter",
