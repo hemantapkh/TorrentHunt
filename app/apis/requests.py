@@ -7,11 +7,10 @@ from loguru import logger
 class Requests:
     # Perform async HTTP request
     async def request(self, method, url, params=None, data=None, headers=None):
-        self.connector = aiohttp.TCPConnector(verify_ssl=False)
-        self.session = aiohttp.ClientSession(connector=self.connector)
+        connector = aiohttp.TCPConnector(verify_ssl=False)
 
         try:
-            async with aiohttp.ClientSession(connector=self.connector) as session:
+            async with aiohttp.ClientSession(connector=connector) as session:
                 async with session.request(
                     method,
                     url,
