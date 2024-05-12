@@ -51,6 +51,16 @@
             "value": "",
             "required": true
         },
+        "SENTRY_DSN": {
+            "description": "Sentry.io token for error tracking",
+            "value": "",
+            "required": true
+        },
+        "ENVIRONMENT": {
+            "description": "Type of app environment i.e local or production",
+            "value": "production",
+            "required": false
+        },
         "START_ADS": {
             "description": "Send message from a channel to a user when they start the bot",
             "value": "false",

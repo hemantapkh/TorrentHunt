@@ -44,7 +44,7 @@ class Misc:
                 )
 
             except Exception as err:
-                logger.error(f"Error sending message to admin: {err}")
+                logger.warning(f"Error sending message to admin: {err}")
                 pass
 
     # Get user language

@@ -28,7 +28,7 @@ class Init:
                     await self.Client.DB.merge(new_admin)
 
                 except ValueError:
-                    logger.error(f"Invalid user id: {user_id}")
+                    logger.warning(f"Invalid user id: {user_id}")
 
     async def add_commands(self):
         logger.info("Setting bot commands")
@@ -66,7 +66,7 @@ class Init:
                     ),
                 )
             except pyrogram.errors.exceptions.bad_request_400.PeerIdInvalid as err:
-                logger.error(f"Error setting commands for admins: {err}")
+                logger.warning(f"Error setting commands for admins: {err}")
 
 
 all_commands = [

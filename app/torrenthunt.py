@@ -5,6 +5,7 @@ from os import environ
 from sys import argv
 
 import uvloop
+import sentry_sdk
 from apis.requests import Requests
 from apis.torrenthunt import TorrentHunt
 from database import DataBase
@@ -20,6 +21,12 @@ from plugins.functions.keyboards import KeyBoard
 from plugins.functions.misc import Misc
 from py1337x import py1337x
 from pyrogram import Client, filters
+
+# Initializing sentry for error tracking
+sentry_sdk.init(
+    dsn=environ.get("SENTRY_DSN"),
+    environment=environ.get("ENVIRONMENT") or "local"
+)
 
 # Installing UVloop for better performance
 logger.info("Installing uvloop")
