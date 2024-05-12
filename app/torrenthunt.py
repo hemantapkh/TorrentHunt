@@ -58,6 +58,7 @@ bot = Client(
 Client.torrent_hunt_api = TorrentHunt(
     environ.get("TORRENTHUNT_API_KEY"),
 )
+Client.sites = {}
 Client.misc = Misc(bot)
 Client.keyboard = KeyBoard(bot)
 Client.language = Lang("langs/string.json", "langs/lang.json")
