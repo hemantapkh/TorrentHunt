@@ -74,7 +74,6 @@ all_commands = [
     pyrogram.types.BotCommand("bookmarks", "🔖 View your bookmarks"),
     pyrogram.types.BotCommand("settings", "⚙️ Change bot settings"),
     pyrogram.types.BotCommand("search", "🔍 Search for torrents"),
-    pyrogram.types.BotCommand("stats", "📊 See bot stats"),
 ]
 
 default_commands = [
@@ -92,4 +91,7 @@ group_commands_admins = [
     all_commands[2],
 ]
 
-admin_commands = default_commands + [all_commands[4]]
+admin_commands = default_commands + [
+    pyrogram.types.BotCommand("1337x", "🔧 Configure 1337x proxy"),
+    pyrogram.types.BotCommand("stats", "📊 See bot stats"),
+]
