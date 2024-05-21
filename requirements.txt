@@ -33,7 +33,7 @@ pyropatch==2.1
 PySocks==1.7.1
 python-dotenv==1.0.1
 PyYAML==6.0.1
-requests==2.31.0
+requests==2.32.0
 requests-cache==1.2.0
 requests-toolbelt==1.0.0
 scikit-learn==1.2.2
