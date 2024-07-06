@@ -9,7 +9,7 @@ attrs==23.2.0
 beautifulsoup4==4.12.3
 bs4==0.0.2
 cattrs==23.2.3
-certifi==2024.2.2
+certifi==2024.7.4
 cfgv==3.4.0
 charset-normalizer==3.3.2
 cloudscraper==1.2.71
