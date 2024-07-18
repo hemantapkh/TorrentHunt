@@ -38,7 +38,7 @@ requests-cache==1.2.0
 requests-toolbelt==1.0.0
 scikit-learn==1.2.2
 scipy==1.12.0
-sentry-sdk==2.1.1
+sentry-sdk==2.8.0
 six==1.16.0
 soupsieve==2.5
 SQLAlchemy==2.0.25
