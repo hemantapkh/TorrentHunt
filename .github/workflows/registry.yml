@@ -1,10 +1,10 @@
 name: Deploy Images to GHCR
 
 on:
-  workflow_dispatch:
   push:
-    tags:
-      - '**'
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   push-to-ghcr:
@@ -53,5 +53,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            ${{ steps.meta.outputs.tags }}
+            hemantapkh/torrenthunt:latest 
           labels: ${{ steps.meta.outputs.labels }}
