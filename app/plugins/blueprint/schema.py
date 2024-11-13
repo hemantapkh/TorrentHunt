@@ -36,6 +36,8 @@ class Schema:
             data.get("name") or data.get("title"),
         ):
             return self.Client.language.STR("cantView", language), None
+        
+        magnet_link = data.get("magnetLink") or data.get("magnet")
 
         message = content_struct.format(
             title=data.get("name") or data.get("title"),
@@ -43,7 +45,7 @@ class Schema:
             seeders=data.get("seeders"),
             leechers=data.get("leechers"),
             uploaded_on=data.get("uploadDate") or data.get("uploaded_on"),
-            magnet=data.get("magnetLink") or data.get("magnet"),
+            magnet=magnet_link,
             size_str=self.Client.language.STR("size", language),
             seeders_str=self.Client.language.STR("seeders", language),
             leechers_str=self.Client.language.STR("leechers", language),
@@ -55,6 +57,7 @@ class Schema:
             language,
             data.get("infoHash") or data.get("hash"),
             bookmarked=bookmarked,
+            magnet_link=magnet_link
         )
 
         return message, markup

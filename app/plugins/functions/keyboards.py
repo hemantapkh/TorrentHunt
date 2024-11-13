@@ -1,5 +1,5 @@
 """Markup for reply and inline keywords"""
-
+import base64
 from pyrogram import types
 
 
@@ -55,7 +55,7 @@ class KeyBoard:
             self.client.misc.split_list(results, 2),
         )
 
-    def torrent_info(self, user_lang, hash, bookmarked=False):
+    def torrent_info(self, user_lang, hash, magnet_link, bookmarked=False):
         if bookmarked:
             results = [
                 [
@@ -81,6 +81,15 @@ class KeyBoard:
                 types.InlineKeyboardButton(
                     text=self.client.language.BTN("addToSeedr", user_lang),
                     url=f"https://t.me/torrentseedrbot?start=addTorrent_{hash}",
+                ),
+            ],
+        )
+        
+        results.append(
+            [
+                types.InlineKeyboardButton(
+                    text=self.client.language.BTN("hoodyStream", user_lang),
+                    url=f"https://hoody.com/torrent-proxy?af=VRWTSYO72#{base64.b64encode(magnet_link)}",
                 ),
             ],
         )
