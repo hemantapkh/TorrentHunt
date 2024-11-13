@@ -85,14 +85,15 @@ class KeyBoard:
             ],
         )
         
-        results.append(
-            [
-                types.InlineKeyboardButton(
-                    text=self.client.language.BTN("hoodyStream", user_lang),
-                    url=f"https://hoody.com/torrent-proxy?af=VRWTSYO72#{base64.b64encode(magnet_link)}",
-                ),
-            ],
-        )
+        if magnet_link:
+            results.append(
+                [
+                    types.InlineKeyboardButton(
+                        text=self.client.language.BTN("hoodyStream", user_lang),
+                        url=f"https://hoody.com/torrent-proxy?af=VRWTSYO72#{base64.b64encode(magnet_link.encode()).decode()}",
+                    ),
+                ],
+            )
 
         return types.InlineKeyboardMarkup(
             results,
