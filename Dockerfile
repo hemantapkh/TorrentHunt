@@ -1,12 +1,15 @@
-FROM python:3.11.2-slim
+FROM python:3.12
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 WORKDIR /opt/torrenthunt
 
-RUN apt-get -qq update
+RUN apt-get -y update
 
 COPY app app
-COPY requirements.txt .
+COPY pyproject.toml .
+COPY uv.lock .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv sync --frozen --all-groups
 
-CMD ["python3","app/torrenthunt.py"]
+CMD ["uv", "run", "app/torrenthunt.py"]
