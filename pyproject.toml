@@ -5,17 +5,17 @@ description = "🏴‍☠️ The ultimate torrent bot on telegram"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "1337x==1.2.5",
-    "aiohttp==3.9.4",
-    "aiosqlite==0.19.0",
-    "asyncpg==0.29.0",
-    "greenlet==3.0.3",
+    "1337x==1.2.6",
+    "aiohttp==3.11.9",
+    "aiosqlite==0.20.0",
+    "asyncpg==0.30.0",
+    "greenlet==3.1.1",
     "loguru==0.7.2",
     "pyrogram==2.0.106",
     "python-dotenv==1.0.1",
     "scikit-learn==1.5.2",
     "sentry-sdk==2.19.0",
-    "sqlalchemy==2.0.25",
+    "sqlalchemy==2.0.36",
     "tgcrypto==1.2.5",
-    "uvloop==0.19.0",
+    "uvloop==0.21.0",
 ]
