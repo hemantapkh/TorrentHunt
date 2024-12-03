@@ -1,7 +1,7 @@
 import joblib
 
 class ExplicitDetector:
-    def __init__(self, model: str = "Randomforest.joblib"):
+    def __init__(self, model: str = "RandomForest.joblib"):
         self.vectorizer = joblib.load(
             open("models/explicit_detector/vectorizer.joblib", "rb"),
         )
