@@ -1,17 +1,17 @@
-import pickle
-
-vectorizer = pickle.load(
-    open("models/explicit_detector/vectorizer.pickle", "rb"),
-)
-model = pickle.load(
-    open("models/explicit_detector/RandomForestClassifier.pickle", "rb"),
-)
-
+import joblib
 
 class ExplicitDetector:
-    def __init__(self):
-        pass
+    def __init__(self, model: str = "Randomforest.joblib"):
+        self.vectorizer = joblib.load(
+            open("models/explicit_detector/vectorizer.joblib", "rb"),
+        )
+        self.model = joblib.load(
+            open(f"models/explicit_detector/{model}", "rb"),
+        )
 
     def predict(self, text):
-        vector = vectorizer.transform([text]).toarray()
-        return model.predict(vector)
+        try:
+            vector = self.vectorizer.transform([text])
+            return bool(self.model.predict(vector)[0])
+        except Exception:
+            return False
