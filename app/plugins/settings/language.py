@@ -50,7 +50,7 @@ async def set_language(Client, callback):
         )
 
         # Send ads on start if configured
-        if environ.get("START_ADS"):
+        if environ.get("START_ADS") in ["True", "true"]:
             await Client.forward_messages(
                 chat_id=callback.message.chat.id,
                 from_chat_id=environ.get("START_ADS_CHANNEL"),
