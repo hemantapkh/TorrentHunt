@@ -19,7 +19,7 @@ class Schema:
                     seeders=item.get("seeders"),
                     leechers=item.get("leechers"),
                     torrent_id=item.get("torrentId"),
-                    link_str=self.Client.language.STR("size", language),
+                    link_str=self.Client.language.STR("link", language),
                 )
                 + message
             )

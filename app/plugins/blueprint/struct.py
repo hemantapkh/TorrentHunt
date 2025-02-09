@@ -6,7 +6,7 @@ search_struct = """
 
 💾 {size}, 🟢 {seeders}, 🔴 {leechers}
 
-{link_str}: /getLink_{torrent_id}
+{link_str}: 👉 /getLink_{torrent_id}
 """
 
 # Structure of torrent content
