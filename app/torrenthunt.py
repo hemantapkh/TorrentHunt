@@ -19,7 +19,7 @@ from plugins.functions.filters import Filter
 from plugins.functions.init import Init
 from plugins.functions.keyboards import KeyBoard
 from plugins.functions.misc import Misc
-from py1337x import py1337x
+from py1337x import AsyncPy1337x
 from pyrogram import Client, filters
 
 # Initializing sentry for error tracking
@@ -63,12 +63,12 @@ Client.misc = Misc(bot)
 Client.keyboard = KeyBoard(bot)
 Client.language = Lang("langs/string.json", "langs/lang.json")
 Client.requests = Requests()
-Client.py1337x = py1337x()
+Client.py1337x = AsyncPy1337x()
 Client.struct = Schema(bot)
 filters.custom = Filter(bot)
 Client.explicit_detector = ExplicitDetector()
 
-
+    
 async def main():
     async with bot:
         await init_models()

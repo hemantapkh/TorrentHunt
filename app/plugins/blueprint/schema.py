@@ -18,7 +18,7 @@ class Schema:
                     size=item.get("size"),
                     seeders=item.get("seeders"),
                     leechers=item.get("leechers"),
-                    torrent_id=item.get("torrentId"),
+                    torrent_id=item.get("torrent_id") or item.get("torrentId"),
                     link_str=self.Client.language.STR("link", language),
                 )
                 + message
@@ -42,8 +42,8 @@ class Schema:
             size=data.get("size"),
             seeders=data.get("seeders"),
             leechers=data.get("leechers"),
-            uploaded_on=data.get("uploadDate") or data.get("uploaded_on"),
-            magnet=data.get("magnetLink") or data.get("magnet"),
+            uploaded_on=data.get("date_uploaded") or data.get("uploadDate") or data.get("uploaded_on"),
+            magnet=data.get("magnet_link") or data.get("magnetLink") or data.get("magnet"),
             size_str=self.Client.language.STR("size", language),
             seeders_str=self.Client.language.STR("seeders", language),
             leechers_str=self.Client.language.STR("leechers", language),
@@ -53,7 +53,7 @@ class Schema:
 
         markup = self.Client.keyboard.torrent_info(
             language,
-            data.get("infoHash") or data.get("hash"),
+            data.get("info_hash") or data.get("infoHash") or data.get("hash"),
             bookmarked=bookmarked,
         )
 

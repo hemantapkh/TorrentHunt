@@ -14,10 +14,10 @@ async def results(Client, message):
         reply_to_message_id=message.id,
     )
 
-    response = Client.py1337x.info(torrentId=torrent_id)
+    response = await Client.py1337x.info(torrent_id=torrent_id)
 
     text, markup = Client.struct.content_message(
-        response,
+        response.to_dict(),
         language=user_lang,
         restricted_mode=restricted_mode,
     )

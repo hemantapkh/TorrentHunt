@@ -8,7 +8,7 @@ from pyrogram import Client, filters
     & filters.custom.init
     & ~filters.command("settings"),
 )
-async def search(Client, message):
+async def search(Client: Client, message):
     user_lang = await Client.misc.user_lang(message)
 
     msg = await Client.send_message(
@@ -17,9 +17,9 @@ async def search(Client, message):
         reply_to_message_id=message.id,
     )
 
-    response = Client.py1337x.search(message.text)
+    response = await Client.py1337x.search(message.text)
 
-    text = Client.struct.search_message(response, user_lang)
+    text = Client.struct.search_message(response.to_dict(), user_lang)
 
     await Client.edit_message_text(
         chat_id=message.chat.id,
