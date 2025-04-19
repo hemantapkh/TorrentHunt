@@ -6,13 +6,15 @@ from sys import argv
 
 import uvloop
 import sentry_sdk
+from loguru import logger
+from pyrogram import Client, filters
+
 from apis.requests import Requests
 from apis.torrenthunt import TorrentHunt
 from database import DataBase
 from database.models import init_models
 from init import exec_dir
 from langs.lang import Lang
-from loguru import logger
 from models.explicit_detector.explicit_detector import ExplicitDetector
 from plugins.blueprint.schema import Schema
 from plugins.functions.filters import Filter
@@ -31,15 +33,6 @@ sentry_sdk.init(
 # Installing UVloop for better performance
 logger.info("Installing uvloop")
 uvloop.install()
-
-# Configure logger to write logs to file and console
-log_file = environ.get("LOGFILE")
-if log_file:
-    logger.add(
-        log_file,
-        backtrace=True,
-        rotation="10 MB",
-    )
 
 logger.info("Creating database instance")
 Client.DB = DataBase()

@@ -14,7 +14,7 @@ class Misc:
     async def fetch_config(self):
         # Get available sites
         config = await self.Client.torrent_hunt_api.request(
-            "/api/config",
+            "/api/v1/sites/config",
         )
 
         if "error" in config:
@@ -74,7 +74,3 @@ class Misc:
     def split_list(self, lst, size):
         return [lst[i : i + size] for i in range(0, len(lst), size)]
 
-    # Get the site by it's code
-    def code_to_site(self, code):
-        data = self.Client.sites
-        return next((key for key, value in data.items() if value["code"] == code), None)

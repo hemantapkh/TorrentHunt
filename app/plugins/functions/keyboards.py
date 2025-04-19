@@ -27,11 +27,10 @@ class KeyBoard:
     def sites(self, keyword):
         results = [
             types.InlineKeyboardButton(
-                text=self.client.sites[key]["title"],
-                switch_inline_query_current_chat=f"{self.client.sites[key]['code']} {keyword}",
+                text=self.client.sites[key]["website"],
+                switch_inline_query_current_chat=f"!{key} {keyword}",
             )
             for key in self.client.sites
-            if not self.client.sites[key].get("deactivated")
         ]
 
         return (

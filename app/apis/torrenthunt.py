@@ -9,16 +9,13 @@ class TorrentHunt:
     def __init__(self, api_key):
         url = (
             environ.get(
-                "TORRENTHUNT_API_URL",
+                "TORRENTHUNT_API_URL"
             )
-            or "https://torrenthunt.p.rapidapi.com"
         )
         self.requests = Requests()
         self.url = url.strip("/")
         self.headers = {
-            "X-RapidAPI-Key": api_key,
-            "X-RapidAPI-Proxy-Secret": api_key,
-            "X-RapidAPI-Host": "torrenthunt.p.rapidapi.com",
+            "X-API-Key": environ.get("TORRENTHUNT_API_KEY"),
         }
 
     async def request(self, route, method="GET", params=None, data=None):
@@ -27,5 +24,5 @@ class TorrentHunt:
             self.url + route,
             params=params,
             data=data,
-            headers=self.headers,
+            headers=self.headers
         )

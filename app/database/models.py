@@ -2,7 +2,6 @@ from os import environ
 from uuid import uuid4
 
 from asyncpg import Connection as asyncpg_connection
-from dotenv import load_dotenv
 from loguru import logger
 from sqlalchemy import (
     TIMESTAMP,
@@ -17,8 +16,6 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from sqlalchemy.sql import func
 
-logger.info("Loading variables from .env file")
-load_dotenv()
 
 connection_string = (
     environ.get("DATABASE_URL", "")

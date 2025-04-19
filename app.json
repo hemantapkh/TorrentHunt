@@ -1,6 +1,6 @@
 {
-    "name": "Torrenthunt",
-    "description": "Torrenthunt",
+    "name": "Torrenthunt Clone",
+    "description": "Torrenthunt clone: https://github.com/hemantapkh/TorrentHunt",
     "stack": "container",
     "keywords": [
       "auto-filter",
@@ -42,14 +42,14 @@
             "required": true
         },
         "TORRENTHUNT_API_URL": {
-            "description": "URL of Torrent Hunt API",
-            "value": "https://torrenthunt.p.rapidapi.com",
+            "description": "URL of Torrents API, Deploy from https://github.com/Ryuk-me/Torrent-Api-py",
+            "value": "https://torrent-api-py-nx0x.onrender.com",
             "required": true
         },
         "TORRENTHUNT_API_KEY": {
-            "description": "Get your key from https://rapidapi.com/hemantapkh/api/torrenthunt",
+            "description": "API key for Torrents api",
             "value": "",
-            "required": true
+            "required": false
         },
         "SENTRY_DSN": {
             "description": "Sentry.io token for error tracking",

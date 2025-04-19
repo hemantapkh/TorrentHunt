@@ -2,7 +2,6 @@
 
 import datetime
 
-import sqlalchemy
 from database.models import Session, Setting, User
 
 
