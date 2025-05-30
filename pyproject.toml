@@ -5,7 +5,7 @@ description = "🏴‍☠️ The ultimate torrent bot on telegram"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "1337x==2.0.0",
+    "1337x==2.0.1",
     "aiohttp==3.11.9",
     "aiosqlite==0.20.0",
     "asyncpg==0.30.0",

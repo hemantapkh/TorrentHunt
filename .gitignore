@@ -140,3 +140,6 @@ logs
 # Database
 *.sqlite3
 *.db
+
+# MacOS
+.DS_Store
