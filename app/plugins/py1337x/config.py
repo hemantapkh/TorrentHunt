@@ -26,7 +26,7 @@ async def stats(Client, message):
 async def proxy(Client, callback):
     proxy = callback.data.split("_")[1]
     
-    Client.py1337x = py1337x.Py1337x(base_url=f"https://www.{proxy}")
+    Client.py1337x = py1337x.AsyncPy1337x(base_url=f"https://www.{proxy}")
 
     await Client.delete_messages(
         chat_id=callback.message.chat.id,
