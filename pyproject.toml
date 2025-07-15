@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "1337x==2.0.1",
-    "aiohttp==3.11.9",
+    "aiohttp==3.12.14",
     "aiosqlite==0.20.0",
     "asyncpg==0.30.0",
     "greenlet==3.1.1",
