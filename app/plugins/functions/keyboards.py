@@ -54,6 +54,33 @@ class KeyBoard:
             self.client.misc.split_list(results, 2),
         )
 
+    def categories(self, query):
+        category_map = {
+            "movies": "🎬 Movies",
+            "tv": "📺 TV",
+            "games": "🎮 Games",
+            "music": "🎵 Music",
+            "apps": "🖥️ Apps",
+            "anime": "🎎 Anime",
+            "documentaries": "🎥 Documentaries",
+            "xxx": "📦 Other",
+        }
+
+        # Truncate query to the max safe length to avoid hitting Telegram's limit
+        truncated_query = query[:46]
+
+        buttons = [
+            types.InlineKeyboardButton(
+                text=display_text,
+                callback_data=f"cat_{category_name}_{truncated_query}",
+            )
+            for category_name, display_text in category_map.items()
+        ]
+
+        return types.InlineKeyboardMarkup(
+            self.client.misc.split_list(buttons, 2),
+        )
+
     def torrent_info(self, user_lang, hash, bookmarked=False):
         if bookmarked:
             results = [

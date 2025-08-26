@@ -3,6 +3,10 @@
 import asyncio
 from os import environ
 from sys import argv
+from dotenv import load_dotenv
+
+# It's crucial to load the environment variables before other imports
+load_dotenv()  # noqa
 
 import sentry_sdk
 import uvloop
