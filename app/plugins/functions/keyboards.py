@@ -63,7 +63,7 @@ class KeyBoard:
             "apps": "🖥️ Apps",
             "anime": "🎎 Anime",
             "documentaries": "🎥 Documentaries",
-            "xxx": "🔞 Other",
+            "xxx": "🔞 Others",
         }
 
         # Truncate query to the max safe length to avoid hitting Telegram's limit
