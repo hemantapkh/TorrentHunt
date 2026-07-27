@@ -1,1 +1,1 @@
-python3 app/torrenthunt.py
+python3 app/main.py

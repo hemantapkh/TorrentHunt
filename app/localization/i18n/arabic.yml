@@ -1,0 +1,133 @@
+## Messages
+backToMenu: ⬅️ الرجوع للقائمة الرئيسية
+blockedTooFast: ⛔ تم حظرك 5 مرات لإرسالك رسائل متعددة في وقت قصير.
+cantView: 🚫 لا يمكنك عرض هذا المحتوى نظرًا لتفعيلك وضع الحظر. يمكنك الغاء تفعيل وضع الحظر من الاعدادات.
+category: الفئة
+chooseLanguage: 🗣️ إختر لغتك
+clickForMoreDetails: اضغط لعرض المزيد من التفاصيل.
+downloads: التحميلات
+emptyPage: ⚠️ لا يوجد أي محتوى في هذه الصفحة.
+errorFetchingInfo: ⚠️ <code>حدث خطأ اثناء استخراج المعلومات. ..</code>
+errorFetchingLink: ⚠️ <code>حدث خطأ اثناء استخراج الرابط ...</code>
+errorSendingImage: ⚠️ حدث خطأ اثناء ارسال الصورة.
+fetchingMagnetLink: 🔎 <code>جار استخراج الرابط ...</code>
+fetchingTorrentInfo: 🔎 <code>جار استخراج معلومات التورنت ...</code>
+fetchingTorrents: 🔎 <code>البحث عن تورنتات ...</code>
+fileNotFound: 😿 لم يتم ايجاد الملف المطلوب على السيرفر.
+greet: |-
+  ✨ مرحبًا {}, أنا Torrent Hunt Bot ويمكنني مساعدتك في البحث واستكشاف التورنت داخل تليجرام.
+
+  <b>أرسل أي كلمة مفتاحية للبحث عن تورنت.</b>
+
+  على سبيل المثال: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>للبحث المضمّن, ما عليك سوى كتابة @TorrentHuntBot في أي دردشة والبحث عن تورنت.</b>
+
+  على سبيل المثال: <code>@TorrentHuntBot Sintel</code>
+greetGroup: |-
+  ✨ مرحبًا {}, أنا Torrent Hunt Bot ويمكنني مساعدتك في البحث واستكشاف التورنت داخل تليجرام.
+
+  <b>أرسل أي كلمة مفتاحية للبحث عن تورنت.</b>
+
+  على سبيل المثال: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>للبحث المضمّن, ما عليك سوى كتابة @TorrentHuntBot في أي دردشة والبحث عن تورنت.</b>
+
+  على سبيل المثال: <code>@TorrentHuntBot Sintel</code>
+help: |-
+  <b>{}
+
+  ⬇️ كيف تحمل التورنت؟</b>
+
+  لتحميل التورنت, سوف تحتاج إلى تحميل عميل التورنت في جهازك. هنالك الكثير من العملاء (أي التطبيقات) qBitTorrent هو المفضل لدي (للحاسوب) و Flud (للأندرويد). بعد التثبيت, سوف تحتاج إلى نسخ رابط المغناطيس (اي رابط الملف), او فتح .رابط التورنت في التطبيق وسوف يبدأ تحميل الملف.
+
+  للمزيد, يمكنك استخدام عميل تورنت للويب, كـseedr على سبيل المثال. اذا استخدمت عميل ويب سوف تتمكن من مشاهدة التورنت بدون تحميله. تحتاج فقط إلى انشاء حساب في seedr ولصق رابط التورنت هناك. يمكنك تحميل الملف او مشاهدته مباشرة بدون تحميله على جهازك. انا افضل استخدام عميل ويب كـseedr للتحميل .
+
+  <b>ارسل أي كلمة مفتاحية للبحث عن تورنتات.</b>
+
+  على سبيل المثال: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>للبحث المضمّن, فقط اكتب @TorrentHuntBot في أي دردشة للبحث عن التورنتات.</b>
+
+  على سبيل المثال: <code>@TorrentHuntBot Sintel</code>
+language: اللغة
+languageSelected: 🌐 تم اختيار اللغة العربية كلغتك الافتراضية، يمكنك اختيار لغة أخرى من الاعدادات.
+lastChecked: تم التحقق آخر مرة
+link: رابط
+moreInfo: معلومات
+noPermission: ⚠️ ليست لديك الصلاحية للولوج إلى هذا.
+noResults: ❌ لا توجد نتائج، يرجى اعادة البحث.
+notSubscribed: 🥺 يبدوا انك لست مشتركًا في قناتنا بعد. نظرًا لمصادرنا المحدودة، يمكن لمشتركينا فقط استعمال هذه الخدمة. يرجى دعمنا بالإشتراك في قناتنا لإستعمال هذه الخدمة.
+notSubscribedCallback: أنت لست مشترك بعد.
+notYourMessage: ⚠️ يمكن لمرسل الرسالة فقط استخدام هذه الميزة. من فضلك ارسل لي رسالتك الخاصة للبحث عنها.
+popularThisWeek: ⚡️ التورنتات المنتشرة هذا الاسبوع
+popularToday: ⚡️ التورنتات المنتشرة حاليًا
+restrictedModeFalse: ✔️ تم الغاء تفعيل وضع الحظر بنجاح.
+restrictedModeTrue: 🚫 تم تفعيل وضع الحظر لإخفاء المتحوى الغير لائق من نتائج بحثك.
+searchingInline: 🔎 جار البحث عن {} ...
+searchingQuery: 🔎 <code>جار البحث عن {} ...</code>
+seeders: Seeders
+selectCategory: ❔ اختر فئة للتورنت
+selectTimePeriod: ⏰ اختر مدة
+settings: |-
+  <b>{}</b>
+
+  اختر اللغة التي تريد التغيير إليها.
+shareText: مرحبٌا، باستخدام torrent hunt يمكنك الحصول على رابط افلامك المفضلة، ومسلسلات، العاب وبرامج، والمزيد من داخل تيليجرام، لاستخدام هذا البوت، اضغط على الرابط ادناه وابدأ معه المحادثة.🚀
+size: الحجم
+support: |-
+  <b>{}</b>
+
+  شكرًا لرغبتك في التطوع، تبرع بأي قدر للحفاظ على بقاء هذه الخدمة ولتحفيزي لإضافة مميزات جديدة.😇
+
+  🐛 للإبلاغ عن مشكلة او طلب إضافة ميزة جديدة، انضم لدردشة المناقشة، واطرحها هناك.
+thanksForSub: 😇 <b>شكرًا جزيلًا لدعمنا!! كونك عضوًا في قناتنا، سوف تتلقى آخر تحديثات مشاريعنا.</b>
+trendingThisWeek: ✨ تورنتات متداولة هذا الاسبوع
+trendingToday: ✨ تورنتات متداولة اليوم
+unknownCategory: ❔ يرجى اختيار الفئة الصحيحة
+unknownTimePeriod: ⏰ يرجى اختيار المدة الصحيحة
+unlockAllFeatures: 💫 <b>احرص على الاشتراك في قناتنا لفتح كل مميزات البوت مجانًا.</b>
+uploadedBy: المحمّل
+uploadedOn: الرفع على
+warningTooFast: 🛑 انك ترسل رسائلًا بسرعة كبيرة. ابطئ قليلًا لكي لا تتعرض للحظر.
+wishlistAdded: ✅ تمت اضافة هذا العنصر لقائمة امنياتك.
+
+## Buttons
+addToSeedrBtn: ⬇️ إضافة إلى seedr
+allBtn: ✅ الكل
+animeBtn: 🎎 انمي
+appsBtn: 🖥️ تطبيقات
+backBtn: ⬅️ رجوع
+browseBtn: 🔍 تصفح التورنتات
+channelBtn: 📢 القناة
+docsBtn: 🎥 وثائقيات
+donateBtn: ☕  تبرع
+doneBtn: ❤️ تم
+gamesBtn: 🎮 العاب
+githubBtn: 🌟 غيت هب
+groupBtn: 🗣️ مجموعة الدردشة
+imageBtn: 🖼️ الصور
+inlineSearchBtn: 🔎 البحث الداخلي
+languageSettingBtn: 🗣️ اعدادات اللغة
+magnetDownloadBtn: 🧲 Magnet
+mainMenuBtn: ⬅️ القائمة الرئيسية
+moviesBtn: 🎬 افلام
+musicBtn: 🎵 موسيقى
+nextBtn: ⏭️ التالي
+othersBtn: 📦 اخرى
+popularBtn: ⚡ التورنتات المُنتشرة
+previousBtn: ⏮️ السابق
+shareBtn: 💬 مشاركة
+topBtn: 💯 قائمة اشهر تورنتات
+torrentDownloadBtn: 📄 تورنت
+trendingBtn: ✨ التورنتات الشائعة
+turnOffRestrictedModeBtn: ✔️ الغاء تفعيل وضع الحظر
+turnOnRestrictedModeBtn: 🚫 تفعيل وضع الحظر
+tvBtn: 📺 تلفزيون
+xxxBtn: 🔞 جنس
+youtubeBtn: 📺 يوتيوب
+
+## Commands
+helpCmd: ⁉️ مساعدة
+settingsCmd: ⚙️ الاعدادات
+supportCmd: 🎁 الدعم

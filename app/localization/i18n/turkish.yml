@@ -1,0 +1,133 @@
+## Messages
+backToMenu: ⬅️ Ana menüye dön
+blockedTooFast: ⛔ Bot'a spam gönderdiğiniz için 5 dakika süreyle yasaklandınız.
+cantView: 🚫 Kısıtlı mod açık olduğundan bu içeriği görüntüleyemezsiniz. Kısıtlamayı ayarlardan kapatabilirsiniz.
+category: Kategori
+chooseLanguage: 🗣️ Dilediğiniz dili seçin
+clickForMoreDetails: Daha fazla detay için tıklayınız.
+downloads: İndirilenler
+emptyPage: ⚠️ Bu sayfada herhangi bir içerik yok...
+errorFetchingInfo: ⚠️ <code>Bilgi alınırken hata ...</code>
+errorFetchingLink: ⚠️ <code>Bağlantı alınırken hata ...</code>
+errorSendingImage: ⚠️ Resimleri gönderirken bir hata oluştu.
+fetchingMagnetLink: 🔎 <code>Bağlantı bulunuyor ...</code>
+fetchingTorrentInfo: 🔎 <code>Bilgi alınıyor ...</code>
+fetchingTorrents: 🔎 <code>Torrent aranıyor ...</code>
+fileNotFound: 😿 İstenen dosya sunucuda bulunamadı...
+greet: |-
+  ✨ Selam {}, Ben Torrent Hunt Bot'um ve Telegram'da torrentleri aramanıza ve göz atmanıza yardımcı olabilirim.
+
+  <b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>
+
+  Örneğin: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>Satır içi arama için; herhangi bir sohbette @TorrentHuntBot yazıp torrentleri aramanız yeterlidir.</b>
+
+  Şu şekilde: <code>@TorrentHuntBot Sintel</code>
+greetGroup: |-
+  ✨ Selam {}, Ben Torrent Hunt Bot'um ve Telegram'da torrentleri aramanıza ve göz atmanıza yardımcı olabilirim.
+
+  <b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>
+
+  Örneğin: /VLC Media, /Sintel
+
+  <b>Satır içi arama için; herhangi bir sohbette @TorrentHuntBot yazıp torrentleri aramanız yeterlidir.</b>
+
+  Şu şekilde: <code>@TorrentHuntBot Sintel</code>
+help: |-
+  <b>{}
+
+  ⬇️ Torrentler nasıl indirilir?</b>
+
+  Torrentleri indirmek için, cihazınıza herhangi bir Torrent istemcisi yüklemeniz gerekir. Dışarıda birçok Torrent istemcisi var. Favorilerimden bazıları qBitTorrent (PC için) ve Flud (Android için). Yükledikten sonra, mıknatıs bağlantısını kopyalamanız veya .Torrent dosyasını uygulamaya yüklemeniz yeterlidir; Torrent'iniz indirilmeye başlayacaktır.
+
+  Ayrıca, torrent'i sizin için indirecek seedr gibi bir web torrent istemcisi de kullanabilirsiniz. Bir web istemcisi kullanmak, indirmeden Torrentleri izlemenize izin verir. Sadece seedr'de bir hesap oluşturmanız ve mıknatıs bağlantısını oraya kopyalamanız yeterlidir. Dosyayı indirebilir veya indirmeden doğrudan VLC oynatıcıya aktarabilirsiniz. Torrentleri indirmek için seedr gibi bir web istemcisi kullanmayı tercih ediyorum.
+
+  <b>Torrent aramak için herhangi bir anahtar kelime gönderin.</b>
+
+  Örneğin: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>Satır içi arama için, herhangi bir sohbette @TorrentHuntBot yazıp torrentleri aramanız yeterlidir.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+language: Dil
+languageSelected: 🇹🇷 Varsayılan diliniz artık Türkçe ! Dilerseniz ayarlardan başka bir dile tekrar geçebilirsiniz...
+lastChecked: Son Kontrol Edilen
+leechers: Leechers
+link: Bağlantı
+moreInfo: Bilgi
+noPermission: ⚠️ Buna erişmek için yeterli izinin yok.
+noResults: ❌ Hiçbir sonuç yok. Lütfen aramanızı daraltın.
+notSubscribed: 🥺 Görünüşe göre henüz kanalımıza abone değilsiniz. Sınırlı kaynaklarımız nedeniyle, bu hizmeti yalnızca abonelerimiz kullanabilir. Lütfen bu hizmeti kullanmak için kanalımıza abone olarak bize destek olun.
+notSubscribedCallback: Henüz abone değilsiniz.
+notYourMessage: ⚠️ Bu özelliği yalnızca iletiyi gönderen kullanabilir. Lütfen aramak için bana kendi mesajınızı gönderin.
+popularThisWeek: ⚡️ Bu Haftanın Popüler Torrentleri
+popularToday: ⚡️ Günümüzün Popüler Torrentleri
+restrictedModeFalse: ✔️ Kısıtlı mod başarıyla kapatıldı.
+restrictedModeTrue: '🚫 Kısıtlı modu kendiniz için açtınız ve bu da şu anlama geliyor: Yetişkinlere yönelik içerik sonuçlarınızda gözükmeyecek.'
+searchingInline: 🔎 Aranıyor ...
+searchingQuery: 🔎 <code>Aranıyor ...</code>
+seeders: Seeders
+selectCategory: ❔ Torrentleriniz için bir kategori seçin
+selectTimePeriod: ⏰ Bir dönem seçin
+settings: |-
+  <b>{}</b>
+
+  Değiştirmek istediğiniz ayarı seçin.
+shareText: Merhaba, Torrent Hunt kullanarak Telegram'da en sevdiğiniz filmlerin, dizilerin, şovların, oyunların, yazılımların ve çok daha fazlasının bağlantısını alabilirsiniz. Botu kullanmak için yukarıdaki bağlantıya tıklayın ve keyfini çıkarın.
+size: Boyutu
+support: |-
+  <b>{}</b>
+
+  Katkı sağlama isteğiniz için teşekkür ederiz. Bu hizmeti canlı tutmak ve bana yeni özellikler ekleme motivasyonu vermek için herhangi bir miktar bağış yapın.😇
+
+  🐛 Hataları bildirmek veya yeni bir özellik talep etmek için destek grubumuza katılın ve orada bize anlatın.
+thanksForSub: 😇 <b>Bizi desteklediğiniz için çok teşekkür ederim !! Kanalımızın bir parçası olarak projelerimizin en son güncellemelerini alacaksınız.</b>
+trendingThisWeek: ✨ Bu Haftanın Trend Olan Torrentleri
+trendingToday: ✨ Bugünün Trend Olan Torrentleri
+unknownCategory: ❔ Lütfen doğru kategoriyi seçin
+unknownTimePeriod: ⏰ Lütfen doğru dönemi seçin
+unlockAllFeatures: 💫 <b>Botun tüm özelliklerinden ücretsiz yararlanmak için kanalımıza abone olmayı unutmayın.</b>
+uploadedBy: Yükleyici
+uploadedOn: Yüklendi
+warningTooFast: 🛑 Çok hızlı mesaj gönderiyorsun. Lütfen yavaşlayın yoksa yasaklanabilirsiniz.
+
+## Buttons
+addToSeedrBtn: ⬇️ Seedr'e indir
+allBtn: ✅ Herşey
+animeBtn: 🎎 Anime
+appsBtn: 🖥️ Uygulamalar
+backBtn: ⬅️ Geri
+browseBtn: 🔍 Torrentlere Göz At
+channelBtn: 📢 Kanal
+docsBtn: 🎥 Belgesel
+donateBtn: ☕  Bağış yapmak
+doneBtn: ❤️ Bitti
+gamesBtn: 🎮 Oyun
+githubBtn: 🌟 GitHub
+groupBtn: 🗣️ Grup sohbeti
+imageBtn: 🖼️ Fotoğraflar
+inlineSearchBtn: 🔎 Satır içi arama
+languageSettingBtn: 🗣️ Dil ayarı
+magnetDownloadBtn: 🧲 Magnet
+mainMenuBtn: ⬅️ Ana menü
+moviesBtn: 🎬 Film
+musicBtn: 🎵 Müzik
+nextBtn: ⏭️ Sonraki
+othersBtn: 📦 Diğerleri
+popularBtn: ⚡ Popüler Torrentler
+previousBtn: ⏮️ Önceki
+shareBtn: 💬 Paylaş
+topBtn: 💯 En İyi Torrentler
+torrentDownloadBtn: 📄 Torrent
+trendingBtn: ✨ Trend Olan Torrentler
+turnOffRestrictedModeBtn: ✔️ Kısıtlı modu devre dışı bırakın
+turnOnRestrictedModeBtn: 🚫 Kısıtlı modu etkinleştirin
+tvBtn: 📺 Televizyon
+xxxBtn: 🔞 XXX
+youtubeBtn: 📺 YouTube
+
+## Commands
+helpCmd: ⁉️ Yardım
+settingsCmd: ⚙️ Ayarlar
+supportCmd: 🎁 Destek

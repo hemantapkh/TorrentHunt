@@ -1,0 +1,133 @@
+## Messages
+backToMenu: ⬅️ Indietro al menù principale
+blockedTooFast: ⛔ Sei stato bannato per 5 minuti per aver inviato spam al bot.
+cantView: 🚫 Non puoi visualizzare questo contenuto perché la modalità con restrizioni è attiva. Puoi disattivare la restrizione dalle impostazioni.
+category: Categoria
+chooseLanguage: 🗣️ Scegli la lingua che desideri
+clickForMoreDetails: Fare clic per maggiori dettagli.
+downloads: Downloads
+emptyPage: ⚠️ Questa pagina non ha alcun contenuto.
+errorFetchingInfo: ⚠️ <code>Errore durante il recupero delle informazioni ...</code>
+errorFetchingLink: ⚠️ <code>Errore durante il recupero del collegamento ...</code>
+errorSendingImage: ⚠️ Errore durante l'invio delle immagini.
+fetchingMagnetLink: 🔎 <code>Ricerca collegamento in corso ...</code>
+fetchingTorrentInfo: 🔎 <code>Recupero informazioni in corso ...</code>
+fetchingTorrents: 🔎 <code>Ricerca torrent ...</code>
+fileNotFound: 😿 Il file richiesto non è stato trovato sul server.
+greet: |-
+  ✨ Ciao {}, Sono Torrent Hunt Bot e posso aiutarti a cercare e scegliere i torrent all'interno di Telegram.
+
+  <b>Invia qualsiasi parola chiave per cercare torrent.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+greetGroup: |-
+  ✨ Ciao {}, Sono Torrent Hunt Bot e posso aiutarti a cercare e scegliere i torrent all'interno di Telegram.
+
+  <b>Invia qualsiasi parola chiave per cercare torrent.</b>
+
+  Eg: /VLC Media, /Sintel
+
+  <b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+help: |-
+  <b>{}
+
+  ⬇️ Come scaricare i torrent?</b>
+
+  Per scaricare i torrent, devi installare un qualsiasi client torrent sul tuo dispositivo. Ci sono molti client torrent là fuori. Alcuni dei miei preferiti sono qBitTorrent (per PC) e Flud (per Android). Dopo l'installazione, devi solo copiare il collegamento magnetico o caricare il file .Torrent nell'app e il tuo torrent inizierà a scaricarsi.
+
+  Inoltre, puoi utilizzare un client torrent web, come seedr, che scaricherà il torrent per te. L'utilizzo di un client Web ti consentirà di guardare i torrent senza scaricarli. Devi solo creare un account in seedr e copiare il link magnetico lì. Puoi scaricare il file o riprodurlo in streaming direttamente nel lettore VLC senza scaricarlo. Preferisco usare un client web come seedr per scaricare torrent.
+
+  <b>Invia qualsiasi parola chiave per cercare torrent.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>Per la ricerca in linea, digita @TorrentHuntBot in qualsiasi chat e cerca i torrent.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+language: Lingua
+languageSelected: 🇮🇹 L'italiano è selezionato come la tua lingua predefinita. Puoi scegliere un'altra lingua dalle impostazioni.
+lastChecked: Ultimo controllo
+leechers: Leechers
+link: Link
+moreInfo: Informazioni
+noPermission: ⚠️ Non disponi di autorizzazioni sufficienti per accedervi.
+noResults: ❌ Nessun risultato è stato trovato. Per favore affina la tua ricerca.
+notSubscribed: 🥺 Sembra che tu non sia ancora iscritto al nostro canale. A causa delle nostre risorse limitate, solo i nostri abbonati possono utilizzare questo servizio. Ti preghiamo di sostenerci iscrivendoti al nostro canale per utilizzare questo servizio.
+notSubscribedCallback: Non sei ancora iscritto.
+notYourMessage: ⚠️ Solo il mittente del messaggio può utilizzare questa funzione. Per favore mandami il tuo messaggio da cercare.
+popularThisWeek: ⚡️ I torrent popolari di questa settimana
+popularToday: ⚡️ I torrent popolari di oggi
+restrictedModeFalse: ✔️ La modalità con restrizioni è stata disattivata correttamente.
+restrictedModeTrue: 🚫 La modalità con restrizioni è attivata per te e nasconderà i contenuti per adulti dai tuoi risultati.
+searchingInline: 🔎 Ricerca ...
+searchingQuery: 🔎 <code>Ricerca ...</code>
+seeders: Seeders
+selectCategory: ❔ Scegli una categoria per i tuoi torrent
+selectTimePeriod: ⏰ Scegli un periodo
+settings: |-
+  <b>{}</b>
+
+  Scegli l'impostazione che desideri modificare.
+shareText: Ciao, usando la caccia al torrent puoi ottenere il link dei tuoi film, serie, programmi, giochi, software e molti altri preferiti all'interno di Telegram. Per utilizzare il bot, fare clic sul collegamento in alto e avviare la conversazione con esso.
+size: Dimensione
+support: |-
+  <b>{}</b>
+
+  Grazie per il desiderio di contribuire. Dona qualsiasi somma per mantenere vivo questo servizio e per darmi la motivazione per aggiungere nuove funzionalità.😇
+
+  🐛 Per segnalare bug o richiedere una nuova funzionalità, unisciti alla nostra chat di discussione e discutine lì.
+thanksForSub: 😇 <b>Grazie mille per averci supportato !! Facendo parte del nostro canale, riceverai gli ultimi aggiornamenti dei nostri progetti.</b>
+trendingThisWeek: ✨ I torrent di tendenza di questa settimana
+trendingToday: ✨ I torrent di tendenza di oggi
+unknownCategory: ❔ Si prega di scegliere la categoria corretta
+unknownTimePeriod: ⏰ Si prega di scegliere il periodo corretto
+unlockAllFeatures: 💫 <b>Assicurati di iscriverti al nostro canale per sbloccare gratuitamente tutte le funzionalità del bot.</b>
+uploadedBy: Uploader
+uploadedOn: Data di caricamento
+warningTooFast: 🛑 Stai inviando messaggi troppo velocemente. Per favore rallenta o potresti essere bannato.
+
+## Buttons
+addToSeedrBtn: ⬇️ Scarica su seedr
+allBtn: ✅ Tutti
+animeBtn: 🎎 Anime
+appsBtn: 🖥️ App
+backBtn: ⬅️ Indietro
+browseBtn: 🔍 Vedi i torrent
+channelBtn: 📢 Canale
+docsBtn: 🎥 Documenti
+donateBtn: ☕  Donare
+doneBtn: ❤️ Fatto
+gamesBtn: 🎮 Giochi
+githubBtn: 🌟 GitHub
+groupBtn: 🗣️ Chat di gruppo
+imageBtn: 🖼️ Immagini
+inlineSearchBtn: 🔎 Ricerca nella barra di ricerca
+languageSettingBtn: 🗣️ Impostazioni della lingua
+magnetDownloadBtn: 🧲 Magnet
+mainMenuBtn: ⬅️ Menu principale
+moviesBtn: 🎬 Film
+musicBtn: 🎵 Musica
+nextBtn: ⏭️ Il prossimo
+othersBtn: 📦 Altri
+popularBtn: ⚡ Torrent popolari
+previousBtn: ⏮️ Precedente
+shareBtn: 💬 Condividere
+topBtn: 💯 I migliori torrent
+torrentDownloadBtn: 📄 Torrent
+trendingBtn: ✨ Torrent di tendenza
+turnOffRestrictedModeBtn: ✔️ Disattiva la modalità con restrizioni
+turnOnRestrictedModeBtn: 🚫 Attiva la modalità con restrizioni
+tvBtn: 📺 TV
+xxxBtn: 🔞 XXX
+youtubeBtn: 📺 YouTube
+
+## Commands
+helpCmd: ⁉️ Aiuto
+settingsCmd: ⚙️ impostazioni
+supportCmd: 🎁 Supporto

@@ -1,13 +1,14 @@
+from pathlib import Path
+
 import joblib
+
+MODEL_DIR = Path(__file__).resolve().parent
+
 
 class ExplicitDetector:
     def __init__(self, model: str = "RandomForest.joblib"):
-        self.vectorizer = joblib.load(
-            open("models/explicit_detector/vectorizer.joblib", "rb"),
-        )
-        self.model = joblib.load(
-            open(f"models/explicit_detector/{model}", "rb"),
-        )
+        self.vectorizer = joblib.load(MODEL_DIR / "vectorizer.joblib")
+        self.model = joblib.load(MODEL_DIR / model)
 
     def predict(self, text):
         try:

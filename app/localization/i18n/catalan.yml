@@ -1,0 +1,133 @@
+## Messages
+backToMenu: ⬅️ Torna al menú principal
+blockedTooFast: ⛔ Se us ha prohibit durant 5 minuts per brossa de correu brossa.
+cantView: 🚫 No podeu veure aquest contingut perquè el mode restringit està activat. Podeu desactivar la restricció des de la configuració.
+category: Categoria
+chooseLanguage: 🗣️ Trieu l'idioma que desitgeu
+clickForMoreDetails: Feu clic per obtenir més informació.
+downloads: Descàrregues
+emptyPage: ⚠️ Aquesta pàgina no té cap contingut.
+errorFetchingInfo: ⚠️ <code>Error en obtenir informació ...</code>
+errorFetchingLink: ⚠️ <code>Error en obtenir l'enllaç ...</code>
+errorSendingImage: ⚠️ Error en enviar fotografies.
+fetchingMagnetLink: 🔎 <code>S'està cercant l'enllaç ...</code>
+fetchingTorrentInfo: 🔎 <code>S'està obtenint informació ...</code>
+fetchingTorrents: 🔎 <code>S'estan cercant torrents ...</code>
+fileNotFound: 😿 El fitxer sol·licitat no es troba al servidor.
+greet: |-
+  ✨ Hola {}, Sóc Torrent Hunt Bot i puc ajudar-vos a buscar i navegar per torrents dins de Telegram.
+
+  <b>Envieu qualsevol paraula clau per cercar torrents.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>Per a la cerca en línia, només cal que escriviu @TorrentHuntBot en qualsevol xat i cerqueu torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+greetGroup: |-
+  ✨ Hola {}, Sóc Torrent Hunt Bot i puc ajudar-vos a buscar i navegar per torrents dins de Telegram.
+
+  <b>Envieu qualsevol paraula clau per cercar torrents.</b>
+
+  Eg: /VLC Media, /Sintel
+
+  <b>Per a la cerca en línia, només cal que escriviu @TorrentHuntBot en qualsevol xat i cerqueu torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+help: |-
+  <b>{}
+
+  ⬇️ Com descarregar torrents?</b>
+
+  Per descarregar els torrents, heu d’instal·lar qualsevol client torrent al vostre dispositiu. Hi ha molts clients torrent. Alguns dels meus preferits són qBitTorrent (per a PC) i Flud (per a Android). Després d’instal·lar-lo, només heu de copiar l’enllaç magnet o carregar el fitxer .Torrent a l’aplicació i el torrent començarà a descarregar-se.
+
+  A més, podeu utilitzar un client de torrent web, com seedr, que us descarregarà el torrent. L’ús d’un client web us permetrà veure torrents sense descarregar. Només heu de crear un compte a seedr i copiar-hi l'enllaç magnet. Podeu descarregar el fitxer o transmetre'ls directament al reproductor VLC sense descarregar-lo. Prefereixo fer servir un client web com seedr per descarregar torrents.
+
+  <b>Envieu qualsevol paraula clau per cercar torrents.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>Per a la cerca en línia, només cal que escriviu @TorrentHuntBot en qualsevol xat i cerqueu torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+language: Llenguatge
+languageSelected: 🏴󠁥󠁳󠁣󠁴󠁿 El català està seleccionat com a idioma predeterminat. Podeu tornar a triar un altre idioma a la configuració.
+lastChecked: Darrera revisió
+leechers: Leechers
+link: Enllaç
+moreInfo: Informació
+noPermission: ⚠️ No teniu prou permís per accedir-hi.
+noResults: ❌ No s'han trobat resultats. Refineu la vostra cerca.
+notSubscribed: 🥺 Sembla que encara no esteu subscrit al nostre canal. A causa dels nostres recursos limitats, només els nostres subscriptors poden utilitzar aquest servei. Si us plau, ajudeu-nos subscrivint-vos al nostre canal per utilitzar aquest servei.
+notSubscribedCallback: Encara no esteu subscrit.
+notYourMessage: ⚠️ Només el remitent del missatge pot utilitzar aquesta funció. Envieu-me el vostre propi missatge per cercar-lo.
+popularThisWeek: ⚡️ Els torrents populars d’aquesta setmana
+popularToday: ⚡️ Torrents populars d’avui
+restrictedModeFalse: ✔️ El mode restringit està desactivat correctament.
+restrictedModeTrue: 🚫 El mode restringit està activat per a vosaltres, que amagarà el contingut per a adults dels resultats.
+searchingInline: 🔎 Cercant ...
+searchingQuery: 🔎 <code>Cercant ...</code>
+seeders: Seeders
+selectCategory: ❔ Trieu una categoria per als vostres torrents
+selectTimePeriod: ⏰ Trieu un punt
+settings: |-
+  <b>{}</b>
+
+  Trieu la configuració que vulgueu canviar.
+shareText: Hola, amb la cerca de torrents podeu obtenir l'enllaç de les vostres pel·lícules, sèries, programes, jocs, programari i molts altres preferits a Telegram. Per utilitzar el bot, feu clic a l'enllaç superior i inicieu la conversa amb ell.
+size: Mida
+support: |-
+  <b>{}</b>
+
+  Gràcies pel vostre desig de contribuir. Doneu qualsevol quantitat per mantenir viu aquest servei i donar-me la motivació per afegir noves funcions.😇
+
+  🐛 Per informar d'errors o sol·licitar una nova característica, uniu-vos al xat de debat i discutiu-lo allà.
+thanksForSub: 😇 <b>Moltes gràcies per donar-nos suport !! En formar part del nostre canal, obtindreu les darreres actualitzacions dels nostres projectes.</b>
+trendingThisWeek: ✨ els torrents de tendència d’aquesta setmana
+trendingToday: ✨ Els actuals torrents d’avui
+unknownCategory: ❔ Seleccioneu la categoria correcta
+unknownTimePeriod: ⏰ Escolliu el període correcte
+unlockAllFeatures: 💫 <b>Assegura't de subscriure't al nostre canal per desbloquejar totes les funcions del bot de forma gratuïta.</b>
+uploadedBy: Carregador
+uploadedOn: Data de pujada
+warningTooFast: 🛑 Esteu enviant missatges massa ràpid. Si us plau, reduïu la velocitat o és possible que se us prohibeixi.
+
+## Buttons
+addToSeedrBtn: ⬇️ Descarregar a seedr
+allBtn: ✅ Tots
+animeBtn: 🎎 Anime
+appsBtn: 🖥️ Apps
+backBtn: ⬅️ esquena
+browseBtn: 🔍 Navegar per torrents
+channelBtn: 📢 Channel
+docsBtn: 🎥 Docu
+donateBtn: ☕  Donar
+doneBtn: ❤️ Fet
+gamesBtn: 🎮 Joc
+githubBtn: 🌟 GitHub
+groupBtn: 🗣️ Xat en grup
+imageBtn: 🖼️ Imatges
+inlineSearchBtn: 🔎 cerca en línia
+languageSettingBtn: 🗣️ Configuració d'idioma
+magnetDownloadBtn: 🧲 Magnet
+mainMenuBtn: ⬅️ Menú principal
+moviesBtn: 🎬 Pel·lícula
+musicBtn: 🎵 Música
+nextBtn: ⏭️ Pròxim
+othersBtn: 📦 Altres
+popularBtn: ⚡ Torrents populars
+previousBtn: ⏮️ Anterior
+shareBtn: 💬 Compartir
+topBtn: 💯 Torrents principals
+torrentDownloadBtn: 📄 Torrent
+trendingBtn: ✨ Torrents de tendència
+turnOffRestrictedModeBtn: ✔️ Desactiveu el mode restringit
+turnOnRestrictedModeBtn: 🚫 Activeu el mode restringit
+tvBtn: 📺 TV
+xxxBtn: 🔞 XXX
+youtubeBtn: 📺 YouTube
+
+## Commands
+helpCmd: ⁉️ Ajuda
+settingsCmd: ⚙️ Configuració
+supportCmd: 🎁 Suport

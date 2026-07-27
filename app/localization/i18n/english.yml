@@ -1,0 +1,175 @@
+## Icons
+searchIcon: 🔍
+storageIcon: 💾
+seedersIcon: 🟢
+leechersIcon: 🔴
+dateIcon: 📅
+magnetIcon: ✨
+
+## Messages
+backToMenu: ⬅️ Back to main menu
+blockedTooFast: ⛔ You have been banned for 5 minutes for spamming the bot.
+bookmarks: 🔖 Click the button below to view your bookmarks
+cantView: 🚫 The result may contain explicit adult content and has been filtered by your settings. To view the results, deactivate the restriction mode from settings.
+category: Category
+chooseLanguage: 🗣️ Choose a language you wish
+clickForMoreDetails: Click for more details.
+downloads: Downloads
+emptyPage: ⚠️ This page doesn't have any content.
+errorFetchingInfo: ⚠️ <code>Error while fetching info. ..</code>
+errorFetchingLink: ⚠️ <code>Error while fetching link ...</code>
+errorSendingImage: ⚠️ Error while sending pictures.
+fetchingMagnetLink: 🔎 <code>Fetching link ...</code>
+fetchingTorrentInfo: 🔎 <code>Fetching torrent info ...</code>
+fetchingTorrents: 🔎 <code>Searching torrents ...</code>
+fileNotFound: 😿 The requested file is not found on the server.
+greet: |-
+  ✨ Hi {}, I am Torrent Hunt Bot and I can help you to search and explore torrents within Telegram.
+
+  <b>Send any keywords to search for torrents.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>For inline search, just type @TorrentHuntBot in any chat and search for torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+greetGroup: |-
+  ✨ Hi {}, I am Torrent Hunt Bot and I can help you to search and explore torrents within Telegram.
+
+  <b>Send any keywords to search for torrents.</b>
+
+  Eg: /VLC Media, /Sintel
+
+  <b>For inline search, just type @TorrentHuntBot in any chat and search for torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+help: |-
+  <b>{}
+
+  ⬇️ How to download torrents?</b>
+
+  To download the torrents, you need to install any torrent client on your device. There are many torrent clients out there. Some of my favorites are qBitTorrent (For PC) and Flud (For android). After installing, you just need to copy the magnet link, or load the .Torrent file into the app and your torrent shall begin to download.
+
+  Furthermore, you can use a web torrent client, like seedr which will download the torrent for you. Using a web client will allow you to watch torrents without downloading. You just need to create an account in seedr and copy the magnet link there. You can either download the file or stream them directly into the VLC player without downloading. I prefer to use a web client like seedr to download torrents.
+
+  <b>Send any keywords to search for torrents.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>For inline search, just type @TorrentHuntBot in any chat and search for torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+keywordToSearch: 💬 Type a keyword to search
+language: Language
+languageSelected: 🌐 English is selected as your default language. You can choose another language again from settings.
+lastChecked: Last Checked
+leechers: Leechers
+link: Link
+moreInfo: Info
+noPermission: ⚠️ You don’t have enough permission to access this.
+noResults: ❌ No results were returned. Please refine your search.
+notSubscribed: 🥺 It seems like you are not subscribed to our channel yet. Due to our limited resources, only our subscriers can use this service. Please support us by subscribing to our channel to use this service.
+notSubscribedCallback: You are not subscribed yet.
+notYourMessage: ⚠️ Only the message sender can use this feature. Please send me your own message to search for.
+page: Page
+popularThisWeek: ⚡️ Popular torrents this week
+popularToday: ⚡️ Popular torrents today
+queryToSearch: 🔎 Please send the keyword to search for
+restrictedModeFalse: ✔️ Restricted mode is turned off successfully.
+restrictedModeTrue: 🚫 Restricted mode is turned on for you which will hide adults content from your results.
+results: results
+resultsFor: 📜 Results for {}
+searchingInline: 🔎 Searching {} ...
+searchingQuery: 🔎 <code>Searching {} ...</code>
+seeders: Seeders
+selectCategory: ❔ Choose a category for your torrents
+selectTimePeriod: ⏰ Choose a period
+settings: |-
+  <b>{}</b>
+
+  Choose the setting you wish to change.
+shareText: Hey, using torrent hunt you can get the link of your favorites movies, series, shows, games, software, and many more within Telegram. To use the bot, click on the link above and start the conversation with it.🚀
+size: Size
+sortBy: Sort by
+support: |-
+  <b>{}</b>
+
+  Thank you for your wish to contribute. Donate any amount to keep this service alive and to give me a motivation to add new features.😇
+
+  🐛 To report bugs or to request a new feature, join our discussion chat, and discuss it there.
+thanksForSub: 😇 <b>Thank you so much for supporting us!! Being a part of our channel, you will get the latest updates of our projects.</b>
+trendingThisWeek: ✨ Trending torrents this week
+trendingToday: ✨ Trending torrents today
+unknownCategory: ❔ Please choose the correct category
+unknownTimePeriod: ⏰ Please choose the correct period
+unlockAllFeatures: 💫 <b>Make sure to subscribe to our channel to unlock all the features of the bot for free.</b>
+uploadedBy: Uploader
+uploadedOn: Uploaded On
+userStats: |-
+  📊 User Stats
+
+   Total users: {}
+  Joined today: {}
+warningTooFast: 🛑 You are sending messages too fast. Please slow down or you may get banned.
+wishlistAdded: ✅ This item has been added in your bookmark.
+wishlistRemoved: ✅ This item has been removed from your bookmark.
+
+## Buttons
+addToBookmarkBtn: 🔖 Add to Bookmark
+addToSeedrBtn: ⬇️ Add to seedr
+allBtn: ✅ All
+animeBtn: 🎎 Anime
+appsBtn: 🖥️ Apps
+backBtn: ⬅️ Back
+browseBtn: 🔍 Browse Torrents
+channelBtn: 📢 Channel
+docsBtn: 🎥 Docu
+donateBtn: ☕  Donate
+doneBtn: ❤️ Done
+errorOccuredBtn: ⚠️ Something went wrong. Please try again later.
+gamesBtn: 🎮 Games
+githubBtn: 🌟 GitHub
+groupBtn: 🗣️ Group Chat
+imageBtn: 🖼️ Images
+inlineSearchBtn: 🔎 Inline search
+languageSettingBtn: 🗣️ Language setting
+magnetDownloadBtn: 🧲 Magnet
+mainMenuBtn: ⬅️ Main menu
+moviesBtn: 🎬 Movies
+musicBtn: 🎵 Music
+nextBtn: ⏭️ Next
+othersBtn: 📦 Others
+popularBtn: ⚡ Popular Torrents
+previousBtn: ⏮️ Previous
+removeFromBookmarkBtn: 🗑 Remove from Bookmark
+shareBtn: 💬 Share
+topBtn: 💯 Top Torrents
+torrentDownloadBtn: 📄 Torrent
+trendingBtn: ✨ Trending Torrents
+turnOffRestrictedModeBtn: ✔️ Deactivate restricted mode
+turnOnRestrictedModeBtn: 🚫 Activate restricted mode
+tvBtn: 📺 TV
+xxxBtn: 🔞 XXX
+youtubeBtn: 📺 YouTube
+
+## Commands
+bookmarksCmd: 🔖 Bookmarks
+helpCmd: ⁉️ Help
+settingsCmd: ⚙️ Settings
+supportCmd: 🎁 Support
+
+othersBtn: 🔞 Others
+sortBtn: ↕️ Sort
+categoryBtn: 🗂 Category
+moreSitesBtn: 🌐 More sites
+seedsBtn: 🌱 Seeds
+sizeBtn: 💾 Size
+uploadDateBtn: 📅 Date
+previousIcon: ◀️
+nextIcon: ▶️
+botRestarted: 🔃 Bot has been restarted.
+startCmdDescription: 💫 Start using bot
+bookmarksCmdDescription: 🔖 View your bookmarks
+settingsCmdDescription: ⚙️ Change bot settings
+searchCmdDescription: 🔍 Search for torrents
+statsCmdDescription: 📊 See bot stats
