@@ -41,15 +41,20 @@
             "value": "sqlite:///torrenthunt.db",
             "required": true
         },
-        "TORRENTHUNT_API_URL": {
-            "description": "URL of Torrents API, Deploy from https://github.com/Ryuk-me/Torrent-Api-py",
-            "value": "https://torrent-api-py-nx0x.onrender.com",
+        "TORRENT_PROVIDER": {
+            "description": "Torrent search backend (currently supported: jackett)",
+            "value": "jackett",
+            "required": false
+        },
+        "JACKETT_URL": {
+            "description": "Base URL of the Jackett instance",
+            "value": "http://localhost:9117",
             "required": true
         },
-        "TORRENTHUNT_API_KEY": {
-            "description": "API key for Torrents api",
+        "JACKETT_API_KEY": {
+            "description": "API key of the Jackett instance",
             "value": "",
-            "required": false
+            "required": true
         },
         "SENTRY_DSN": {
             "description": "Sentry.io token for error tracking",

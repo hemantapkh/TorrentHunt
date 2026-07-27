@@ -1,0 +1,133 @@
+## Messages
+backToMenu: ⬅️ 메인 메뉴로 돌아 가기
+blockedTooFast: ⛔ 봇을 스팸하여 5분 동안 차단되었습니다.
+cantView: 🚫 제한 모드가 켜져 있기 때문에이 콘텐츠를 볼 수 없습니다. 설정에서 제한을 해제 할 수 있습니다.
+category: 범주
+chooseLanguage: 🗣️ 원하는 언어를 선택하세요
+clickForMoreDetails: 자세한 내용을 보려면 클릭하십시오.
+downloads: 다운로드
+emptyPage: ⚠️ 이 페이지에는 콘텐츠가 없습니다.
+errorFetchingInfo: ⚠️ <code>정보를 가져 오는 중에 오류가 발생했습니다 ...</code>
+errorFetchingLink: ⚠️ <code>링크를 가져 오는 동안 오류가 발생했습니다 ...</code>
+errorSendingImage: ⚠️ 사진을 보내는 동안 오류가 발생했습니다.
+fetchingMagnetLink: 🔎 <code>링크 찾는 중 ...</code>
+fetchingTorrentInfo: 🔎 <code>정보를 가져 오는 중 ...</code>
+fetchingTorrents: 🔎 <code>급류 검색 중 ...</code>
+fileNotFound: 😿 요청한 파일을 서버에서 찾을 수 없습니다.
+greet: |-
+  ✨ 안녕하세요 {}, 저는 Torrent Hunt Bot이며 Telegram에서 급류를 검색하고 찾아 볼 수 있도록 도와 드릴 수 있습니다.
+
+  <b>급류를 검색하려면 키워드를 보내십시오.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>인라인 검색의 경우 채팅에서 @TorrentHuntBot를 입력하고 토렌트를 검색하십시오.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+greetGroup: |-
+  ✨ 안녕하세요 {}, 저는 Torrent Hunt Bot이며 Telegram에서 급류를 검색하고 찾아 볼 수 있도록 도와 드릴 수 있습니다.
+
+  <b>급류를 검색하려면 키워드를 보내십시오.</b>
+
+  Eg: /VLC Media, /Sintel
+
+  <b>인라인 검색의 경우 채팅에서 @TorrentHuntBot를 입력하고 토렌트를 검색하십시오.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+help: |-
+  <b>{}
+
+  ⬇️ 급류를 다운로드하는 방법?</b>
+
+  토렌트를 다운로드하려면 기기에 토렌트 클라이언트를 설치해야합니다. 많은 토렌트 클라이언트가 있습니다. 내가 좋아하는 것 중 일부는 qBitTorrent (PC 용)와 Flud (Android 용)입니다. 설치 후 마그넷 링크를 복사하거나 .Torrent 파일을 앱에로드하면 토렌트가 다운로드되기 시작합니다.
+
+  또한 토렌트를 다운로드하는 seedr와 같은 웹 토렌트 클라이언트를 사용할 수 있습니다. 웹 클라이언트를 사용하면 다운로드하지 않고도 토렌트를 볼 수 있습니다. seedr에서 계정을 만들고 거기에 자석 링크를 복사하기 만하면됩니다. 파일을 다운로드하거나 다운로드하지 않고 VLC 플레이어로 직접 스트리밍 할 수 있습니다. 나는 급류를 다운로드하기 위해 seedr와 같은 웹 클라이언트를 사용하는 것을 선호합니다.
+
+  <b>급류를 검색하려면 키워드를 보내십시오.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>인라인 검색의 경우 채팅에서 @TorrentHuntBot를 입력하고 토렌트를 검색하십시오.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+language: 언어
+languageSelected: 🇰🇷 한국어가 기본 언어로 선택됩니다. 설정에서 다른 언어를 다시 선택할 수 있습니다.
+lastChecked: 마지막 확인
+leechers: Leechers
+link: 링크
+moreInfo: 정보
+noPermission: ⚠️ 여기에 액세스 할 수있는 권한이 없습니다.
+noResults: ❌ 결과가 반환되지 않았습니다. 검색을 구체화하십시오.
+notSubscribed: 🥺 아직 저희 채널을 구독하지 않으신 것 같습니다. 제한된 리소스로 인해 구독자 만이 서비스를 사용할 수 있습니다. 이 서비스를 사용하려면 채널을 구독하여 지원하십시오.
+notSubscribedCallback: 아직 구독하지 않았습니다.
+notYourMessage: ⚠️ 메시지 보낸 사람만 이 기능을 사용할 수 있습니다. 검색할 나만의 메시지를 보내주세요.
+popularThisWeek: ⚡️ 이번 주 인기 급류
+popularToday: ⚡️ 오늘의 인기 급류
+restrictedModeFalse: ✔️ 제한 모드가 성공적으로 해제되었습니다.
+restrictedModeTrue: 🚫 검색 결과에서 성인용 콘텐츠를 숨기는 제한 모드가 켜져 있습니다.
+searchingInline: 🔎 수색 ...
+searchingQuery: 🔎 <code>수색 ...</code>
+seeders: Seeders
+selectCategory: ❔ 토렌트 카테고리를 선택하세요
+selectTimePeriod: ⏰ 기간 선택
+settings: |-
+  <b>{}</b>
+
+  변경할 설정을 선택하십시오.
+shareText: 안녕하세요, 토렌트 헌트를 사용하면 좋아하는 영화, 시리즈, 쇼, 게임, 소프트웨어 등의 링크를 Telegram에서 얻을 수 있습니다. 봇을 사용하려면 위의 링크를 클릭하고 대화를 시작하세요.
+size: 크기
+support: |-
+  <b>{}</b>
+
+  기부를 희망해주셔서 감사합니다. 이 서비스를 유지하고 새로운 기능을 추가할 동기를 부여하려면 얼마든지 기부하십시오.😇
+
+  🐛 버그를보고하거나 새로운 기능을 요청하려면 토론 채팅에 참여하고 거기에서 토론하십시오.
+thanksForSub: 😇 <b>응원 해주셔서 감사합니다 !! 우리 채널의 일원이되면 우리 프로젝트의 최신 업데이트를받을 수 있습니다.</b>
+trendingThisWeek: ✨ 이번주의 인기 급류
+trendingToday: ✨ 오늘의 인기 급류
+unknownCategory: ❔ 올바른 카테고리를 선택하세요
+unknownTimePeriod: ⏰ 정확한 기간을 선택하세요
+unlockAllFeatures: 💫 <b>봇의 모든 기능을 무료로 잠금 해제하려면 채널을 구독하세요.</b>
+uploadedBy: 업 로더
+uploadedOn: 업로드 됨
+warningTooFast: 🛑 메시지를 너무 빨리 보내고 있습니다. 속도를 줄이지 않으면 차단될 수 있습니다.
+
+## Buttons
+addToSeedrBtn: ⬇️ 파종기에 다운로드
+allBtn: ✅ 모두
+animeBtn: 🎎 애니메이션
+appsBtn: 🖥️ 앱
+backBtn: ⬅️ 뒤
+browseBtn: 🔍 급류 찾아보기
+channelBtn: 📢 Channel
+docsBtn: 🎥 기록한 것
+donateBtn: ☕  기부
+doneBtn: ❤️ 끝난
+gamesBtn: 🎮 경기
+githubBtn: 🌟 GitHub
+groupBtn: 🗣️ 그룹 채팅
+imageBtn: 🖼️ 영화
+inlineSearchBtn: 🔎 인라인 검색
+languageSettingBtn: 🗣️ 언어 설정
+magnetDownloadBtn: 🧲 Magnet
+mainMenuBtn: ⬅️ 메인 메뉴
+moviesBtn: 🎬 영화
+musicBtn: 🎵 음악
+nextBtn: ⏭️ 다음
+othersBtn: 📦 기타
+popularBtn: ⚡ 인기 급류
+previousBtn: ⏮️ 이전
+shareBtn: 💬 공유
+topBtn: 💯 최고 급류
+torrentDownloadBtn: 📄 토렌트
+trendingBtn: ✨ 급류 급류
+turnOffRestrictedModeBtn: ✔️ 제한 모드 비활성화
+turnOnRestrictedModeBtn: 🚫 제한 모드 활성화
+tvBtn: 📺 텔레비전
+xxxBtn: 🔞 XXX
+youtubeBtn: 📺 YouTube
+
+## Commands
+helpCmd: ⁉️ 도움
+settingsCmd: ⚙️ 설정
+supportCmd: 🎁 지원하다

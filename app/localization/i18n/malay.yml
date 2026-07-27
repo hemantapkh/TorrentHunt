@@ -1,0 +1,133 @@
+## Messages
+backToMenu: ⬅️ Kembali ke menu utama
+blockedTooFast: ⛔ Anda telah dilarang selama 5 minit kerana menghantar spam ke bot.
+cantView: 🚫 Anda tidak dapat melihat kandungan ini kerana mod terhad dihidupkan. Anda boleh mematikan sekatan dari tetapan.
+category: Kategori
+chooseLanguage: 🗣️ Pilih bahasa yang anda mahukan
+clickForMoreDetails: Klik untuk maklumat lebih lanjut.
+downloads: Muat turun
+emptyPage: ⚠️ Halaman ini tidak mempunyai kandungan.
+errorFetchingInfo: ⚠️ <code>Ralat semasa mengambil maklumat ...</code>
+errorFetchingLink: ⚠️ <code>Ralat semasa mengambil pautan ...</code>
+errorSendingImage: ⚠️ Ralat semasa menghantar gambar.
+fetchingMagnetLink: 🔎 <code>Mencari pautan ...</code>
+fetchingTorrentInfo: 🔎 <code>Mengambil maklumat ...</code>
+fetchingTorrents: 🔎 <code>Mencari torrents ...</code>
+fileNotFound: 😿 Fail yang diminta tidak dijumpai di pelayan.
+greet: |-
+  ✨ Hai {}, Saya Torrent Hunt Bot dan saya dapat membantu anda mencari dan meninjau torrents di Telegram.
+
+  <b>Hantarkan sebarang kata kunci untuk mencari torrents.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>Untuk carian sebaris, ketik @TorrentHuntBot dalam mana-mana sembang dan cari torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+greetGroup: |-
+  ✨ Hai {}, Saya Torrent Hunt Bot dan saya dapat membantu anda mencari dan meninjau torrents di Telegram.
+
+  <b>Hantarkan sebarang kata kunci untuk mencari torrents.</b>
+
+  Eg: /VLC Media, /Sintel
+
+  <b>Untuk carian sebaris, ketik @TorrentHuntBot dalam mana-mana sembang dan cari torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+help: |-
+  <b>{}
+
+  ⬇️ Bagaimana memuat turun torrents?</b>
+
+  Untuk memuat turun torrents, anda perlu memasang klien torrent pada peranti anda. Terdapat banyak pelanggan torrent di luar sana. Beberapa kegemaran saya adalah qBitTorrent (Untuk PC) dan Flud (Untuk android). Selepas memasang, anda hanya perlu menyalin pautan magnet, atau memuatkan fail .Torrent ke dalam aplikasi dan torrent anda akan mula dimuat turun.
+
+  Selain itu, anda boleh menggunakan klien torrent web, seperti seedr yang akan memuat turun torrent untuk anda. Menggunakan pelanggan web akan membolehkan anda menonton torrent tanpa memuat turun. Anda hanya perlu membuat akaun di seedr dan menyalin pautan magnet di sana. Anda boleh memuat turun fail atau mengalirkannya terus ke pemain VLC tanpa memuat turun. Saya lebih suka menggunakan pelanggan web seperti seedr untuk memuat turun torrents.
+
+  <b>Hantarkan sebarang kata kunci untuk mencari torrents.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>Untuk carian sebaris, ketik @TorrentHuntBot dalam mana-mana sembang dan cari torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+language: Bahasa
+languageSelected: 🇮🇩 Bahasa Melayu dipilih sebagai bahasa lalai anda. Anda boleh memilih bahasa lain sekali lagi dari tetapan.
+lastChecked: Pemeriksaan Terakhir
+leechers: Leechers
+link: Pautan
+moreInfo: Maklumat
+noPermission: ⚠️ Anda tidak mempunyai kebenaran yang mencukupi untuk mengaksesnya.
+noResults: ❌ Tidak ada hasil yang dikembalikan. Sila perbaiki carian anda.
+notSubscribed: 🥺 Nampaknya anda belum melanggan saluran kami. Oleh kerana sumber daya kami terhad, hanya pelanggan kami yang dapat menggunakan perkhidmatan ini. Tolong menyokong kami dengan melanggan saluran kami untuk menggunakan perkhidmatan ini.
+notSubscribedCallback: Anda belum melanggan.
+notYourMessage: ⚠️ Hanya pengirim mesej yang boleh menggunakan ciri ini. Sila hantar mesej anda sendiri untuk saya cari.
+popularThisWeek: ⚡️ Torrents popular minggu ini
+popularToday: ⚡️ Torrents popular hari ini
+restrictedModeFalse: ✔️ Mod terhad dimatikan dengan berjaya.
+restrictedModeTrue: 🚫 Mod terhad dihidupkan untuk anda yang akan menyembunyikan kandungan dewasa dari hasil anda.
+searchingInline: 🔎 Mencari ...
+searchingQuery: 🔎 <code>Mencari ...</code>
+seeders: Seeders
+selectCategory: ❔ Pilih kategori untuk torrents anda
+selectTimePeriod: ⏰ Pilih tempoh
+settings: |-
+  <b>{}</b>
+
+  Pilih tetapan yang ingin anda ubah.
+shareText: Hai, dengan menggunakan torrent hunt, anda boleh mendapatkan pautan filem kegemaran anda, siri, rancangan, permainan, perisian, dan banyak lagi dalam Telegram. Untuk menggunakan bot, klik pada pautan di atas dan mulakan perbualan dengannya.
+size: Saiz
+support: |-
+  <b>{}</b>
+
+  Terima kasih kerana sudi menyumbang. Sumbangkan sejumlah wang untuk memastikan perkhidmatan ini tetap hidup dan memberi saya motivasi untuk menambahkan ciri baru.😇
+
+  🐛 Untuk melaporkan bug atau meminta ciri baru, sertai sembang perbincangan kami, dan bincangkan di sana.
+thanksForSub: 😇 <b>Terima kasih banyak kerana menyokong kami !! Sebagai sebahagian daripada saluran kami, anda akan mendapat kemas kini terkini projek kami.</b>
+trendingThisWeek: ✨ Torrents trending minggu ini
+trendingToday: ✨ Torrents yang sedang meningkat kini
+unknownCategory: ❔ Sila pilih kategori yang betul
+unknownTimePeriod: ⏰ Sila pilih tempoh yang betul
+unlockAllFeatures: 💫 <b>Pastikan anda melanggan saluran kami untuk membuka kunci semua ciri bot secara percuma.</b>
+uploadedBy: Pemuat naik
+uploadedOn: Dimuat naik
+warningTooFast: 🛑 Anda menghantar mesej terlalu cepat. Harap perlahan atau anda mungkin dilarang.
+
+## Buttons
+addToSeedrBtn: ⬇️ Muat turun ke seedr
+allBtn: ✅ Semua
+animeBtn: 🎎 Anime
+appsBtn: 🖥️ Aplikasi
+backBtn: ⬅️ Belakang
+browseBtn: 🔍 Layari Torrents
+channelBtn: 📢 Channel
+docsBtn: 🎥 Doku
+donateBtn: ☕  Sumbang
+doneBtn: ❤️ Selesai
+gamesBtn: 🎮 Permainan
+githubBtn: 🌟 GitHub
+groupBtn: 🗣️ Sembang berkumpulan
+imageBtn: 🖼️ Gambar
+inlineSearchBtn: 🔎 carian sebaris
+languageSettingBtn: 🗣️ Tetapan bahasa
+magnetDownloadBtn: 🧲 Magnet
+mainMenuBtn: ⬅️ Menu utama
+moviesBtn: 🎬 Filem
+musicBtn: 🎵 Muzik
+nextBtn: ⏭️ Seterusnya
+othersBtn: 📦 Yang lain
+popularBtn: ⚡ Torrents yang popular
+previousBtn: ⏮️ Sebelumnya
+shareBtn: 💬 berkongsi
+topBtn: 💯 Torrents Teratas
+torrentDownloadBtn: 📄 Torrent
+trendingBtn: ✨ Tren Tending
+turnOffRestrictedModeBtn: ✔️ Nyahaktifkan mod terhad
+turnOnRestrictedModeBtn: 🚫 Aktifkan mod terhad
+tvBtn: 📺 Televisyen
+xxxBtn: 🔞 XXX
+youtubeBtn: 📺 YouTube
+
+## Commands
+helpCmd: ⁉️ Tolonglah
+settingsCmd: ⚙️ Tetapan
+supportCmd: 🎁 Sokongan

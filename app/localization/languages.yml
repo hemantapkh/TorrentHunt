@@ -1,0 +1,57 @@
+arabic:
+  code: ar
+  title: 🇸🇦 العربية
+belarusian:
+  code: be
+  title: 🇧🇾 Беларуская
+bengali:
+  code: bn
+  title: 🇧🇩 বাংলা
+catalan:
+  code: ca
+  title: 🇪🇸 Català
+dutch:
+  code: nl
+  title: 🇳🇱 Nederlands
+english:
+  code: en
+  title: 🇬🇧 English
+french:
+  code: fr
+  title: 🇫🇷 Français
+german:
+  code: de
+  title: 🇩🇪 Deutsch
+hindi:
+  code: hi
+  title: 🇮🇳 हिन्दी
+italian:
+  code: it
+  title: 🇮🇹 Italiano
+korean:
+  code: ko
+  title: 🇰🇷 한국어
+malay:
+  code: ms
+  title: 🇲🇾 Bahasa Melayu
+nepali:
+  code: np
+  title: 🇳🇵 नेपाली
+polish:
+  code: pl
+  title: 🇵🇱 Polski
+portuguese:
+  code: pt
+  title: 🇵🇹 Português
+russian:
+  code: ru
+  title: 🇷🇺 Русский
+spanish:
+  code: es
+  title: 🇪🇸 Español
+turkish:
+  code: tr
+  title: 🇹🇷 Türkçe
+ukrainian:
+  code: uk
+  title: 🇺🇦 Українська

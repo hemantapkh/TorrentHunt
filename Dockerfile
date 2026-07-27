@@ -12,4 +12,4 @@ COPY uv.lock .
 
 RUN uv sync --frozen --all-groups
 
-CMD ["uv", "run", "app/torrenthunt.py"]
+CMD ["uv", "run", "app/main.py"]

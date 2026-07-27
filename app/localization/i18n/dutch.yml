@@ -1,0 +1,133 @@
+## Messages
+backToMenu: ⬅️ Terug naar het hoofdmenu
+blockedTooFast: ⛔ Je bent 5 minuten verbannen voor het spammen van de bot.
+cantView: 🚫 U kunt deze inhoud niet bekijken omdat de beperkte modus is ingeschakeld. U kunt de beperking uitschakelen via de instellingen.
+category: Categorie
+chooseLanguage: 🗣️ Kies een taal die u wenst
+clickForMoreDetails: Klik voor meer details.
+downloads: Downloads
+emptyPage: ⚠️ Deze pagina heeft geen inhoud.
+errorFetchingInfo: ⚠️ <code>Fout bij het ophalen van informatie ...</code>
+errorFetchingLink: ⚠️ <code>Fout bij het ophalen van link ...</code>
+errorSendingImage: ⚠️ Fout bij het verzenden van afbeeldingen.
+fetchingMagnetLink: 🔎 <code>Link zoeken ...</code>
+fetchingTorrentInfo: 🔎 <code>Informatie ophalen ...</code>
+fetchingTorrents: 🔎 <code>Torrents zoeken ...</code>
+fileNotFound: 😿 Het opgevraagde bestand is niet gevonden op de server.
+greet: |-
+  ✨ Hoi {}, Ik ben Torrent Hunt Bot en ik kan je helpen bij het zoeken en bladeren door torrents binnen Telegram.
+
+  <b>Stuur trefwoorden om naar torrents te zoeken.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>Voor inline zoeken typ je gewoon @TorrentHuntBot in een chat en zoek je naar torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+greetGroup: |-
+  ✨ Hoi {}, Ik ben Torrent Hunt Bot en ik kan je helpen bij het zoeken en bladeren door torrents binnen Telegram.
+
+  <b>Stuur trefwoorden om naar torrents te zoeken.</b>
+
+  Eg: /VLC Media, /Sintel
+
+  <b>Voor inline zoeken typ je gewoon @TorrentHuntBot in een chat en zoek je naar torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+help: |-
+  <b>{}
+
+  ⬇️ Hoe torrents te downloaden?</b>
+
+  Om de torrents te downloaden, moet je een torrent-client op je apparaat installeren. Er zijn veel torrent-clients die er zijn. Enkele van mijn favorieten zijn qBitTorrent (voor pc) en Flud (voor Android). Na het installeren hoef je alleen maar de magneetlink te kopiëren of het .Torrent-bestand in de app te laden en je torrent zal beginnen met downloaden.
+
+  Verder kun je een web-torrent-client gebruiken, zoals seedr, die de torrent voor je downloadt. Als je een webclient gebruikt, kun je torrents bekijken zonder te downloaden. U hoeft alleen maar een account in seedr aan te maken en de magneetlink daarheen te kopiëren. U kunt het bestand downloaden of ze rechtstreeks naar de VLC-speler streamen zonder te downloaden. Ik gebruik liever een webclient zoals seedr om torrents te downloaden.
+
+  <b>Stuur trefwoorden om naar torrents te zoeken.</b>
+
+  Eg: <code>VLC Media</code>, <code>Sintel</code>
+
+  <b>Voor inline zoeken typ je gewoon @TorrentHuntBot in een chat en zoek je naar torrents.</b>
+
+  Eg: <code>@TorrentHuntBot Sintel</code>
+language: Taal
+languageSelected: 🇳🇱 Nederlands is geselecteerd als uw standaardtaal. U kunt via de instellingen opnieuw een andere taal kiezen.
+lastChecked: Laatst gecontroleerd
+leechers: Leechers
+link: Koppeling
+moreInfo: Info
+noPermission: ⚠️ Je hebt niet genoeg toestemming om hier toegang toe te krijgen.
+noResults: ❌ Er zijn geen resultaten gevonden. Verfijn uw zoekopdracht.
+notSubscribed: 🥺 Het lijkt erop dat je nog niet bent geabonneerd op ons kanaal. Vanwege onze beperkte middelen kunnen alleen onze abonnees deze service gebruiken. Steun ons alstublieft door u te abonneren op ons kanaal om deze service te gebruiken.
+notSubscribedCallback: Je bent nog niet geabonneerd.
+notYourMessage: ⚠️ Alleen de afzender van het bericht kan deze functie gebruiken. Stuur me alsjeblieft je eigen bericht om naar te zoeken.
+popularThisWeek: ⚡️ De populaire torrents van deze week
+popularToday: ⚡️ De populaire torrents van vandaag
+restrictedModeFalse: ✔️ De beperkte modus is met succes uitgeschakeld.
+restrictedModeTrue: 🚫 De beperkte modus is voor u ingeschakeld, waardoor inhoud voor volwassenen voor uw resultaten wordt verborgen.
+searchingInline: 🔎 Zoeken ...
+searchingQuery: 🔎 <code>Zoeken ...</code>
+seeders: Seeders
+selectCategory: ❔ Kies een categorie voor je torrents
+selectTimePeriod: ⏰ Kies een periode
+settings: |-
+  <b>{}</b>
+
+  Kies de instelling die u wilt wijzigen.
+shareText: Hoi, met torrent-jacht kun je de link van je favoriete films, series, shows, games, software en nog veel meer binnen Telegram krijgen. Om de bot te gebruiken, klik je op de link hierboven en start je het gesprek ermee.
+size: Grootte
+support: |-
+  <b>{}</b>
+
+  Bedankt voor je wens om bij te dragen. Doneer een willekeurig bedrag om deze service in leven te houden en om mij de motivatie te geven om nieuwe functies toe te voegen.😇
+
+  🐛 Om bugs te melden of een nieuwe functie aan te vragen, neemt u deel aan onze discussiechat en bespreekt u deze daar.
+thanksForSub: 😇 <b>Heel erg bedankt voor je steun !! Als onderdeel van ons kanaal ontvang je de laatste updates van onze projecten.</b>
+trendingThisWeek: ✨ de trending torrents van deze week
+trendingToday: ✨ De trending torrents van vandaag
+unknownCategory: ❔ Kies de juiste categorie
+unknownTimePeriod: ⏰ Kies de juiste periode
+unlockAllFeatures: 💫 <b>Zorg ervoor dat je je abonneert op ons kanaal om alle functies van de bot gratis te ontgrendelen.</b>
+uploadedBy: Uploader
+uploadedOn: Geüploade datum
+warningTooFast: 🛑 Je verstuurt berichten te snel. Alsjeblieft, vertraag of je kunt een ban krijgen.
+
+## Buttons
+addToSeedrBtn: ⬇️ Downloaden naar seedr
+allBtn: ✅ Alle
+animeBtn: 🎎 Anime
+appsBtn: 🖥️ Apps
+backBtn: ⬅️ Terug
+browseBtn: 🔍 Blader door Torrents
+channelBtn: 📢 Channel
+docsBtn: 🎥 Docu
+donateBtn: ☕  Doneren
+doneBtn: ❤️ Gedaan
+gamesBtn: 🎮 Spel
+githubBtn: 🌟 GitHub
+groupBtn: 🗣️ Groeps chat
+imageBtn: 🖼️ Afbeeldingen
+inlineSearchBtn: 🔎 inline zoeken
+languageSettingBtn: 🗣️ Taalinstelling
+magnetDownloadBtn: 🧲 Magnet
+mainMenuBtn: ⬅️ Hoofdmenu
+moviesBtn: 🎬 Film
+musicBtn: 🎵 Muziek
+nextBtn: ⏭️ De volgende
+othersBtn: 📦 Anderen
+popularBtn: ⚡ Populaire Torrents
+previousBtn: ⏮️ Vorige
+shareBtn: 💬 delen
+topBtn: 💯 Top Torrents
+torrentDownloadBtn: 📄 Torrent
+trendingBtn: ✨ Trending Torrents
+turnOffRestrictedModeBtn: ✔️ Schakel de beperkte modus uit
+turnOnRestrictedModeBtn: 🚫 Activeer de beperkte modus
+tvBtn: 📺 TV
+xxxBtn: 🔞 XXX
+youtubeBtn: 📺 YouTube
+
+## Commands
+helpCmd: ⁉️ Helpen
+settingsCmd: ⚙️ Instellingen
+supportCmd: 🎁 Ondersteuning

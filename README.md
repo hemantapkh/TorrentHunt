@@ -5,13 +5,13 @@
 <a href="https://github.com/hemantapkh/torrenthunt/fork">
 <img src="https://img.shields.io/github/forks/hemantapkh/torrenthunt.svg" alt="Forks"/>
 </a>
-<img src="https://visitor-badge.laobi.icu/badge?page_id=hemantapkh.torrenthunt" alt="visitors" />
 <a href="https://github.com/hemantapkh/torrenthunt/graphs/contributors">
 <img src="https://img.shields.io/github/contributors/hemantapkh/torrenthunt.svg" alt="Contributors" />
-<a href="https://www.youtube.com/c/H9TechYouTube?sub_confirmation=1">
-<img src="https://img.shields.io/badge/YouTube-H9-red" alt="Subscribe my channel H9"/>
 </a>
+<a href="https://github.com/hemantapkh/torrenthunt/blob/main/LICENSE">
+<img src="https://img.shields.io/github/license/hemantapkh/torrenthunt" alt="License" />
 </a>
+<img src="https://img.shields.io/badge/python-3.14+-blue?logo=python&logoColor=white" alt="Python 3.14+" />
 </p>
 
 <p align="center">
@@ -20,35 +20,40 @@
 
 <p align="center">
 <a href="https://t.me/torrenthuntbot?start=githubReadme">
-<img src='https://img.shields.io/endpoint?logo=telegram&style=for-the-badge&url=https%3A%2F%2Fhemantapokharel.com.np%2Fshields%2FTorrentHunt%2F'>
+<img src="https://img.shields.io/badge/Telegram-@torrenthuntbot-2CA5E0?logo=telegram&logoColor=white&style=for-the-badge" alt="Open in Telegram" />
 </a>
-<a href="https://t.me/h9youtube">
-<img src='https://img.shields.io/endpoint?logo=telegram&style=for-the-badge&url=https%3A%2F%2Fhemantapokharel.com.np%2Fshields%2Fh9youtube%2F'>
-</a>
-</P>
+</p>
+
 <h1 align='center'>🔍 Torrent Hunt Bot</h1>
 
-<h2 align="center">
-The ultimate torrent searching bot on telegram
-</h2>
+Torrent Hunt is a Telegram bot for searching torrents. Send it a keyword and
+it searches your configured indexers and delivers the magnet links right
+inside Telegram, in your language.
 
+# ✨ Features
 
-# 🌐 Supported Torrent Sources
+- **Search** any keyword, browse results in a single message, and tap a title to get its magnet link
+- **Filter & sort** by category, seeders, size, or upload date; jump to any page
+- **Inline search** in any chat (`@torrenthuntbot <query>`), per-site too
+- **Bookmarks** to save torrents for later
+- **19 languages** and an optional restricted mode for adult content
 
-- [1337x.to](https://1337x.to/)
-- [The pirate bay](https://thehiddenbay.com/)
-- [Torrent Galaxy](https://torrentgalaxy.to/)
-- [RARBG](https://rargb.to/)
-- [Nyaa](https://nyaa.si/)
-- [YTS](https://yts.mx/)
-- [Ez Tv](https://eztv.re/)
-- [Tor lock](https://www.torlock.com/)
-- [ET Tv](https://www.ettvcentral.com/)
+# 🔌 Search Provider
 
+Torrent Hunt uses [Jackett](https://github.com/Jackett/Jackett) as its search
+provider. Every indexer you configure in Jackett becomes searchable from the
+bot.
+
+**Todo**
+
+- [ ] [Prowlarr](https://github.com/Prowlarr/Prowlarr) support
 
 # 🗣️ Languages
 
-Torrent Hunt Bot can talk in 19 different languages.
+Torrent Hunt Bot speaks 19 languages.
+
+<details>
+<summary>Full list & translation credits</summary>
 
 - Arabic (Added by [Omar Khalid](https://github.com/omvrkhvlid))
 - Bengali (Checked and fixed by [sobuj53](https://github.com/sobuj53))
@@ -70,20 +75,32 @@ Torrent Hunt Bot can talk in 19 different languages.
 - Turkish (Checked and fixed by [Berce](https://github.com/must4f))
 - Ukrainian
 
----
+</details>
 
-## ⚒️ Deployment
+# ⚒️ Deployment
+
+### Run locally
+
+```bash
+# 1. Configure: copy sample.env to .env and fill in the values
+cp sample.env .env
+
+# 2. Install dependencies and run
+uv sync
+uv run app/main.py
+```
+
+### Docker
+
+```bash
+docker build -t torrenthunt .
+docker run --env-file .env torrenthunt
+```
+
+### Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/hemantapkh/torrenthunt)
 
 ---
 
-## 💚 Thanks to
-
-* All the people invloved in language translation
-* [Samip Timalsina](https://samiptimalsena.com.np/) for the explicit content detector model
-* [rinrinx](https://github.com/rinrinx) for Heroku support
-
------
-
-❇️ Author/Maintainer: [Hemanta Pokharel](https://github.com/hemantapkh/) [[✉️](mailto:hemantapkh@yahoo.com) [💬](https://t.me/hemantapkh) [📺](https://youtube.com/h9youtube)]
+❇️ Author/Maintainer: [Hemanta Pokharel](https://github.com/hemantapkh/) [[✉️](mailto:hemantapkh@yahoo.com) [💬](https://t.me/hemantapkh)]
