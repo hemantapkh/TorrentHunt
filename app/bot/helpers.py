@@ -73,19 +73,23 @@ async def is_chat_admin(event: Any, t: Translator, alert: bool = True) -> bool:
 
 
 def match_command(event: events.NewMessage.Event, word: str) -> bool:
-    """Match a command in any language, with or without the leading slash.
+    """Match a slash command or a reply-keyboard button in any language.
 
-    Reply-keyboard buttons send the localized command word as plain text
-    (e.g. "Bookmarks" or its translation), so the first word is matched
-    against the English word and every translation of `<word>Cmd`.
+    Slash commands ("/settings", "/settings@bot") match on the first word.
+    Reply-keyboard buttons send their full localized label as plain text,
+    so the whole text is matched against every translation of `<word>Cmd`.
+    Matching spans all languages, not just the user's current one, so a
+    stale keyboard from before a language switch keeps working.
     """
-    text = event.raw_text or ""
+    text = (event.raw_text or "").strip()
     if not text:
         return False
 
-    first_word = re.sub(r"^/?([^@\s]+).*", r"\1", text, flags=re.S)
+    if text.startswith("/"):
+        first_word = re.sub(r"^/([^@\s]+).*", r"\1", text, flags=re.S)
+        return first_word == word
 
-    return first_word in {word} | ctx.language_service.translations(f"{word}Cmd")
+    return text == word or text in ctx.language_service.translations(f"{word}Cmd")
 
 
 def search_guard(event: events.NewMessage.Event) -> bool:
