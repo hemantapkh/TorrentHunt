@@ -42,7 +42,7 @@
             "required": true
         },
         "TORRENT_PROVIDER": {
-            "description": "Torrent search backend (currently supported: jackett)",
+            "description": "Torrent search backend (currently supported: jackett, prowlarr)",
             "value": "jackett",
             "required": false
         },
@@ -55,6 +55,16 @@
             "description": "API key of the Jackett instance",
             "value": "",
             "required": true
+        },
+        "PROWLARR_URL": {
+            "description": "Base URL of the Prowlarr instance",
+            "value": "http://localhost:9696",
+            "required": false
+        },
+        "PROWLARR_API_KEY": {
+            "description": "API key of the Prowlarr instance",
+            "value": "",
+            "required": false
         },
         "SENTRY_DSN": {
             "description": "Sentry.io token for error tracking",

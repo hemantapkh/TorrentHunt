@@ -7,6 +7,7 @@ The rest of the code imports `settings` and never touches os.environ.
 """
 
 from pathlib import Path
+from typing import Literal
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -36,11 +37,16 @@ class Settings(BaseSettings):
     cleanup_interval_minutes: float = 60
 
     # Torrent search provider
-    torrent_provider: str = "jackett"
+    torrent_provider: Literal["jackett", "prowlarr"] = "jackett"
     jackett_url: str = "http://localhost:9117"
     jackett_api_key: str = ""
     jackett_indexer: str = "all"
     jackett_timeout: float = 40
+
+    prowlarr_url: str = "http://localhost:9696"
+    prowlarr_api_key: str = ""
+    prowlarr_indexer: str = "all"
+    prowlarr_timeout: float = 40
 
     # Message to forward on start
     start_ads: bool = False

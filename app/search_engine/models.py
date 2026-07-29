@@ -56,3 +56,24 @@ class SearchResults:
             "page": self.page,
             "provider": self.provider,
         }
+
+
+@dataclass
+class Indexer:
+    """A search backend indexer/source."""
+
+    id: str
+    name: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class IndexerList:
+    """A list of available indexers."""
+
+    items: list[Indexer] = field(default_factory=list)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {"items": [item.to_dict() for item in self.items]}

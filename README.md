@@ -40,13 +40,7 @@ inside Telegram, in your language.
 
 # 🔌 Search Provider
 
-Torrent Hunt uses [Jackett](https://github.com/Jackett/Jackett) as its search
-provider. Every indexer you configure in Jackett becomes searchable from the
-bot.
-
-**Todo**
-
-- [ ] [Prowlarr](https://github.com/Prowlarr/Prowlarr) support
+Torrent Hunt supports [Jackett](https://github.com/Jackett/Jackett) and [Prowlarr](https://github.com/Prowlarr/Prowlarr) as its search providers. Every indexer you configure in them becomes searchable from the bot.
 
 # 🗣️ Languages
 

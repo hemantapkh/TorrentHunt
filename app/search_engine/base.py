@@ -2,7 +2,7 @@
 
 from abc import ABC, abstractmethod
 
-from search_engine.models import SearchResults
+from search_engine.models import IndexerList, SearchResults
 
 
 class TorrentProvider(ABC):
@@ -31,14 +31,13 @@ class TorrentProvider(ABC):
         Must not raise on backend failures: log and return empty results.
         """
 
-    async def sources(self) -> dict[str, str]:
+    async def sources(self) -> IndexerList:
         """Return the backend's individually searchable sources.
 
-        Maps a source id (usable as `search(source=...)`) to a display
-        name, e.g. Jackett/Prowlarr indexers. Backends without such a
-        concept return an empty dict.
+        Backends without such a concept return an empty list.
         """
-        return {}
+        return IndexerList()
 
     async def close(self) -> None:
         """Release any underlying resources (HTTP sessions etc.)."""
+

@@ -126,7 +126,7 @@ async def load_sites() -> None:
     sources = await ctx.search.sources()
 
     ctx.sites = {
-        source_id: {"website": name} for source_id, name in sources.items()
+        source.id: {"website": source.name} for source in sources.items
     }
 
     logger.info(

@@ -8,7 +8,7 @@ result to the parser, and returns normalized models.
 from structlog import get_logger
 
 from search_engine.base import TorrentProvider
-from search_engine.models import SearchResults
+from search_engine.models import Indexer, IndexerList, SearchResults
 from search_engine.providers.jackett.constants import CATEGORY_MAP, RESULTS_ENDPOINT
 from search_engine.providers.jackett.parser import parse_torrent
 from search_engine.transport import HttpProvider
@@ -69,7 +69,7 @@ class JackettProvider(HttpProvider, TorrentProvider):
 
         return results
 
-    async def sources(self) -> dict[str, str]:
+    async def sources(self) -> IndexerList:
         # Jackett's indexer listing endpoint needs cookie auth, but an
         # empty-query search reports every configured indexer it queried
         url = self.base_url + RESULTS_ENDPOINT.format(indexer=self.indexer)
@@ -81,10 +81,12 @@ class JackettProvider(HttpProvider, TorrentProvider):
                 payload = await response.json()
         except Exception as err:
             logger.error("Jackett indexer listing failed", error=str(err))
-            return {}
+            return IndexerList()
 
-        return {
-            indexer["ID"]: indexer.get("Name") or indexer["ID"]
-            for indexer in payload.get("Indexers") or []
-            if indexer.get("ID")
-        }
+        return IndexerList(
+            items=[
+                Indexer(id=indexer["ID"], name=indexer.get("Name") or indexer["ID"])
+                for indexer in payload.get("Indexers") or []
+                if indexer.get("ID")
+            ]
+        )

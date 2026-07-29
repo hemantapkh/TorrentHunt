@@ -8,9 +8,11 @@ passes its configuration as keyword arguments.
 
 from search_engine.base import TorrentProvider
 from search_engine.providers.jackett import JackettProvider
+from search_engine.providers.prowlarr.provider import ProwlarrProvider
 
 PROVIDERS: dict[str, type[TorrentProvider]] = {
     JackettProvider.name: JackettProvider,
+    ProwlarrProvider.name: ProwlarrProvider,
 }
 
 

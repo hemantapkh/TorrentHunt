@@ -7,6 +7,7 @@ this service, never to a provider directly.
 """
 
 from search_engine import SearchResults, Torrent, TorrentProvider
+from search_engine.models import IndexerList
 
 from services.torrent_store import DatabaseTorrentStore
 
@@ -34,7 +35,7 @@ class SearchService:
     async def get_torrent(self, torrent_id: str) -> Torrent | None:
         return await self.store.get(torrent_id)
 
-    async def sources(self) -> dict[str, str]:
+    async def sources(self) -> IndexerList:
         return await self.provider.sources()
 
     async def close(self) -> None:
