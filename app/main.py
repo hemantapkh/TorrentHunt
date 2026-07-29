@@ -49,21 +49,24 @@ ctx.explicit_detector = ExplicitDetector()
 
 logger.info("Initializing torrent search service")
 torrent_store = DatabaseTorrentStore(retention_days=settings.torrent_cache_days)
-provider_kwargs = {}
+provider_kwargs = {
+    "message_search_tag": settings.message_search_tag,
+    "inline_search_tag": settings.inline_search_tag,
+}
 if settings.torrent_provider == "prowlarr":
-    provider_kwargs = {
+    provider_kwargs.update({
         "base_url": settings.prowlarr_url,
         "api_key": settings.prowlarr_api_key,
         "indexer": settings.prowlarr_indexer,
         "timeout": settings.prowlarr_timeout,
-    }
+    })
 else:
-    provider_kwargs = {
+    provider_kwargs.update({
         "base_url": settings.jackett_url,
         "api_key": settings.jackett_api_key,
         "indexer": settings.jackett_indexer,
         "timeout": settings.jackett_timeout,
-    }
+    })
 
 ctx.search = SearchService(
     provider=create_provider(

@@ -6,8 +6,7 @@ resolvable later, powering deep links and /getLink). Handlers talk to
 this service, never to a provider directly.
 """
 
-from search_engine import SearchResults, Torrent, TorrentProvider
-from search_engine.models import IndexerList
+from search_engine import IndexerList, SearchResults, Torrent, TorrentProvider
 
 from services.torrent_store import DatabaseTorrentStore
 
@@ -37,6 +36,9 @@ class SearchService:
 
     async def sources(self) -> IndexerList:
         return await self.provider.sources()
+
+    async def reload(self) -> None:
+        await self.provider.reload()
 
     async def close(self) -> None:
         await self.provider.close()

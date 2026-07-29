@@ -8,11 +8,12 @@ nothing outside this package changes.
 """
 
 from search_engine.base import TorrentProvider
-from search_engine.models import CATEGORIES, SearchResults, Torrent
+from search_engine.models import CATEGORIES, IndexerList, SearchResults, Torrent
 from search_engine.providers import create_provider
 
 __all__ = [
     "CATEGORIES",
+    "IndexerList",
     "SearchResults",
     "Torrent",
     "TorrentProvider",

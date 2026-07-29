@@ -66,6 +66,16 @@
             "value": "",
             "required": false
         },
+        "MESSAGE_SEARCH_TAG": {
+            "description": "Only search indexers with this tag for message/command searches (leave empty to search all)",
+            "value": "",
+            "required": false
+        },
+        "INLINE_SEARCH_TAG": {
+            "description": "Only show indexers with this tag for inline searches (leave empty to search all)",
+            "value": "",
+            "required": false
+        },
         "SENTRY_DSN": {
             "description": "Sentry.io token for error tracking",
             "value": "",

@@ -25,12 +25,16 @@ class JackettProvider(HttpProvider, TorrentProvider):
         api_key: str = "",
         indexer: str = "all",
         timeout: float = 40,
+        message_search_tag: str = "",
+        inline_search_tag: str = "",
     ):
         super().__init__(base_url=base_url, timeout=timeout)
         self.api_key = api_key
         # "all" aggregates every indexer configured in Jackett; pass a
         # single indexer id to query just that one
         self.indexer = indexer or "all"
+        self.message_search_tag = message_search_tag
+        self.inline_search_tag = inline_search_tag
 
     async def search(
         self,
@@ -50,7 +54,11 @@ class JackettProvider(HttpProvider, TorrentProvider):
         for torznab_category in CATEGORY_MAP.get(category or "", []):
             params.append(("Category[]", str(torznab_category)))
 
-        url = self.base_url + RESULTS_ENDPOINT.format(indexer=source or self.indexer)
+        indexer_id = source or self.indexer
+        if indexer_id.lower() == "all" and self.message_search_tag:
+            params.append(("Tracker[]", f"tag:{self.message_search_tag}"))
+
+        url = self.base_url + RESULTS_ENDPOINT.format(indexer=indexer_id)
 
         try:
             async with self.session.get(url, params=params) as response:
@@ -75,6 +83,9 @@ class JackettProvider(HttpProvider, TorrentProvider):
         url = self.base_url + RESULTS_ENDPOINT.format(indexer=self.indexer)
         params = [("apikey", self.api_key), ("Query", "")]
 
+        if self.inline_search_tag:
+            params.append(("Tracker[]", f"tag:{self.inline_search_tag}"))
+
         try:
             async with self.session.get(url, params=params) as response:
                 response.raise_for_status()
@@ -90,3 +101,6 @@ class JackettProvider(HttpProvider, TorrentProvider):
                 if indexer.get("ID")
             ]
         )
+
+    async def reload(self) -> None:
+        pass

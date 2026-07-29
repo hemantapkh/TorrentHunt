@@ -8,7 +8,7 @@ catch-alls (the text search and the unfiltered inline search).
 
 from telethon import events
 
-from bot.handlers import bookmarks, inline, search, settings, start, stats
+from bot.handlers import bookmarks, inline, reload, search, settings, start, stats
 from bot.helpers import match_command, search_guard
 
 
@@ -21,6 +21,10 @@ def register_handlers(client):
     client.add_event_handler(
         stats.stats,
         events.NewMessage(incoming=True, pattern=r"^/stats"),
+    )
+    client.add_event_handler(
+        reload.reload,
+        events.NewMessage(incoming=True, pattern=r"^/reload"),
     )
     client.add_event_handler(
         settings.settings_menu,

@@ -22,7 +22,7 @@ logger = get_logger(__name__)
 DEFAULT_COMMANDS = ("start", "bookmarks", "settings")
 GROUP_COMMANDS = ("search",)
 GROUP_ADMIN_COMMANDS = ("search", "settings")
-BOT_ADMIN_COMMANDS = (*DEFAULT_COMMANDS, "stats")
+BOT_ADMIN_COMMANDS = (*DEFAULT_COMMANDS, "stats", "reload")
 
 
 def _commands(t: Translator, names: tuple[str, ...]) -> list[types.BotCommand]:

@@ -38,6 +38,9 @@ class TorrentProvider(ABC):
         """
         return IndexerList()
 
+    async def reload(self) -> None:
+        """Clear cached state, if any, and fetch fresh data from the backend."""
+
     async def close(self) -> None:
         """Release any underlying resources (HTTP sessions etc.)."""
 

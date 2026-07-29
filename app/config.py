@@ -48,6 +48,9 @@ class Settings(BaseSettings):
     prowlarr_indexer: str = "all"
     prowlarr_timeout: float = 40
 
+    message_search_tag: str = ""
+    inline_search_tag: str = ""
+
     # Message to forward on start
     start_ads: bool = False
     start_ads_channel: str = ""

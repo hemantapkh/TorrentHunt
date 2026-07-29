@@ -3,6 +3,7 @@
 # Search results endpoint
 RESULTS_ENDPOINT = "/api/v1/search"
 INDEXERS_ENDPOINT = "/api/v1/indexer"
+TAGS_ENDPOINT = "/api/v1/tag"
 
 # Canonical application categories -> Torznab category ids
 CATEGORY_MAP: dict[str, list[int]] = {

@@ -168,6 +168,8 @@ uploadDateBtn: 📅 Date
 previousIcon: ◀️
 nextIcon: ▶️
 botRestarted: 🔃 Bot has been restarted.
+configReloaded: ✅ Config reloaded.
+reloadCmdDescription: 🔄 Reload indexer configuration
 startCmdDescription: 💫 Start using bot
 bookmarksCmdDescription: 🔖 View your bookmarks
 settingsCmdDescription: ⚙️ Change bot settings
