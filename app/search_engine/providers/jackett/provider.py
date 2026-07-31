@@ -56,8 +56,8 @@ class JackettProvider(HttpProvider, TorrentProvider):
 
         indexer_id = source or self.indexer
         if indexer_id.lower() == "all" and self.message_search_tag:
-            params.append(("Tracker[]", f"tag:{self.message_search_tag}"))
-
+            indexer_id = f"tag:{self.message_search_tag}"
+            
         url = self.base_url + RESULTS_ENDPOINT.format(indexer=indexer_id)
 
         try:
@@ -78,13 +78,14 @@ class JackettProvider(HttpProvider, TorrentProvider):
         return results
 
     async def sources(self) -> IndexerList:
+        indexer_id = self.indexer
+        if indexer_id.lower() == "all" and self.inline_search_tag:
+            indexer_id = f"tag:{self.inline_search_tag}"
+            
         # Jackett's indexer listing endpoint needs cookie auth, but an
         # empty-query search reports every configured indexer it queried
-        url = self.base_url + RESULTS_ENDPOINT.format(indexer=self.indexer)
+        url = self.base_url + RESULTS_ENDPOINT.format(indexer=indexer_id)
         params = [("apikey", self.api_key), ("Query", "")]
-
-        if self.inline_search_tag:
-            params.append(("Tracker[]", f"tag:{self.inline_search_tag}"))
 
         try:
             async with self.session.get(url, params=params) as response:
