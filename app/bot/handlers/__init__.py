@@ -7,12 +7,29 @@ catch-alls (the text search and the unfiltered inline search).
 """
 
 from telethon import events
+from telethon.tl import types
 
-from bot.handlers import bookmarks, inline, reload, search, settings, start, stats
+from bot.handlers import (
+    bookmarks,
+    inline,
+    membership,
+    reload,
+    search,
+    settings,
+    start,
+    stats,
+)
 from bot.helpers import match_command, search_guard
 
 
 def register_handlers(client):
+    # Reachability: blocks, removals, migrations. Registered first; they never stop
+    # propagation, so every other handler still runs.
+    client.add_event_handler(membership.bot_stopped, events.Raw(types.UpdateBotStopped))
+    client.add_event_handler(membership.channel_participant, events.Raw(types.UpdateChannelParticipant))
+    client.add_event_handler(membership.chat_migrated, events.Raw(func=membership.is_migration))
+    client.add_event_handler(membership.chat_action, events.ChatAction())
+
     # Commands — must be registered before the catch-all text search
     client.add_event_handler(
         start.start,

@@ -24,6 +24,7 @@ from typing import Any
 import structlog
 from database import get_session
 from database.repositories import UserRepository
+from services.reachability import UNREACHABLE_ERRORS, record_send_failure
 from structlog import get_logger
 from telethon import events
 
@@ -38,10 +39,16 @@ Event = (
 )
 
 
+def _chat_id(event: Event) -> int | None:
+    # Inline queries have no chat; the person's own private chat is their user id.
+    return getattr(event, "chat_id", None) or event.sender_id
+
+
 def setup_handler(
     track_user: bool = False,
     admin: bool = False,
     chat_admin: bool = False,
+    search: bool = False,
 ) -> Callable:
     def decorator(func: Callable[..., Coroutine[Any, Any, None]]) -> Callable:
         signature = inspect.signature(func)
@@ -59,9 +66,12 @@ def setup_handler(
                 if admin and not await is_admin(event.sender_id):
                     return
 
-                if track_user:
-                    async with get_session() as session:
-                        await UserRepository(session).upsert_from_event(event)
+                async with get_session() as session:
+                    if track_user:
+                        await UserRepository(session).upsert_from_event(event, searched=search)
+                    else:
+                        # Activity for chats we already know; never creates one.
+                        await UserRepository(session).touch(_chat_id(event), searched=search)
 
                 t = await resolve_translator(event)
 
@@ -82,6 +92,10 @@ def setup_handler(
 
             except events.StopPropagation:
                 raise
+
+            except UNREACHABLE_ERRORS as exc:
+                # Replying failed because the chat is gone/blocked: record it, don't crash.
+                await record_send_failure(_chat_id(event), exc)
 
             except Exception:
                 logger.exception("Unhandled error in handler")

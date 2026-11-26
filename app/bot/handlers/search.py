@@ -75,7 +75,7 @@ async def send_torrent(
         await event.respond(view.message, buttons=view.buttons, reply_to=reply_to)
 
 
-@setup_handler(track_user=True)
+@setup_handler(track_user=True, search=True)
 async def text_search(event: events.NewMessage.Event, client: TelegramClient, t: Translator) -> None:
     # Truncate to the max length that fits in the keyboard's callback data
     query = event.raw_text[:46]
@@ -154,7 +154,7 @@ async def get_link(event: events.NewMessage.Event, t: Translator) -> None:
     await send_torrent(event, t, torrent_id, edit_message=message.id)
 
 
-@setup_handler(track_user=True)
+@setup_handler(track_user=True, search=True)
 async def group_search(event: events.NewMessage.Event, t: Translator) -> None:
     view = render_group_search_prompt(t)
 
