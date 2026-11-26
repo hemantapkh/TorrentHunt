@@ -79,9 +79,25 @@ Torrent Hunt Bot speaks 19 languages.
 # 1. Configure: copy sample.env to .env and fill in the values
 cp sample.env .env
 
-# 2. Install dependencies and run
+# 2. Install dependencies, update the database schema, and run
 uv sync
+uv run app/migrate.py
 uv run app/main.py
+```
+
+### Database migrations
+
+The schema is managed with [Alembic](https://alembic.sqlalchemy.org/). `app/migrate.py`
+applies pending migrations; the Docker image runs it automatically before the bot starts.
+Databases created before migrations existed are detected and stamped at the baseline, so
+their data is kept.
+
+After changing a model in `app/database/models/`, generate and review a migration:
+
+```bash
+cd app
+uv run alembic revision --autogenerate -m "describe the change"
+uv run alembic upgrade head
 ```
 
 ### Docker

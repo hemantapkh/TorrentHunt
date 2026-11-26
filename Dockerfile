@@ -12,4 +12,5 @@ COPY uv.lock .
 
 RUN uv sync --frozen --all-groups
 
-CMD ["uv", "run", "app/main.py"]
+# Migrate the database schema first, then start the bot.
+CMD ["sh", "-c", "uv run app/migrate.py && exec uv run app/main.py"]

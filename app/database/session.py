@@ -9,8 +9,6 @@ from config import APP_DIR, settings
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from structlog import get_logger
 
-from database.models.base import Base
-
 logger = get_logger(__name__)
 
 connection_string = (
@@ -59,9 +57,3 @@ async def get_session() -> AsyncIterator[AsyncSession]:
         except Exception:
             await session.rollback()
             raise
-
-
-async def init_db() -> None:
-    logger.info("Creating metadata for database")
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)

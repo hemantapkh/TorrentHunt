@@ -10,7 +10,7 @@ from bot.context import ctx
 from bot.handlers import register_handlers
 from bot.helpers import load_sites, message_admins
 from config import APP_DIR, settings  # noqa: I001
-from database import get_session, init_db
+from database import get_session
 from database.repositories import AdminRepository
 from localization import LanguageService
 from logging_config import configure_logging
@@ -94,8 +94,6 @@ async def seed_admins() -> None:
 async def main() -> None:
     # Telethon's start() returns a coroutine when a loop is running
     await bot.start(bot_token=settings.bot_token)  # ty: ignore[invalid-await]
-
-    await init_db()
 
     if "--no-init" not in argv:
         await seed_admins()
