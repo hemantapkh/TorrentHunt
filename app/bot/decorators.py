@@ -23,7 +23,7 @@ from typing import Any
 
 import structlog
 from database import get_session
-from database.repositories import UserRepository
+from database.repositories import ChatRepository
 from services.reachability import UNREACHABLE_ERRORS, record_send_failure
 from structlog import get_logger
 from telethon import events
@@ -68,10 +68,10 @@ def setup_handler(
 
                 async with get_session() as session:
                     if track_user:
-                        await UserRepository(session).upsert_from_event(event, searched=search)
+                        await ChatRepository(session).upsert_from_event(event, searched=search)
                     else:
                         # Activity for chats we already know; never creates one.
-                        await UserRepository(session).touch(_chat_id(event), searched=search)
+                        await ChatRepository(session).touch(_chat_id(event), searched=search)
 
                 t = await resolve_translator(event)
 

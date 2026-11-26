@@ -4,7 +4,7 @@ import re
 from typing import Any
 
 from database import get_session
-from database.repositories import AdminRepository, UserRepository
+from database.repositories import AdminRepository, ChatRepository
 from localization import Translator
 from structlog import get_logger
 from telethon import TelegramClient, events
@@ -28,14 +28,14 @@ async def resolve_translator(event: Any) -> Translator:
         user_id = event.chat_id
 
     async with get_session() as session:
-        language = await UserRepository(session).get_language(user_id)
+        language = await ChatRepository(session).get_language(user_id)
 
     return ctx.language_service.get_translator(language or "english")
 
 
 async def get_restricted_mode(user_id: int) -> bool | None:
     async with get_session() as session:
-        return await UserRepository(session).get_restricted_mode(user_id)
+        return await ChatRepository(session).get_restricted_mode(user_id)
 
 
 def is_explicit_hidden(data: dict[str, Any], restricted_mode: bool | None) -> bool:
@@ -112,7 +112,7 @@ async def message_admins(client: TelegramClient, text_key: str) -> None:
     for admin_id in admin_ids:
         try:
             async with get_session() as session:
-                language = await UserRepository(session).get_language(admin_id)
+                language = await ChatRepository(session).get_language(admin_id)
 
             t = ctx.language_service.get_translator(language or "english")
 

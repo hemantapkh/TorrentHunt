@@ -9,7 +9,7 @@ Command descriptions come from the locale files (`<name>CmdDescription`).
 """
 
 from database import get_session
-from database.repositories import AdminRepository, UserRepository
+from database.repositories import AdminRepository, ChatRepository
 from localization import Translator
 from structlog import get_logger
 from telethon import TelegramClient
@@ -62,7 +62,7 @@ async def set_command_menus(client: TelegramClient) -> None:
     for admin_id in admin_ids:
         try:
             async with get_session() as session:
-                language = await UserRepository(session).get_language(admin_id)
+                language = await ChatRepository(session).get_language(admin_id)
 
             t = ctx.language_service.get_translator(language or "english")
             peer = await client.get_input_entity(admin_id)

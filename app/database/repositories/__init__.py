@@ -7,14 +7,14 @@ only flush when they need generated ids.
 
 from database.repositories.admin import AdminRepository
 from database.repositories.bookmark import BookmarkRepository
+from database.repositories.chat import ChatRepository
 from database.repositories.referrer import ReferrerRepository
 from database.repositories.torrent_cache import TorrentCacheRepository
-from database.repositories.user import UserRepository
 
 __all__ = [
     "AdminRepository",
     "BookmarkRepository",
+    "ChatRepository",
     "ReferrerRepository",
     "TorrentCacheRepository",
-    "UserRepository",
 ]

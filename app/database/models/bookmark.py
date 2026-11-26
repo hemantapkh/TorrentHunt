@@ -5,14 +5,14 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql import func
 
 from database.models.base import Base
-from database.models.user import User
+from database.models.chat import Chat
 
 
 class Bookmark(Base):
     __tablename__ = "bookmarks"
 
-    user_id: Mapped[int] = mapped_column(
-        BigInteger, ForeignKey("users.user_id"), primary_key=True, index=True,
+    chat_id: Mapped[int] = mapped_column(
+        BigInteger, ForeignKey("chats.id", ondelete="CASCADE"), primary_key=True, index=True,
     )
     hash: Mapped[str] = mapped_column(String, primary_key=True, index=True)
     title: Mapped[str] = mapped_column(String)
@@ -25,4 +25,4 @@ class Bookmark(Base):
         TIMESTAMP, server_default=func.current_timestamp(),
     )
 
-    user: Mapped[User] = relationship(backref="bookmark")
+    chat: Mapped[Chat] = relationship(backref="bookmarks")

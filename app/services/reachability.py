@@ -5,7 +5,7 @@ Telethon raises typed errors, so this matches on exception classes, not error te
 
 from database import get_session
 from database.models import ChatStatus, StatusSource, UnreachableReason
-from database.repositories import UserRepository
+from database.repositories import ChatRepository
 from structlog import get_logger
 from telethon import errors
 
@@ -34,9 +34,9 @@ async def record_send_failure(chat_id: int | None, exc: BaseException) -> bool:
     if status is None and reason is None:
         return False
     async with get_session() as session:
-        repo = UserRepository(session)
+        repo = ChatRepository(session)
         if status is not None:
-            await repo.set_chat_status(chat_id, status, StatusSource.SEND_ERROR)
+            await repo.set_status(chat_id, status, StatusSource.SEND_ERROR)
         else:
             await repo.mark_unreachable(chat_id, reason, StatusSource.SEND_ERROR)
     logger.info("Chat is unreachable", chat_id=chat_id, error=type(exc).__name__)

@@ -14,11 +14,20 @@ without sending them something, so blocks are left to live updates and send erro
 
 import argparse
 import asyncio
+import datetime
 from collections import Counter
 
 from config import settings
-from database.models import REACHABLE, ChatStatus, StatusSource, UnreachableReason, User
-from database.repositories import UserRepository
+from database.models import (
+    REACHABLE,
+    Chat,
+    ChatStatus,
+    ChatType,
+    StatusSource,
+    UnreachableReason,
+)
+from database.repositories import ChatRepository
+from database.repositories.chat import profile_of
 from database.session import Session, engine
 from logging_config import configure_logging
 from sqlalchemy import select
@@ -31,10 +40,10 @@ logger = get_logger(__name__)
 BATCH = 100  # users per users.getUsers call
 
 
-async def _rows(session, kinds: tuple[str, ...], after: int | None, limit: int) -> list[User]:
-    query = select(User).where(User.user_type.in_(kinds)).order_by(User.user_id).limit(limit)
+async def _rows(session, kinds: tuple[str, ...], after: int | None, limit: int) -> list[Chat]:
+    query = select(Chat).where(Chat.type.in_(kinds)).order_by(Chat.id).limit(limit)
     if after is not None:
-        query = query.where(User.user_id > after)
+        query = query.where(Chat.id > after)
     return list((await session.scalars(query)).all())
 
 
@@ -63,13 +72,14 @@ async def refresh_private(client, after: int | None, limit: int | None, dry_run:
     while limit is None or stats["checked"] < limit:
         size = BATCH if limit is None else min(BATCH, limit - stats["checked"])
         async with Session() as session:
-            rows = await _rows(session, ("PRIVATE",), after, size)
+            rows = await _rows(session, (ChatType.PRIVATE,), after, size)
             if not rows:
                 break
-            found = await _get_users(client, [r.user_id for r in rows])
-            repo = UserRepository(session)
+            found = await _get_users(client, [r.id for r in rows])
+            repo = ChatRepository(session)
+            now = datetime.datetime.now(datetime.UTC)
             for row in rows:
-                user = found.get(row.user_id)
+                user = found.get(row.id)
                 if not isinstance(user, types.User):  # missing or UserEmpty
                     stats["not_resolved"] += 1
                     continue
@@ -77,19 +87,17 @@ async def refresh_private(client, after: int | None, limit: int | None, dry_run:
                     if row.unreachable_reason != UnreachableReason.DEACTIVATED:
                         stats["deleted"] += 1
                     await repo.mark_unreachable(
-                        row.user_id, UnreachableReason.DEACTIVATED, StatusSource.LOOKUP,
+                        row.id, UnreachableReason.DEACTIVATED, StatusSource.LOOKUP,
                     )
                     continue
                 if not row.first_name and user.first_name:
                     stats["name_filled"] += 1
-                row.first_name, row.last_name = user.first_name, user.last_name
-                row.username = user.username
-                row.is_premium = bool(user.premium)
-                if user.lang_code:
-                    row.language_code = user.lang_code
+                for key, value in profile_of(user).items():
+                    setattr(row, key, value)
+                row.profile_updated_at = now
                 stats["updated"] += 1
             stats["checked"] += len(rows)
-            after = rows[-1].user_id
+            after = rows[-1].id
             await (session.rollback() if dry_run else session.commit())
         if stats["checked"] % 10_000 < BATCH:
             logger.info("Private chats", last_user_id=after, **stats)
@@ -114,32 +122,34 @@ async def _lookup_group(client, chat_id: int):
 async def refresh_groups(client, limit: int | None, dry_run: bool) -> None:
     stats: Counter = Counter()
     async with Session() as session:
-        rows = await _rows(session, ("GROUP", "SUPERGROUP", "CHANNEL"), None, limit or 1_000_000)
-        repo = UserRepository(session)
+        rows = await _rows(
+            session, (ChatType.GROUP, ChatType.SUPERGROUP, ChatType.CHANNEL), None, limit or 1_000_000,
+        )
+        repo = ChatRepository(session)
+        now = datetime.datetime.now(datetime.UTC)
         for row in rows:
-            chat = await _lookup_group(client, row.user_id)
+            chat = await _lookup_group(client, row.id)
             stats["checked"] += 1
             if chat is None:
                 stats["not_resolved"] += 1
             elif chat is ChatStatus.LEFT or getattr(chat, "left", False):
-                stats["left"] += row.chat_status != ChatStatus.LEFT
-                await repo.set_chat_status(row.user_id, ChatStatus.LEFT, StatusSource.LOOKUP)
+                stats["left"] += row.status != ChatStatus.LEFT
+                await repo.set_status(row.id, ChatStatus.LEFT, StatusSource.LOOKUP)
             elif isinstance(chat, (types.ChatForbidden, types.ChannelForbidden)):
-                stats["kicked"] += row.chat_status != ChatStatus.KICKED
-                await repo.set_chat_status(row.user_id, ChatStatus.KICKED, StatusSource.LOOKUP)
+                stats["kicked"] += row.status != ChatStatus.KICKED
+                await repo.set_status(row.id, ChatStatus.KICKED, StatusSource.LOOKUP)
             elif isinstance(chat, types.Chat) and isinstance(chat.migrated_to, types.InputChannel):
                 stats["migrated"] += row.unreachable_reason != UnreachableReason.MIGRATED
                 new_id = utils.get_peer_id(types.PeerChannel(chat.migrated_to.channel_id))
                 await repo.mark_unreachable(
-                    row.user_id, UnreachableReason.MIGRATED, StatusSource.LOOKUP, migrated_to=new_id,
+                    row.id, UnreachableReason.MIGRATED, StatusSource.LOOKUP, migrated_to=new_id,
                 )
             else:
-                row.first_name = chat.title
-                row.username = getattr(chat, "username", None)
-                if isinstance(chat, types.Channel):
-                    row.user_type = "SUPERGROUP" if chat.megagroup else "CHANNEL"
-                if row.chat_status not in REACHABLE:
-                    await repo.set_chat_status(row.user_id, ChatStatus.MEMBER, StatusSource.LOOKUP)
+                for key, value in profile_of(chat).items():
+                    setattr(row, key, value)
+                row.profile_updated_at = now
+                if row.status not in REACHABLE:
+                    await repo.set_status(row.id, ChatStatus.MEMBER, StatusSource.LOOKUP)
                 stats["updated"] += 1
         await (session.rollback() if dry_run else session.commit())
     logger.info("Groups and channels done", dry_run=dry_run, **stats)

@@ -1,6 +1,6 @@
 from config import settings
 from database import get_session
-from database.repositories import UserRepository
+from database.repositories import ChatRepository
 from localization import Translator
 from telethon import TelegramClient, events
 
@@ -47,7 +47,7 @@ async def set_language(event: events.CallbackQuery.Event, client: TelegramClient
     language = data.split("_")[1]
 
     async with get_session() as session:
-        await UserRepository(session).set_language(event.chat_id, language)
+        await ChatRepository(session).set_language(event.chat_id, language)
 
     await event.delete()
 
@@ -85,7 +85,7 @@ async def restriction(event: events.CallbackQuery.Event, t: Translator) -> None:
     restriction_value = event.data.decode().split("_")[1]
 
     async with get_session() as session:
-        await UserRepository(session).set_restricted_mode(
+        await ChatRepository(session).set_restricted_mode(
             event.chat_id,
             restriction_value == "True",
         )

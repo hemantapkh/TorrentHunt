@@ -15,6 +15,15 @@ from sqlalchemy.sql import func
 from database.models.base import Base
 
 
+class ChatType(StrEnum):
+    """Telegram's chat types, spelled as the Bot API spells them."""
+
+    PRIVATE = "private"
+    GROUP = "group"
+    SUPERGROUP = "supergroup"
+    CHANNEL = "channel"
+
+
 class ChatStatus(StrEnum):
     """Telegram's ChatMember.status values, for the bot's membership in a chat."""
 
@@ -54,7 +63,7 @@ class StatusSource(StrEnum):
 class ChatStatusChange(Base):
     """Append-only history: one row each time a chat's reachability changes.
 
-    users.chat_status / unreachable_reason hold the current state; this keeps every
+    chats.status / unreachable_reason hold the current state; this keeps every
     change so churn (blocks, unblocks, removals) can be counted over time."""
 
     __tablename__ = "chat_status_changes"
@@ -67,8 +76,8 @@ class ChatStatusChange(Base):
     )
 
     id: Mapped[int] = mapped_column(BigInteger().with_variant(Integer(), "sqlite"), primary_key=True)
-    user_id: Mapped[int] = mapped_column(
-        BigInteger, ForeignKey("users.user_id", ondelete="CASCADE"), index=True,
+    chat_id: Mapped[int] = mapped_column(
+        BigInteger, ForeignKey("chats.id", ondelete="CASCADE"), index=True,
     )
     status: Mapped[str] = mapped_column(String)  # a ChatStatus or UnreachableReason value
     source: Mapped[str] = mapped_column(String)  # a StatusSource value

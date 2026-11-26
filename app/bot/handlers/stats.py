@@ -1,5 +1,5 @@
 from database import get_session
-from database.repositories import UserRepository
+from database.repositories import ChatRepository
 from localization import Translator
 from telethon import events
 
@@ -9,7 +9,7 @@ from bot.decorators import setup_handler
 @setup_handler(admin=True)
 async def stats(event: events.NewMessage.Event, t: Translator) -> None:
     async with get_session() as session:
-        users = UserRepository(session)
+        users = ChatRepository(session)
         total_users = await users.count()
         joined_today = await users.count_joined_today()
 

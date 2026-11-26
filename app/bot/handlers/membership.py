@@ -6,7 +6,7 @@ handler table. Unknown chats are ignored: membership only matters for chats we s
 
 from database import get_session
 from database.models import ChatStatus, StatusSource, UnreachableReason
-from database.repositories import UserRepository
+from database.repositories import ChatRepository
 from structlog import get_logger
 from telethon import events, utils
 from telethon.tl import types
@@ -18,7 +18,7 @@ logger = get_logger(__name__)
 
 async def _set(chat_id: int, status: ChatStatus) -> None:
     async with get_session() as session:
-        await UserRepository(session).set_chat_status(chat_id, status, StatusSource.TELEGRAM_UPDATE)
+        await ChatRepository(session).set_status(chat_id, status, StatusSource.TELEGRAM_UPDATE)
 
 
 async def bot_stopped(update: types.UpdateBotStopped) -> None:
@@ -39,7 +39,13 @@ async def chat_action(event: events.ChatAction.Event) -> None:
         elif event.user_left:
             await _set(event.chat_id, ChatStatus.LEFT)
         elif event.user_added or event.user_joined:
-            await _set(event.chat_id, ChatStatus.MEMBER)
+            # Store the group now (not only once it uses the bot), with who added the bot.
+            async with get_session() as session:
+                repo = ChatRepository(session)
+                await repo.upsert_from_event(event)
+                await session.flush()
+                if event.user_added and (adder := await event.get_added_by()):
+                    await repo.set_added_by(event.chat_id, adder.id)
     except Exception:
         logger.exception("Couldn't record a membership change", chat_id=event.chat_id)
 
@@ -83,7 +89,7 @@ async def chat_migrated(update: types.UpdateNewMessage) -> None:
         old_id = utils.get_peer_id(message.peer_id)
         new_id = utils.get_peer_id(types.PeerChannel(message.action.channel_id))
         async with get_session() as session:
-            await UserRepository(session).mark_unreachable(
+            await ChatRepository(session).mark_unreachable(
                 old_id, UnreachableReason.MIGRATED, StatusSource.TELEGRAM_UPDATE, migrated_to=new_id,
             )
     except Exception:
