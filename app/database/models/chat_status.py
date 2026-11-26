@@ -48,6 +48,7 @@ class StatusSource(StrEnum):
     TELEGRAM_UPDATE = "telegram_update"  # Telegram told us (bot stopped, removed, added...)
     SEND_ERROR = "send_error"  # a message to this chat failed
     USER_ACTIVITY = "user_activity"  # the chat used the bot again
+    LOOKUP = "lookup"  # found by looking the chat up (app/refresh_chats.py)
 
 
 class ChatStatusChange(Base):
