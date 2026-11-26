@@ -1,7 +1,14 @@
 from datetime import datetime
 from enum import StrEnum
 
-from sqlalchemy import TIMESTAMP, BigInteger, ForeignKey, Integer, String
+from sqlalchemy import (
+    TIMESTAMP,
+    BigInteger,
+    CheckConstraint,
+    ForeignKey,
+    Integer,
+    String,
+)
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.sql import func
 
@@ -20,6 +27,13 @@ class ChatStatus(StrEnum):
 
 
 REACHABLE = (ChatStatus.CREATOR, ChatStatus.ADMINISTRATOR, ChatStatus.MEMBER, ChatStatus.RESTRICTED)
+
+
+def one_of(column: str, values: type[StrEnum], nullable: bool = False) -> str:
+    """SQL for a CHECK constraint: the column may only hold these enum values."""
+    allowed = ", ".join(f"'{v.value}'" for v in values)
+    check = f"{column} IN ({allowed})"
+    return f"{column} IS NULL OR {check}" if nullable else check
 
 
 class UnreachableReason(StrEnum):
@@ -43,6 +57,13 @@ class ChatStatusChange(Base):
     change so churn (blocks, unblocks, removals) can be counted over time."""
 
     __tablename__ = "chat_status_changes"
+    __table_args__ = (
+        CheckConstraint(
+            f"({one_of('status', ChatStatus)}) OR ({one_of('status', UnreachableReason)})",
+            name="ck_chat_status_changes_status",
+        ),
+        CheckConstraint(one_of("source", StatusSource), name="ck_chat_status_changes_source"),
+    )
 
     id: Mapped[int] = mapped_column(BigInteger().with_variant(Integer(), "sqlite"), primary_key=True)
     user_id: Mapped[int] = mapped_column(

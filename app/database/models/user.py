@@ -1,15 +1,22 @@
 from datetime import datetime
 
-from sqlalchemy import TIMESTAMP, BigInteger, ForeignKey, String
+from sqlalchemy import TIMESTAMP, BigInteger, CheckConstraint, ForeignKey, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql import func
 
 from database.models.base import Base
-from database.models.chat_status import ChatStatus
+from database.models.chat_status import ChatStatus, UnreachableReason, one_of
 
 
 class User(Base):
     __tablename__ = "users"
+    __table_args__ = (
+        CheckConstraint(one_of("chat_status", ChatStatus), name="ck_users_chat_status"),
+        CheckConstraint(
+            one_of("unreachable_reason", UnreachableReason, nullable=True),
+            name="ck_users_unreachable_reason",
+        ),
+    )
 
     user_id: Mapped[int] = mapped_column(BigInteger, primary_key=True, index=True)
     user_type: Mapped[str] = mapped_column(String)
