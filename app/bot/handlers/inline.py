@@ -9,13 +9,13 @@ from bot.views.torrent_view import render_torrent
 
 PAGE_SIZE = 10
 
-FALLBACK_THUMB = "https://raw.githubusercontent.com/hemantapkh/torrenthunt/main/images/torrenthunt.jpg"
+FALLBACK_THUMB = (
+    "https://raw.githubusercontent.com/hemantapkh/torrenthunt/main/images/torrenthunt.jpg"
+)
 
 
 def thumb(url: str) -> tl_types.InputWebDocument:
-    return tl_types.InputWebDocument(
-        url=url, size=0, mime_type="image/jpeg", attributes=[]
-    )
+    return tl_types.InputWebDocument(url=url, size=0, mime_type="image/jpeg", attributes=[])
 
 
 @setup_handler()
